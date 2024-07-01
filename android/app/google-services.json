@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "899511432641",
+    "project_id": "power-zxvlh8",
+    "storage_bucket": "power-zxvlh8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899511432641:android:eb989e27989800aaaaeb40",
+        "android_client_info": {
+          "package_name": "com.Devman.power360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899511432641-f8rjofjg8almgakqu6a0e3kggfgl2vvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Devman.power360",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "899511432641-2sfk0lb05qmsiaeo7mm8k2umbc0hekva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt9cW8iQySPrRsyyCDkqtRoWm19-aY24E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899511432641-2sfk0lb05qmsiaeo7mm8k2umbc0hekva.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "899511432641-10g319g9s4vhqjq7u2qf78ps9rnf9cs8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tekjob.power360"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899511432641:android:20f3326e3ee7b416aaeb40",
+        "android_client_info": {
+          "package_name": "com.tekjob.power360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899511432641-ej41r4umobjvs571tk0fbnhu0s9bcnf5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tekjob.power360",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "899511432641-2sfk0lb05qmsiaeo7mm8k2umbc0hekva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt9cW8iQySPrRsyyCDkqtRoWm19-aY24E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899511432641-2sfk0lb05qmsiaeo7mm8k2umbc0hekva.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "899511432641-10g319g9s4vhqjq7u2qf78ps9rnf9cs8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tekjob.power360"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

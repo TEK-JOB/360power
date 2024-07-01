@@ -1,0 +1,218 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Comercio",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Concluido",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Cancelado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Comercio",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Motoboy",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Pago",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Nafila",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Motoboy",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Pago",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Concluido",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Motoboy",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Comercio",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Comercio",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Pago",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Concluido",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "tipo",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}

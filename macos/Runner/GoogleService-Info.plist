@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>899511432641-10g319g9s4vhqjq7u2qf78ps9rnf9cs8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.899511432641-10g319g9s4vhqjq7u2qf78ps9rnf9cs8</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>899511432641-ej41r4umobjvs571tk0fbnhu0s9bcnf5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBhTgf8IKi89qATzBdLtDgcIPiasbCCVok</string>
+	<key>GCM_SENDER_ID</key>
+	<string>899511432641</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tekjob.power360</string>
+	<key>PROJECT_ID</key>
+	<string>power-zxvlh8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>power-zxvlh8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:899511432641:ios:d269047caff4377eaaeb40</string>
+</dict>
+</plist>
