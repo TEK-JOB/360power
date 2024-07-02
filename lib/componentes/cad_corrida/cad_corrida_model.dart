@@ -9,8 +9,6 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
 
   BairroRecord? docBairroDestino;
 
-  bool pago = false;
-
   RotaRecord? rotaAchada;
 
   ///  State fields for stateful widgets in this component.
@@ -22,7 +20,7 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
   String? Function(BuildContext, String?)? idTextControllerValidator;
   String? _idTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Campo Obrigatório';
+      return 'Campo obrigatório';
     }
 
     return null;
@@ -36,7 +34,7 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
   String? Function(BuildContext, String?)? bairroTextControllerValidator;
   String? _bairroTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Campo Obrigatório';
+      return 'Campo obrigatório';
     }
     if (val != bairroSelectedOption) {
       return 'Escolha uma opção';
@@ -47,6 +45,10 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
 
   // Stores action output result for [Firestore Query - Query a collection] action in Bairro widget.
   RotaRecord? acheiRota;
+  // Stores action output result for [Firestore Query - Query a collection] action in Bairro widget.
+  RotaRecord? acheiRota2;
+  // Stores action output result for [Firestore Query - Query a collection] action in Bairro widget.
+  RotaRecord? acheiRota3;
   // State field(s) for fone widget.
   FocusNode? foneFocusNode;
   TextEditingController? foneTextController;
@@ -56,19 +58,17 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
   FocusNode? prcoPedidoFocusNode;
   TextEditingController? prcoPedidoTextController;
   String? Function(BuildContext, String?)? prcoPedidoTextControllerValidator;
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue;
   // State field(s) for detalhes widget.
   FocusNode? detalhesFocusNode;
   TextEditingController? detalhesTextController;
   String? Function(BuildContext, String?)? detalhesTextControllerValidator;
   String? _detalhesTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Campo Obrigatório';
+      return 'Campo obrigatório';
     }
 
-    if (val.length < 5) {
-      return 'No minimo 5 caracteres';
+    if (val.length < 10) {
+      return 'No minimo 10 caracteres';
     }
 
     return null;
@@ -78,6 +78,10 @@ class CadCorridaModel extends FlutterFlowModel<CadCorridaWidget> {
   CorridasRecord? criaCorridaAgendada;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CorridasRecord? criaCorrida;
+  // Stores action output result for [Backend Call - Create Document] action in Container widget.
+  CorridasRecord? criaCorridaCopy;
+  // Stores action output result for [Backend Call - Create Document] action in Container widget.
+  CorridasRecord? criaCorridaFila;
 
   @override
   void initState(BuildContext context) {

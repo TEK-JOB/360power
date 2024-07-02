@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
-import '/componentes/cad_corrida_copy/cad_corrida_copy_widget.dart';
+import '/componentes/cad_corrida/cad_corrida_widget.dart';
 import '/componentes/cad_pix/cad_pix_widget.dart';
 import '/componentes/corrida/corrida_widget.dart';
 import '/componentes/edt_comercio/edt_comercio_widget.dart';
@@ -210,7 +210,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: AutoSizeText(
-                                            'Versão 0.49',
+                                            'Versão 0.50',
                                             minFontSize: 10.0,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -313,7 +313,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                             context)
                                                                         .unfocus(),
                                                                 child:
-                                                                    CadCorridaCopyWidget(
+                                                                    CadCorridaWidget(
                                                                   docBairroOrigem:
                                                                       columnBairroRecord,
                                                                   comercio:

@@ -798,9 +798,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                             child: Container(
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
+                                                                color: corridasMotoboyItem
+                                                                            .status !=
+                                                                        'Concluido'
+                                                                    ? const Color(
+                                                                        0xFF780508)
+                                                                    : FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
                                                                 borderRadius:
                                                                     const BorderRadius
                                                                         .only(

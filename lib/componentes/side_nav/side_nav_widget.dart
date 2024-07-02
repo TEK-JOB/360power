@@ -763,7 +763,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: AutoSizeText(
-                                'Versão 0.49',
+                                'Versão 0.50',
                                 minFontSize: 10.0,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
