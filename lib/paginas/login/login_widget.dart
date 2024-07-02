@@ -118,7 +118,10 @@ class _LoginWidgetState extends State<LoginWidget>
                             ),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 400.0,
+                              height: 300.0,
+                              constraints: BoxConstraints(
+                                maxHeight: 300.0,
+                              ),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [
@@ -142,25 +145,21 @@ class _LoginWidgetState extends State<LoginWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 24.0, 16.0, 24.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 200.0,
-                            decoration: BoxDecoration(),
-                            alignment: AlignmentDirectional(0.0, -1.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.asset(
-                                Theme.of(context).brightness == Brightness.dark
-                                    ? 'assets/images/fijek_4.png'
-                                    : 'assets/images/3a9k2_3.png',
-                                width: MediaQuery.sizeOf(context).width * 0.7,
-                                height: MediaQuery.sizeOf(context).height * 0.4,
-                                fit: BoxFit.contain,
-                              ),
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 200.0,
+                          decoration: BoxDecoration(),
+                          alignment: AlignmentDirectional(0.0, -1.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(0.0),
+                            child: Image.asset(
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? 'assets/images/fijek_4.png'
+                                  : 'assets/images/3a9k2_3.png',
+                              width: MediaQuery.sizeOf(context).width * 0.7,
+                              height: MediaQuery.sizeOf(context).height * 0.4,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -351,7 +350,7 @@ class _LoginWidgetState extends State<LoginWidget>
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 16.0, 8.0, 8.0),
+                                8.0, 16.0, 8.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -419,7 +418,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 24.0),
+                              0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
