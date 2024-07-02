@@ -104,7 +104,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 24.0),
+                              0.0, 0.0, 0.0, 16.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 12.0,
@@ -176,7 +176,7 @@ class _LoginWidgetState extends State<LoginWidget>
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -263,7 +263,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 16.0, 8.0, 16.0),
+                              8.0, 8.0, 8.0, 8.0),
                           child: Container(
                             width: 300.0,
                             child: TextFormField(
