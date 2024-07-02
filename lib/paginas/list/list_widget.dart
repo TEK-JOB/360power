@@ -2,9 +2,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'list_model.dart';
 export 'list_model.dart';
@@ -49,8 +54,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -68,8 +73,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(30.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(30.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -87,8 +92,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(30.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(30.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -106,8 +111,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -125,8 +130,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -145,8 +150,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -165,8 +170,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -185,8 +190,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -204,8 +209,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -224,8 +229,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -244,8 +249,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -264,8 +269,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -284,8 +289,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -304,8 +309,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -324,8 +329,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -343,8 +348,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -363,8 +368,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -383,8 +388,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -403,8 +408,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -423,8 +428,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -443,8 +448,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 10.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 10.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -463,8 +468,8 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
             curve: Curves.bounceOut,
             delay: 400.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -497,7 +502,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: const Color(0xFFF1F4F8),
+            backgroundColor: Color(0xFFF1F4F8),
             body: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -517,7 +522,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 1.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -525,9 +530,9 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                   ),
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -536,7 +541,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 16.0, 0.0, 0.0),
                                           child: Text(
                                             'Pedidos',
@@ -568,14 +573,14 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                   scrollDirection: Axis.horizontal,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 12.0, 12.0),
                                       child: Container(
                                         width: 230.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          boxShadow: const [
+                                          boxShadow: [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x34090F13),
@@ -595,7 +600,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -603,7 +608,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               Container(
                                                 width: double.infinity,
                                                 height: 120.0,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   color: Color(0xFFF9BE4B),
                                                   borderRadius:
                                                       BorderRadius.only(
@@ -618,7 +623,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -635,16 +640,16 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0x62FFFFFF),
+                                                              Color(0x62FFFFFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                         ),
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
-                                                        child: const FaIcon(
+                                                        child: FaIcon(
                                                           FontAwesomeIcons
                                                               .solidClock,
                                                           color: Colors.white,
@@ -674,7 +679,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 0.0),
                                                 child: Row(
@@ -708,14 +713,14 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                           'containerOnPageLoadAnimation1']!),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 12.0, 12.0),
                                       child: Container(
                                         width: 230.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          boxShadow: const [
+                                          boxShadow: [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x34090F13),
@@ -735,7 +740,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -743,7 +748,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               Container(
                                                 width: double.infinity,
                                                 height: 120.0,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   color: Color(0xFF74CB48),
                                                   borderRadius:
                                                       BorderRadius.only(
@@ -758,7 +763,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -775,16 +780,16 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0x61FFFFFF),
+                                                              Color(0x61FFFFFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                         ),
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
-                                                        child: const Icon(
+                                                        child: Icon(
                                                           Icons
                                                               .attach_money_outlined,
                                                           color: Colors.white,
@@ -814,7 +819,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 0.0),
                                                 child: Row(
@@ -848,13 +853,13 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                           'containerOnPageLoadAnimation2']!),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(12.0),
+                                      padding: EdgeInsets.all(12.0),
                                       child: Container(
                                         width: 230.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          boxShadow: const [
+                                          boxShadow: [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x34090F13),
@@ -874,7 +879,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -882,7 +887,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               Container(
                                                 width: double.infinity,
                                                 height: 120.0,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   color: Color(0xFFF1416C),
                                                   borderRadius:
                                                       BorderRadius.only(
@@ -897,7 +902,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -914,16 +919,16 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0x62FFFFFF),
+                                                              Color(0x62FFFFFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       12.0),
                                                         ),
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
-                                                        child: const Icon(
+                                                        child: Icon(
                                                           Icons
                                                               .not_interested_outlined,
                                                           color: Colors.white,
@@ -953,7 +958,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 0.0),
                                                 child: Row(
@@ -990,7 +995,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 12.0),
                                 child: Text(
                                   'Lista de pedidos',
@@ -1004,11 +1009,11 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                               ),
                               Expanded(
                                 child: Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     children: [
                                       Align(
-                                        alignment: const Alignment(0.0, 0),
+                                        alignment: Alignment(0.0, 0),
                                         child: FlutterFlowButtonTabBar(
                                           useToggleButtonStyle: false,
                                           labelStyle:
@@ -1019,7 +1024,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                     fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                   ),
-                                          unselectedLabelStyle: const TextStyle(),
+                                          unselectedLabelStyle: TextStyle(),
                                           labelColor: Colors.white,
                                           unselectedLabelColor:
                                               FlutterFlowTheme.of(context)
@@ -1034,10 +1039,10 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                           borderRadius: 8.0,
                                           elevation: 0.0,
                                           buttonMargin:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          padding: const EdgeInsets.all(4.0),
-                                          tabs: const [
+                                          padding: EdgeInsets.all(4.0),
+                                          tabs: [
                                             Tab(
                                               text: 'Pendentes',
                                             ),
@@ -1063,7 +1068,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                           controller: _model.tabBarController,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: ListView(
@@ -1073,7 +1078,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -1085,7 +1090,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -1108,7 +1113,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -1142,7 +1147,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1181,7 +1186,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   Axis.vertical,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1193,7 +1198,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -1214,7 +1219,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(2.0),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -1229,7 +1234,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             8.0,
@@ -1263,7 +1268,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation3']!),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Calçados',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1276,7 +1281,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -1316,7 +1321,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1343,7 +1348,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFFEF8ED),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
@@ -1351,12 +1356,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           8.0,
                                                                           12.0,
@@ -1368,7 +1373,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: const Color(0xFFF9BE4B),
+                                                                              color: Color(0xFFF9BE4B),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
@@ -1389,7 +1394,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: ListView(
@@ -1399,7 +1404,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -1411,7 +1416,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -1434,7 +1439,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -1468,7 +1473,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1507,7 +1512,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   Axis.vertical,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1519,7 +1524,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -1540,7 +1545,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(2.0),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -1555,7 +1560,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             8.0,
@@ -1589,7 +1594,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation6']!),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Calçados',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1602,7 +1607,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -1623,7 +1628,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1635,7 +1640,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -1656,7 +1661,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(2.0),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -1671,7 +1676,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             8.0,
@@ -1705,7 +1710,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation9']!),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Acessório',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1718,7 +1723,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -1758,7 +1763,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1785,7 +1790,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFE8FFF3),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
@@ -1793,12 +1798,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           8.0,
                                                                           12.0,
@@ -1810,7 +1815,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: const Color(0xFF50CD89),
+                                                                              color: Color(0xFF50CD89),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
@@ -1831,7 +1836,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: ListView(
@@ -1841,7 +1846,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -1853,7 +1858,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -1876,7 +1881,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -1910,7 +1915,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1949,7 +1954,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   Axis.vertical,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1961,7 +1966,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -1982,7 +1987,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(2.0),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -1997,7 +2002,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             8.0,
@@ -2031,7 +2036,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation12']!),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Calçados',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -2044,7 +2049,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -2065,7 +2070,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -2077,7 +2082,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -2098,7 +2103,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(2.0),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(12.0),
@@ -2113,7 +2118,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             8.0,
@@ -2147,7 +2152,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   ),
                                                                             ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation15']!),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Acessório',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -2160,7 +2165,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -2200,7 +2205,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -2227,7 +2232,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                 Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFFFF5F8),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
@@ -2235,12 +2240,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   child: Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           8.0,
                                                                           12.0,
@@ -2252,7 +2257,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: const Color(0xFFF1416C),
+                                                                              color: Color(0xFFF1416C),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
@@ -2280,7 +2285,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.0),
                                 child: Material(
                                   color: Colors.transparent,
                                   elevation: 8.0,
@@ -2296,7 +2301,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(16.0),
+                                      padding: EdgeInsets.all(16.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -2304,7 +2309,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2314,11 +2319,11 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -2348,7 +2353,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2365,12 +2370,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFFF29200),
                                                             width: 2.0,
                                                           ),
                                                         ),
-                                                        child: const Icon(
+                                                        child: Icon(
                                                           Icons
                                                               .attach_money_sharp,
                                                           color:
@@ -2381,7 +2386,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -2398,12 +2403,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF00F85B),
                                                             width: 2.0,
                                                           ),
                                                         ),
-                                                        child: const Align(
+                                                        child: Align(
                                                           alignment:
                                                               AlignmentDirectional(
                                                                   0.0, 0.0),
@@ -2428,7 +2433,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -2448,7 +2453,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 16.0),
                                                 child: SingleChildScrollView(
@@ -2463,17 +2468,17 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   4.0),
                                                           child: Container(
                                                             width: 300.0,
                                                             height: 200.0,
                                                             constraints:
-                                                                const BoxConstraints(
+                                                                BoxConstraints(
                                                               maxWidth: 570.0,
                                                             ),
                                                             decoration:
@@ -2495,7 +2500,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2520,7 +2525,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               16.0,
                                                                               0.0,
@@ -2598,7 +2603,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               12.0),
                                                                       child:
                                                                           Row(
@@ -2620,12 +2625,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                               color: FlutterFlowTheme.of(context).alternate,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
-                                                                                color: const Color(0xFFF29200),
+                                                                                color: Color(0xFFF29200),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.pin_drop,
                                                                               color: Color(0xFFF29200),
                                                                               size: 30.0,
@@ -2633,10 +2638,10 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           ),
                                                                           Stack(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             children: [
                                                                               Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 120.0,
                                                                                   height: 4.0,
@@ -2653,7 +2658,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   color: FlutterFlowTheme.of(context).alternate,
                                                                                   shape: BoxShape.circle,
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.keyboard_double_arrow_right_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -2672,18 +2677,18 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                               color: FlutterFlowTheme.of(context).alternate,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
-                                                                                color: const Color(0xFF00F85B),
+                                                                                color: Color(0xFF00F85B),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.pin_drop_outlined,
                                                                               color: Color(0xFF00F85B),
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 16.0)),
+                                                                        ].divide(SizedBox(width: 16.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2699,11 +2704,11 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         child:
                                                                             Container(
                                                                           decoration:
-                                                                              const BoxDecoration(),
+                                                                              BoxDecoration(),
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 GradientText(
                                                                               'De bairro até bairro',
@@ -2712,7 +2717,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                     fontFamily: 'Readex Pro',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
-                                                                              colors: const [
+                                                                              colors: [
                                                                                 Color(0xFFF29200),
                                                                                 Color(0xFF00F85B)
                                                                               ],
@@ -2725,10 +2730,10 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                     ],
                                                                   ),
                                                                 ]
-                                                                    .divide(const SizedBox(
+                                                                    .divide(SizedBox(
                                                                         height:
                                                                             4.0))
-                                                                    .addToEnd(const SizedBox(
+                                                                    .addToEnd(SizedBox(
                                                                         height:
                                                                             12.0)),
                                                               ),
@@ -2748,7 +2753,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -2768,7 +2773,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 16.0),
                                                 child: SingleChildScrollView(
@@ -2783,17 +2788,17 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   4.0),
                                                           child: Container(
                                                             width: 300.0,
                                                             height: 200.0,
                                                             constraints:
-                                                                const BoxConstraints(
+                                                                BoxConstraints(
                                                               maxWidth: 570.0,
                                                             ),
                                                             decoration:
@@ -2815,7 +2820,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2840,7 +2845,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               16.0,
                                                                               0.0,
@@ -2918,7 +2923,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               12.0),
                                                                       child:
                                                                           Row(
@@ -2940,12 +2945,12 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                               color: FlutterFlowTheme.of(context).alternate,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
-                                                                                color: const Color(0xFFF29200),
+                                                                                color: Color(0xFFF29200),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.pin_drop,
                                                                               color: Color(0xFFF29200),
                                                                               size: 30.0,
@@ -2953,10 +2958,10 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                           ),
                                                                           Stack(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             children: [
                                                                               Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: 120.0,
                                                                                   height: 4.0,
@@ -2973,7 +2978,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                   color: FlutterFlowTheme.of(context).alternate,
                                                                                   shape: BoxShape.circle,
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.keyboard_double_arrow_right_rounded,
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -2992,18 +2997,18 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                               color: FlutterFlowTheme.of(context).alternate,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
-                                                                                color: const Color(0xFF00F85B),
+                                                                                color: Color(0xFF00F85B),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
-                                                                                const Icon(
+                                                                                Icon(
                                                                               Icons.pin_drop_outlined,
                                                                               color: Color(0xFF00F85B),
                                                                               size: 30.0,
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 16.0)),
+                                                                        ].divide(SizedBox(width: 16.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -3019,11 +3024,11 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                         child:
                                                                             Container(
                                                                           decoration:
-                                                                              const BoxDecoration(),
+                                                                              BoxDecoration(),
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 GradientText(
                                                                               'De bairro até bairro',
@@ -3032,7 +3037,7 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                                     fontFamily: 'Readex Pro',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
-                                                                              colors: const [
+                                                                              colors: [
                                                                                 Color(0xFFF29200),
                                                                                 Color(0xFF00F85B)
                                                                               ],
@@ -3045,10 +3050,10 @@ class _ListWidgetState extends State<ListWidget> with TickerProviderStateMixin {
                                                                     ],
                                                                   ),
                                                                 ]
-                                                                    .divide(const SizedBox(
+                                                                    .divide(SizedBox(
                                                                         height:
                                                                             4.0))
-                                                                    .addToEnd(const SizedBox(
+                                                                    .addToEnd(SizedBox(
                                                                         height:
                                                                             12.0)),
                                                               ),

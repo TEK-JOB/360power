@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'escolhido_model.dart';
 export 'escolhido_model.dart';
 
@@ -45,7 +47,7 @@ class _EscolhidoWidgetState extends State<EscolhidoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -58,17 +60,17 @@ class _EscolhidoWidgetState extends State<EscolhidoWidget> {
                 sigmaY: 2.0,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Container(
                   width: 450.0,
                   height: 350.0,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 450.0,
                     maxHeight: 350.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x1A000000),

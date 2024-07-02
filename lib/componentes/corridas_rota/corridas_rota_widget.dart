@@ -2,10 +2,16 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'corridas_rota_model.dart';
 export 'corridas_rota_model.dart';
 
@@ -54,8 +60,8 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +80,8 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -100,7 +106,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -108,25 +114,25 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0x4D000000),
               ),
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 36.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 36.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 650.0,
                     maxHeight: 800.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x19000000),
@@ -142,13 +148,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -160,7 +166,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                 child: Container(
                                   width: 48.0,
                                   height: 48.0,
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Color(0xFFF02E4B),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
@@ -169,7 +175,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                       topRight: Radius.circular(12.0),
                                     ),
                                   ),
-                                  child: const Icon(
+                                  child: Icon(
                                     Icons.close_rounded,
                                     color: Colors.white,
                                     size: 36.0,
@@ -181,7 +187,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -198,9 +204,9 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                             ).animateOnPageLoad(
                                 animationsMap['textOnPageLoadAnimation1']!),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Text(
                                   valueOrDefault<String>(
@@ -218,16 +224,16 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 24.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 600.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Builder(
                                   builder: (context) {
                                     final refCorridas =
-                                        widget.rota?.corridasRota.toList() ??
+                                        widget.rota?.corridasRota?.toList() ??
                                             [];
                                     return SingleChildScrollView(
                                       primary: false,
@@ -240,7 +246,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                               refCorridas[refCorridasIndex];
                                           return Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 4.0),
                                             child:
                                                 StreamBuilder<CorridasRecord>(
@@ -250,7 +256,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
-                                                  return const Center(
+                                                  return Center(
                                                     child: SizedBox(
                                                       width: 50.0,
                                                       height: 50.0,
@@ -270,7 +276,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                 return Material(
                                                   color: Colors.transparent,
                                                   elevation: 8.0,
-                                                  shape: const RoundedRectangleBorder(
+                                                  shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.only(
                                                       bottomLeft:
@@ -289,7 +295,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                               .of(context)
                                                           .primaryBackground,
                                                       borderRadius:
-                                                          const BorderRadius.only(
+                                                          BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 8.0),
@@ -317,7 +323,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       8.0,
@@ -334,7 +340,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                               // Customize what your widget looks like when it's loading.
                                                               if (!snapshot
                                                                   .hasData) {
-                                                                return const Center(
+                                                                return Center(
                                                                   child:
                                                                       SizedBox(
                                                                     width: 50.0,
@@ -407,14 +413,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                 BoxShape.circle,
                                                                             border:
                                                                                 Border.all(
-                                                                              color: const Color(0xFFF8B400),
+                                                                              color: Color(0xFFF8B400),
                                                                               width: 2.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 ClipRRect(
                                                                               borderRadius: BorderRadius.circular(50.0),
@@ -426,7 +432,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                 width: 45.0,
                                                                                 height: 45.0,
                                                                                 fit: BoxFit.contain,
-                                                                                alignment: const Alignment(0.0, 0.0),
+                                                                                alignment: Alignment(0.0, 0.0),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -438,7 +444,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 haderComerciosRecord.nomeComercio,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -460,7 +466,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             MainAxisAlignment.spaceEvenly,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
@@ -505,7 +511,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                             refCorridasIndex)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         58.0,
                                                                         0.0,
@@ -523,12 +529,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                   width: double
                                                                       .infinity,
                                                                   constraints:
-                                                                      const BoxConstraints(
+                                                                      BoxConstraints(
                                                                     maxWidth:
                                                                         900.0,
                                                                   ),
                                                                   decoration:
-                                                                      const BoxDecoration(
+                                                                      BoxDecoration(
                                                                     color: Colors
                                                                         .transparent,
                                                                   ),
@@ -559,19 +565,19 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
-                                                                                color: cartCorridasRecord.pago ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                                color: cartCorridasRecord.pago ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.monetization_on_rounded,
-                                                                              color: cartCorridasRecord.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                              color: cartCorridasRecord.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                               size: 24.0,
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -581,7 +587,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               cartCorridasRecord.pago == true ? 'Pago em: ' : 'Receber',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                    color: cartCorridasRecord.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                                    color: cartCorridasRecord.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -591,7 +597,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           if (cartCorridasRecord.pago ==
                                                                               true)
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -600,7 +606,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                       fontFamily: 'Readex Pro',
-                                                                                      color: const Color(0xFF5CF91B),
+                                                                                      color: Color(0xFF5CF91B),
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
@@ -608,7 +614,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                         ],
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             18.0,
                                                                             0.0,
                                                                             0.0,
@@ -629,7 +635,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 26.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -641,7 +647,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                   child: RichText(
                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                     text: TextSpan(
@@ -659,7 +665,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                       ],
                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                            color: const Color(0xFF606A85),
+                                                                                            color: Color(0xFF606A85),
                                                                                             fontSize: 14.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
@@ -667,13 +673,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                const Divider(
+                                                                                Divider(
                                                                                   height: 1.0,
                                                                                   thickness: 1.0,
                                                                                   indent: 0.0,
                                                                                   color: Color(0xFFE5E7EB),
                                                                                 ),
-                                                                              ].addToEnd(const SizedBox(height: 12.0)),
+                                                                              ].addToEnd(SizedBox(height: 12.0)),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -688,12 +694,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                     width: double
                                                                         .infinity,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           900.0,
                                                                     ),
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       color: Color(
                                                                           0x00FFFFFF),
                                                                     ),
@@ -716,14 +722,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: const Color(0x4D9489F5),
+                                                                                color: Color(0x4D9489F5),
                                                                                 shape: BoxShape.circle,
                                                                                 border: Border.all(
-                                                                                  color: const Color(0xFFF8B400),
+                                                                                  color: Color(0xFFF8B400),
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
-                                                                              child: const Align(
+                                                                              child: Align(
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.businessTime,
@@ -734,7 +740,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   'Agendado',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -748,7 +754,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -767,7 +773,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ],
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               18.0,
                                                                               0.0,
                                                                               0.0,
@@ -779,7 +785,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 0.0,
                                                                                   color: Color(0xFFF8B400),
@@ -800,7 +806,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -810,7 +816,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                           text: TextSpan(
                                                                                             children: [
-                                                                                              const TextSpan(
+                                                                                              TextSpan(
                                                                                                 text: 'Detalhe:',
                                                                                                 style: TextStyle(),
                                                                                               ),
@@ -818,7 +824,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                                 text: cartCorridasRecord.detalhe,
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                      color: const Color(0xFFF8B400),
+                                                                                                      color: Color(0xFFF8B400),
                                                                                                       fontSize: 14.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                       fontWeight: FontWeight.bold,
@@ -827,20 +833,20 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                             ],
                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFF606A85),
+                                                                                                  color: Color(0xFF606A85),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
-                                                                                        const Divider(
+                                                                                        Divider(
                                                                                           height: 1.0,
                                                                                           thickness: 1.0,
                                                                                           indent: 0.0,
                                                                                           color: Color(0xFFE5E7EB),
                                                                                         ),
-                                                                                      ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                      ].addToEnd(SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -858,12 +864,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                     width: double
                                                                         .infinity,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           900.0,
                                                                     ),
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       color: Color(
                                                                           0x00FFFFFF),
                                                                     ),
@@ -886,14 +892,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: const Color(0x4D9489F5),
+                                                                                color: Color(0x4D9489F5),
                                                                                 shape: BoxShape.circle,
                                                                                 border: Border.all(
-                                                                                  color: const Color(0xFFF8B400),
+                                                                                  color: Color(0xFFF8B400),
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
-                                                                              child: const Align(
+                                                                              child: Align(
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.boxOpen,
@@ -904,7 +910,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   'Disponivel',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -918,7 +924,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -937,7 +943,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ],
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               18.0,
                                                                               0.0,
                                                                               0.0,
@@ -949,7 +955,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 0.0,
                                                                                   color: Color(0xFFF8B400),
@@ -969,7 +975,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -979,7 +985,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                         textScaler: MediaQuery.of(context).textScaler,
                                                                                         text: TextSpan(
                                                                                           children: [
-                                                                                            const TextSpan(
+                                                                                            TextSpan(
                                                                                               text: 'Detalhe: ',
                                                                                               style: TextStyle(),
                                                                                             ),
@@ -987,7 +993,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                               text: cartCorridasRecord.detalhe,
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: const Color(0xFFF8B400),
+                                                                                                    color: Color(0xFFF8B400),
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.bold,
@@ -996,20 +1002,20 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                           ],
                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                color: const Color(0xFF606A85),
+                                                                                                color: Color(0xFF606A85),
                                                                                                 fontSize: 14.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w500,
                                                                                               ),
                                                                                         ),
                                                                                       ),
-                                                                                      const Divider(
+                                                                                      Divider(
                                                                                         height: 1.0,
                                                                                         thickness: 1.0,
                                                                                         indent: 0.0,
                                                                                         color: Color(0xFFE5E7EB),
                                                                                       ),
-                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                    ].addToEnd(SizedBox(height: 12.0)),
                                                                                   ),
                                                                                 ),
                                                                               ],
@@ -1026,12 +1032,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                     width: double
                                                                         .infinity,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           900.0,
                                                                     ),
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       color: Color(
                                                                           0x00FFFFFF),
                                                                     ),
@@ -1054,14 +1060,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: const Color(0x4D9489F5),
+                                                                                color: Color(0x4D9489F5),
                                                                                 shape: BoxShape.circle,
                                                                                 border: Border.all(
-                                                                                  color: const Color(0xFFF8B400),
+                                                                                  color: Color(0xFFF8B400),
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
-                                                                              child: const Align(
+                                                                              child: Align(
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.sports_motorsports,
@@ -1072,7 +1078,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   'Aceita',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1086,7 +1092,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -1105,7 +1111,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ],
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               18.0,
                                                                               0.0,
                                                                               0.0,
@@ -1117,7 +1123,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 0.0,
                                                                                   color: Color(0xFFF8B400),
@@ -1133,18 +1139,18 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                     child: RichText(
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
                                                                                         children: [
-                                                                                          const TextSpan(
+                                                                                          TextSpan(
                                                                                             text: 'Motoboy:',
                                                                                             style: TextStyle(),
                                                                                           ),
@@ -1152,7 +1158,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                             text: cartCorridasRecord.nomeMotoboy,
                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFFF8B400),
+                                                                                                  color: Color(0xFFF8B400),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
@@ -1161,7 +1167,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                         ],
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                              color: const Color(0xFF606A85),
+                                                                                              color: Color(0xFF606A85),
                                                                                               fontSize: 14.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
@@ -1169,13 +1175,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                  const Divider(
+                                                                                  Divider(
                                                                                     height: 1.0,
                                                                                     thickness: 1.0,
                                                                                     indent: 0.0,
                                                                                     color: Color(0xFFE5E7EB),
                                                                                   ),
-                                                                                ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                ].addToEnd(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1190,12 +1196,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                     width: double
                                                                         .infinity,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           900.0,
                                                                     ),
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       color: Color(
                                                                           0x00FFFFFF),
                                                                     ),
@@ -1218,14 +1224,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: const Color(0x4D9489F5),
+                                                                                color: Color(0x4D9489F5),
                                                                                 shape: BoxShape.circle,
                                                                                 border: Border.all(
-                                                                                  color: const Color(0xFFF8B400),
+                                                                                  color: Color(0xFFF8B400),
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
-                                                                              child: const Align(
+                                                                              child: Align(
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.box,
@@ -1236,7 +1242,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   'Coletado',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1250,7 +1256,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -1269,7 +1275,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ],
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               18.0,
                                                                               0.0,
                                                                               0.0,
@@ -1281,7 +1287,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 0.0,
                                                                                   color: Color(0xFFF8B400),
@@ -1297,13 +1303,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                     child: RichText(
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
@@ -1312,7 +1318,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                             text: 'Motoboy ja coletou o Pedido',
                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFFF8B400),
+                                                                                                  color: Color(0xFFF8B400),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
@@ -1321,7 +1327,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                         ],
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                              color: const Color(0xFF606A85),
+                                                                                              color: Color(0xFF606A85),
                                                                                               fontSize: 14.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
@@ -1329,13 +1335,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                  const Divider(
+                                                                                  Divider(
                                                                                     height: 1.0,
                                                                                     thickness: 1.0,
                                                                                     indent: 0.0,
                                                                                     color: Color(0xFFE5E7EB),
                                                                                   ),
-                                                                                ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                ].addToEnd(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1350,12 +1356,12 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                     width: double
                                                                         .infinity,
                                                                     constraints:
-                                                                        const BoxConstraints(
+                                                                        BoxConstraints(
                                                                       maxWidth:
                                                                           900.0,
                                                                     ),
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       color: Colors
                                                                           .transparent,
                                                                     ),
@@ -1381,14 +1387,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: const Color(0x4D9489F5),
+                                                                                color: Color(0x4D9489F5),
                                                                                 shape: BoxShape.circle,
                                                                                 border: Border.all(
-                                                                                  color: const Color(0xFFF8B400),
+                                                                                  color: Color(0xFFF8B400),
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
-                                                                              child: const Icon(
+                                                                              child: Icon(
                                                                                 Icons.home,
                                                                                 color: Color(0xFFF8B400),
                                                                                 size: 24.0,
@@ -1396,7 +1402,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   'Finalizada',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1410,7 +1416,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   'H:mm:s',
@@ -1429,7 +1435,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                           ],
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               18.0,
                                                                               0.0,
                                                                               0.0,
@@ -1448,14 +1454,14 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.min,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                     child: RichText(
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
@@ -1464,7 +1470,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                             text: 'Concluido com sucesso!',
                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFFF8B400),
+                                                                                                  color: Color(0xFFF8B400),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
@@ -1473,7 +1479,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                         ],
                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                              color: const Color(0xFF606A85),
+                                                                                              color: Color(0xFF606A85),
                                                                                               fontSize: 14.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
@@ -1481,13 +1487,13 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                  const Divider(
+                                                                                  Divider(
                                                                                     height: 1.0,
                                                                                     thickness: 1.0,
                                                                                     indent: 0.0,
                                                                                     color: Color(0xFFE5E7EB),
                                                                                   ),
-                                                                                ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                ].addToEnd(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),

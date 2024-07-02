@@ -6,8 +6,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'documentos_model.dart';
 export 'documentos_model.dart';
 
@@ -46,15 +51,15 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -88,20 +93,20 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: SizedBox(
+                  child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 100.0,
                     child: Stack(
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Material(
                               color: Colors.transparent,
                               elevation: 12.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(50.0),
                                   bottomRight: Radius.circular(200.0),
@@ -112,7 +117,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 400.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
                                       Color(0xFFF6D800),
@@ -129,21 +134,21 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                     topRight: Radius.circular(0.0),
                                   ),
                                 ),
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                               ),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 24.0, 16.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 200.0,
-                              decoration: const BoxDecoration(),
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              decoration: BoxDecoration(),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.asset(
@@ -165,10 +170,10 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -186,9 +191,9 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Material(
                                   color: Colors.transparent,
                                   elevation: 8.0,
@@ -206,10 +211,10 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 24.0),
                                             child: Text(
                                               'Clique para enviar sua habilitação',
@@ -220,7 +225,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color: Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -230,7 +235,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 36.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -343,7 +348,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                                       valueOrDefault<String>(
                                                         (currentUserDocument
                                                                 ?.documentosList
-                                                                .toList() ??
+                                                                ?.toList() ??
                                                             [])[0],
                                                         'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/habilita.png?alt=media&token=bd1931db-e442-47e7-b658-a40a47c5a6a9',
                                                       ),
@@ -364,9 +369,9 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Material(
                                   color: Colors.transparent,
                                   elevation: 8.0,
@@ -384,10 +389,10 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 24.0),
                                             child: Text(
                                               'Clique para enviar seu comprovante de residência',
@@ -398,7 +403,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color: Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -408,7 +413,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 36.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -521,7 +526,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                                       valueOrDefault<String>(
                                                         (currentUserDocument
                                                                 ?.documentosList
-                                                                .toList() ??
+                                                                ?.toList() ??
                                                             [])[1],
                                                         'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/endere.png?alt=media&token=c05e53aa-5193-46c1-b914-7e1fb24ef6a6',
                                                       ),
@@ -544,7 +549,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -556,7 +561,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -564,7 +569,7 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.safePop();
@@ -573,9 +578,9 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 45.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -588,12 +593,12 @@ class _DocumentosWidgetState extends State<DocumentosWidget>
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 8.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: const Color(0xFFF29200),
+                              hoverColor: Color(0xFFF29200),
                               hoverTextColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               hoverElevation: 3.0,

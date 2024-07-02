@@ -7,10 +7,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'cadastro_model.dart';
 export 'cadastro_model.dart';
 
@@ -92,15 +98,15 @@ class _CadastroWidgetState extends State<CadastroWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -134,20 +140,20 @@ class _CadastroWidgetState extends State<CadastroWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: SizedBox(
+                  child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 100.0,
                     child: Stack(
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Material(
                               color: Colors.transparent,
                               elevation: 12.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(50.0),
                                   bottomRight: Radius.circular(200.0),
@@ -158,7 +164,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 400.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
                                       Color(0xFFF6D800),
@@ -175,21 +181,21 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                     topRight: Radius.circular(0.0),
                                   ),
                                 ),
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                               ),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 24.0, 16.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 200.0,
-                              decoration: const BoxDecoration(),
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              decoration: BoxDecoration(),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.asset(
@@ -211,10 +217,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -233,9 +239,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                           children: [
                             if (_model.pag == 0)
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: Material(
                                     color: Colors.transparent,
                                     elevation: 8.0,
@@ -257,10 +263,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 8.0, 16.0, 24.0),
                                                 child: Text(
@@ -273,7 +279,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF57636C),
+                                                            Color(0xFF57636C),
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -283,8 +289,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: SizedBox(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Container(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -302,7 +308,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -333,7 +339,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -369,7 +375,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsets.all(18.0),
+                                                        EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -387,10 +393,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       8.0, 16.0, 8.0, 16.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -409,7 +415,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -440,7 +446,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -476,7 +482,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsets.all(18.0),
+                                                        EdgeInsets.all(18.0),
                                                     suffixIcon: InkWell(
                                                       onTap: () => setState(
                                                         () => _model
@@ -516,7 +522,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
                                               child: Row(
@@ -527,11 +533,11 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(4.0),
+                                                          EdgeInsets.all(4.0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           _model.pag =
@@ -544,21 +550,21 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           width: 100.0,
                                                           height: 45.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -574,7 +580,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -595,7 +601,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             width: 1.0,
                                                           ),
                                                           hoverTextColor:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -612,9 +618,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                               ),
                             if (_model.pag == 1)
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: Material(
                                     color: Colors.transparent,
                                     elevation: 8.0,
@@ -636,10 +642,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 8.0, 16.0, 24.0),
                                                 child: Text(
@@ -652,7 +658,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         color:
-                                                            const Color(0xFF57636C),
+                                                            Color(0xFF57636C),
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -662,8 +668,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: SizedBox(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Container(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -681,7 +687,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText: 'seu nome aqui.',
@@ -711,7 +717,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -747,7 +753,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsets.all(18.0),
+                                                        EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -765,8 +771,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: SizedBox(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Container(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -784,7 +790,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText: 'seu CPF aqui.',
@@ -814,7 +820,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -850,7 +856,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsets.all(18.0),
+                                                        EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -873,8 +879,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: SizedBox(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Container(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -892,7 +898,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -923,7 +929,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -959,7 +965,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsets.all(18.0),
+                                                        EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -982,7 +988,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
                                               child: Row(
@@ -993,7 +999,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
@@ -1006,14 +1012,14 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                         width: 100.0,
                                                         height: 45.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1036,7 +1042,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 8.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -1045,7 +1051,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             BorderRadius
                                                                 .circular(8.0),
                                                         hoverColor:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                         hoverTextColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1056,11 +1062,11 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(4.0),
+                                                          EdgeInsets.all(4.0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           _model.pag =
@@ -1073,21 +1079,21 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           width: 100.0,
                                                           height: 45.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1103,7 +1109,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1124,7 +1130,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             width: 1.0,
                                                           ),
                                                           hoverTextColor:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -1141,9 +1147,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                               ),
                             if (_model.pag == 2)
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: StreamBuilder<List<BairroRecord>>(
                                     stream: queryBairroRecord(
                                       parent: widget.de,
@@ -1151,7 +1157,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
                                       if (!snapshot.hasData) {
-                                        return const Center(
+                                        return Center(
                                           child: SizedBox(
                                             width: 50.0,
                                             height: 50.0,
@@ -1184,10 +1190,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 8.0, 16.0, 0.0),
                                                   child: Text(
@@ -1200,7 +1206,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1210,7 +1216,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 16.0),
                                                 child: Column(
@@ -1223,7 +1229,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -1236,7 +1242,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          SizedBox(
+                                                          Container(
                                                             width: 300.0,
                                                             child:
                                                                 TextFormField(
@@ -1257,7 +1263,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1293,7 +1299,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0xFFF29200),
                                                                     width: 2.0,
@@ -1332,7 +1338,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                               36.0),
                                                                 ),
                                                                 contentPadding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             18.0),
                                                               ),
@@ -1360,7 +1366,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1373,7 +1379,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          SizedBox(
+                                                          Container(
                                                             width: 300.0,
                                                             child:
                                                                 TextFormField(
@@ -1394,7 +1400,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1430,7 +1436,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0xFFF29200),
                                                                     width: 2.0,
@@ -1469,7 +1475,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                               36.0),
                                                                 ),
                                                                 contentPadding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             18.0),
                                                               ),
@@ -1497,18 +1503,18 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
                                                                   0.0,
                                                                   8.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: 300.0,
                                                         child: Autocomplete<
                                                             String>(
                                                           initialValue:
-                                                              const TextEditingValue(),
+                                                              TextEditingValue(),
                                                           optionsBuilder:
                                                               (textEditingValue) {
                                                             if (textEditingValue
@@ -1557,7 +1563,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                             0.0,
                                                                       ),
                                                               textHighlightStyle:
-                                                                  const TextStyle(),
+                                                                  TextStyle(),
                                                               elevation: 4.0,
                                                               optionBackgroundColor:
                                                                   FlutterFlowTheme.of(
@@ -1622,7 +1628,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   EasyDebounce
                                                                       .debounce(
                                                                 '_model.kadBairroTextController',
-                                                                const Duration(
+                                                                Duration(
                                                                     milliseconds:
                                                                         2000),
                                                                 () async {
@@ -1663,7 +1669,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1699,7 +1705,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0xFFF29200),
                                                                     width: 2.0,
@@ -1738,7 +1744,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                               36.0),
                                                                 ),
                                                                 contentPadding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             18.0),
                                                               ),
@@ -1765,7 +1771,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1780,9 +1786,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: 70.0,
                                                               child:
                                                                   TextFormField(
@@ -1803,7 +1809,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1838,7 +1844,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1877,7 +1883,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1902,17 +1908,17 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           4.0,
                                                                           0.0),
-                                                              child: SizedBox(
+                                                              child: Container(
                                                                 width: 120.0,
                                                                 child:
                                                                     TextFormField(
@@ -1935,7 +1941,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              const Color(0xFFF29200),
+                                                                              Color(0xFFF29200),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1968,7 +1974,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          const BorderSide(
+                                                                          BorderSide(
                                                                         color: Color(
                                                                             0xFFF29200),
                                                                         width:
@@ -2005,7 +2011,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                               36.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             18.0),
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -2044,7 +2050,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               _model.ddUFValue ??=
                                                                   'SP',
                                                             ),
-                                                            options: const [
+                                                            options: [
                                                               'AC',
                                                               'AL',
                                                               'AP',
@@ -2093,14 +2099,14 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                           0.0,
                                                                     ),
                                                             hintText: 'UF',
-                                                            icon: const Icon(
+                                                            icon: Icon(
                                                               Icons
                                                                   .keyboard_arrow_down_rounded,
                                                               color: Color(
                                                                   0xFFF29200),
                                                               size: 24.0,
                                                             ),
-                                                            fillColor: const Color(
+                                                            fillColor: Color(
                                                                 0x00FFFFFF),
                                                             elevation: 2.0,
                                                             borderColor:
@@ -2110,7 +2116,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             borderWidth: 2.0,
                                                             borderRadius: 24.0,
                                                             margin:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         4.0,
@@ -2128,13 +2134,13 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
                                                                   0.0,
                                                                   8.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: 300.0,
                                                         child: TextFormField(
                                                           controller: _model
@@ -2154,7 +2160,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -2191,7 +2197,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFF29200),
                                                                 width: 2.0,
@@ -2230,7 +2236,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                           36.0),
                                                             ),
                                                             contentPadding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     18.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2253,13 +2259,13 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
                                                                   0.0,
                                                                   8.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: 300.0,
                                                         child: TextFormField(
                                                           controller: _model
@@ -2279,7 +2285,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -2316,7 +2322,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFF29200),
                                                                 width: 2.0,
@@ -2355,7 +2361,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                           36.0),
                                                             ),
                                                             contentPadding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     18.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2380,7 +2386,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 16.0),
                                                 child: Row(
@@ -2392,7 +2398,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
@@ -2406,14 +2412,14 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                           width: 100.0,
                                                           height: 45.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2437,7 +2443,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -2447,7 +2453,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   .circular(
                                                                       8.0),
                                                           hoverColor:
-                                                              const Color(0xFFF29200),
+                                                              Color(0xFFF29200),
                                                           hoverTextColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2458,11 +2464,11 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -2470,7 +2476,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     0.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
-                                                            var shouldSetState =
+                                                            var _shouldSetState =
                                                                 false;
                                                             GoRouter.of(context)
                                                                 .prepareAuthEvent();
@@ -2483,7 +2489,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               ScaffoldMessenger
                                                                       .of(context)
                                                                   .showSnackBar(
-                                                                const SnackBar(
+                                                                SnackBar(
                                                                   content: Text(
                                                                     'Senhas diferentes',
                                                                   ),
@@ -2624,7 +2630,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                               _model.bairro,
                                                                         ),
                                                                         enderecoRecordReference);
-                                                            shouldSetState =
+                                                            _shouldSetState =
                                                                 true;
 
                                                             await currentUserReference!
@@ -2694,7 +2700,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   },
                                                                 ),
                                                               }, pontoRecordReference);
-                                                              shouldSetState =
+                                                              _shouldSetState =
                                                                   true;
 
                                                               await currentUserReference!
@@ -2713,9 +2719,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   context
                                                                       .mounted);
 
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 setState(() {});
-                                                              }
                                                               return;
                                                             } else if (valueOrDefault(
                                                                     currentUserDocument
@@ -2803,7 +2808,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                                 _model.enderCriado?.localizar,
                                                                           ),
                                                                           comerciosRecordReference);
-                                                              shouldSetState =
+                                                              _shouldSetState =
                                                                   true;
 
                                                               await widget.de!
@@ -2849,9 +2854,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   context
                                                                       .mounted);
 
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 setState(() {});
-                                                              }
                                                               return;
                                                             } else if (valueOrDefault(
                                                                     currentUserDocument
@@ -2876,9 +2880,8 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   context
                                                                       .mounted);
 
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 setState(() {});
-                                                              }
                                                               return;
                                                             } else {
                                                               context.pushNamedAuth(
@@ -2886,15 +2889,13 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                   context
                                                                       .mounted);
 
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 setState(() {});
-                                                              }
                                                               return;
                                                             }
 
-                                                            if (shouldSetState) {
+                                                            if (_shouldSetState)
                                                               setState(() {});
-                                                            }
                                                           },
                                                           text: 'Cadastrar',
                                                           options:
@@ -2902,20 +2903,20 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                             width: 180.0,
                                                             height: 45.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFFF29200),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -2932,7 +2933,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     ),
                                                             elevation: 8.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -2953,7 +2954,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               width: 1.0,
                                                             ),
                                                             hoverTextColor:
-                                                                const Color(
+                                                                Color(
                                                                     0xFFF29200),
                                                           ),
                                                         ),
@@ -2973,7 +2974,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2985,7 +2986,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -2993,7 +2994,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed('Login');
@@ -3002,9 +3003,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 45.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -3017,12 +3018,12 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 8.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
-                              hoverColor: const Color(0xFFF29200),
+                              hoverColor: Color(0xFFF29200),
                               hoverTextColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               hoverElevation: 3.0,
@@ -3030,15 +3031,15 @@ class _CadastroWidgetState extends State<CadastroWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -3046,10 +3047,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Text(
                                             'Ou cadastre com sua conta ',
@@ -3059,7 +3060,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF57636C),
+                                                  color: Color(0xFF57636C),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -3069,7 +3070,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),

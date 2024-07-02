@@ -1,9 +1,15 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:barcode_widget/barcode_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'qr_model.dart';
 export 'qr_model.dart';
 
@@ -49,22 +55,22 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.349, 0),
+            end: Offset(0, 0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -101,20 +107,20 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: SizedBox(
+                  child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 100.0,
                     child: Stack(
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Material(
                               color: Colors.transparent,
                               elevation: 12.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(50.0),
                                   bottomRight: Radius.circular(200.0),
@@ -125,7 +131,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 400.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
                                       Color(0xFFF6D800),
@@ -142,21 +148,21 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                                     topRight: Radius.circular(0.0),
                                   ),
                                 ),
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                               ),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 24.0, 16.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 200.0,
-                              decoration: const BoxDecoration(),
-                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              decoration: BoxDecoration(),
+                              alignment: AlignmentDirectional(0.0, -1.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.asset(
@@ -179,7 +185,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                             Container(
                               width: 50.0,
                               height: 50.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -205,13 +211,13 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                 Expanded(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 24.0),
                           child: Text(
                             'Cadastro de ${widget.tipo}',
@@ -235,7 +241,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                             width: 320.0,
                             height: 320.0,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF8B400),
+                              color: Color(0xFFF8B400),
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: InkWell(
@@ -258,9 +264,9 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                                     width: 300.0,
                                     height: 300.0,
                                     color: Colors.black,
-                                    backgroundColor: const Color(0xFFF8B400),
-                                    errorBuilder: (context, error) =>
-                                        const SizedBox(
+                                    backgroundColor: Color(0xFFF8B400),
+                                    errorBuilder: (_context, _error) =>
+                                        SizedBox(
                                       width: 300.0,
                                       height: 300.0,
                                     ),

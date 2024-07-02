@@ -1,8 +1,11 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'listdet_model.dart';
 export 'listdet_model.dart';
 
@@ -57,7 +60,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                 context.pop();
               },
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -72,7 +75,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 3.0,
                           color: Color(0x39000000),
@@ -84,7 +87,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           12.0, 16.0, 12.0, 24.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -95,7 +98,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
                                   '2,503',
@@ -127,7 +130,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: Text(
                                       '4.6',
@@ -141,7 +144,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 12.0),
                                     child: Icon(
                                       Icons.star_rounded,
@@ -174,13 +177,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.96,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x33000000),
@@ -193,13 +196,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(2.0),
+                            padding: EdgeInsets.all(2.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -216,12 +219,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                 BorderRadius.circular(40.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(2.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 50.0,
                                               clipBehavior: Clip.antiAlias,
-                                              decoration: const BoxDecoration(
+                                              decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.asset(
@@ -246,7 +249,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 4.0),
                                               child: RatingBarIndicator(
                                                 itemBuilder: (context, index) =>
@@ -258,7 +261,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                 ),
                                                 direction: Axis.horizontal,
                                                 rating: 5.0,
-                                                unratedColor: const Color(0xFF95A1AC),
+                                                unratedColor: Color(0xFF95A1AC),
                                                 itemCount: 5,
                                                 itemSize: 24.0,
                                               ),
@@ -269,7 +272,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -303,13 +306,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.96,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x33000000),
@@ -322,13 +325,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(2.0),
+                            padding: EdgeInsets.all(2.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -351,7 +354,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 4.0),
                                               child: RatingBarIndicator(
                                                 itemBuilder: (context, index) =>
@@ -363,7 +366,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                 ),
                                                 direction: Axis.horizontal,
                                                 rating: 5.0,
-                                                unratedColor: const Color(0xFF95A1AC),
+                                                unratedColor: Color(0xFF95A1AC),
                                                 itemCount: 5,
                                                 itemSize: 24.0,
                                               ),
@@ -380,12 +383,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                                 BorderRadius.circular(40.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(2.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 50.0,
                                               clipBehavior: Clip.antiAlias,
-                                              decoration: const BoxDecoration(
+                                              decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.asset(
@@ -398,7 +401,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -428,12 +431,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.96,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -446,13 +449,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: EdgeInsets.all(2.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -475,7 +478,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 4.0),
                                           child: RatingBarIndicator(
                                             itemBuilder: (context, index) =>
@@ -487,7 +490,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                             ),
                                             direction: Axis.horizontal,
                                             rating: 5.0,
-                                            unratedColor: const Color(0xFF95A1AC),
+                                            unratedColor: Color(0xFF95A1AC),
                                             itemCount: 5,
                                             itemSize: 24.0,
                                           ),
@@ -503,12 +506,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                             BorderRadius.circular(40.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: Container(
                                           width: 50.0,
                                           height: 50.0,
                                           clipBehavior: Clip.antiAlias,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -521,7 +524,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 4.0, 16.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -549,12 +552,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.96,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x33000000),
@@ -567,13 +570,13 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: EdgeInsets.all(2.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -596,7 +599,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 4.0),
                                           child: RatingBarIndicator(
                                             itemBuilder: (context, index) =>
@@ -608,7 +611,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                             ),
                                             direction: Axis.horizontal,
                                             rating: 5.0,
-                                            unratedColor: const Color(0xFF95A1AC),
+                                            unratedColor: Color(0xFF95A1AC),
                                             itemCount: 5,
                                             itemSize: 24.0,
                                           ),
@@ -624,12 +627,12 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                             BorderRadius.circular(40.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: Container(
                                           width: 50.0,
                                           height: 50.0,
                                           clipBehavior: Clip.antiAlias,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -642,7 +645,7 @@ class _ListdetWidgetState extends State<ListdetWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 4.0, 16.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,

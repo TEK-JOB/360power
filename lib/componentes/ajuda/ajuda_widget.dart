@@ -4,10 +4,14 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'ajuda_model.dart';
 export 'ajuda_model.dart';
 
@@ -57,8 +61,8 @@ class _AjudaWidgetState extends State<AjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -77,8 +81,8 @@ class _AjudaWidgetState extends State<AjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -97,8 +101,8 @@ class _AjudaWidgetState extends State<AjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -117,8 +121,8 @@ class _AjudaWidgetState extends State<AjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -143,7 +147,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -156,13 +160,13 @@ class _AjudaWidgetState extends State<AjudaWidget>
                 sigmaY: 2.0,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: StreamBuilder<List<AjudaRecord>>(
                   stream: queryAjudaRecord(),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return const Center(
+                      return Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -180,7 +184,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                       height: 550.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x1A000000),
@@ -193,7 +197,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(18.0),
+                        padding: EdgeInsets.all(18.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,12 +234,12 @@ class _AjudaWidgetState extends State<AjudaWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
-                                  child: SizedBox(
+                                  child: Container(
                                     width: double.infinity,
                                     child: Autocomplete<String>(
-                                      initialValue: const TextEditingValue(),
+                                      initialValue: TextEditingValue(),
                                       optionsBuilder: (textEditingValue) {
                                         if (textEditingValue.text == '') {
                                           return const Iterable<String>.empty();
@@ -266,7 +270,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                                     fontFamily: 'Readex Pro',
                                                     letterSpacing: 0.0,
                                                   ),
-                                          textHighlightStyle: const TextStyle(),
+                                          textHighlightStyle: TextStyle(),
                                           elevation: 4.0,
                                           optionBackgroundColor:
                                               FlutterFlowTheme.of(context)
@@ -325,7 +329,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.ruaTextController',
-                                            const Duration(milliseconds: 2000),
+                                            Duration(milliseconds: 2000),
                                             () async {
                                               setState(() {
                                                 _model.ajudafTextController
@@ -378,7 +382,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                                     .labelMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: const Color(0xFFF29200),
+                                                      color: Color(0xFFF29200),
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Digite o nome da rua ',
@@ -404,7 +408,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                                   BorderRadius.circular(36.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0xFFF29200),
                                                 width: 2.0,
                                               ),
@@ -433,7 +437,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                                   BorderRadius.circular(36.0),
                                             ),
                                             contentPadding:
-                                                const EdgeInsets.all(18.0),
+                                                EdgeInsets.all(18.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -452,9 +456,9 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                       'textFieldOnPageLoadAnimation1']!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
-                                  child: SizedBox(
+                                  child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.ajudafTextController,
@@ -468,7 +472,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
-                                              color: const Color(0xFFF29200),
+                                              color: Color(0xFFF29200),
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Aqui veja o que achamos',
@@ -491,7 +495,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0xFFF29200),
                                             width: 2.0,
                                           ),
@@ -516,7 +520,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ),
-                                        contentPadding: const EdgeInsets.all(18.0),
+                                        contentPadding: EdgeInsets.all(18.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -536,7 +540,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -551,10 +555,10 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                     options: FFButtonOptions(
                                       width: 150.0,
                                       height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -562,11 +566,11 @@ class _AjudaWidgetState extends State<AjudaWidget>
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFFF29200),
+                                            color: Color(0xFFF29200),
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

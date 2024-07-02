@@ -5,12 +5,18 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'cad_corrida2_model.dart';
 export 'cad_corrida2_model.dart';
 
@@ -77,8 +83,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -97,8 +103,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -117,8 +123,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -137,8 +143,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -157,8 +163,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -177,8 +183,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -197,8 +203,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -217,8 +223,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -237,8 +243,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.8, 0.8),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -263,7 +269,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -271,14 +277,14 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0x4D000000),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -292,13 +298,13 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: StreamBuilder<List<BairroRecord>>(
                               stream: queryBairroRecord(),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return const Center(
+                                  return Center(
                                     child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
@@ -316,13 +322,13 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                 return Container(
                                   width: double.infinity,
                                   height: 850.0,
-                                  constraints: const BoxConstraints(
+                                  constraints: BoxConstraints(
                                     maxWidth: 530.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x19000000),
@@ -340,7 +346,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -369,7 +375,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                               ).animateOnPageLoad(animationsMap[
                                                   'textOnPageLoadAnimation1']!),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -386,7 +392,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                   child: Container(
                                                     width: 48.0,
                                                     height: 48.0,
-                                                    decoration: const BoxDecoration(
+                                                    decoration: BoxDecoration(
                                                       color: Color(0xFFF02E4B),
                                                       borderRadius:
                                                           BorderRadius.only(
@@ -404,7 +410,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 12.0),
                                                       ),
                                                     ),
-                                                    child: const Icon(
+                                                    child: Icon(
                                                       Icons.close_rounded,
                                                       color: Colors.white,
                                                       size: 36.0,
@@ -417,7 +423,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 16.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -425,10 +431,10 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 8.0),
                                                   child: Text(
@@ -446,8 +452,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: SizedBox(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller:
@@ -465,7 +471,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -498,7 +504,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -532,7 +538,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -551,12 +557,12 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                     'textFieldOnPageLoadAnimation1']!),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: SizedBox(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   child: Autocomplete<String>(
                                                     initialValue:
-                                                        const TextEditingValue(),
+                                                        TextEditingValue(),
                                                     optionsBuilder:
                                                         (textEditingValue) {
                                                       if (textEditingValue
@@ -601,7 +607,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                       0.0,
                                                                 ),
                                                         textHighlightStyle:
-                                                            const TextStyle(),
+                                                            TextStyle(),
                                                         elevation: 4.0,
                                                         optionBackgroundColor:
                                                             FlutterFlowTheme.of(
@@ -651,7 +657,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                             EasyDebounce
                                                                 .debounce(
                                                           '_model.bairroTextController',
-                                                          const Duration(
+                                                          Duration(
                                                               milliseconds:
                                                                   2000),
                                                           () async {
@@ -701,7 +707,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Readex Pro',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF29200),
                                                                     letterSpacing:
                                                                         0.0,
@@ -738,7 +744,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Color(
                                                                   0xFFF29200),
                                                               width: 2.0,
@@ -777,7 +783,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                         36.0),
                                                           ),
                                                           contentPadding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   18.0),
                                                         ),
                                                         style:
@@ -803,8 +809,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                     'textFieldOnPageLoadAnimation2']!),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: SizedBox(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -822,7 +828,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -856,7 +862,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -890,7 +896,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -914,8 +920,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                     'textFieldOnPageLoadAnimation3']!),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: SizedBox(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -934,7 +940,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -968,7 +974,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -1002,7 +1008,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1035,8 +1041,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                           (newValue) async {
                                                         setState(() => _model
                                                                 .switchListTileValue =
-                                                            newValue);
-                                                        if (newValue) {
+                                                            newValue!);
+                                                        if (newValue!) {
                                                           _model.pago = true;
                                                           setState(() {});
                                                         } else {
@@ -1058,9 +1064,9 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                   color: _model
                                                                               .pago ==
                                                                           true
-                                                                      ? const Color(
+                                                                      ? Color(
                                                                           0xFF35E70E)
-                                                                      : const Color(
+                                                                      : Color(
                                                                           0xFFF20D3D),
                                                                   letterSpacing:
                                                                       0.0,
@@ -1080,9 +1086,9 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                   color: _model
                                                                               .pago ==
                                                                           true
-                                                                      ? const Color(
+                                                                      ? Color(
                                                                           0xFF48903C)
-                                                                      : const Color(
+                                                                      : Color(
                                                                           0xFF902B3F),
                                                                   letterSpacing:
                                                                       0.0,
@@ -1097,7 +1103,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                   context)
                                                               .primaryText,
                                                       activeTrackColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       dense: false,
                                                       controlAffinity:
                                                           ListTileControlAffinity
@@ -1113,8 +1119,8 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: SizedBox(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Container(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -1132,7 +1138,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -1166,7 +1172,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -1200,7 +1206,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1221,7 +1227,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                     'textFieldOnPageLoadAnimation5']!),
                                               ),
                                               Container(
-                                                decoration: const BoxDecoration(),
+                                                decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1238,7 +1244,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
@@ -1259,7 +1265,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1308,7 +1314,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   8.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
@@ -1495,14 +1501,14 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               width: 150.0,
                                                               height: 45.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1525,7 +1531,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                       ),
                                                               elevation: 8.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -1534,7 +1540,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                   BorderRadius
                                                                       .circular(
                                                                           8.0),
-                                                              hoverColor: const Color(
+                                                              hoverColor: Color(
                                                                   0xFFF29200),
                                                               hoverTextColor:
                                                                   FlutterFlowTheme.of(
@@ -1549,7 +1555,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   8.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
@@ -1731,20 +1737,20 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                               width: 150.0,
                                                               height: 50.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFFF29200),
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
@@ -1760,7 +1766,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                       ),
                                                               elevation: 8.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -1781,7 +1787,7 @@ class _CadCorrida2WidgetState extends State<CadCorrida2Widget>
                                                                 width: 1.0,
                                                               ),
                                                               hoverTextColor:
-                                                                  const Color(
+                                                                  Color(
                                                                       0xFFF29200),
                                                             ),
                                                           ).animateOnPageLoad(

@@ -1,12 +1,18 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/componentes/edt_bairro/edt_bairro_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'cad_rota_model.dart';
 export 'cad_rota_model.dart';
 
@@ -52,8 +58,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -71,8 +77,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -90,8 +96,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -110,8 +116,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -130,8 +136,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -150,8 +156,8 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -176,9 +182,9 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: AuthUserStreamWidget(
           builder: (context) => StreamBuilder<List<BairroRecord>>(
             stream: queryBairroRecord(
@@ -187,7 +193,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return const Center(
+                return Center(
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
@@ -210,7 +216,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     minWidth: 0.0,
                     minHeight: 0.0,
                     maxWidth: 400.0,
@@ -218,7 +224,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x1A000000),
@@ -231,7 +237,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: Container(
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Form(
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
@@ -240,14 +246,14 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Text(
                                     'Cadastrar Rota',
@@ -263,7 +269,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                 ),
                                 if (_model.bairroOrigem != null)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 16.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -284,7 +290,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 6.0,
                                                   color: Color(0x4B1A1F24),
@@ -301,7 +307,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                const Align(
+                                                Align(
                                                   alignment:
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
@@ -336,7 +342,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                           children: [
                                             Builder(
                                               builder: (context) => Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 8.0, 0.0),
                                                 child: InkWell(
@@ -359,7 +365,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: const AlignmentDirectional(
+                                                          alignment: AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -385,7 +391,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 6.0,
                                                             color: Color(
@@ -398,7 +404,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                         ],
                                                         shape: BoxShape.circle,
                                                       ),
-                                                      child: const Align(
+                                                      child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -415,7 +421,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -438,7 +444,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: const [
+                                                      boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 6.0,
                                                           color:
@@ -451,7 +457,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                       ],
                                                       shape: BoxShape.circle,
                                                     ),
-                                                    child: const Align(
+                                                    child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
                                                               0.0, 0.0),
@@ -476,7 +482,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Text(
                                           'Escolha o bairro de origem',
@@ -495,13 +501,13 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(16.0),
+                                            padding: EdgeInsets.all(16.0),
                                             child: Builder(
                                               builder: (context) {
                                                 final bairrosdaOrigemPagina =
@@ -522,7 +528,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                               bairrosdaOrigemPaginaIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -549,7 +555,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -572,7 +578,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: const [
+                                                                      boxShadow: [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -589,7 +595,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        const Align(
+                                                                        Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -636,7 +642,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                   ),
                                 if (_model.bairroDestino != null)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 12.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -657,7 +663,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 6.0,
                                                   color: Color(0x4B1A1F24),
@@ -674,7 +680,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                const Align(
+                                                Align(
                                                   alignment:
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
@@ -710,7 +716,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                           children: [
                                             Builder(
                                               builder: (context) => Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 8.0, 0.0),
                                                 child: InkWell(
@@ -733,7 +739,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: const AlignmentDirectional(
+                                                          alignment: AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -759,7 +765,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 6.0,
                                                             color: Color(
@@ -772,7 +778,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                         ],
                                                         shape: BoxShape.circle,
                                                       ),
-                                                      child: const Align(
+                                                      child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -789,7 +795,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -812,7 +818,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: const [
+                                                      boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 6.0,
                                                           color:
@@ -825,7 +831,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                       ],
                                                       shape: BoxShape.circle,
                                                     ),
-                                                    child: const Align(
+                                                    child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
                                                               0.0, 0.0),
@@ -851,7 +857,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Text(
                                           'Escolha o bairro de destino',
@@ -870,13 +876,13 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(16.0),
+                                            padding: EdgeInsets.all(16.0),
                                             child: Builder(
                                               builder: (context) {
                                                 final bairrosDestinoPagina =
@@ -884,7 +890,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                         .where((e) =>
                                                             _model.bairroOrigem
                                                                 ?.listBairrosDestino
-                                                                .contains(e
+                                                                ?.contains(e
                                                                     .reference) !=
                                                             true)
                                                         .toList();
@@ -903,7 +909,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                               bairrosDestinoPaginaIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -930,7 +936,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -953,7 +959,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: const [
+                                                                      boxShadow: [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -970,7 +976,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        const Align(
+                                                                        Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1018,7 +1024,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                 if ((_model.bairroOrigem != null) &&
                                     (_model.bairroDestino != null))
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1039,9 +1045,9 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                             'textOnPageLoadAnimation3']!),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 300.0,
                                             child: TextFormField(
                                               controller: _model
@@ -1057,7 +1063,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                     .labelMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: const Color(0xFFF29200),
+                                                      color: Color(0xFFF29200),
                                                       letterSpacing: 0.0,
                                                     ),
                                                 hintText: 'Escolha um preço',
@@ -1075,7 +1081,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0xFFF29200),
                                                     width: 2.0,
                                                   ),
@@ -1107,7 +1113,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                           36.0),
                                                 ),
                                                 contentPadding:
-                                                    const EdgeInsets.all(18.0),
+                                                    EdgeInsets.all(18.0),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1132,7 +1138,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 12.0, 18.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1146,9 +1152,9 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -1156,11 +1162,11 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: const Color(0xFFF29200),
+                                          color: Color(0xFFF29200),
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1172,7 +1178,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                     (_model.bairroDestino != null))
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      var shouldSetState = false;
+                                      var _shouldSetState = false;
                                       if (_model.formKey.currentState == null ||
                                           !_model.formKey.currentState!
                                               .validate()) {
@@ -1220,7 +1226,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                     'De: ${_model.bairroOrigem?.nome} Para: ${_model.bairroDestino?.nome}',
                                               ),
                                               rotaRecordReference1);
-                                      shouldSetState = true;
+                                      _shouldSetState = true;
                                       FFAppState().addToRota(RotaOffStruct(
                                         precoRota: double.tryParse(_model
                                             .precoRotaTextController.text),
@@ -1247,7 +1253,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                       if (_model.bairroOrigem?.reference ==
                                           _model.bairroDestino?.reference) {
                                         Navigator.pop(context);
-                                        if (shouldSetState) setState(() {});
+                                        if (_shouldSetState) setState(() {});
                                         return;
                                       } else {
                                         var rotaRecordReference2 =
@@ -1291,7 +1297,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                       'De: ${_model.bairroDestino?.nome} Para: ${_model.bairroOrigem?.nome}',
                                                 ),
                                                 rotaRecordReference2);
-                                        shouldSetState = true;
+                                        _shouldSetState = true;
 
                                         await _model.bairroDestino!.reference
                                             .update({
@@ -1309,22 +1315,22 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                           ),
                                         });
                                         Navigator.pop(context);
-                                        if (shouldSetState) setState(() {});
+                                        if (_shouldSetState) setState(() {});
                                         return;
                                       }
 
-                                      if (shouldSetState) setState(() {});
+                                      if (_shouldSetState) setState(() {});
                                     },
                                     text: 'Salvar',
                                     options: FFButtonOptions(
                                       width: 150.0,
                                       height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -1334,7 +1340,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 8.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -1346,7 +1352,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                             .primaryText,
                                         width: 1.0,
                                       ),
-                                      hoverTextColor: const Color(0xFFF29200),
+                                      hoverTextColor: Color(0xFFF29200),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
                                       'buttonOnPageLoadAnimation2']!),

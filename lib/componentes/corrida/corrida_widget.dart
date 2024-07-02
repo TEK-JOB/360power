@@ -5,9 +5,14 @@ import '/componentes/tranferir_corrida/tranferir_corrida_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'corrida_model.dart';
 export 'corrida_model.dart';
 
@@ -52,14 +57,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, -1.0),
+      alignment: AlignmentDirectional(0.0, -1.0),
       child: AuthUserStreamWidget(
         builder: (context) => StreamBuilder<PontoRecord>(
           stream: PontoRecord.getDocument(currentUserDocument!.ponto!),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return const Center(
+              return Center(
                 child: SizedBox(
                   width: 50.0,
                   height: 50.0,
@@ -75,21 +80,21 @@ class _CorridaWidgetState extends State<CorridaWidget> {
             return Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0x7514181B),
               ),
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxHeight: 800.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x19000000),
@@ -105,13 +110,13 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -123,7 +128,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                 child: Container(
                                   width: 48.0,
                                   height: 48.0,
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Color(0xFFF02E4B),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
@@ -132,7 +137,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                       topRight: Radius.circular(12.0),
                                     ),
                                   ),
-                                  child: const Icon(
+                                  child: Icon(
                                     Icons.close_rounded,
                                     color: Colors.white,
                                     size: 36.0,
@@ -145,7 +150,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -159,7 +164,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                   children: [
                                     if (widget.parametCorrida?.aceito == false)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -170,8 +175,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           (alertDialogContext) {
                                                         return AlertDialog(
                                                           title:
-                                                              const Text('Cancelar'),
-                                                          content: const Text(
+                                                              Text('Cancelar'),
+                                                          content: Text(
                                                               'Você está cancelando essa corrida, esta certo disso?'),
                                                           actions: [
                                                             TextButton(
@@ -180,14 +185,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  const Text('Não'),
+                                                                  Text('Não'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Sim cancelar'),
                                                             ),
                                                           ],
@@ -217,7 +222,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             }
                                           },
                                           text: 'Cancelar',
-                                          icon: const FaIcon(
+                                          icon: FaIcon(
                                             FontAwesomeIcons.solidWindowClose,
                                             color: Color(0xFFF29200),
                                             size: 30.0,
@@ -226,10 +231,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             width: 130.0,
                                             height: 45.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -245,13 +250,13 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 8.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            hoverColor: const Color(0xFFF29200),
+                                            hoverColor: Color(0xFFF29200),
                                             hoverTextColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
@@ -262,11 +267,11 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                     if (widget.parametCorrida?.status ==
                                         'Agendada')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            var shouldSetState = false;
+                                            var _shouldSetState = false;
                                             var confirmDialogResponse =
                                                 await showDialog<bool>(
                                                       context: context,
@@ -274,8 +279,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           (alertDialogContext) {
                                                         return AlertDialog(
                                                           title:
-                                                              const Text('Liberar'),
-                                                          content: const Text(
+                                                              Text('Liberar'),
+                                                          content: Text(
                                                               'Deseja deixar essa corrida disponivel pra ser coletada?'),
                                                           actions: [
                                                             TextButton(
@@ -284,14 +289,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  const Text('Não'),
+                                                                  Text('Não'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Sim pode coletar'),
                                                             ),
                                                           ],
@@ -335,7 +340,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           isEqualTo: true,
                                                         ),
                                               );
-                                              shouldSetState = true;
+                                              _shouldSetState = true;
                                               triggerPushNotification(
                                                 notificationTitle:
                                                     'Nova corrida',
@@ -348,23 +353,20 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 initialPageName: 'Motoboy',
                                                 parameterData: {},
                                               );
-                                              if (shouldSetState) {
+                                              if (_shouldSetState)
                                                 setState(() {});
-                                              }
                                               return;
                                             } else {
-                                              if (shouldSetState) {
+                                              if (_shouldSetState)
                                                 setState(() {});
-                                              }
                                               return;
                                             }
 
-                                            if (shouldSetState) {
+                                            if (_shouldSetState)
                                               setState(() {});
-                                            }
                                           },
                                           text: 'Liberar ',
-                                          icon: const FaIcon(
+                                          icon: FaIcon(
                                             FontAwesomeIcons.solidFlag,
                                             color: Color(0xFFF29200),
                                             size: 30.0,
@@ -373,10 +375,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             width: 130.0,
                                             height: 45.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -392,13 +394,13 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 8.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            hoverColor: const Color(0xFFF29200),
+                                            hoverColor: Color(0xFFF29200),
                                             hoverTextColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
@@ -408,7 +410,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                       ),
                                     if (widget.parametCorrida?.pago == false)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -419,8 +421,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           (alertDialogContext) {
                                                         return AlertDialog(
                                                           title:
-                                                              const Text('Receber'),
-                                                          content: const Text(
+                                                              Text('Receber'),
+                                                          content: Text(
                                                               'Você está marcando essa corrida como já recebida, esta certo disso?'),
                                                           actions: [
                                                             TextButton(
@@ -429,14 +431,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  const Text('Não'),
+                                                                  Text('Não'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Sim ja recebi'),
                                                             ),
                                                           ],
@@ -482,7 +484,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             }
                                           },
                                           text: 'Receber ',
-                                          icon: const FaIcon(
+                                          icon: FaIcon(
                                             FontAwesomeIcons.donate,
                                             color: Color(0xFFF29200),
                                             size: 30.0,
@@ -491,10 +493,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             width: 130.0,
                                             height: 45.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -510,13 +512,13 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 8.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            hoverColor: const Color(0xFFF29200),
+                                            hoverColor: Color(0xFFF29200),
                                             hoverTextColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
@@ -528,7 +530,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             currentUserDocument?.tipo, '') !=
                                         'comercio')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -539,8 +541,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           (alertDialogContext) {
                                                         return AlertDialog(
                                                           title:
-                                                              const Text('Excluir '),
-                                                          content: const Text(
+                                                              Text('Excluir '),
+                                                          content: Text(
                                                               'Atenção você está prestes a APAGAR definitivamente essa corrida,  isso não pode ser desfeito, tem certesa disso?'),
                                                           actions: [
                                                             TextButton(
@@ -549,14 +551,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  const Text('Não'),
+                                                                  Text('Não'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Apagar'),
                                                             ),
                                                           ],
@@ -575,7 +577,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             }
                                           },
                                           text: 'Excluir',
-                                          icon: const FaIcon(
+                                          icon: FaIcon(
                                             FontAwesomeIcons.solidTrashAlt,
                                             color: Color(0xFFF29200),
                                           ),
@@ -583,10 +585,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             width: 130.0,
                                             height: 45.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -602,13 +604,13 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 8.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            hoverColor: const Color(0xFFF29200),
+                                            hoverColor: Color(0xFFF29200),
                                             hoverTextColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
@@ -622,7 +624,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                       currentUserDocument?.tipo, '') !=
                                   'comercio')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 16.0),
                                   child: SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
@@ -641,7 +643,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       '') !=
                                                   'comercio')
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -654,23 +656,23 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: const Text(
+                                                                    title: Text(
                                                                         'Excluir '),
-                                                                    content: const Text(
+                                                                    content: Text(
                                                                         'Atenção você está prestes a APAGAR definitivamente essa corrida,  isso não pode ser desfeito, tem certesa disso?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'Não'),
                                                                       ),
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'Apagar'),
                                                                       ),
                                                                     ],
@@ -690,7 +692,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       }
                                                     },
                                                     text: 'Excluir',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons
                                                           .solidTrashAlt,
                                                       color: Color(0xFFF29200),
@@ -699,14 +701,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -729,7 +731,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -738,7 +740,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -751,7 +753,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   currentUserDocument?.ativo,
                                                   false))
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -823,17 +825,17 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              const Text('Atenção '),
+                                                                              Text('Atenção '),
                                                                           content:
-                                                                              const Text('Você não pode aceitar porquê não é o primeiro da fila fila. '),
+                                                                              Text('Você não pode aceitar porquê não é o primeiro da fila fila. '),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: const Text('...'),
+                                                                              child: Text('...'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: const Text('ok'),
+                                                                              child: Text('ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -844,7 +846,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           }
                                                         } else {
                                                           if (containerPontoRecord
-                                                                  .filaMotoboys.isEmpty) {
+                                                                  .filaMotoboys
+                                                                  .length ==
+                                                              0) {
                                                             await widget
                                                                 .parametCorrida!
                                                                 .reference
@@ -879,17 +883,17 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              const Text('Atenção '),
+                                                                              Text('Atenção '),
                                                                           content:
-                                                                              const Text('Você não pode aceitar porque não está na fila. '),
+                                                                              Text('Você não pode aceitar porque não está na fila. '),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: const Text('...'),
+                                                                              child: Text('...'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: const Text('ok'),
+                                                                              child: Text('ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -905,16 +909,16 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           builder:
                                                               (alertDialogContext) {
                                                             return AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Que pena !'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'Essa corrida não está mais disponivel, por isso não pode ser aceita'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Ok'),
                                                                 ),
                                                               ],
@@ -925,7 +929,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       }
                                                     },
                                                     text: 'Aceitar',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons
                                                           .solidHandPointUp,
                                                       color: Color(0xFFF29200),
@@ -934,14 +938,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -964,7 +968,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -973,7 +977,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -996,7 +1000,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   widget.parametCorrida?.zap !=
                                                       '')
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1005,7 +1009,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           'https://api.whatsapp.com/send?phone=55${widget.parametCorrida?.zap}&text=oi');
                                                     },
                                                     text: 'Chamar',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons.whatsapp,
                                                       color: Color(0xFFF29200),
                                                     ),
@@ -1013,14 +1017,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1043,7 +1047,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1052,7 +1056,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1062,7 +1066,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   ),
                                                 ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1084,7 +1088,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Navigator.pop(context);
                                                   },
                                                   text: 'Coletar',
-                                                  icon: const FaIcon(
+                                                  icon: FaIcon(
                                                     FontAwesomeIcons
                                                         .cartArrowDown,
                                                     color: Color(0xFFF29200),
@@ -1093,11 +1097,11 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     width: 130.0,
                                                     height: 45.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1115,7 +1119,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 8.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1123,7 +1127,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     hoverColor:
-                                                        const Color(0xFFF29200),
+                                                        Color(0xFFF29200),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1134,7 +1138,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               ),
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1150,7 +1154,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -1167,7 +1171,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           setState(() {}));
                                                     },
                                                     text: 'Transferir',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons.random,
                                                       color: Color(0xFFF29200),
                                                     ),
@@ -1175,14 +1179,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1205,7 +1209,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1214,7 +1218,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1225,7 +1229,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1236,23 +1240,23 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               builder:
                                                                   (alertDialogContext) {
                                                                 return AlertDialog(
-                                                                  title: const Text(
+                                                                  title: Text(
                                                                       'Desistir'),
-                                                                  content: const Text(
+                                                                  content: Text(
                                                                       'Você está DESISTINDO dessa corrida, esta certo disso?'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Não'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Sim desistir'),
                                                                     ),
                                                                   ],
@@ -1293,7 +1297,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     }
                                                   },
                                                   text: 'Desistir',
-                                                  icon: const Icon(
+                                                  icon: Icon(
                                                     Icons
                                                         .transfer_within_a_station,
                                                     color: Color(0xFFF29200),
@@ -1303,11 +1307,11 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     width: 130.0,
                                                     height: 45.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1325,7 +1329,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 8.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1333,7 +1337,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     hoverColor:
-                                                        const Color(0xFFF29200),
+                                                        Color(0xFFF29200),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1354,7 +1358,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               if (widget.parametCorrida?.pago ==
                                                   true)
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1368,7 +1372,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       ));
                                                     },
                                                     text: 'Pix',
-                                                    icon: const Icon(
+                                                    icon: Icon(
                                                       Icons.pix_outlined,
                                                       color: Color(0xFFF29200),
                                                       size: 30.0,
@@ -1377,14 +1381,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1407,7 +1411,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1416,7 +1420,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1430,7 +1434,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   widget.parametCorrida?.zap !=
                                                       '')
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1439,7 +1443,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           'https://api.whatsapp.com/send?phone=55${widget.parametCorrida?.zap}&text=oi');
                                                     },
                                                     text: 'Chamar',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons.whatsapp,
                                                       color: Color(0xFFF29200),
                                                     ),
@@ -1447,14 +1451,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1477,7 +1481,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1486,7 +1490,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1496,7 +1500,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   ),
                                                 ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1585,7 +1589,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Navigator.pop(context);
                                                   },
                                                   text: 'Concluir',
-                                                  icon: const FaIcon(
+                                                  icon: FaIcon(
                                                     FontAwesomeIcons.trophy,
                                                     color: Color(0xFFF29200),
                                                   ),
@@ -1593,11 +1597,11 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     width: 130.0,
                                                     height: 45.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1615,7 +1619,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 8.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1623,7 +1627,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     hoverColor:
-                                                        const Color(0xFFF29200),
+                                                        Color(0xFFF29200),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1634,7 +1638,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               ),
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1650,7 +1654,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -1667,7 +1671,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           setState(() {}));
                                                     },
                                                     text: 'Transferir',
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons.random,
                                                       color: Color(0xFFF29200),
                                                     ),
@@ -1675,14 +1679,14 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       width: 130.0,
                                                       height: 45.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1705,7 +1709,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 8.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1714,7 +1718,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       hoverColor:
-                                                          const Color(0xFFF29200),
+                                                          Color(0xFFF29200),
                                                       hoverTextColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1725,7 +1729,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1736,23 +1740,23 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               builder:
                                                                   (alertDialogContext) {
                                                                 return AlertDialog(
-                                                                  title: const Text(
+                                                                  title: Text(
                                                                       'Desistir'),
-                                                                  content: const Text(
+                                                                  content: Text(
                                                                       'Você está DESISTINDO dessa corrida, esta certo disso?'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Não'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Sim desistir'),
                                                                     ),
                                                                   ],
@@ -1793,7 +1797,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     }
                                                   },
                                                   text: 'Desistir',
-                                                  icon: const Icon(
+                                                  icon: Icon(
                                                     Icons
                                                         .transfer_within_a_station,
                                                     color: Color(0xFFF29200),
@@ -1803,11 +1807,11 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     width: 130.0,
                                                     height: 45.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -1825,7 +1829,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 8.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1833,7 +1837,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     hoverColor:
-                                                        const Color(0xFFF29200),
+                                                        Color(0xFFF29200),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1856,7 +1860,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: SingleChildScrollView(
                             primary: false,
                             child: Column(
@@ -1864,7 +1868,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 4.0),
                                     child: Container(
                                       decoration: BoxDecoration(
@@ -1883,7 +1887,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 8.0, 0.0, 8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1904,7 +1908,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -1943,7 +1947,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1980,7 +1984,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -2050,7 +2054,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: Column(
@@ -2060,10 +2064,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
-                                                    constraints: const BoxConstraints(
+                                                    constraints: BoxConstraints(
                                                       maxWidth: 900.0,
                                                     ),
-                                                    decoration: const BoxDecoration(
+                                                    decoration: BoxDecoration(
                                                       color: Colors.transparent,
                                                     ),
                                                     child: Column(
@@ -2098,9 +2102,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               .parametCorrida
                                                                               ?.pago ==
                                                                           true
-                                                                      ? const Color(
+                                                                      ? Color(
                                                                           0xFF5CF91B)
-                                                                      : const Color(
+                                                                      : Color(
                                                                           0xFFF20A43),
                                                                   width: 2.0,
                                                                 ),
@@ -2112,16 +2116,16 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             .parametCorrida
                                                                             ?.pago ==
                                                                         true
-                                                                    ? const Color(
+                                                                    ? Color(
                                                                         0xFF5CF91B)
-                                                                    : const Color(
+                                                                    : Color(
                                                                         0xFFF20A43),
                                                                 size: 24.0,
                                                               ),
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -2141,9 +2145,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           'Plus Jakarta Sans',
                                                                       color: widget.parametCorrida?.pago ==
                                                                               true
-                                                                          ? const Color(
+                                                                          ? Color(
                                                                               0xFF5CF91B)
-                                                                          : const Color(
+                                                                          : Color(
                                                                               0xFFF20A43),
                                                                       fontSize:
                                                                           14.0,
@@ -2161,7 +2165,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 true)
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
@@ -2183,7 +2187,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF5CF91B),
                                                                         letterSpacing:
                                                                             0.0,
@@ -2194,7 +2198,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       18.0,
                                                                       0.0,
@@ -2217,7 +2221,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           26.0,
                                                                           0.0,
@@ -2235,7 +2239,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         .start,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2266,7 +2270,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                              color: const Color(0xFF606A85),
+                                                                              color: Color(0xFF606A85),
                                                                               fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
@@ -2274,7 +2278,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                  const Divider(
+                                                                  Divider(
                                                                     height: 1.0,
                                                                     thickness:
                                                                         1.0,
@@ -2283,7 +2287,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         0xFFE5E7EB),
                                                                   ),
                                                                 ].addToEnd(
-                                                                    const SizedBox(
+                                                                    SizedBox(
                                                                         height:
                                                                             12.0)),
                                                               ),
@@ -2295,7 +2299,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             .pago)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     16.0),
                                                             child: StreamBuilder<
                                                                 List<
@@ -2319,7 +2323,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 // Customize what your widget looks like when it's loading.
                                                                 if (!snapshot
                                                                     .hasData) {
-                                                                  return const Center(
+                                                                  return Center(
                                                                     child:
                                                                         SizedBox(
                                                                       width:
@@ -2384,9 +2388,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         duration:
-                                                                            const Duration(milliseconds: 4000),
+                                                                            Duration(milliseconds: 4000),
                                                                         backgroundColor:
-                                                                            const Color(0xFFF29200),
+                                                                            Color(0xFFF29200),
                                                                       ),
                                                                     );
                                                                   },
@@ -2412,7 +2416,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               18.0,
                                                                               0.0,
@@ -2427,7 +2431,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2443,7 +2447,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2455,7 +2459,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              const Padding(
+                                                                              Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.hotel,
@@ -2473,7 +2477,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
                                                                                     pixPixRecord?.banco,
@@ -2491,7 +2495,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2503,7 +2507,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              const Padding(
+                                                                              Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                 child: Icon(
                                                                                   Icons.location_history_sharp,
@@ -2521,7 +2525,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
                                                                                     pixPixRecord?.nomePix,
@@ -2539,7 +2543,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2551,7 +2555,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              const Padding(
+                                                                              Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.shieldAlt,
@@ -2569,7 +2573,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   valueOrDefault<String>(
                                                                                     pixPixRecord?.tipo,
@@ -2587,7 +2591,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2599,7 +2603,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              const Padding(
+                                                                              Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                 child: FaIcon(
                                                                                   FontAwesomeIcons.key,
@@ -2618,8 +2622,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               ),
                                                                               Flexible(
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                                  child: SizedBox(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                                  child: Container(
                                                                                     width: 200.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.copieChaveTextController ??= TextEditingController(
@@ -2673,10 +2677,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Container(
                                                       width: double.infinity,
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 900.0,
                                                       ),
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         color:
                                                             Color(0x00FFFFFF),
                                                       ),
@@ -2700,18 +2704,18 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x4D9489F5),
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF8B400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: const Align(
+                                                                child: Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.0,
@@ -2727,7 +2731,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -2755,7 +2759,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2792,7 +2796,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         18.0,
                                                                         0.0,
@@ -2806,7 +2810,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         0.0,
@@ -2837,7 +2841,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           26.0,
                                                                           0.0,
                                                                           0.0,
@@ -2852,7 +2856,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             CrossAxisAlignment.start,
                                                                         children:
                                                                             [
-                                                                          const Divider(
+                                                                          Divider(
                                                                             height:
                                                                                 1.0,
                                                                             thickness:
@@ -2862,7 +2866,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             color:
                                                                                 Color(0xFFE5E7EB),
                                                                           ),
-                                                                        ].addToEnd(const SizedBox(height: 12.0)),
+                                                                        ].addToEnd(SizedBox(height: 12.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2879,10 +2883,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Container(
                                                       width: double.infinity,
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 900.0,
                                                       ),
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         color:
                                                             Color(0x00FFFFFF),
                                                       ),
@@ -2906,18 +2910,18 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x4D9489F5),
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF8B400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: const Align(
+                                                                child: Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.0,
@@ -2933,7 +2937,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -2961,7 +2965,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2998,7 +3002,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         18.0,
                                                                         0.0,
@@ -3012,7 +3016,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         0.0,
@@ -3042,7 +3046,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           26.0,
                                                                           0.0,
                                                                           0.0,
@@ -3082,10 +3086,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Container(
                                                       width: double.infinity,
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 900.0,
                                                       ),
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         color:
                                                             Color(0x00FFFFFF),
                                                       ),
@@ -3109,18 +3113,18 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x4D9489F5),
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF8B400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: const Align(
+                                                                child: Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.0,
@@ -3136,7 +3140,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -3164,7 +3168,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -3201,7 +3205,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         18.0,
                                                                         0.0,
@@ -3215,7 +3219,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         0.0,
@@ -3237,7 +3241,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             26.0,
                                                                             0.0,
@@ -3252,7 +3256,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -3264,7 +3268,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         text:
                                                                             TextSpan(
                                                                           children: [
-                                                                            const TextSpan(
+                                                                            TextSpan(
                                                                               text: 'Motoboy:',
                                                                               style: TextStyle(),
                                                                             ),
@@ -3275,7 +3279,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                    color: const Color(0xFFF8B400),
+                                                                                    color: Color(0xFFF8B400),
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -3286,7 +3290,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               .labelMedium
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                color: const Color(0xFF606A85),
+                                                                                color: Color(0xFF606A85),
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
@@ -3294,7 +3298,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    const Divider(
+                                                                    Divider(
                                                                       height:
                                                                           1.0,
                                                                       thickness:
@@ -3305,7 +3309,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           0xFFE5E7EB),
                                                                     ),
                                                                   ].addToEnd(
-                                                                      const SizedBox(
+                                                                      SizedBox(
                                                                           height:
                                                                               12.0)),
                                                                 ),
@@ -3321,10 +3325,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Container(
                                                       width: double.infinity,
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 900.0,
                                                       ),
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         color:
                                                             Color(0x00FFFFFF),
                                                       ),
@@ -3348,18 +3352,18 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x4D9489F5),
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF8B400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: const Align(
+                                                                child: Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.0,
@@ -3375,7 +3379,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -3403,7 +3407,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -3440,7 +3444,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         18.0,
                                                                         0.0,
@@ -3454,7 +3458,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         0.0,
@@ -3476,7 +3480,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             26.0,
                                                                             0.0,
@@ -3491,7 +3495,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -3507,7 +3511,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               text: 'Motoboy ja coletou o Pedido',
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                    color: const Color(0xFFF8B400),
+                                                                                    color: Color(0xFFF8B400),
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -3518,7 +3522,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               .labelMedium
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                color: const Color(0xFF606A85),
+                                                                                color: Color(0xFF606A85),
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
@@ -3526,7 +3530,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    const Divider(
+                                                                    Divider(
                                                                       height:
                                                                           1.0,
                                                                       thickness:
@@ -3537,7 +3541,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           0xFFE5E7EB),
                                                                     ),
                                                                   ].addToEnd(
-                                                                      const SizedBox(
+                                                                      SizedBox(
                                                                           height:
                                                                               12.0)),
                                                                 ),
@@ -3553,10 +3557,10 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     Container(
                                                       width: double.infinity,
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 900.0,
                                                       ),
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         color:
                                                             Colors.transparent,
                                                       ),
@@ -3583,18 +3587,18 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0x4D9489F5),
                                                                   shape: BoxShape
                                                                       .circle,
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF8B400),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: const Icon(
+                                                                child: Icon(
                                                                   Icons.home,
                                                                   color: Color(
                                                                       0xFFF8B400),
@@ -3603,7 +3607,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -3631,7 +3635,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -3668,7 +3672,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         18.0,
                                                                         0.0,
@@ -3691,7 +3695,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             26.0,
                                                                             0.0,
@@ -3709,7 +3713,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -3725,7 +3729,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               text: 'Concluido com sucesso!',
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                    color: const Color(0xFFF8B400),
+                                                                                    color: Color(0xFFF8B400),
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -3736,7 +3740,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                               .labelMedium
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                color: const Color(0xFF606A85),
+                                                                                color: Color(0xFF606A85),
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
@@ -3744,7 +3748,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    const Divider(
+                                                                    Divider(
                                                                       height:
                                                                           1.0,
                                                                       thickness:
@@ -3755,7 +3759,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           0xFFE5E7EB),
                                                                     ),
                                                                   ].addToEnd(
-                                                                      const SizedBox(
+                                                                      SizedBox(
                                                                           height:
                                                                               12.0)),
                                                                 ),

@@ -9,12 +9,19 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'ver_comercio_model.dart';
 export 'ver_comercio_model.dart';
 
@@ -73,8 +80,8 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -92,8 +99,8 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -111,8 +118,8 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -143,7 +150,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           body: Container(
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
@@ -154,9 +161,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -178,7 +185,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                     child: Wrap(
                       spacing: 0.0,
                       runSpacing: 0.0,
@@ -190,7 +197,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                       clipBehavior: Clip.antiAlias,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 8.0,
@@ -200,7 +207,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             child: Container(
                               width: 350.0,
                               height: 430.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 390.0,
                               ),
                               decoration: BoxDecoration(
@@ -215,7 +222,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(16.0),
+                                    padding: EdgeInsets.all(16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -225,7 +232,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(10.0),
                                               bottomRight:
                                                   Radius.circular(10.0),
@@ -233,20 +240,20 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               topRight: Radius.circular(10.0),
                                             ),
                                             border: Border.all(
-                                              color: const Color(0xFFF29200),
+                                              color: Color(0xFFF29200),
                                               width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                 fadeOutDuration:
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                 imageUrl:
                                                     valueOrDefault<String>(
                                                   widget.comercioSelect?.logo,
@@ -266,7 +273,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 4.0, 0.0, 4.0),
                                                 child: Column(
@@ -292,7 +299,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -341,7 +348,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: Container(
                                             width: 200.0,
@@ -353,7 +360,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 12.0, 12.0, 0.0),
                                               child: Column(
@@ -361,21 +368,21 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
                                                 children: [
-                                                  const FaIcon(
+                                                  FaIcon(
                                                     FontAwesomeIcons.motorcycle,
                                                     color: Color(0xFFF29200),
                                                     size: 44.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 4.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
                                                         widget.comercioSelect
                                                             ?.qtdCorridasTotal
-                                                            .toString(),
+                                                            ?.toString(),
                                                         '0',
                                                       ),
                                                       textAlign:
@@ -413,7 +420,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: Container(
                                             width: 200.0,
@@ -425,7 +432,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 12.0, 12.0, 0.0),
                                               child: Column(
@@ -433,14 +440,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
                                                 children: [
-                                                  const FaIcon(
+                                                  FaIcon(
                                                     FontAwesomeIcons.whatsapp,
                                                     color: Color(0xFFF29200),
                                                     size: 44.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -489,7 +496,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: StreamBuilder<List<PixRecord>>(
                             stream: queryPixRecord(
                               queryBuilder: (pixRecord) => pixRecord.where(
@@ -501,7 +508,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return const Center(
+                                return Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -530,14 +537,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 child: Container(
                                   width: 350.0,
                                   height: 430.0,
-                                  constraints: const BoxConstraints(
+                                  constraints: BoxConstraints(
                                     maxWidth: 450.0,
                                     maxHeight: 700.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x1A000000),
@@ -555,7 +562,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 18.0, 0.0, 18.0),
                                         child: Text(
                                           'Pix Comercio',
@@ -570,7 +577,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       Flexible(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   36.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -580,7 +587,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 8.0),
                                                 child: Row(
@@ -589,7 +596,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: [
-                                                    const Padding(
+                                                    Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
@@ -620,7 +627,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -652,7 +659,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 8.0),
                                                 child: Row(
@@ -661,7 +668,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: [
-                                                    const Padding(
+                                                    Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
@@ -693,7 +700,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -725,7 +732,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 8.0),
                                                 child: Row(
@@ -734,7 +741,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: [
-                                                    const Padding(
+                                                    Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
@@ -766,7 +773,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -802,7 +809,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  const Padding(
+                                                  Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
@@ -829,7 +836,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -860,7 +867,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 24.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -869,7 +876,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           children: [
                                             Builder(
                                               builder: (context) => Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: FFButtonWidget(
@@ -884,7 +891,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: const AlignmentDirectional(
+                                                          alignment: AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -904,14 +911,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     width: 100.0,
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFF29200),
+                                                    color: Color(0xFFF29200),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -924,7 +931,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 8.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -943,7 +950,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                       width: 1.0,
                                                     ),
                                                     hoverTextColor:
-                                                        const Color(0xFFF29200),
+                                                        Color(0xFFF29200),
                                                   ),
                                                 ),
                                               ),
@@ -959,7 +966,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 8.0,
@@ -969,14 +976,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             child: Container(
                               width: 350.0,
                               height: 430.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 450.0,
                                 maxHeight: 700.0,
                               ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x1A000000),
@@ -994,7 +1001,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -1018,7 +1025,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 0.0),
                                               child: Text(
@@ -1042,12 +1049,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Container(
                                             width: double.infinity,
                                             height: 300.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: StreamBuilder<
                                                 List<CorridasRecord>>(
                                               stream: queryCorridasRecord(
@@ -1076,7 +1083,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
-                                                  return const Center(
+                                                  return Center(
                                                     child: SizedBox(
                                                       width: 50.0,
                                                       height: 50.0,
@@ -1107,7 +1114,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                               columnIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     4.0,
@@ -1150,7 +1157,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                           backgroundColor:
                                                                               Colors.transparent,
                                                                           alignment:
-                                                                              const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                           child:
                                                                               CorridaWidget(
                                                                             parametCorrida:
@@ -1184,7 +1191,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
-                                                                        boxShadow: const [
+                                                                        boxShadow: [
                                                                           BoxShadow(
                                                                             blurRadius:
                                                                                 6.0,
@@ -1209,14 +1216,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(8.0),
+                                                                                EdgeInsets.all(8.0),
                                                                             child:
                                                                                 StreamBuilder<ComerciosRecord>(
                                                                               stream: ComerciosRecord.getDocument(columnCorridasRecord.comercio!),
                                                                               builder: (context, snapshot) {
                                                                                 // Customize what your widget looks like when it's loading.
                                                                                 if (!snapshot.hasData) {
-                                                                                  return const Center(
+                                                                                  return Center(
                                                                                     child: SizedBox(
                                                                                       width: 50.0,
                                                                                       height: 50.0,
@@ -1247,7 +1254,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                                                                               child: AutoSizeText(
                                                                                 formatNumber(
                                                                                   columnCorridasRecord.valorProduto,
@@ -1268,7 +1275,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                                                                               child: AutoSizeText(
                                                                                 '${dateTimeFormat(
                                                                                   'd/M',
@@ -1296,16 +1303,16 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                                     context: context,
                                                                                     builder: (alertDialogContext) {
                                                                                       return AlertDialog(
-                                                                                        title: const Text('Receber'),
-                                                                                        content: const Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
+                                                                                        title: Text('Receber'),
+                                                                                        content: Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
                                                                                         actions: [
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                            child: const Text('Não'),
+                                                                                            child: Text('Não'),
                                                                                           ),
                                                                                           TextButton(
                                                                                             onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                            child: const Text('Sim ja recebi'),
+                                                                                            child: Text('Sim ja recebi'),
                                                                                           ),
                                                                                         ],
                                                                                       );
@@ -1334,8 +1341,8 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                                 FFButtonOptions(
                                                                               width: 60.0,
                                                                               height: 45.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Readex Pro',
@@ -1343,12 +1350,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                               elevation: 8.0,
-                                                                              borderSide: const BorderSide(
+                                                                              borderSide: BorderSide(
                                                                                 color: Colors.transparent,
                                                                                 width: 1.0,
                                                                               ),
                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                              hoverColor: const Color(0xFFF29200),
+                                                                              hoverColor: Color(0xFFF29200),
                                                                               hoverTextColor: FlutterFlowTheme.of(context).primaryText,
                                                                               hoverElevation: 3.0,
                                                                             ),
@@ -1379,7 +1386,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 8.0,
@@ -1389,14 +1396,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             child: Container(
                               width: 350.0,
                               height: 470.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 450.0,
                                 maxHeight: 700.0,
                               ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x1A000000),
@@ -1414,7 +1421,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
-                                    return const Center(
+                                    return Center(
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
@@ -1435,7 +1442,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
@@ -1468,14 +1475,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                SizedBox(
+                                                Container(
                                                   width: 300.0,
                                                   child: TextFormField(
                                                     controller: _model
@@ -1497,7 +1504,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -1530,7 +1537,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -1564,7 +1571,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1586,14 +1593,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                SizedBox(
+                                                Container(
                                                   width: 300.0,
                                                   child: TextFormField(
                                                     controller: _model
@@ -1615,7 +1622,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFF29200),
                                                                 letterSpacing:
                                                                     0.0,
@@ -1649,7 +1656,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color:
                                                               Color(0xFFF29200),
                                                           width: 2.0,
@@ -1683,7 +1690,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                 .circular(36.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsets.all(18.0),
+                                                          EdgeInsets.all(18.0),
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1705,7 +1712,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) =>
@@ -1747,7 +1754,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return const Center(
+                                                    return Center(
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
@@ -1765,11 +1772,11 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   List<BairroRecord>
                                                       bairroBairroRecordList =
                                                       snapshot.data!;
-                                                  return SizedBox(
+                                                  return Container(
                                                     width: 300.0,
                                                     child: Autocomplete<String>(
                                                       initialValue:
-                                                          const TextEditingValue(),
+                                                          TextEditingValue(),
                                                       optionsBuilder:
                                                           (textEditingValue) {
                                                         if (textEditingValue
@@ -1815,7 +1822,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                         0.0,
                                                                   ),
                                                           textHighlightStyle:
-                                                              const TextStyle(),
+                                                              TextStyle(),
                                                           elevation: 4.0,
                                                           optionBackgroundColor:
                                                               FlutterFlowTheme.of(
@@ -1877,7 +1884,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                               EasyDebounce
                                                                   .debounce(
                                                             '_model.bairroTextController',
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     2000),
                                                             () async {
@@ -1918,7 +1925,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFF29200),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1955,7 +1962,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Color(
                                                                     0xFFF29200),
                                                                 width: 2.0,
@@ -1994,7 +2001,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                           36.0),
                                                             ),
                                                             contentPadding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     18.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2022,7 +2029,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2031,9 +2038,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
-                                                  child: SizedBox(
+                                                  child: Container(
                                                     width: 70.0,
                                                     child: TextFormField(
                                                       controller: _model
@@ -2057,7 +2064,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Readex Pro',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFFF29200),
                                                                   letterSpacing:
                                                                       0.0,
@@ -2093,7 +2100,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Color(
                                                                 0xFFF29200),
                                                             width: 2.0,
@@ -2132,7 +2139,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                       36.0),
                                                         ),
                                                         contentPadding:
-                                                            const EdgeInsets.all(
+                                                            EdgeInsets.all(
                                                                 18.0),
                                                       ),
                                                       style: FlutterFlowTheme
@@ -2153,14 +2160,14 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 4.0, 0.0),
-                                                    child: SizedBox(
+                                                    child: Container(
                                                       width: 120.0,
                                                       child: TextFormField(
                                                         controller: _model
@@ -2184,7 +2191,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Readex Pro',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFF29200),
                                                                     letterSpacing:
                                                                         0.0,
@@ -2220,7 +2227,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Color(
                                                                   0xFFF29200),
                                                               width: 2.0,
@@ -2259,7 +2266,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                         36.0),
                                                           ),
                                                           contentPadding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   18.0),
                                                         ),
                                                         style:
@@ -2296,7 +2303,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     _model.ddUFValue ??=
                                                         columnEnderecoRecord.uf,
                                                   ),
-                                                  options: const [
+                                                  options: [
                                                     'AC',
                                                     'AL',
                                                     'AP',
@@ -2343,13 +2350,13 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   hintText: 'UF',
-                                                  icon: const Icon(
+                                                  icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
                                                     color: Color(0xFFF29200),
                                                     size: 24.0,
                                                   ),
-                                                  fillColor: const Color(0x00FFFFFF),
+                                                  fillColor: Color(0x00FFFFFF),
                                                   elevation: 2.0,
                                                   borderColor:
                                                       FlutterFlowTheme.of(
@@ -2357,7 +2364,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                           .secondaryText,
                                                   borderWidth: 2.0,
                                                   borderRadius: 24.0,
-                                                  margin: const EdgeInsetsDirectional
+                                                  margin: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   hidesUnderline: true,
@@ -2370,9 +2377,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
-                                            child: SizedBox(
+                                            child: Container(
                                               width: 300.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -2395,7 +2402,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                         letterSpacing: 0.0,
                                                       ),
                                                   hintText:
@@ -2427,7 +2434,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0xFFF29200),
                                                       width: 2.0,
                                                     ),
@@ -2462,7 +2469,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                             36.0),
                                                   ),
                                                   contentPadding:
-                                                      const EdgeInsets.all(18.0),
+                                                      EdgeInsets.all(18.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -2481,9 +2488,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
-                                            child: SizedBox(
+                                            child: Container(
                                               width: 300.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -2505,7 +2512,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                         letterSpacing: 0.0,
                                                       ),
                                                   hintText: 'Ex: ap.4 ou fundo',
@@ -2536,7 +2543,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0xFFF29200),
                                                       width: 2.0,
                                                     ),
@@ -2571,7 +2578,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                             36.0),
                                                   ),
                                                   contentPadding:
-                                                      const EdgeInsets.all(18.0),
+                                                      EdgeInsets.all(18.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -2591,7 +2598,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 16.0, 8.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -2626,12 +2633,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                             width: 100.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: const Color(0xFFF29200),
+                                            color: Color(0xFFF29200),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -2644,7 +2651,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 8.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -2659,7 +2666,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                       .primaryText,
                                               width: 1.0,
                                             ),
-                                            hoverTextColor: const Color(0xFFF29200),
+                                            hoverTextColor: Color(0xFFF29200),
                                           ),
                                         ),
                                       ),
@@ -2671,7 +2678,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: EdgeInsets.all(12.0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 8.0,
@@ -2681,7 +2688,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             child: Container(
                               width: 350.0,
                               height: 470.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 390.0,
                               ),
                               decoration: BoxDecoration(
@@ -2697,7 +2704,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -2719,12 +2726,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       options: FFButtonOptions(
                                         width: 200.0,
                                         height: 50.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xFFF29200),
+                                        color: Color(0xFFF29200),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -2735,7 +2742,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 8.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -2748,12 +2755,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               .primaryText,
                                           width: 1.0,
                                         ),
-                                        hoverTextColor: const Color(0xFFF29200),
+                                        hoverTextColor: Color(0xFFF29200),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () {
@@ -2763,12 +2770,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       options: FFButtonOptions(
                                         width: 200.0,
                                         height: 50.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xFFE3093E),
+                                        color: Color(0xFFE3093E),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -2779,7 +2786,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 8.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -2792,13 +2799,13 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                               .primaryText,
                                           width: 1.0,
                                         ),
-                                        hoverTextColor: const Color(0xFFF29200),
+                                        hoverTextColor: Color(0xFFF29200),
                                       ),
                                     ),
                                   ),
                                   Builder(
                                     builder: (context) => Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -2810,7 +2817,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
@@ -2828,12 +2835,12 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           width: 100.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0xFFF29200),
+                                          color: Color(0xFFF29200),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
@@ -2845,7 +2852,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 8.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -2859,7 +2866,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 .primaryText,
                                             width: 1.0,
                                           ),
-                                          hoverTextColor: const Color(0xFFF29200),
+                                          hoverTextColor: Color(0xFFF29200),
                                         ),
                                       ),
                                     ),

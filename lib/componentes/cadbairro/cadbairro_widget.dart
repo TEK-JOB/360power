@@ -4,10 +4,15 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'cadbairro_model.dart';
 export 'cadbairro_model.dart';
 
@@ -53,8 +58,8 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -73,8 +78,8 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -93,8 +98,8 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -113,8 +118,8 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -139,7 +144,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -152,17 +157,17 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                 sigmaY: 2.0,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Container(
                   width: 450.0,
                   height: 350.0,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 450.0,
                     maxHeight: 350.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x1A000000),
@@ -178,7 +183,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Padding(
-                      padding: const EdgeInsets.all(18.0),
+                      padding: EdgeInsets.all(18.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -206,9 +211,9 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation']!),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 300.0,
                               child: TextFormField(
                                 controller: _model.bairroTextController,
@@ -221,7 +226,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: const Color(0xFFF29200),
+                                        color: Color(0xFFF29200),
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: 'nome do bairro',
@@ -242,7 +247,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                     borderRadius: BorderRadius.circular(36.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0xFFF29200),
                                       width: 2.0,
                                     ),
@@ -262,7 +267,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                     ),
                                     borderRadius: BorderRadius.circular(36.0),
                                   ),
-                                  contentPadding: const EdgeInsets.all(18.0),
+                                  contentPadding: EdgeInsets.all(18.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -278,7 +283,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                 animationsMap['textFieldOnPageLoadAnimation']!),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -292,9 +297,9 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -302,11 +307,11 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: const Color(0xFFF29200),
+                                          color: Color(0xFFF29200),
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -359,11 +364,11 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFF29200),
+                                    color: Color(0xFFF29200),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -373,7 +378,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 8.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -385,7 +390,7 @@ class _CadbairroWidgetState extends State<CadbairroWidget>
                                           .primaryText,
                                       width: 1.0,
                                     ),
-                                    hoverTextColor: const Color(0xFFF29200),
+                                    hoverTextColor: Color(0xFFF29200),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
                                     'buttonOnPageLoadAnimation2']!),

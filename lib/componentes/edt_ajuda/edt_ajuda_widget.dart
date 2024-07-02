@@ -1,11 +1,17 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edt_ajuda_model.dart';
 export 'edt_ajuda_model.dart';
 
@@ -67,8 +73,8 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -87,8 +93,8 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -107,8 +113,8 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -127,8 +133,8 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -147,8 +153,8 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -173,7 +179,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -186,13 +192,13 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                 sigmaY: 2.0,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Container(
                   width: 550.0,
                   height: 550.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x1A000000),
@@ -205,7 +211,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: EdgeInsets.all(18.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -245,9 +251,9 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.ruaTextController,
@@ -260,7 +266,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFFF29200),
+                                            color: Color(0xFFF29200),
                                             letterSpacing: 0.0,
                                           ),
                                       hintText: 'Digite o nome da rua ',
@@ -282,7 +288,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                             BorderRadius.circular(36.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFFF29200),
                                           width: 2.0,
                                         ),
@@ -307,7 +313,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                         borderRadius:
                                             BorderRadius.circular(36.0),
                                       ),
-                                      contentPadding: const EdgeInsets.all(18.0),
+                                      contentPadding: EdgeInsets.all(18.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -323,9 +329,9 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                     'textFieldOnPageLoadAnimation1']!),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.ajudafTextController,
@@ -338,7 +344,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFFF29200),
+                                            color: Color(0xFFF29200),
                                             letterSpacing: 0.0,
                                           ),
                                       hintText: 'Aqui veja o que achamos',
@@ -360,7 +366,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                             BorderRadius.circular(16.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFFF29200),
                                           width: 2.0,
                                         ),
@@ -385,7 +391,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                         borderRadius:
                                             BorderRadius.circular(16.0),
                                       ),
-                                      contentPadding: const EdgeInsets.all(18.0),
+                                      contentPadding: EdgeInsets.all(18.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -406,7 +412,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -420,9 +426,9 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                 options: FFButtonOptions(
                                   width: 150.0,
                                   height: 50.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -430,11 +436,11 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: const Color(0xFFF29200),
+                                        color: Color(0xFFF29200),
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -443,7 +449,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                               ).animateOnPageLoad(
                                   animationsMap['buttonOnPageLoadAnimation1']!),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 16.0, 8.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -464,11 +470,11 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                   options: FFButtonOptions(
                                     width: 160.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFF29200),
+                                    color: Color(0xFFF29200),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -478,7 +484,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 8.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -490,7 +496,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                           .primaryText,
                                       width: 1.0,
                                     ),
-                                    hoverTextColor: const Color(0xFFF29200),
+                                    hoverTextColor: Color(0xFFF29200),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
                                     'buttonOnPageLoadAnimation2']!),

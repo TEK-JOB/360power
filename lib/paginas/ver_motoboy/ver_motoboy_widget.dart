@@ -9,13 +9,20 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'ver_motoboy_model.dart';
 export 'ver_motoboy_model.dart';
 
@@ -74,8 +81,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -93,8 +100,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 90.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 90.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -112,8 +119,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -131,8 +138,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -163,7 +170,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
         if (!snapshot.hasData) {
           return Scaffold(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-            body: const Center(
+            body: Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
@@ -189,7 +196,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return const Center(
+                      return Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -203,7 +210,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                     }
                     final containerPontoRecord = snapshot.data!;
                     return Container(
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -219,9 +226,9 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: EdgeInsets.all(8.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -245,7 +252,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Wrap(
                                       spacing: 0.0,
@@ -259,7 +266,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                       clipBehavior: Clip.antiAlias,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -270,7 +277,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                             child: Container(
                                               width: 350.0,
                                               height: 280.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 390.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -290,7 +297,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(16.0),
+                                                        EdgeInsets.all(16.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -304,7 +311,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     .of(context)
                                                                 .primaryText,
                                                             borderRadius:
-                                                                const BorderRadius
+                                                                BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
@@ -321,14 +328,14 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       10.0),
                                                             ),
                                                             border: Border.all(
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFFF29200),
                                                               width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     2.0),
                                                             child: ClipRRect(
                                                               borderRadius:
@@ -338,11 +345,11 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                               child:
                                                                   CachedNetworkImage(
                                                                 fadeInDuration:
-                                                                    const Duration(
+                                                                    Duration(
                                                                         milliseconds:
                                                                             500),
                                                                 fadeOutDuration:
-                                                                    const Duration(
+                                                                    Duration(
                                                                         milliseconds:
                                                                             500),
                                                                 imageUrl:
@@ -371,7 +378,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             4.0,
@@ -399,7 +406,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -442,7 +449,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -462,7 +469,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           12.0,
@@ -476,7 +483,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  const Icon(
+                                                                  Icon(
                                                                     Icons
                                                                         .sports_motorsports,
                                                                     color: Color(
@@ -484,7 +491,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     size: 44.0,
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -534,7 +541,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -554,7 +561,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           12.0,
@@ -568,7 +575,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  const Icon(
+                                                                  Icon(
                                                                     Icons
                                                                         .monetization_on_outlined,
                                                                     color: Color(
@@ -576,7 +583,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     size: 44.0,
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -638,7 +645,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -663,7 +670,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 16.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -686,21 +693,21 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                         width: 200.0,
                                                         height: 50.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         color:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -715,7 +722,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 8.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -735,13 +742,13 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           width: 1.0,
                                                         ),
                                                         hoverTextColor:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                       ),
                                                     ),
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 16.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -754,9 +761,9 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   builder:
                                                                       (alertDialogContext) {
                                                                     return AlertDialog(
-                                                                      title: const Text(
+                                                                      title: Text(
                                                                           'Excluir Motoboy'),
-                                                                      content: const Text(
+                                                                      content: Text(
                                                                           'tem certeza que deseja excluir esse motoboy, isso não pode ser desfeito'),
                                                                       actions: [
                                                                         TextButton(
@@ -764,14 +771,14 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               alertDialogContext,
                                                                               false),
                                                                           child:
-                                                                              const Text('Não'),
+                                                                              Text('Não'),
                                                                         ),
                                                                         TextButton(
                                                                           onPressed: () => Navigator.pop(
                                                                               alertDialogContext,
                                                                               true),
                                                                           child:
-                                                                              const Text('Sim Excluir'),
+                                                                              Text('Sim Excluir'),
                                                                         ),
                                                                       ],
                                                                     );
@@ -819,16 +826,16 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                title: const Text(
+                                                                title: Text(
                                                                     'Sucesso'),
-                                                                content: const Text(
+                                                                content: Text(
                                                                     'Deletado com sucesso!'),
                                                                 actions: [
                                                                   TextButton(
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: const Text(
+                                                                    child: Text(
                                                                         'Ok'),
                                                                   ),
                                                                 ],
@@ -844,21 +851,21 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                         width: 200.0,
                                                         height: 50.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         color:
-                                                            const Color(0xFFE3093E),
+                                                            Color(0xFFE3093E),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -873,7 +880,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 8.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -893,7 +900,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           width: 1.0,
                                                         ),
                                                         hoverTextColor:
-                                                            const Color(0xFFF29200),
+                                                            Color(0xFFF29200),
                                                       ),
                                                     ),
                                                   ),
@@ -903,7 +910,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -934,7 +941,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                               .of(context)
                                                           .primaryBackground,
                                                       borderRadius:
-                                                          const BorderRadius.only(
+                                                          BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 0.0),
@@ -951,7 +958,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   12.0,
@@ -974,7 +981,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -990,7 +997,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -1001,7 +1008,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1047,8 +1054,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       (newValue) async {
                                                                     setState(() =>
                                                                         _model.switchValue1 =
-                                                                            newValue);
-                                                                    if (newValue) {
+                                                                            newValue!);
+                                                                    if (newValue!) {
                                                                       await verMotoboyUsersRecord
                                                                           .reference
                                                                           .update(
@@ -1067,7 +1074,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     }
                                                                   },
                                                                   activeColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                   activeTrackColor:
                                                                       FlutterFlowTheme.of(
@@ -1091,7 +1098,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -1107,7 +1114,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -1118,7 +1125,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1166,8 +1173,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       (newValue) async {
                                                                     setState(() =>
                                                                         _model.switchValue2 =
-                                                                            newValue);
-                                                                    if (newValue) {
+                                                                            newValue!);
+                                                                    if (newValue!) {
                                                                       await verMotoboyUsersRecord
                                                                           .reference
                                                                           .update(
@@ -1186,7 +1193,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     }
                                                                   },
                                                                   activeColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                   activeTrackColor:
                                                                       FlutterFlowTheme.of(
@@ -1210,7 +1217,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -1226,14 +1233,14 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1252,7 +1259,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1300,8 +1307,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       (newValue) async {
                                                                     setState(() =>
                                                                         _model.switchValue3 =
-                                                                            newValue);
-                                                                    if (newValue) {
+                                                                            newValue!);
+                                                                    if (newValue!) {
                                                                       await verMotoboyUsersRecord
                                                                           .reference
                                                                           .update({
@@ -1357,7 +1364,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     }
                                                                   },
                                                                   activeColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                   activeTrackColor:
                                                                       FlutterFlowTheme.of(
@@ -1381,7 +1388,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -1397,14 +1404,14 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   12.0),
@@ -1423,7 +1430,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1471,8 +1478,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       (newValue) async {
                                                                     setState(() =>
                                                                         _model.switchValue4 =
-                                                                            newValue);
-                                                                    if (newValue) {
+                                                                            newValue!);
+                                                                    if (newValue!) {
                                                                       await verMotoboyUsersRecord
                                                                           .reference
                                                                           .update(
@@ -1491,7 +1498,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     }
                                                                   },
                                                                   activeColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                   activeTrackColor:
                                                                       FlutterFlowTheme.of(
@@ -1519,7 +1526,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -1530,7 +1537,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                             child: Container(
                                               width: 350.0,
                                               height: 470.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 450.0,
                                                 maxHeight: 700.0,
                                               ),
@@ -1538,7 +1545,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x1A000000),
@@ -1562,7 +1569,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   16.0,
@@ -1600,7 +1607,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           4.0,
@@ -1629,7 +1636,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -1640,7 +1647,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     .infinity,
                                                                 height: 280.0,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: Builder(
                                                                   builder:
                                                                       (context) {
@@ -1659,7 +1666,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           final docsDoMotoboyItem =
                                                                               docsDoMotoboy[docsDoMotoboyIndex];
                                                                           return Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 8.0,
                                                                                 4.0,
                                                                                 8.0,
@@ -1672,7 +1679,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                 Expanded(
                                                                                   child: Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(8.0),
+                                                                                      padding: EdgeInsets.all(8.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -1686,7 +1693,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: VerDocumentoWidget(
                                                                                                   documento: valueOrDefault<String>(
                                                                                                     docsDoMotoboyItem,
@@ -1714,7 +1721,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                   docsDoMotoboyItem,
                                                                                                 ).image,
                                                                                               ),
-                                                                                              boxShadow: const [
+                                                                                              boxShadow: [
                                                                                                 BoxShadow(
                                                                                                   blurRadius: 6.0,
                                                                                                   color: Color(0x4B1A1F24),
@@ -1730,7 +1737,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                             child: Stack(
                                                                                               children: [
                                                                                                 Align(
-                                                                                                  alignment: const AlignmentDirectional(1.0, -1.0),
+                                                                                                  alignment: AlignmentDirectional(1.0, -1.0),
                                                                                                   child: InkWell(
                                                                                                     splashColor: Colors.transparent,
                                                                                                     focusColor: Colors.transparent,
@@ -1741,16 +1748,16 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                             context: context,
                                                                                                             builder: (alertDialogContext) {
                                                                                                               return AlertDialog(
-                                                                                                                title: const Text('Atenção '),
-                                                                                                                content: const Text('Você está prestes a apagar essa imagem, isso não pode ser desfeito, tem certeza disso'),
+                                                                                                                title: Text('Atenção '),
+                                                                                                                content: Text('Você está prestes a apagar essa imagem, isso não pode ser desfeito, tem certeza disso'),
                                                                                                                 actions: [
                                                                                                                   TextButton(
                                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                    child: const Text('Não'),
+                                                                                                                    child: Text('Não'),
                                                                                                                   ),
                                                                                                                   TextButton(
                                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                    child: const Text('Apagar'),
+                                                                                                                    child: Text('Apagar'),
                                                                                                                   ),
                                                                                                                 ],
                                                                                                               );
@@ -1771,7 +1778,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                         return;
                                                                                                       }
                                                                                                     },
-                                                                                                    child: const FaIcon(
+                                                                                                    child: FaIcon(
                                                                                                       FontAwesomeIcons.solidTrashAlt,
                                                                                                       color: Color(0xFFE3093E),
                                                                                                       size: 24.0,
@@ -1798,7 +1805,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1837,19 +1844,19 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     FFButtonOptions(
                                                                   width: 100.0,
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFFF29200),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -1865,7 +1872,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   elevation:
                                                                       8.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -1885,7 +1892,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     width: 1.0,
                                                                   ),
                                                                   hoverTextColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                 ),
                                                               ),
@@ -1901,7 +1908,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -1912,7 +1919,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                             child: Container(
                                               width: 350.0,
                                               height: 470.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 450.0,
                                                 maxHeight: 700.0,
                                               ),
@@ -1920,7 +1927,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x1A000000),
@@ -1942,7 +1949,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 16.0,
@@ -1979,7 +1986,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           4.0,
@@ -2010,7 +2017,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -2021,7 +2028,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 double.infinity,
                                                             height: 190.0,
                                                             decoration:
-                                                                const BoxDecoration(),
+                                                                BoxDecoration(),
                                                             child: StreamBuilder<
                                                                 List<
                                                                     CorridasRecord>>(
@@ -2054,7 +2061,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 // Customize what your widget looks like when it's loading.
                                                                 if (!snapshot
                                                                     .hasData) {
-                                                                  return const Center(
+                                                                  return Center(
                                                                     child:
                                                                         SizedBox(
                                                                       width:
@@ -2089,7 +2096,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           columnCorridasRecordList[
                                                                               columnIndex];
                                                                       return Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             4.0,
                                                                             8.0,
@@ -2116,7 +2123,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: CorridaWidget(
                                                                                             parametCorrida: columnCorridasRecord,
                                                                                           ),
@@ -2135,7 +2142,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                       height: 50.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        boxShadow: const [
+                                                                                        boxShadow: [
                                                                                           BoxShadow(
                                                                                             blurRadius: 6.0,
                                                                                             color: Color(0x4B1A1F24),
@@ -2152,13 +2159,13 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: const EdgeInsets.all(8.0),
+                                                                                            padding: EdgeInsets.all(8.0),
                                                                                             child: StreamBuilder<ComerciosRecord>(
                                                                                               stream: ComerciosRecord.getDocument(columnCorridasRecord.comercio!),
                                                                                               builder: (context, snapshot) {
                                                                                                 // Customize what your widget looks like when it's loading.
                                                                                                 if (!snapshot.hasData) {
-                                                                                                  return const Center(
+                                                                                                  return Center(
                                                                                                     child: SizedBox(
                                                                                                       width: 50.0,
                                                                                                       height: 50.0,
@@ -2188,7 +2195,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                                                                                               child: AutoSizeText(
                                                                                                 formatNumber(
                                                                                                   columnCorridasRecord.valorProduto,
@@ -2208,7 +2215,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                                                                                               child: AutoSizeText(
                                                                                                 '${dateTimeFormat(
                                                                                                   'd/M',
@@ -2235,16 +2242,16 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                     context: context,
                                                                                                     builder: (alertDialogContext) {
                                                                                                       return AlertDialog(
-                                                                                                        title: const Text('Receber'),
-                                                                                                        content: const Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
+                                                                                                        title: Text('Receber'),
+                                                                                                        content: Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
                                                                                                         actions: [
                                                                                                           TextButton(
                                                                                                             onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                            child: const Text('Não'),
+                                                                                                            child: Text('Não'),
                                                                                                           ),
                                                                                                           TextButton(
                                                                                                             onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                            child: const Text('Sim ja recebi'),
+                                                                                                            child: Text('Sim ja recebi'),
                                                                                                           ),
                                                                                                         ],
                                                                                                       );
@@ -2282,8 +2289,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                             options: FFButtonOptions(
                                                                                               width: 60.0,
                                                                                               height: 45.0,
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                     fontFamily: 'Readex Pro',
@@ -2291,12 +2298,12 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                     letterSpacing: 0.0,
                                                                                                   ),
                                                                                               elevation: 8.0,
-                                                                                              borderSide: const BorderSide(
+                                                                                              borderSide: BorderSide(
                                                                                                 color: Colors.transparent,
                                                                                                 width: 1.0,
                                                                                               ),
                                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                                              hoverColor: const Color(0xFFF29200),
+                                                                                              hoverColor: Color(0xFFF29200),
                                                                                               hoverTextColor: FlutterFlowTheme.of(context).primaryText,
                                                                                               hoverElevation: 3.0,
                                                                                             ),
@@ -2323,7 +2330,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -2419,7 +2426,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Readex Pro',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFE3093E),
                                                                     fontSize:
                                                                         22.0,
@@ -2429,7 +2436,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           16.0,
@@ -2447,16 +2454,16 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             builder:
                                                                                 (alertDialogContext) {
                                                                               return AlertDialog(
-                                                                                title: const Text('Atenção '),
-                                                                                content: const Text('Você está dizendo que recebeu, tudo que esse motoboy, devia ao ponto, deseja confirmar essa informação?'),
+                                                                                title: Text('Atenção '),
+                                                                                content: Text('Você está dizendo que recebeu, tudo que esse motoboy, devia ao ponto, deseja confirmar essa informação?'),
                                                                                 actions: [
                                                                                   TextButton(
                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                    child: const Text('Não'),
+                                                                                    child: Text('Não'),
                                                                                   ),
                                                                                   TextButton(
                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                    child: const Text('Sim recebi, liberar ele'),
+                                                                                    child: Text('Sim recebi, liberar ele'),
                                                                                   ),
                                                                                 ],
                                                                               );
@@ -2483,19 +2490,19 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     FFButtonOptions(
                                                                   width: 100.0,
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFFF29200),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -2511,7 +2518,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   elevation:
                                                                       8.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -2531,7 +2538,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     width: 1.0,
                                                                   ),
                                                                   hoverTextColor:
-                                                                      const Color(
+                                                                      Color(
                                                                           0xFFF29200),
                                                                 ),
                                                               ),
@@ -2547,7 +2554,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Material(
                                             color: Colors.transparent,
                                             elevation: 8.0,
@@ -2558,7 +2565,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                             child: Container(
                                               width: 350.0,
                                               height: 470.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 450.0,
                                                 maxHeight: 700.0,
                                               ),
@@ -2566,7 +2573,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x1A000000),
@@ -2588,7 +2595,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return const Center(
+                                                    return Center(
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
@@ -2616,7 +2623,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     16.0,
@@ -2664,7 +2671,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -2678,7 +2685,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                SizedBox(
+                                                                Container(
                                                                   width: 300.0,
                                                                   child:
                                                                       TextFormField(
@@ -2706,7 +2713,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                const Color(0xFFF29200),
+                                                                                Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -2738,7 +2745,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -2772,7 +2779,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -2799,7 +2806,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -2813,7 +2820,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                SizedBox(
+                                                                Container(
                                                                   width: 300.0,
                                                                   child:
                                                                       TextFormField(
@@ -2841,7 +2848,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                const Color(0xFFF29200),
+                                                                                Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -2873,7 +2880,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -2907,7 +2914,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -2934,7 +2941,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -2978,7 +2985,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 // Customize what your widget looks like when it's loading.
                                                                 if (!snapshot
                                                                     .hasData) {
-                                                                  return const Center(
+                                                                  return Center(
                                                                     child:
                                                                         SizedBox(
                                                                       width:
@@ -3000,13 +3007,13 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     bairroBairroRecordList =
                                                                     snapshot
                                                                         .data!;
-                                                                return SizedBox(
+                                                                return Container(
                                                                   width: 300.0,
                                                                   child:
                                                                       Autocomplete<
                                                                           String>(
                                                                     initialValue:
-                                                                        const TextEditingValue(),
+                                                                        TextEditingValue(),
                                                                     optionsBuilder:
                                                                         (textEditingValue) {
                                                                       if (textEditingValue
@@ -3048,7 +3055,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         textHighlightStyle:
-                                                                            const TextStyle(),
+                                                                            TextStyle(),
                                                                         elevation:
                                                                             4.0,
                                                                         optionBackgroundColor:
@@ -3106,7 +3113,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             (_) =>
                                                                                 EasyDebounce.debounce(
                                                                           '_model.bairroTextController',
-                                                                          const Duration(
+                                                                          Duration(
                                                                               milliseconds: 2000),
                                                                           () async {
                                                                             _model.refBairro =
@@ -3136,7 +3143,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               .labelMedium
                                                                               .override(
                                                                                 fontFamily: 'Readex Pro',
-                                                                                color: const Color(0xFFF29200),
+                                                                                color: Color(0xFFF29200),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           hintText:
@@ -3161,7 +3168,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Color(0xFFF29200),
                                                                               width: 2.0,
                                                                             ),
@@ -3189,7 +3196,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                 BorderRadius.circular(36.0),
                                                                           ),
                                                                           contentPadding:
-                                                                              const EdgeInsets.all(18.0),
+                                                                              EdgeInsets.all(18.0),
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
@@ -3211,7 +3218,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -3227,11 +3234,11 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
-                                                                      SizedBox(
+                                                                      Container(
                                                                     width: 70.0,
                                                                     child:
                                                                         TextFormField(
@@ -3256,7 +3263,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: const Color(0xFFF29200),
+                                                                              color: Color(0xFFF29200),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         hintText:
@@ -3283,7 +3290,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                         focusedBorder:
                                                                             OutlineInputBorder(
                                                                           borderSide:
-                                                                              const BorderSide(
+                                                                              BorderSide(
                                                                             color:
                                                                                 Color(0xFFF29200),
                                                                             width:
@@ -3317,7 +3324,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               BorderRadius.circular(36.0),
                                                                         ),
                                                                         contentPadding:
-                                                                            const EdgeInsets.all(18.0),
+                                                                            EdgeInsets.all(18.0),
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -3340,19 +3347,19 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             4.0,
                                                                             0.0),
                                                                     child:
-                                                                        SizedBox(
+                                                                        Container(
                                                                       width:
                                                                           120.0,
                                                                       child:
@@ -3377,7 +3384,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               .labelMedium
                                                                               .override(
                                                                                 fontFamily: 'Readex Pro',
-                                                                                color: const Color(0xFFF29200),
+                                                                                color: Color(0xFFF29200),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           hintText:
@@ -3402,7 +3409,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Color(0xFFF29200),
                                                                               width: 2.0,
                                                                             ),
@@ -3430,7 +3437,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                 BorderRadius.circular(36.0),
                                                                           ),
                                                                           contentPadding:
-                                                                              const EdgeInsets.all(18.0),
+                                                                              EdgeInsets.all(18.0),
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
@@ -3463,7 +3470,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                         columnEnderecoRecord
                                                                             .uf,
                                                                   ),
-                                                                  options: const [
+                                                                  options: [
                                                                     'AC',
                                                                     'AL',
                                                                     'AP',
@@ -3511,14 +3518,14 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       ),
                                                                   hintText:
                                                                       'UF',
-                                                                  icon: const Icon(
+                                                                  icon: Icon(
                                                                     Icons
                                                                         .keyboard_arrow_down_rounded,
                                                                     color: Color(
                                                                         0xFFF29200),
                                                                     size: 24.0,
                                                                   ),
-                                                                  fillColor: const Color(
+                                                                  fillColor: Color(
                                                                       0x00FFFFFF),
                                                                   elevation:
                                                                       2.0,
@@ -3530,7 +3537,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       2.0,
                                                                   borderRadius:
                                                                       24.0,
-                                                                  margin: const EdgeInsetsDirectional
+                                                                  margin: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -3550,13 +3557,13 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
                                                                         0.0,
                                                                         0.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -3581,7 +3588,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -3616,7 +3623,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -3655,7 +3662,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -3680,13 +3687,13 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
                                                                         0.0,
                                                                         0.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -3711,7 +3718,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -3746,7 +3753,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -3785,7 +3792,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -3812,7 +3819,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     16.0,
@@ -3856,20 +3863,20 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                             width: 100.0,
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFFF29200),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -3886,7 +3893,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     ),
                                                             elevation: 8.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -3907,7 +3914,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                               width: 1.0,
                                                             ),
                                                             hoverTextColor:
-                                                                const Color(
+                                                                Color(
                                                                     0xFFF29200),
                                                           ),
                                                         ),

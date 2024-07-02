@@ -14,10 +14,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:provider/provider.dart';
 import 'comercio_model.dart';
 export 'comercio_model.dart';
 
@@ -82,7 +86,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
-                        return const Center(
+                        return Center(
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
@@ -106,7 +110,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                 child: Container(
                                   width: 100.0,
                                   height: 130.0,
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 6.0,
@@ -134,7 +138,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 50.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
@@ -144,7 +148,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 8.0),
                                           child: ClipRRect(
                                             borderRadius:
@@ -166,7 +170,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         18.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -183,7 +187,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         18.0, 0.0, 0.0, 0.0),
                                                 child: AutoSizeText(
@@ -207,7 +211,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: AutoSizeText(
                                             'Versão 0.50',
@@ -235,9 +239,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: StreamBuilder<PontoRecord>(
                                         stream: PontoRecord.getDocument(
@@ -245,7 +249,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return const Center(
+                                            return Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -270,7 +274,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 Builder(
                                                   builder: (context) => Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 24.0,
                                                                 8.0, 8.0),
                                                     child: InkWell(
@@ -295,7 +299,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               backgroundColor:
                                                                   Colors
                                                                       .transparent,
-                                                              alignment: const AlignmentDirectional(
+                                                              alignment: AlignmentDirectional(
                                                                       0.0, 0.0)
                                                                   .resolve(
                                                                       Directionality.of(
@@ -335,7 +339,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                           width: 200.0,
                                                           height: 200.0,
                                                           decoration:
-                                                              const BoxDecoration(
+                                                              BoxDecoration(
                                                             boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 6.0,
@@ -370,7 +374,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     16.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -388,7 +392,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                       MainAxisAlignment
                                                                           .center,
                                                                   children: [
-                                                                    const FaIcon(
+                                                                    FaIcon(
                                                                       FontAwesomeIcons
                                                                           .motorcycle,
                                                                       color: Colors
@@ -425,7 +429,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               if (rowPontoRecord.aberto ==
                                                   false)
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 24.0, 8.0, 8.0),
                                                   child: InkWell(
@@ -443,9 +447,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                         builder:
                                                             (alertDialogContext) {
                                                           return AlertDialog(
-                                                            title: const Text(
+                                                            title: Text(
                                                                 'Fechamos'),
-                                                            content: const Text(
+                                                            content: Text(
                                                                 'No momento estamos fechados, não estamos pegando mais corridas, obrigado pela preferência, voltaremos ás 11:00 hs.'),
                                                             actions: [
                                                               TextButton(
@@ -453,7 +457,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    const Text('Ok'),
+                                                                    Text('Ok'),
                                                               ),
                                                             ],
                                                           );
@@ -463,7 +467,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                     child: Container(
                                                       width: 200.0,
                                                       height: 200.0,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 6.0,
@@ -492,7 +496,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Padding(
-                                                        padding: const EdgeInsets.all(
+                                                        padding: EdgeInsets.all(
                                                             16.0),
                                                         child: Row(
                                                           mainAxisSize:
@@ -509,7 +513,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                const FaIcon(
+                                                                FaIcon(
                                                                   FontAwesomeIcons
                                                                       .storeAltSlash,
                                                                   color: Colors
@@ -547,17 +551,17 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       height: 120.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 16.0),
                                           child: ListView(
                                             padding: EdgeInsets.zero,
@@ -566,7 +570,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                             children: [
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: InkWell(
@@ -590,7 +594,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -625,7 +629,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -645,7 +649,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         6.0,
@@ -661,7 +665,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 shape: BoxShape
                                                                     .circle,
                                                               ),
-                                                              child: const Align(
+                                                              child: Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.0,
@@ -696,7 +700,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               ),
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: InkWell(
@@ -720,7 +724,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -758,7 +762,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -778,7 +782,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         6.0,
@@ -794,7 +798,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 shape: BoxShape
                                                                     .circle,
                                                               ),
-                                                              child: const Align(
+                                                              child: Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.0,
@@ -831,7 +835,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               ),
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: InkWell(
@@ -855,7 +859,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -891,7 +895,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -911,7 +915,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         6.0,
@@ -927,7 +931,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 shape: BoxShape
                                                                     .circle,
                                                               ),
-                                                              child: const Align(
+                                                              child: Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.0,
@@ -962,7 +966,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: InkWell(
@@ -996,7 +1000,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1016,7 +1020,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
-                                                              boxShadow: const [
+                                                              boxShadow: [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       6.0,
@@ -1032,7 +1036,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
-                                                            child: const Align(
+                                                            child: Align(
                                                               alignment:
                                                                   AlignmentDirectional(
                                                                       0.0, 0.0),
@@ -1067,7 +1071,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: InkWell(
@@ -1118,7 +1122,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1138,7 +1142,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
-                                                              boxShadow: const [
+                                                              boxShadow: [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       6.0,
@@ -1154,7 +1158,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
-                                                            child: const Align(
+                                                            child: Align(
                                                               alignment:
                                                                   AlignmentDirectional(
                                                                       0.0, 0.0),
@@ -1190,7 +1194,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               ),
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: InkWell(
@@ -1214,7 +1218,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: const AlignmentDirectional(
+                                                            alignment: AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -1233,7 +1237,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                           context)
                                                                       .unfocus(),
                                                               child:
-                                                                  const ListComercioWidget(),
+                                                                  ListComercioWidget(),
                                                             ),
                                                           );
                                                         },
@@ -1246,7 +1250,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1266,7 +1270,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         6.0,
@@ -1282,7 +1286,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                 shape: BoxShape
                                                                     .circle,
                                                               ),
-                                                              child: const Align(
+                                                              child: Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.0,
@@ -1316,7 +1320,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: InkWell(
@@ -1344,7 +1348,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1364,7 +1368,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
-                                                              boxShadow: const [
+                                                              boxShadow: [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       6.0,
@@ -1380,7 +1384,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
-                                                            child: const Align(
+                                                            child: Align(
                                                               alignment:
                                                                   AlignmentDirectional(
                                                                       0.0, 0.0),
@@ -1414,14 +1418,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(const SizedBox(width: 24.0)),
+                                            ].divide(SizedBox(width: 24.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -1432,7 +1436,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 8.0, 8.0, 8.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -1455,7 +1459,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 decoration: BoxDecoration(
                                                   color: _model.stats == null ||
                                                           _model.stats == ''
-                                                      ? const Color(0xFFF8B400)
+                                                      ? Color(0xFFF8B400)
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .primaryText,
@@ -1463,10 +1467,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       BorderRadius.circular(
                                                           8.0),
                                                 ),
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Row(
@@ -1486,7 +1490,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Text(
                                                           'Todos',
@@ -1512,10 +1516,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 8.0),
                                             child: FlutterFlowChoiceChips(
-                                              options: const [
+                                              options: [
                                                 ChipData('Disponivel',
                                                     FontAwesomeIcons.boxOpen),
                                                 ChipData('Aceita',
@@ -1541,7 +1545,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               },
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
-                                                    const Color(0xFFF8B400),
+                                                    Color(0xFFF8B400),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1557,7 +1561,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                 iconColor: Colors.black,
                                                 iconSize: 34.0,
                                                 elevation: 2.0,
-                                                borderColor: const Color(0xFFF8B400),
+                                                borderColor: Color(0xFFF8B400),
                                                 borderWidth: 1.0,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
@@ -1573,7 +1577,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF606A85),
+                                                              Color(0xFF606A85),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1609,11 +1613,11 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
+                                    alignment: AlignmentDirectional(0.0, -1.0),
                                     child: Container(
                                       width: double.infinity,
                                       height: 600.0,
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         color: Colors.transparent,
                                       ),
                                       child: SingleChildScrollView(
@@ -1624,13 +1628,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 24.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 height: 600.0,
-                                                decoration: const BoxDecoration(),
+                                                decoration: BoxDecoration(),
                                                 child: StreamBuilder<
                                                     List<CorridasRecord>>(
                                                   stream: queryCorridasRecord(
@@ -1671,7 +1675,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
                                                     if (!snapshot.hasData) {
-                                                      return const Center(
+                                                      return Center(
                                                         child: SizedBox(
                                                           width: 50.0,
                                                           height: 50.0,
@@ -1702,7 +1706,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                   columnIndex];
                                                           return Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         4.0,
@@ -1713,7 +1717,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                   .transparent,
                                                               elevation: 16.0,
                                                               shape:
-                                                                  const RoundedRectangleBorder(
+                                                                  RoundedRectangleBorder(
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
@@ -1738,7 +1742,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                           context)
                                                                       .primaryBackground,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -1768,7 +1772,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           8.0,
                                                                           0.0,
@@ -1796,7 +1800,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         elevation: 0,
                                                                                         insetPadding: EdgeInsets.zero,
                                                                                         backgroundColor: Colors.transparent,
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                         child: GestureDetector(
                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                           child: CorridaWidget(
@@ -1812,7 +1816,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                       child: Text(
                                                                                         columnCorridasRecord.idPedido,
                                                                                         style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -1825,7 +1829,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                       child: Text(
                                                                                         formatNumber(
                                                                                           columnCorridasRecord.valorProduto,
@@ -1921,7 +1925,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                             .abrir ==
                                                                         columnIndex)
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             0.0,
@@ -1956,23 +1960,23 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                             children: [
                                                                               if (columnCorridasRecord.pago == false)
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return AlertDialog(
-                                                                                                title: const Text('Receber'),
-                                                                                                content: const Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
+                                                                                                title: Text('Receber'),
+                                                                                                content: Text('Você está marcando essa corrida como já recebida, esta certo disso?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: const Text('Não'),
+                                                                                                    child: Text('Não'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: const Text('Sim ja recebi'),
+                                                                                                    child: Text('Sim ja recebi'),
                                                                                                   ),
                                                                                                 ],
                                                                                               );
@@ -2010,16 +2014,16 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFF29200),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFF29200),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2029,30 +2033,30 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         width: 1.0,
                                                                                       ),
-                                                                                      hoverTextColor: const Color(0xFFF29200),
+                                                                                      hoverTextColor: Color(0xFFF29200),
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                               if (columnCorridasRecord.status == 'Agendada')
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
-                                                                                      var shouldSetState = false;
+                                                                                      var _shouldSetState = false;
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return AlertDialog(
-                                                                                                title: const Text('Liberar'),
-                                                                                                content: const Text('Deseja deixar essa corrida disponivel pra ser coletada?'),
+                                                                                                title: Text('Liberar'),
+                                                                                                content: Text('Deseja deixar essa corrida disponivel pra ser coletada?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: const Text('Não'),
+                                                                                                    child: Text('Não'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: const Text('Sim pode coletar'),
+                                                                                                    child: Text('Sim pode coletar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               );
@@ -2086,7 +2090,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                 isEqualTo: true,
                                                                                               ),
                                                                                         );
-                                                                                        shouldSetState = true;
+                                                                                        _shouldSetState = true;
                                                                                         triggerPushNotification(
                                                                                           notificationTitle: 'Nova corrida',
                                                                                           notificationText: '${comercioComerciosRecord.nomeComercio}Enviou uma nova corrida: ',
@@ -2095,29 +2099,29 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           initialPageName: 'Motoboy',
                                                                                           parameterData: {},
                                                                                         );
-                                                                                        if (shouldSetState) setState(() {});
+                                                                                        if (_shouldSetState) setState(() {});
                                                                                         return;
                                                                                       } else {
-                                                                                        if (shouldSetState) setState(() {});
+                                                                                        if (_shouldSetState) setState(() {});
                                                                                         return;
                                                                                       }
 
-                                                                                      if (shouldSetState) setState(() {});
+                                                                                      if (_shouldSetState) setState(() {});
                                                                                     },
                                                                                     text: 'Liberar',
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFF25BC06),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFF25BC06),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2127,29 +2131,29 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         width: 1.0,
                                                                                       ),
-                                                                                      hoverTextColor: const Color(0xFFF29200),
+                                                                                      hoverTextColor: Color(0xFFF29200),
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                               if (columnCorridasRecord.status == 'Disponivel')
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return AlertDialog(
-                                                                                                title: const Text('Cancelar'),
-                                                                                                content: const Text('Você está cancelando essa corrida, esta certo disso?'),
+                                                                                                title: Text('Cancelar'),
+                                                                                                content: Text('Você está cancelando essa corrida, esta certo disso?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: const Text('Não'),
+                                                                                                    child: Text('Não'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: const Text('Sim cancelar'),
+                                                                                                    child: Text('Sim cancelar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               );
@@ -2178,16 +2182,16 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEE0A4D),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEE0A4D),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2197,29 +2201,29 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         width: 1.0,
                                                                                       ),
-                                                                                      hoverTextColor: const Color(0xFFF29200),
+                                                                                      hoverTextColor: Color(0xFFF29200),
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                               if (columnCorridasRecord.status == 'Agendada')
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 16.0, 8.0, 16.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return AlertDialog(
-                                                                                                title: const Text('Cancelar'),
-                                                                                                content: const Text('Você está cancelando essa corrida, esta certo disso?'),
+                                                                                                title: Text('Cancelar'),
+                                                                                                content: Text('Você está cancelando essa corrida, esta certo disso?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: const Text('Não'),
+                                                                                                    child: Text('Não'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: const Text('Sim cancelar'),
+                                                                                                    child: Text('Sim cancelar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               );
@@ -2248,16 +2252,16 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEE0A4D),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEE0A4D),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2267,7 +2271,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         width: 1.0,
                                                                                       ),
-                                                                                      hoverTextColor: const Color(0xFFF29200),
+                                                                                      hoverTextColor: Color(0xFFF29200),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -2279,7 +2283,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                             .abrir ==
                                                                         columnIndex)
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             58.0,
                                                                             0.0,
                                                                             0.0,
@@ -2293,10 +2297,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: double.infinity,
-                                                                              constraints: const BoxConstraints(
+                                                                              constraints: BoxConstraints(
                                                                                 maxWidth: 900.0,
                                                                               ),
-                                                                              decoration: const BoxDecoration(
+                                                                              decoration: BoxDecoration(
                                                                                 color: Colors.transparent,
                                                                               ),
                                                                               child: Column(
@@ -2315,24 +2319,24 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           shape: BoxShape.circle,
                                                                                           border: Border.all(
-                                                                                            color: columnCorridasRecord.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                                            color: columnCorridasRecord.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                                             width: 2.0,
                                                                                           ),
                                                                                         ),
                                                                                         child: Icon(
                                                                                           Icons.monetization_on_rounded,
-                                                                                          color: columnCorridasRecord.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                                          color: columnCorridasRecord.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                                           size: 24.0,
                                                                                         ),
                                                                                       ),
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             columnCorridasRecord.pago == true ? 'Pago' : 'Receber',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: columnCorridasRecord.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
+                                                                                                  color: columnCorridasRecord.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
@@ -2342,12 +2346,12 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ),
                                                                                       if (columnCorridasRecord.pago == true)
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             'Pago em:  ',
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFF2C9A60),
+                                                                                                  color: Color(0xFF2C9A60),
                                                                                                   fontSize: 12.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
@@ -2356,7 +2360,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                       if (columnCorridasRecord.pago == true)
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -2365,7 +2369,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFF2C9A60),
+                                                                                                  color: Color(0xFF2C9A60),
                                                                                                   fontSize: 12.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
@@ -2374,7 +2378,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                       if (columnCorridasRecord.pago == true)
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -2383,7 +2387,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: const Color(0xFF2C9A60),
+                                                                                                  color: Color(0xFF2C9A60),
                                                                                                   fontSize: 12.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
@@ -2393,7 +2397,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                     ],
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                     child: Container(
                                                                                       width: double.infinity,
                                                                                       decoration: BoxDecoration(
@@ -2404,14 +2408,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.min,
                                                                                           mainAxisAlignment: MainAxisAlignment.start,
                                                                                           crossAxisAlignment: CrossAxisAlignment.start,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                               child: RichText(
                                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                                 text: TextSpan(
@@ -2429,7 +2433,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                   ],
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                        color: const Color(0xFF606A85),
+                                                                                                        color: Color(0xFF606A85),
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w500,
@@ -2437,13 +2441,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                            const Divider(
+                                                                                            Divider(
                                                                                               height: 1.0,
                                                                                               thickness: 1.0,
                                                                                               indent: 0.0,
                                                                                               color: Color(0xFFE5E7EB),
                                                                                             ),
-                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                          ].addToEnd(SizedBox(height: 12.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ),
@@ -2455,10 +2459,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                 true)
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: const BoxConstraints(
+                                                                                constraints: BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   color: Color(0x00FFFFFF),
                                                                                 ),
                                                                                 child: Column(
@@ -2473,14 +2477,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           width: 32.0,
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D9489F5),
+                                                                                            color: Color(0x4D9489F5),
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: const Color(0xFFF8B400),
+                                                                                              color: Color(0xFFF8B400),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          child: const Align(
+                                                                                          child: Align(
                                                                                             alignment: AlignmentDirectional(0.0, 0.0),
                                                                                             child: FaIcon(
                                                                                               FontAwesomeIcons.businessTime,
@@ -2491,7 +2495,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Agendado',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2505,7 +2509,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -2522,7 +2526,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -2541,12 +2545,12 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: Container(
                                                                                         width: double.infinity,
                                                                                         decoration: BoxDecoration(
                                                                                           color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          boxShadow: const [
+                                                                                          boxShadow: [
                                                                                             BoxShadow(
                                                                                               blurRadius: 0.0,
                                                                                               color: Color(0xFFF8B400),
@@ -2566,7 +2570,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           children: [
                                                                                             Expanded(
                                                                                               child: Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -2576,7 +2580,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                                       text: TextSpan(
                                                                                                         children: [
-                                                                                                          const TextSpan(
+                                                                                                          TextSpan(
                                                                                                             text: 'Detalhe:',
                                                                                                             style: TextStyle(),
                                                                                                           ),
@@ -2584,7 +2588,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                             text: columnCorridasRecord.detalhe,
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: const Color(0xFFF8B400),
+                                                                                                                  color: Color(0xFFF8B400),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.bold,
@@ -2593,20 +2597,20 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                         ],
                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                              color: const Color(0xFF606A85),
+                                                                                                              color: Color(0xFF606A85),
                                                                                                               fontSize: 14.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.w500,
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    const Divider(
+                                                                                                    Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -2621,10 +2625,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                 true)
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: const BoxConstraints(
+                                                                                constraints: BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   color: Color(0x00FFFFFF),
                                                                                 ),
                                                                                 child: Column(
@@ -2639,14 +2643,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           width: 32.0,
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D9489F5),
+                                                                                            color: Color(0x4D9489F5),
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: const Color(0xFFF8B400),
+                                                                                              color: Color(0xFFF8B400),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          child: const Align(
+                                                                                          child: Align(
                                                                                             alignment: AlignmentDirectional(0.0, 0.0),
                                                                                             child: FaIcon(
                                                                                               FontAwesomeIcons.boxOpen,
@@ -2657,7 +2661,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Disponivel',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2671,7 +2675,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -2688,7 +2692,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -2707,12 +2711,12 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: Container(
                                                                                         width: double.infinity,
                                                                                         decoration: BoxDecoration(
                                                                                           color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          boxShadow: const [
+                                                                                          boxShadow: [
                                                                                             BoxShadow(
                                                                                               blurRadius: 0.0,
                                                                                               color: Color(0xFFF8B400),
@@ -2731,7 +2735,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -2741,7 +2745,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                                     text: TextSpan(
                                                                                                       children: [
-                                                                                                        const TextSpan(
+                                                                                                        TextSpan(
                                                                                                           text: 'Detalhe:',
                                                                                                           style: TextStyle(),
                                                                                                         ),
@@ -2749,7 +2753,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                           text: columnCorridasRecord.detalhe,
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: const Color(0xFFF8B400),
+                                                                                                                color: Color(0xFFF8B400),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.bold,
@@ -2758,20 +2762,20 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                       ],
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                            color: const Color(0xFF606A85),
+                                                                                                            color: Color(0xFF606A85),
                                                                                                             fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ),
-                                                                                                  const Divider(
+                                                                                                  Divider(
                                                                                                     height: 1.0,
                                                                                                     thickness: 1.0,
                                                                                                     indent: 0.0,
                                                                                                     color: Color(0xFFE5E7EB),
                                                                                                   ),
-                                                                                                ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                                ].addToEnd(SizedBox(height: 12.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ],
@@ -2785,10 +2789,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                 true)
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: const BoxConstraints(
+                                                                                constraints: BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   color: Color(0x00FFFFFF),
                                                                                 ),
                                                                                 child: Column(
@@ -2803,14 +2807,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           width: 32.0,
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D9489F5),
+                                                                                            color: Color(0x4D9489F5),
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: const Color(0xFFF8B400),
+                                                                                              color: Color(0xFFF8B400),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          child: const Align(
+                                                                                          child: Align(
                                                                                             alignment: AlignmentDirectional(0.0, 0.0),
                                                                                             child: Icon(
                                                                                               Icons.sports_motorsports,
@@ -2821,7 +2825,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Aceita',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2835,7 +2839,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -2852,7 +2856,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -2871,13 +2875,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: StreamBuilder<UsersRecord>(
                                                                                         stream: UsersRecord.getDocument(columnCorridasRecord.motoboy!),
                                                                                         builder: (context, snapshot) {
                                                                                           // Customize what your widget looks like when it's loading.
                                                                                           if (!snapshot.hasData) {
-                                                                                            return const Center(
+                                                                                            return Center(
                                                                                               child: SizedBox(
                                                                                                 width: 50.0,
                                                                                                 height: 50.0,
@@ -2894,7 +2898,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                             width: double.infinity,
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              boxShadow: const [
+                                                                                              boxShadow: [
                                                                                                 BoxShadow(
                                                                                                   blurRadius: 0.0,
                                                                                                   color: Color(0xFFF8B400),
@@ -2909,18 +2913,18 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                     child: RichText(
                                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                                       text: TextSpan(
                                                                                                         children: [
-                                                                                                          const TextSpan(
+                                                                                                          TextSpan(
                                                                                                             text: 'Motoboy:',
                                                                                                             style: TextStyle(),
                                                                                                           ),
@@ -2928,7 +2932,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                             text: containerUsersRecord.displayName,
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: const Color(0xFFF8B400),
+                                                                                                                  color: Color(0xFFF8B400),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.bold,
@@ -2937,7 +2941,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                         ],
                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                              color: const Color(0xFF606A85),
+                                                                                                              color: Color(0xFF606A85),
                                                                                                               fontSize: 14.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.w500,
@@ -2945,13 +2949,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
-                                                                                                  const Divider(
+                                                                                                  Divider(
                                                                                                     height: 1.0,
                                                                                                     thickness: 1.0,
                                                                                                     indent: 0.0,
                                                                                                     color: Color(0xFFE5E7EB),
                                                                                                   ),
-                                                                                                ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                                ].addToEnd(SizedBox(height: 12.0)),
                                                                                               ),
                                                                                             ),
                                                                                           );
@@ -2965,10 +2969,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                 true)
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: const BoxConstraints(
+                                                                                constraints: BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   color: Color(0x00FFFFFF),
                                                                                 ),
                                                                                 child: Column(
@@ -2983,14 +2987,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           width: 32.0,
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D9489F5),
+                                                                                            color: Color(0x4D9489F5),
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: const Color(0xFFF8B400),
+                                                                                              color: Color(0xFFF8B400),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          child: const Align(
+                                                                                          child: Align(
                                                                                             alignment: AlignmentDirectional(0.0, 0.0),
                                                                                             child: FaIcon(
                                                                                               FontAwesomeIcons.box,
@@ -3001,7 +3005,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Coletado',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3015,7 +3019,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -3032,7 +3036,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -3051,12 +3055,12 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: Container(
                                                                                         width: double.infinity,
                                                                                         decoration: BoxDecoration(
                                                                                           color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          boxShadow: const [
+                                                                                          boxShadow: [
                                                                                             BoxShadow(
                                                                                               blurRadius: 0.0,
                                                                                               color: Color(0xFFF8B400),
@@ -3071,13 +3075,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             crossAxisAlignment: CrossAxisAlignment.start,
                                                                                             children: [
                                                                                               Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                 child: RichText(
                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                   text: TextSpan(
@@ -3086,7 +3090,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                         text: 'Motoboy ja coletou o Pedido',
                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                              color: const Color(0xFFF8B400),
+                                                                                                              color: Color(0xFFF8B400),
                                                                                                               fontSize: 14.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.bold,
@@ -3095,7 +3099,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: const Color(0xFF606A85),
+                                                                                                          color: Color(0xFF606A85),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -3103,13 +3107,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                              const Divider(
+                                                                                              Divider(
                                                                                                 height: 1.0,
                                                                                                 thickness: 1.0,
                                                                                                 indent: 0.0,
                                                                                                 color: Color(0xFFE5E7EB),
                                                                                               ),
-                                                                                            ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                            ].addToEnd(SizedBox(height: 12.0)),
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -3121,10 +3125,10 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                 true)
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: const BoxConstraints(
+                                                                                constraints: BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   color: Colors.transparent,
                                                                                 ),
                                                                                 child: Column(
@@ -3140,14 +3144,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           width: 32.0,
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D9489F5),
+                                                                                            color: Color(0x4D9489F5),
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: const Color(0xFFF8B400),
+                                                                                              color: Color(0xFFF8B400),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
-                                                                                          child: const Icon(
+                                                                                          child: Icon(
                                                                                             Icons.home,
                                                                                             color: Color(0xFFF8B400),
                                                                                             size: 24.0,
@@ -3155,7 +3159,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Text(
                                                                                               'Finalizada',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3169,7 +3173,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'd/M/y',
@@ -3186,7 +3190,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                           child: Text(
                                                                                             dateTimeFormat(
                                                                                               'H:mm:s',
@@ -3205,7 +3209,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: Container(
                                                                                         width: double.infinity,
                                                                                         decoration: BoxDecoration(
@@ -3216,14 +3220,14 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.min,
                                                                                             mainAxisAlignment: MainAxisAlignment.start,
                                                                                             crossAxisAlignment: CrossAxisAlignment.start,
                                                                                             children: [
                                                                                               Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                 child: RichText(
                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                   text: TextSpan(
@@ -3232,7 +3236,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                         text: 'Concluido com sucesso!',
                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                              color: const Color(0xFFF8B400),
+                                                                                                              color: Color(0xFFF8B400),
                                                                                                               fontSize: 14.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.bold,
@@ -3241,7 +3245,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: const Color(0xFF606A85),
+                                                                                                          color: Color(0xFF606A85),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -3249,13 +3253,13 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                              const Divider(
+                                                                                              Divider(
                                                                                                 height: 1.0,
                                                                                                 thickness: 1.0,
                                                                                                 indent: 0.0,
                                                                                                 color: Color(0xFFE5E7EB),
                                                                                               ),
-                                                                                            ].addToEnd(const SizedBox(height: 12.0)),
+                                                                                            ].addToEnd(SizedBox(height: 12.0)),
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -3281,7 +3285,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                             Container(
                                               width: 100.0,
                                               height: 1.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Opacity(
                                                 opacity: 0.2,
                                                 child: FlutterFlowCalendar(

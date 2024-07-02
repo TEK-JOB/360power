@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -5,9 +6,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'cad_pix_model.dart';
 export 'cad_pix_model.dart';
 
@@ -73,8 +80,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(20.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(20.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -93,8 +100,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -113,8 +120,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -133,8 +140,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -153,8 +160,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -173,8 +180,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -193,8 +200,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(40.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -213,8 +220,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -233,8 +240,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -259,17 +266,17 @@ class _CadPixWidgetState extends State<CadPixWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Container(
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 750.0,
             maxHeight: 850.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x1A000000),
@@ -285,7 +292,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -311,8 +318,8 @@ class _CadPixWidgetState extends State<CadPixWidget>
                       animationsMap['textOnPageLoadAnimation']!),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                    child: SizedBox(
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: Container(
                       width: 300.0,
                       child: TextFormField(
                         controller: _model.bancoTextController,
@@ -324,7 +331,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                           labelStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFFF29200),
+                                    color: Color(0xFFF29200),
                                     letterSpacing: 0.0,
                                   ),
                           hintText: 'nome do banco que vai receber',
@@ -344,7 +351,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                             borderRadius: BorderRadius.circular(36.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Color(0xFFF29200),
                               width: 2.0,
                             ),
@@ -364,7 +371,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                             ),
                             borderRadius: BorderRadius.circular(36.0),
                           ),
-                          contentPadding: const EdgeInsets.all(18.0),
+                          contentPadding: EdgeInsets.all(18.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
@@ -377,7 +384,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                     ).animateOnPageLoad(
                         animationsMap['textFieldOnPageLoadAnimation1']!),
                   ),
-                  SizedBox(
+                  Container(
                     width: 300.0,
                     child: TextFormField(
                       controller: _model.nomePixTextController,
@@ -389,7 +396,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Readex Pro',
-                                  color: const Color(0xFFF29200),
+                                  color: Color(0xFFF29200),
                                   letterSpacing: 0.0,
                                 ),
                         hintText: 'nome do cliente que vai receber',
@@ -408,7 +415,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                           borderRadius: BorderRadius.circular(36.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0xFFF29200),
                             width: 2.0,
                           ),
@@ -428,7 +435,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                           ),
                           borderRadius: BorderRadius.circular(36.0),
                         ),
-                        contentPadding: const EdgeInsets.all(18.0),
+                        contentPadding: EdgeInsets.all(18.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
@@ -447,7 +454,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                       FlutterFlowDropDown<String>(
                         controller: _model.dDtipoValueController ??=
                             FormFieldController<String>(null),
-                        options: const [
+                        options: [
                           'E-mail',
                           'CPF',
                           'CNPJ',
@@ -478,17 +485,17 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   letterSpacing: 0.0,
                                 ),
                         hintText: 'Escolha um tipo de  chave pix',
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
                           color: Color(0xFFF8B400),
                           size: 24.0,
                         ),
-                        fillColor: const Color(0x00FFFFFF),
+                        fillColor: Color(0x00FFFFFF),
                         elevation: 2.0,
                         borderColor: FlutterFlowTheme.of(context).secondaryText,
                         borderWidth: 2.0,
                         borderRadius: 24.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -498,7 +505,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                         labelTextStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Readex Pro',
-                                  color: const Color(0xFFF8B400),
+                                  color: Color(0xFFF8B400),
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -510,7 +517,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                     children: [
                       if (_model.tipo == 4)
                         Expanded(
-                          child: SizedBox(
+                          child: Container(
                             width: 300.0,
                             child: TextFormField(
                               controller: _model.chaveOutraTextController,
@@ -523,7 +530,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: 'Digite ou cole a chave pix',
@@ -544,7 +551,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0xFFF29200),
                                     width: 2.0,
                                   ),
@@ -564,7 +571,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
-                                contentPadding: const EdgeInsets.all(18.0),
+                                contentPadding: EdgeInsets.all(18.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -583,7 +590,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                         ),
                       if (_model.tipo == 3)
                         Expanded(
-                          child: SizedBox(
+                          child: Container(
                             width: 300.0,
                             child: TextFormField(
                               controller: _model.chaveCelularTextController,
@@ -596,7 +603,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: 'Digite ou cole a chave pix',
@@ -617,7 +624,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0xFFF29200),
                                     width: 2.0,
                                   ),
@@ -637,7 +644,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
-                                contentPadding: const EdgeInsets.all(18.0),
+                                contentPadding: EdgeInsets.all(18.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -659,7 +666,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                         ),
                       if (_model.tipo == 2)
                         Expanded(
-                          child: SizedBox(
+                          child: Container(
                             width: 300.0,
                             child: TextFormField(
                               controller: _model.chaveCNPJTextController,
@@ -672,7 +679,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: 'Digite ou cole a chave pix',
@@ -693,7 +700,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0xFFF29200),
                                     width: 2.0,
                                   ),
@@ -713,7 +720,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
-                                contentPadding: const EdgeInsets.all(18.0),
+                                contentPadding: EdgeInsets.all(18.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -734,7 +741,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                         ),
                       if (_model.tipo == 1)
                         Expanded(
-                          child: SizedBox(
+                          child: Container(
                             width: 300.0,
                             child: TextFormField(
                               controller: _model.chaveCpfTextController,
@@ -747,7 +754,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFF29200),
+                                      color: Color(0xFFF29200),
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: 'Digite ou cole a chave pix',
@@ -768,7 +775,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0xFFF29200),
                                     width: 2.0,
                                   ),
@@ -788,7 +795,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   borderRadius: BorderRadius.circular(36.0),
                                 ),
-                                contentPadding: const EdgeInsets.all(18.0),
+                                contentPadding: EdgeInsets.all(18.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -811,7 +818,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -824,9 +831,9 @@ class _CadPixWidgetState extends State<CadPixWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -834,11 +841,11 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: const Color(0xFFF29200),
+                                  color: Color(0xFFF29200),
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -980,11 +987,11 @@ class _CadPixWidgetState extends State<CadPixWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFFF29200),
+                            color: Color(0xFFF29200),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -994,7 +1001,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 8.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -1005,7 +1012,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                               color: FlutterFlowTheme.of(context).primaryText,
                               width: 1.0,
                             ),
-                            hoverTextColor: const Color(0xFFF29200),
+                            hoverTextColor: Color(0xFFF29200),
                           ),
                         ).animateOnPageLoad(
                             animationsMap['buttonOnPageLoadAnimation2']!),

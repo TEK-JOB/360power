@@ -1,15 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/index.dart';
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -74,23 +82,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const LoadingWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? LoadingWidget() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const LoadingWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? LoadingWidget() : LoginWidget(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'erro404',
           path: '/erro404',
-          builder: (context, params) => const Erro404Widget(),
+          builder: (context, params) => Erro404Widget(),
         ),
         FFRoute(
           name: 'Cadastro',
@@ -112,45 +120,45 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Corridas',
           path: '/corridas',
           requireAuth: true,
-          builder: (context, params) => const CorridasWidget(),
+          builder: (context, params) => CorridasWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
           requireAuth: true,
-          builder: (context, params) => const HomeWidget(),
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'MeusMotoboys',
           path: '/meusMotoboys',
           requireAuth: true,
-          builder: (context, params) => const MeusMotoboysWidget(),
+          builder: (context, params) => MeusMotoboysWidget(),
         ),
         FFRoute(
           name: 'MeusComercios2',
           path: '/meusComercios2',
           requireAuth: true,
-          builder: (context, params) => const MeusComercios2Widget(),
+          builder: (context, params) => MeusComercios2Widget(),
         ),
         FFRoute(
           name: 'list',
           path: '/list',
-          builder: (context, params) => const ListWidget(),
+          builder: (context, params) => ListWidget(),
         ),
         FFRoute(
           name: 'perfil',
           path: '/perfil',
-          builder: (context, params) => const PerfilWidget(),
+          builder: (context, params) => PerfilWidget(),
         ),
         FFRoute(
           name: 'Dashboard',
           path: '/dashboard',
-          builder: (context, params) => const DashboardWidget(),
+          builder: (context, params) => DashboardWidget(),
         ),
         FFRoute(
           name: 'loading',
           path: '/loading',
-          builder: (context, params) => const LoadingWidget(),
+          builder: (context, params) => LoadingWidget(),
         ),
         FFRoute(
           name: 'Qr',
@@ -172,13 +180,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Comercio',
           path: '/comercio',
           requireAuth: true,
-          builder: (context, params) => const ComercioWidget(),
+          builder: (context, params) => ComercioWidget(),
         ),
         FFRoute(
           name: 'Motoboy',
           path: '/motoboy',
           requireAuth: true,
-          builder: (context, params) => const MotoboyWidget(),
+          builder: (context, params) => MotoboyWidget(),
         ),
         FFRoute(
           name: 'VerMotoboy',
@@ -195,7 +203,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'documentos',
           path: '/documentos',
-          builder: (context, params) => const DocumentosWidget(),
+          builder: (context, params) => DocumentosWidget(),
         ),
         FFRoute(
           name: 'CorridasMotoboy',
@@ -228,7 +236,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MeusComercios',
           path: '/meusComercios',
           requireAuth: true,
-          builder: (context, params) => const MeusComerciosWidget(),
+          builder: (context, params) => MeusComerciosWidget(),
         ),
         FFRoute(
           name: 'VerComercio',
@@ -247,7 +255,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'listdet',
           path: '/listdet',
-          builder: (context, params) => const ListdetWidget(),
+          builder: (context, params) => ListdetWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -483,7 +491,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

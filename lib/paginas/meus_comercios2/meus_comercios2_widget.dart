@@ -5,10 +5,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
 import 'meus_comercios2_model.dart';
 export 'meus_comercios2_model.dart';
 
@@ -47,15 +52,15 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -73,15 +78,15 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(-50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(-50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -120,7 +125,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
               child: wrapWithModel(
                 model: _model.sideNavModel2,
                 updateCallback: () => setState(() {}),
-                child: const SideNavWidget(),
+                child: SideNavWidget(),
               ),
             ),
             body: Row(
@@ -138,27 +143,27 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                       model: _model.sideNavModel1,
                       updateCallback: () => setState(() {}),
                       updateOnChange: true,
-                      child: const SideNavWidget(
+                      child: SideNavWidget(
                         selectedNav: 3,
                       ),
                     ),
                   ),
                 Expanded(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 1370.0,
                       ),
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: SingleChildScrollView(
                         primary: false,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 16.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -182,7 +187,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Aqui você pode aconpanhar\nO andamento do seu negócio.',
@@ -198,7 +203,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -207,7 +212,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           width: 50.0,
                                           height: 50.0,
                                           decoration: BoxDecoration(
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(10.0),
                                               bottomRight:
                                                   Radius.circular(10.0),
@@ -224,9 +229,9 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   BorderRadius.circular(8.0),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                 fadeOutDuration:
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                 imageUrl:
                                                     valueOrDefault<String>(
                                                   currentUserPhoto,
@@ -245,7 +250,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ))
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -289,9 +294,9 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 4.0),
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
@@ -299,11 +304,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Container(
                                           height: 120.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 270.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -320,13 +325,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: Icon(
@@ -368,7 +373,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -399,11 +404,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Container(
                                           height: 120.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 270.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -420,13 +425,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: Icon(
@@ -467,7 +472,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -497,11 +502,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Container(
                                           height: 120.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 270.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -518,13 +523,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: Icon(
@@ -565,7 +570,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -595,11 +600,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Container(
                                           height: 120.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 270.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -616,13 +621,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: Icon(
@@ -663,7 +668,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -693,9 +698,9 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(width: 16.0))
-                                        .addToStart(const SizedBox(width: 16.0))
-                                        .addToEnd(const SizedBox(width: 16.0)),
+                                        .divide(SizedBox(width: 16.0))
+                                        .addToStart(SizedBox(width: 16.0))
+                                        .addToEnd(SizedBox(width: 16.0)),
                                   ),
                                 ),
                               ),
@@ -749,7 +754,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -757,7 +762,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 8.0),
                                                     child: Text(
@@ -774,7 +779,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Row(
@@ -817,7 +822,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                         FFButtonWidget(
@@ -831,14 +836,14 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               FFButtonOptions(
                                                             height: 36.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -862,7 +867,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -901,7 +906,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 12.0),
                                                     child: Row(
@@ -941,7 +946,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     .textScaler,
                                                                 text: TextSpan(
                                                                   children: [
-                                                                    const TextSpan(
+                                                                    TextSpan(
                                                                       text:
                                                                           '62.2% /',
                                                                       style:
@@ -974,7 +979,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -998,7 +1003,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                       FlutterFlowTheme.of(
                                                                               context)
                                                                           .accent1,
-                                                                  barRadius: const Radius
+                                                                  barRadius: Radius
                                                                       .circular(
                                                                           16.0),
                                                                   padding:
@@ -1008,7 +1013,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -1021,7 +1026,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                   text:
                                                                       TextSpan(
                                                                     children: [
-                                                                      const TextSpan(
+                                                                      TextSpan(
                                                                         text:
                                                                             'Forecasted income is: ',
                                                                         style:
@@ -1051,7 +1056,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -1065,14 +1070,14 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               FFButtonOptions(
                                                             height: 36.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1133,7 +1138,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1152,10 +1157,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 4.0),
                                                 child: SingleChildScrollView(
@@ -1167,7 +1172,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1197,7 +1202,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1220,7 +1225,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -1254,13 +1259,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1290,7 +1295,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1313,7 +1318,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -1347,13 +1352,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1383,7 +1388,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1406,7 +1411,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -1440,13 +1445,13 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1476,7 +1481,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1499,7 +1504,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -1533,16 +1538,16 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(const SizedBox(
+                                                        .divide(SizedBox(
                                                             width: 12.0))
-                                                        .addToStart(const SizedBox(
+                                                        .addToStart(SizedBox(
                                                             width: 16.0))
-                                                        .addToEnd(const SizedBox(
+                                                        .addToEnd(SizedBox(
                                                             width: 16.0)),
                                                   ),
                                                 ),
@@ -1588,7 +1593,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1619,7 +1624,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -1714,7 +1719,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1745,7 +1750,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -1803,7 +1808,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(height: 16.0)),
+                                    ].divide(SizedBox(height: 16.0)),
                                   ),
                                 ),
                                 if (responsiveVisibility(
@@ -1815,11 +1820,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                   Expanded(
                                     flex: 12,
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
-                                        constraints: const BoxConstraints(
+                                        constraints: BoxConstraints(
                                           maxWidth: 1270.0,
                                         ),
                                         decoration: BoxDecoration(
@@ -1834,7 +1839,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(16.0),
+                                          padding: EdgeInsets.all(16.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -1856,7 +1861,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1877,7 +1882,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -1916,14 +1921,14 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1945,7 +1950,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     0.0,
                                                               ),
                                                       elevation: 2.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -1958,7 +1963,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 0.0),
                                                 child: Container(
@@ -1969,7 +1974,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             context)
                                                         .primaryBackground,
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(0.0),
                                                       bottomRight:
@@ -1982,7 +1987,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -2087,7 +2092,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -2102,7 +2107,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -2111,7 +2116,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -2178,7 +2183,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -2190,7 +2195,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -2214,7 +2219,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -2237,7 +2242,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -2300,12 +2305,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                       ),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -2370,7 +2375,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -2385,7 +2390,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -2394,7 +2399,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -2428,7 +2433,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -2440,7 +2445,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -2464,7 +2469,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -2487,7 +2492,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -2550,12 +2555,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                       ),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -2620,7 +2625,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -2635,7 +2640,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -2644,7 +2649,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -2678,7 +2683,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -2690,7 +2695,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -2714,7 +2719,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -2737,7 +2742,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -2800,12 +2805,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                       ),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -2870,7 +2875,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -2885,7 +2890,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -2894,7 +2899,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -2928,7 +2933,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -2940,7 +2945,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -2964,7 +2969,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -2987,7 +2992,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -3050,12 +3055,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                       ),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -3120,7 +3125,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -3135,7 +3140,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -3144,7 +3149,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -3178,7 +3183,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -3190,7 +3195,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -3214,7 +3219,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -3237,7 +3242,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -3294,12 +3299,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                               40.0),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -3364,7 +3369,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -3379,7 +3384,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -3388,7 +3393,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -3422,7 +3427,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -3434,7 +3439,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -3458,7 +3463,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -3481,7 +3486,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -3538,12 +3543,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                               40.0),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -3608,7 +3613,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 1.0),
                                                     child: Container(
@@ -3623,7 +3628,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
@@ -3632,7 +3637,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -3666,7 +3671,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               flex: 4,
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -3678,7 +3683,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -3702,7 +3707,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             0.0,
@@ -3725,7 +3730,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Business Name',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -3782,12 +3787,12 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                               40.0),
                                                                     ),
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
@@ -3859,19 +3864,19 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                     ),
                                   ),
                               ]
-                                  .divide(const SizedBox(width: 16.0))
-                                  .addToStart(const SizedBox(width: 16.0)),
+                                  .divide(SizedBox(width: 16.0))
+                                  .addToStart(SizedBox(width: 16.0)),
                             ),
                             if (responsiveVisibility(
                               context: context,
                               desktop: false,
                             ))
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
-                                  constraints: const BoxConstraints(
+                                  constraints: BoxConstraints(
                                     maxWidth: 1370.0,
                                   ),
                                   decoration: BoxDecoration(
@@ -3885,7 +3890,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
+                                    padding: EdgeInsets.all(16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -3904,7 +3909,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 12.0, 0.0),
                                                     child: Text(
@@ -3921,7 +3926,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 12.0, 0.0),
                                                     child: Text(
@@ -3953,11 +3958,11 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -3973,7 +3978,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                           letterSpacing: 0.0,
                                                         ),
                                                 elevation: 2.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -3985,7 +3990,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Container(
                                             width: double.infinity,
@@ -3994,7 +3999,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius: BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(0.0),
                                                 bottomRight:
@@ -4004,7 +4009,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Row(
@@ -4105,7 +4110,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                           scrollDirection: Axis.vertical,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -4119,7 +4124,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -4127,7 +4132,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -4158,7 +4163,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -4171,7 +4176,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4196,7 +4201,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -4224,7 +4229,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -4293,10 +4298,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                 ),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -4356,7 +4361,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -4370,7 +4375,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -4378,7 +4383,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -4409,7 +4414,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -4422,7 +4427,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4447,7 +4452,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -4475,7 +4480,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -4544,10 +4549,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                 ),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -4607,7 +4612,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -4621,7 +4626,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -4629,7 +4634,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -4660,7 +4665,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -4673,7 +4678,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4698,7 +4703,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -4726,7 +4731,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -4795,10 +4800,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                 ),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -4858,7 +4863,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -4872,7 +4877,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -4880,7 +4885,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -4911,7 +4916,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -4924,7 +4929,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4949,7 +4954,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -4977,7 +4982,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -5046,10 +5051,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                 ),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -5109,7 +5114,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -5123,7 +5128,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -5131,7 +5136,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -5162,7 +5167,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -5175,7 +5180,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -5200,7 +5205,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -5228,7 +5233,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -5291,10 +5296,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             40.0),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -5354,7 +5359,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -5368,7 +5373,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -5376,7 +5381,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -5407,7 +5412,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -5420,7 +5425,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -5445,7 +5450,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -5473,7 +5478,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -5536,10 +5541,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             40.0),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -5599,7 +5604,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 1.0),
                                               child: Container(
                                                 width: 100.0,
@@ -5613,7 +5618,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
@@ -5621,7 +5626,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                   ],
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -5652,7 +5657,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                         flex: 4,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -5665,7 +5670,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -5690,7 +5695,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -5718,7 +5723,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -5781,10 +5786,10 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                                                             40.0),
                                                               ),
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -5850,7 +5855,7 @@ class _MeusComercios2WidgetState extends State<MeusComercios2Widget>
                                   ),
                                 ),
                               ),
-                          ].addToEnd(const SizedBox(height: 24.0)),
+                          ].addToEnd(SizedBox(height: 24.0)),
                         ),
                       ),
                     ),
