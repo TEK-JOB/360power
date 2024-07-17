@@ -71,7 +71,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
 
     _model.bairroTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget.bairro?.nome,
+      widget!.bairro?.nome,
       'sem nome',
     ));
 
@@ -155,7 +155,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
           child: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
             child: StreamBuilder<ComerciosRecord>(
-              stream: ComerciosRecord.getDocument(widget.comercioEdt!),
+              stream: ComerciosRecord.getDocument(widget!.comercioEdt!),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
@@ -171,7 +171,9 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                     ),
                   );
                 }
+
                 final containerComerciosRecord = snapshot.data!;
+
                 return Container(
                   width: double.infinity,
                   height: double.infinity,
@@ -1513,8 +1515,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                         ),
                                                       );
                                                     }
+
                                                     final tab2EnderecoRecord =
                                                         snapshot.data!;
+
                                                     return Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1606,6 +1610,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                     containerBairroRecordList =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return Container(
                                                                   decoration:
                                                                       BoxDecoration(),
@@ -1797,7 +1802,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 Autocomplete<String>(
                                                                               initialValue: TextEditingValue(
                                                                                   text: valueOrDefault<String>(
-                                                                                widget.bairro?.nome,
+                                                                                widget!.bairro?.nome,
                                                                                 'sem nome',
                                                                               )),
                                                                               optionsBuilder: (textEditingValue) {
@@ -2340,7 +2345,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         bairro2: _model.novoBairro?.reference,
                                                                                       ));
 
-                                                                                      await widget.comercioEdt!.update(createComerciosRecordData(
+                                                                                      await widget!.comercioEdt!.update(createComerciosRecordData(
                                                                                         enderCompleto: tab2EnderecoRecord.localizar,
                                                                                       ));
                                                                                       Navigator.pop(context);

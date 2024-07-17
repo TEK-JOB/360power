@@ -317,6 +317,10 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                       .where(
                         'Ativo',
                         isEqualTo: true,
+                      )
+                      .where(
+                        'Impedido',
+                        isEqualTo: false,
                       ),
                 ),
                 builder: (context, snapshot) {
@@ -335,6 +339,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                     );
                   }
                   List<UsersRecord> containerUsersRecordList = snapshot.data!;
+
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -479,6 +484,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                 List<BairroRecord>
                                                     containerBairroRecordList =
                                                     snapshot.data!;
+
                                                 return Container(
                                                   width: double.infinity,
                                                   height: double.infinity,
@@ -790,7 +796,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                             queryBuilder: (rotaRecord) =>
                                                                                 rotaRecord.where(
                                                                               'CodigoRota',
-                                                                              isEqualTo: '${widget.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
+                                                                              isEqualTo: '${widget!.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
                                                                             ),
                                                                             singleRecord:
                                                                                 true,
@@ -837,7 +843,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                             queryBuilder: (rotaRecord) =>
                                                                                 rotaRecord.where(
                                                                               'CodigoRota',
-                                                                              isEqualTo: '${widget.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
+                                                                              isEqualTo: '${widget!.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
                                                                             ),
                                                                             singleRecord:
                                                                                 true,
@@ -869,7 +875,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               rotaRecord.where(
                                                                             'CodigoRota',
                                                                             isEqualTo:
-                                                                                '${widget.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
+                                                                                '${widget!.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
                                                                           ),
                                                                           singleRecord:
                                                                               true,
@@ -1553,7 +1559,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                       await corridasRecordReference
                                                                           .set({
                                                                         ...createCorridasRecordData(
-                                                                          comercio: widget
+                                                                          comercio: widget!
                                                                               .comercio
                                                                               ?.reference,
                                                                           ponto:
@@ -1594,7 +1600,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               .text),
                                                                           nomeComercio:
                                                                               valueOrDefault<String>(
-                                                                            widget.comercio?.nomeComercio,
+                                                                            widget!.comercio?.nomeComercio,
                                                                             'Comercio sem nome',
                                                                           ),
                                                                         ),
@@ -1613,7 +1619,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                           CorridasRecord
                                                                               .getDocumentFromData({
                                                                         ...createCorridasRecordData(
-                                                                          comercio: widget
+                                                                          comercio: widget!
                                                                               .comercio
                                                                               ?.reference,
                                                                           ponto:
@@ -1654,7 +1660,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               .text),
                                                                           nomeComercio:
                                                                               valueOrDefault<String>(
-                                                                            widget.comercio?.nomeComercio,
+                                                                            widget!.comercio?.nomeComercio,
                                                                             'Comercio sem nome',
                                                                           ),
                                                                         ),
@@ -1670,7 +1676,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                         ),
                                                                       }, corridasRecordReference);
 
-                                                                      await widget
+                                                                      await widget!
                                                                           .comercio!
                                                                           .reference
                                                                           .update({
@@ -1770,7 +1776,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                       await corridasRecordReference
                                                                           .set({
                                                                         ...createCorridasRecordData(
-                                                                          comercio: widget
+                                                                          comercio: widget!
                                                                               .comercio
                                                                               ?.reference,
                                                                           ponto:
@@ -1811,7 +1817,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               .text),
                                                                           nomeComercio:
                                                                               valueOrDefault<String>(
-                                                                            widget.comercio?.nomeComercio,
+                                                                            widget!.comercio?.nomeComercio,
                                                                             'Comercio sem nome',
                                                                           ),
                                                                         ),
@@ -1828,7 +1834,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                           CorridasRecord
                                                                               .getDocumentFromData({
                                                                         ...createCorridasRecordData(
-                                                                          comercio: widget
+                                                                          comercio: widget!
                                                                               .comercio
                                                                               ?.reference,
                                                                           ponto:
@@ -1869,7 +1875,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               .text),
                                                                           nomeComercio:
                                                                               valueOrDefault<String>(
-                                                                            widget.comercio?.nomeComercio,
+                                                                            widget!.comercio?.nomeComercio,
                                                                             'Comercio sem nome',
                                                                           ),
                                                                         ),
@@ -1883,7 +1889,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                         ),
                                                                       }, corridasRecordReference);
 
-                                                                      await widget
+                                                                      await widget!
                                                                           .comercio!
                                                                           .reference
                                                                           .update({
@@ -1900,7 +1906,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                         notificationTitle:
                                                                             'Nova corrida',
                                                                         notificationText:
-                                                                            '${widget.comercio?.nomeComercio}Enviou uma nova corrida: ',
+                                                                            '${widget!.comercio?.nomeComercio}Enviou uma nova corrida: ',
                                                                         notificationSound:
                                                                             'default',
                                                                         userRefs: containerUsersRecordList
@@ -1997,7 +2003,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                         corridasRecord
                                                                             .where(
                                                                               'Comercio',
-                                                                              isEqualTo: widget.comercio?.reference,
+                                                                              isEqualTo: widget!.comercio?.reference,
                                                                             )
                                                                             .where(
                                                                               'Status',
@@ -2036,6 +2042,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                     columnCorridasRecordList =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2075,8 +2082,10 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return InkWell(
                                                                             splashColor:
                                                                                 Colors.transparent,
@@ -2096,7 +2105,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               var corridasRecordReference = CorridasRecord.collection.doc();
                                                                               await corridasRecordReference.set({
                                                                                 ...createCorridasRecordData(
-                                                                                  comercio: widget.comercio?.reference,
+                                                                                  comercio: widget!.comercio?.reference,
                                                                                   ponto: currentUserDocument?.ponto,
                                                                                   status: 'Aceita',
                                                                                   detalhe: _model.detalhesTextController.text,
@@ -2113,7 +2122,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                                   valorProduto: double.tryParse(_model.prcoPedidoTextController.text),
                                                                                   zap: functions.limpaCamposTelefone(_model.foneTextController.text),
                                                                                   nomeComercio: valueOrDefault<String>(
-                                                                                    widget.comercio?.nomeComercio,
+                                                                                    widget!.comercio?.nomeComercio,
                                                                                     'Comercio sem nome',
                                                                                   ),
                                                                                   motoboy: containerUsersRecord.reference,
@@ -2129,7 +2138,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               });
                                                                               _model.criaCorridaCopy = CorridasRecord.getDocumentFromData({
                                                                                 ...createCorridasRecordData(
-                                                                                  comercio: widget.comercio?.reference,
+                                                                                  comercio: widget!.comercio?.reference,
                                                                                   ponto: currentUserDocument?.ponto,
                                                                                   status: 'Aceita',
                                                                                   detalhe: _model.detalhesTextController.text,
@@ -2146,7 +2155,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                                   valorProduto: double.tryParse(_model.prcoPedidoTextController.text),
                                                                                   zap: functions.limpaCamposTelefone(_model.foneTextController.text),
                                                                                   nomeComercio: valueOrDefault<String>(
-                                                                                    widget.comercio?.nomeComercio,
+                                                                                    widget!.comercio?.nomeComercio,
                                                                                     'Comercio sem nome',
                                                                                   ),
                                                                                   motoboy: containerUsersRecord.reference,
@@ -2167,7 +2176,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                                 escolhido: true,
                                                                               ));
 
-                                                                              await widget.comercio!.reference.update({
+                                                                              await widget!.comercio!.reference.update({
                                                                                 ...mapToFirestore(
                                                                                   {
                                                                                     'qtdCorridasHoje': FieldValue.increment(1),
@@ -2187,7 +2196,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               });
                                                                               triggerPushNotification(
                                                                                 notificationTitle: 'Escolhido',
-                                                                                notificationText: 'O comercio: ${widget.comercio?.nomeComercio}, te escolheu para uma entrega',
+                                                                                notificationText: 'O comercio: ${widget!.comercio?.nomeComercio}, te escolheu para uma entrega',
                                                                                 userRefs: [
                                                                                   containerUsersRecord.reference
                                                                                 ],
@@ -2358,6 +2367,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                         .where((e) =>
                                                                             e.nafila)
                                                                         .toList();
+
                                                                 return Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2400,7 +2410,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                           await corridasRecordReference
                                                                               .set({
                                                                             ...createCorridasRecordData(
-                                                                              comercio: widget.comercio?.reference,
+                                                                              comercio: widget!.comercio?.reference,
                                                                               ponto: currentUserDocument?.ponto,
                                                                               status: 'Aceita',
                                                                               detalhe: _model.detalhesTextController.text,
@@ -2417,7 +2427,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               valorProduto: double.tryParse(_model.prcoPedidoTextController.text),
                                                                               zap: functions.limpaCamposTelefone(_model.foneTextController.text),
                                                                               nomeComercio: valueOrDefault<String>(
-                                                                                widget.comercio?.nomeComercio,
+                                                                                widget!.comercio?.nomeComercio,
                                                                                 'Comercio sem nome',
                                                                               ),
                                                                               motoboy: userfilaItem.reference,
@@ -2434,7 +2444,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                           _model.criaCorridaFila =
                                                                               CorridasRecord.getDocumentFromData({
                                                                             ...createCorridasRecordData(
-                                                                              comercio: widget.comercio?.reference,
+                                                                              comercio: widget!.comercio?.reference,
                                                                               ponto: currentUserDocument?.ponto,
                                                                               status: 'Aceita',
                                                                               detalhe: _model.detalhesTextController.text,
@@ -2451,7 +2461,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                               valorProduto: double.tryParse(_model.prcoPedidoTextController.text),
                                                                               zap: functions.limpaCamposTelefone(_model.foneTextController.text),
                                                                               nomeComercio: valueOrDefault<String>(
-                                                                                widget.comercio?.nomeComercio,
+                                                                                widget!.comercio?.nomeComercio,
                                                                                 'Comercio sem nome',
                                                                               ),
                                                                               motoboy: userfilaItem.reference,
@@ -2477,7 +2487,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                                 true,
                                                                           ));
 
-                                                                          await widget
+                                                                          await widget!
                                                                               .comercio!
                                                                               .reference
                                                                               .update({
@@ -2504,7 +2514,7 @@ class _CadCorridaWidgetState extends State<CadCorridaWidget>
                                                                             notificationTitle:
                                                                                 'Escolhido',
                                                                             notificationText:
-                                                                                'O comercio: ${widget.comercio?.nomeComercio}, te escolheu para uma entrega',
+                                                                                'O comercio: ${widget!.comercio?.nomeComercio}, te escolheu para uma entrega',
                                                                             userRefs: [
                                                                               userfilaItem.reference
                                                                             ],

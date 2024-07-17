@@ -210,7 +210,7 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Text(
                                   valueOrDefault<String>(
-                                    widget.rota?.nomeRota,
+                                    widget!.rota?.nomeRota,
                                     'Sem nome',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -233,8 +233,9 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                 child: Builder(
                                   builder: (context) {
                                     final refCorridas =
-                                        widget.rota?.corridasRota?.toList() ??
+                                        widget!.rota?.corridasRota?.toList() ??
                                             [];
+
                                     return SingleChildScrollView(
                                       primary: false,
                                       child: Column(
@@ -271,8 +272,10 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                     ),
                                                   );
                                                 }
+
                                                 final cartCorridasRecord =
                                                     snapshot.data!;
+
                                                 return Material(
                                                   color: Colors.transparent,
                                                   elevation: 8.0,
@@ -358,9 +361,11 @@ class _CorridasRotaWidgetState extends State<CorridasRotaWidget>
                                                                   ),
                                                                 );
                                                               }
+
                                                               final haderComerciosRecord =
                                                                   snapshot
                                                                       .data!;
+
                                                               return InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,

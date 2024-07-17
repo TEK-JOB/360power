@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/componentes/corrida/corrida_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -216,6 +218,7 @@ class _PagamentosWidgetState extends State<PagamentosWidget>
                                 }
                                 List<CorridasRecord> columnCorridasRecordList =
                                     snapshot.data!;
+
                                 return SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -341,9 +344,11 @@ class _PagamentosWidgetState extends State<PagamentosWidget>
                                                                     ),
                                                                   );
                                                                 }
+
                                                                 final imageComerciosRecord =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return ClipRRect(
                                                                   borderRadius:
                                                                       BorderRadius
@@ -596,78 +601,209 @@ class _PagamentosWidgetState extends State<PagamentosWidget>
                       ],
                     ),
                   ),
-                  Column(
+                  Row(
                     mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(36.0, 0.0, 0.0, 0.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            'Pagar ao comercio: ${formatNumber(
-                              valueOrDefault(currentUserDocument?.divida, 0.0),
-                              formatType: FormatType.decimal,
-                              decimalType: DecimalType.commaDecimal,
-                              currency: 'R\$ ',
-                            )}',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                36.0, 0.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                'Pagar ao comercio: ${formatNumber(
+                                  valueOrDefault(
+                                      currentUserDocument?.divida, 0.0),
+                                  formatType: FormatType.decimal,
+                                  decimalType: DecimalType.commaDecimal,
+                                  currency: 'R\$ ',
+                                )}',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(36.0, 0.0, 0.0, 0.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            'Pagar ao Ponto:  ${formatNumber(
-                              valueOrDefault(
-                                  currentUserDocument?.pagarHoje, 0.0),
-                              formatType: FormatType.decimal,
-                              decimalType: DecimalType.commaDecimal,
-                              currency: 'R\$ ',
-                            )},00',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(36.0, 0.0, 0.0, 0.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            'Total: ${formatNumber(
-                              valueOrDefault(currentUserDocument?.divida, 0.0) +
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                36.0, 0.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                'Pagar ao Ponto:  ${formatNumber(
                                   valueOrDefault(
                                       currentUserDocument?.pagarHoje, 0.0),
-                              formatType: FormatType.decimal,
-                              decimalType: DecimalType.commaDecimal,
-                              currency: 'R\$ ',
-                            )}',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0xFFE3093E),
-                                  fontSize: 22.0,
-                                  letterSpacing: 0.0,
+                                  formatType: FormatType.decimal,
+                                  decimalType: DecimalType.commaDecimal,
+                                  currency: 'R\$ ',
+                                )},00',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                36.0, 0.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                'Total: ${formatNumber(
+                                  valueOrDefault(
+                                          currentUserDocument?.divida, 0.0) +
+                                      valueOrDefault(
+                                          currentUserDocument?.pagarHoje, 0.0),
+                                  formatType: FormatType.decimal,
+                                  decimalType: DecimalType.commaDecimal,
+                                  currency: 'R\$ ',
+                                )}',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: Color(0xFFE3093E),
+                                      fontSize: 22.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (valueOrDefault(currentUserDocument?.pagarHoje, 0.0) >
+                          0.0)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 16.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => FFButtonWidget(
+                              onPressed: () async {
+                                _model.apiResulttqd =
+                                    await CriarPagamentoCall.call(
+                                  stringrandomica: functions.gerarUUID4(),
+                                  description: 'Diaria: ${dateTimeFormat(
+                                    'd/M/y',
+                                    getCurrentTimestamp,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  )}',
+                                  transactionAmount: valueOrDefault(
+                                      currentUserDocument?.pagarHoje, 0.0),
+                                  email: currentUserEmail,
+                                  firstName: currentUserDisplayName,
+                                  paymentMethodId: 'pix',
+                                  accessToken:
+                                      'APP_USR-3703502955972422-032209-8a28de7c37a70e7a013a3ef0f65b46f0-258151765',
+                                );
+
+                                if ((_model.apiResulttqd?.succeeded ?? true)) {
+                                  FFAppState().StatusApp =
+                                      CriarPagamentoCall.status(
+                                    (_model.apiResulttqd?.jsonBody ?? ''),
+                                  )!;
+                                  setState(() {});
+
+                                  context.pushNamed(
+                                    'PagPix',
+                                    queryParameters: {
+                                      'idPix': serializeParam(
+                                        CriarPagamentoCall.idPix(
+                                          (_model.apiResulttqd?.jsonBody ?? ''),
+                                        )?.toString(),
+                                        ParamType.String,
+                                      ),
+                                      'qrcode': serializeParam(
+                                        CriarPagamentoCall.base64(
+                                          (_model.apiResulttqd?.jsonBody ?? ''),
+                                        ),
+                                        ParamType.String,
+                                      ),
+                                      'chavePix': serializeParam(
+                                        CriarPagamentoCall.qrCode(
+                                          (_model.apiResulttqd?.jsonBody ?? ''),
+                                        ),
+                                        ParamType.String,
+                                      ),
+                                      'url': serializeParam(
+                                        CriarPagamentoCall.url(
+                                          (_model.apiResulttqd?.jsonBody ?? ''),
+                                        ),
+                                        ParamType.String,
+                                      ),
+                                      'status': serializeParam(
+                                        '',
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                } else {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('ops, !'),
+                                        content: Text(
+                                            'Falha ao gerar o Pix, tente de novo'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('voltar'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                }
+
+                                setState(() {});
+                              },
+                              text: 'Pagar Ponto',
+                              options: FFButtonOptions(
+                                width: 120.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: Color(0xFFF29200),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 8.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
                                 ),
+                                borderRadius: BorderRadius.circular(8.0),
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                hoverBorderSide: BorderSide(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  width: 1.0,
+                                ),
+                                hoverTextColor: Color(0xFFF29200),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                   Padding(

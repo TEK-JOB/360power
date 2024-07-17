@@ -256,7 +256,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                     Duration(milliseconds: 500),
                                                 imageUrl:
                                                     valueOrDefault<String>(
-                                                  widget.comercioSelect?.logo,
+                                                  widget!.comercioSelect?.logo,
                                                   'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/sem%20logo2.png?alt=media&token=b0fab6b5-01c2-4681-bf51-f2989da1ad72',
                                                 ),
                                                 width: 44.0,
@@ -284,7 +284,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   children: [
                                                     Text(
                                                       valueOrDefault<String>(
-                                                        widget.comercioSelect
+                                                        widget!.comercioSelect
                                                             ?.nomeComercio,
                                                         'Não informado',
                                                       ),
@@ -307,7 +307,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                   0.0),
                                                       child: AutoSizeText(
                                                         valueOrDefault<String>(
-                                                          widget.comercioSelect
+                                                          widget!.comercioSelect
                                                               ?.enderCompleto,
                                                           'sem endereço',
                                                         ).maybeHandleOverflow(
@@ -380,7 +380,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                 0.0, 4.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
-                                                        widget.comercioSelect
+                                                        widget!.comercioSelect
                                                             ?.qtdCorridasTotal
                                                             ?.toString(),
                                                         '0',
@@ -452,7 +452,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                 0.0, 4.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
-                                                        widget.comercioSelect
+                                                        widget!.comercioSelect
                                                             ?.telefoneComercio,
                                                         '0',
                                                       ),
@@ -501,7 +501,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                             stream: queryPixRecord(
                               queryBuilder: (pixRecord) => pixRecord.where(
                                 'ComercioPix',
-                                isEqualTo: widget.comercioSelect?.reference,
+                                isEqualTo: widget!.comercioSelect?.reference,
                               ),
                               singleRecord: true,
                             ),
@@ -521,6 +521,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                 );
                               }
                               List<PixRecord> pixPixRecordList = snapshot.data!;
+
                               // Return an empty Container when the item does not exist.
                               if (snapshot.data!.isEmpty) {
                                 return Container();
@@ -897,7 +898,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                   Directionality.of(
                                                                       context)),
                                                           child: CadPixWidget(
-                                                            comercioPix: widget
+                                                            comercioPix: widget!
                                                                 .comercioSelect!
                                                                 .reference,
                                                           ),
@@ -1063,7 +1064,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                         corridasRecord
                                                             .where(
                                                               'Comercio',
-                                                              isEqualTo: widget
+                                                              isEqualTo: widget!
                                                                   .comercioSelect
                                                                   ?.reference,
                                                             )
@@ -1101,6 +1102,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                 List<CorridasRecord>
                                                     columnCorridasRecordList =
                                                     snapshot.data!;
+
                                                 return SingleChildScrollView(
                                                   child: Column(
                                                     mainAxisSize:
@@ -1235,7 +1237,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                                                     ),
                                                                                   );
                                                                                 }
+
                                                                                 final imageComerciosRecord = snapshot.data!;
+
                                                                                 return ClipRRect(
                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                   child: Image.network(
@@ -1417,7 +1421,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                               ),
                               child: StreamBuilder<EnderecoRecord>(
                                 stream: EnderecoRecord.getDocument(
-                                    widget.comercioSelect!.local!),
+                                    widget!.comercioSelect!.local!),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -1434,7 +1438,9 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                       ),
                                     );
                                   }
+
                                   final columnEnderecoRecord = snapshot.data!;
+
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -1772,6 +1778,7 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                                   List<BairroRecord>
                                                       bairroBairroRecordList =
                                                       snapshot.data!;
+
                                                   return Container(
                                                     width: 300.0,
                                                     child: Autocomplete<String>(
@@ -2712,13 +2719,13 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           'CorridasComercio',
                                           queryParameters: {
                                             'comercioPag': serializeParam(
-                                              widget.comercioSelect,
+                                              widget!.comercioSelect,
                                               ParamType.Document,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
                                             'comercioPag':
-                                                widget.comercioSelect,
+                                                widget!.comercioSelect,
                                           },
                                         );
                                       },
@@ -2756,6 +2763,74 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           width: 1.0,
                                         ),
                                         hoverTextColor: Color(0xFFF29200),
+                                      ),
+                                    ),
+                                  ),
+                                  Builder(
+                                    builder: (context) => Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 16.0, 8.0, 16.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (dialogContext) {
+                                              return Dialog(
+                                                elevation: 0,
+                                                insetPadding: EdgeInsets.zero,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                alignment: AlignmentDirectional(
+                                                        0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                                child: CadPixWidget(
+                                                  comercioPix: widget!
+                                                      .comercioSelect!
+                                                      .reference,
+                                                ),
+                                              );
+                                            },
+                                          ).then((value) => setState(() {}));
+                                        },
+                                        text: 'Adicionar pix',
+                                        options: FFButtonOptions(
+                                          width: 200.0,
+                                          height: 50.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: Color(0xFFF29200),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 8.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          hoverBorderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            width: 1.0,
+                                          ),
+                                          hoverTextColor: Color(0xFFF29200),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2800,74 +2875,6 @@ class _VerComercioWidgetState extends State<VerComercioWidget>
                                           width: 1.0,
                                         ),
                                         hoverTextColor: Color(0xFFF29200),
-                                      ),
-                                    ),
-                                  ),
-                                  Builder(
-                                    builder: (context) => Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 8.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (dialogContext) {
-                                              return Dialog(
-                                                elevation: 0,
-                                                insetPadding: EdgeInsets.zero,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                alignment: AlignmentDirectional(
-                                                        0.0, 0.0)
-                                                    .resolve(Directionality.of(
-                                                        context)),
-                                                child: CadPixWidget(
-                                                  comercioPix: widget
-                                                      .comercioSelect!
-                                                      .reference,
-                                                ),
-                                              );
-                                            },
-                                          ).then((value) => setState(() {}));
-                                        },
-                                        text: 'Adicionar',
-                                        options: FFButtonOptions(
-                                          width: 100.0,
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0xFFF29200),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 8.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                          hoverBorderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            width: 1.0,
-                                          ),
-                                          hoverTextColor: Color(0xFFF29200),
-                                        ),
                                       ),
                                     ),
                                   ),

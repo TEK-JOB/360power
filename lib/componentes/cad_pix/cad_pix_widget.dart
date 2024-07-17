@@ -865,7 +865,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                               await pixRecordReference1.set(createPixRecordData(
                                 banco: _model.bancoTextController.text,
                                 tipo: _model.dDtipoValue,
-                                comercioPix: widget.comercioPix,
+                                comercioPix: widget!.comercioPix,
                                 nomePix: _model.nomePixTextController.text,
                                 chavePix: functions.limpaCamposTelefone(
                                     _model.chaveCpfTextController.text),
@@ -875,7 +875,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   createPixRecordData(
                                     banco: _model.bancoTextController.text,
                                     tipo: _model.dDtipoValue,
-                                    comercioPix: widget.comercioPix,
+                                    comercioPix: widget!.comercioPix,
                                     nomePix: _model.nomePixTextController.text,
                                     chavePix: functions.limpaCamposTelefone(
                                         _model.chaveCpfTextController.text),
@@ -884,7 +884,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   pixRecordReference1);
 
-                              await widget.comercioPix!
+                              await widget!.comercioPix!
                                   .update(createComerciosRecordData(
                                 pix: _model.pix1?.reference,
                               ));
@@ -895,7 +895,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                               await pixRecordReference2.set(createPixRecordData(
                                 banco: _model.bancoTextController.text,
                                 tipo: _model.dDtipoValue,
-                                comercioPix: widget.comercioPix,
+                                comercioPix: widget!.comercioPix,
                                 nomePix: _model.nomePixTextController.text,
                                 chavePix: functions.limpaCamposTelefone(
                                     _model.chaveCNPJTextController.text),
@@ -905,7 +905,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   createPixRecordData(
                                     banco: _model.bancoTextController.text,
                                     tipo: _model.dDtipoValue,
-                                    comercioPix: widget.comercioPix,
+                                    comercioPix: widget!.comercioPix,
                                     nomePix: _model.nomePixTextController.text,
                                     chavePix: functions.limpaCamposTelefone(
                                         _model.chaveCNPJTextController.text),
@@ -914,7 +914,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   pixRecordReference2);
 
-                              await widget.comercioPix!
+                              await widget!.comercioPix!
                                   .update(createComerciosRecordData(
                                 pix: _model.pix2?.reference,
                               ));
@@ -925,7 +925,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                               await pixRecordReference3.set(createPixRecordData(
                                 banco: _model.bancoTextController.text,
                                 tipo: _model.dDtipoValue,
-                                comercioPix: widget.comercioPix,
+                                comercioPix: widget!.comercioPix,
                                 nomePix: _model.nomePixTextController.text,
                                 chavePix: functions.limpaCamposTelefone(
                                     _model.chaveCelularTextController.text),
@@ -936,7 +936,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   createPixRecordData(
                                     banco: _model.bancoTextController.text,
                                     tipo: _model.dDtipoValue,
-                                    comercioPix: widget.comercioPix,
+                                    comercioPix: widget!.comercioPix,
                                     nomePix: _model.nomePixTextController.text,
                                     chavePix: functions.limpaCamposTelefone(
                                         _model.chaveCelularTextController.text),
@@ -945,7 +945,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   pixRecordReference3);
 
-                              await widget.comercioPix!
+                              await widget!.comercioPix!
                                   .update(createComerciosRecordData(
                                 pix: _model.pix3?.reference,
                               ));
@@ -956,7 +956,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                               await pixRecordReference4.set(createPixRecordData(
                                 banco: _model.bancoTextController.text,
                                 tipo: _model.dDtipoValue,
-                                comercioPix: widget.comercioPix,
+                                comercioPix: widget!.comercioPix,
                                 nomePix: _model.nomePixTextController.text,
                                 chavePix: _model.chaveOutraTextController.text,
                                 verChave: _model.chaveOutraTextController.text,
@@ -965,7 +965,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   createPixRecordData(
                                     banco: _model.bancoTextController.text,
                                     tipo: _model.dDtipoValue,
-                                    comercioPix: widget.comercioPix,
+                                    comercioPix: widget!.comercioPix,
                                     nomePix: _model.nomePixTextController.text,
                                     chavePix:
                                         _model.chaveOutraTextController.text,
@@ -974,7 +974,7 @@ class _CadPixWidgetState extends State<CadPixWidget>
                                   ),
                                   pixRecordReference4);
 
-                              await widget.comercioPix!
+                              await widget!.comercioPix!
                                   .update(createComerciosRecordData(
                                 pix: _model.pix4?.reference,
                               ));

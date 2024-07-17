@@ -1228,8 +1228,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             ),
                                           );
                                         }
+
                                         final enderecoEnderecoRecord =
                                             snapshot.data!;
+
                                         return Material(
                                           color: Colors.transparent,
                                           elevation: 4.0,
@@ -1643,6 +1645,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                         bairroBairroRecordList =
                                                                         snapshot
                                                                             .data!;
+
                                                                     return Container(
                                                                       width:
                                                                           300.0,

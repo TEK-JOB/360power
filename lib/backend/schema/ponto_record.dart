@@ -31,11 +31,6 @@ class PontoRecord extends FirestoreRecord {
   DocumentReference? get endereco => _endereco;
   bool hasEndereco() => _endereco != null;
 
-  // "listCorridas" field.
-  List<DocumentReference>? _listCorridas;
-  List<DocumentReference> get listCorridas => _listCorridas ?? const [];
-  bool hasListCorridas() => _listCorridas != null;
-
   // "FilaMotoboys" field.
   List<DocumentReference>? _filaMotoboys;
   List<DocumentReference> get filaMotoboys => _filaMotoboys ?? const [];
@@ -75,7 +70,6 @@ class PontoRecord extends FirestoreRecord {
     _gestor = getDataList(snapshotData['gestor']);
     _aberto = snapshotData['aberto'] as bool?;
     _endereco = snapshotData['endereco'] as DocumentReference?;
-    _listCorridas = getDataList(snapshotData['listCorridas']);
     _filaMotoboys = getDataList(snapshotData['FilaMotoboys']);
     _litMotoboys = getDataList(snapshotData['LitMotoboys']);
     _listComercios = getDataList(snapshotData['ListComercios']);
@@ -149,7 +143,6 @@ class PontoRecordDocumentEquality implements Equality<PontoRecord> {
     return listEquality.equals(e1?.gestor, e2?.gestor) &&
         e1?.aberto == e2?.aberto &&
         e1?.endereco == e2?.endereco &&
-        listEquality.equals(e1?.listCorridas, e2?.listCorridas) &&
         listEquality.equals(e1?.filaMotoboys, e2?.filaMotoboys) &&
         listEquality.equals(e1?.litMotoboys, e2?.litMotoboys) &&
         listEquality.equals(e1?.listComercios, e2?.listComercios) &&
@@ -164,7 +157,6 @@ class PontoRecordDocumentEquality implements Equality<PontoRecord> {
         e?.gestor,
         e?.aberto,
         e?.endereco,
-        e?.listCorridas,
         e?.filaMotoboys,
         e?.litMotoboys,
         e?.listComercios,

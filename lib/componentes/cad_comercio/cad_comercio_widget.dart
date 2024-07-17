@@ -965,8 +965,10 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         ),
                                       );
                                     }
+
                                     final enderecoEnderecoRecord =
                                         snapshot.data!;
+
                                     return Container(
                                       decoration: BoxDecoration(),
                                       child: Column(
@@ -1027,6 +1029,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                               List<BairroRecord>
                                                   containerBairroRecordList =
                                                   snapshot.data!;
+
                                               return Container(
                                                 decoration: BoxDecoration(),
                                                 child: Padding(

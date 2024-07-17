@@ -220,7 +220,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 24.0),
                           child: Text(
-                            'Cadastro de ${widget.tipo}',
+                            'Cadastro de ${widget!.tipo}',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
@@ -251,7 +251,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 await launchURL(
-                                    'https://power360.flutterflow.app/Cadastro?tp=${widget.tipo}&de=${widget.ponto?.id}');
+                                    'https://power360.flutterflow.app/Cadastro?tp=${widget!.tipo}&de=${widget!.ponto?.id}');
                               },
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -259,7 +259,7 @@ class _QrWidgetState extends State<QrWidget> with TickerProviderStateMixin {
                                 children: [
                                   BarcodeWidget(
                                     data:
-                                        'https://power360.flutterflow.app/Cadastro?tp=${widget.tipo}&de=${widget.ponto?.id}',
+                                        'https://power360.flutterflow.app/Cadastro?tp=${widget!.tipo}&de=${widget!.ponto?.id}',
                                     barcode: Barcode.qrCode(),
                                     width: 300.0,
                                     height: 300.0,

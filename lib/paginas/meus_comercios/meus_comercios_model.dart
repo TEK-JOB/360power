@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'meus_comercios_widget.dart' show MeusComerciosWidget;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';

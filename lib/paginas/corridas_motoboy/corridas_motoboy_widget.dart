@@ -124,7 +124,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget.motoboy!),
+      stream: UsersRecord.getDocument(widget!.motoboy!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -143,7 +143,9 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
             ),
           );
         }
+
         final corridasMotoboyUsersRecord = snapshot.data!;
+
         return Title(
             title: 'CorridasMotoboy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -656,7 +658,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                             )
                                             .where(
                                               'Motoboy',
-                                              isEqualTo: widget.motoboy,
+                                              isEqualTo: widget!.motoboy,
                                             )
                                             .orderBy('DisponivelEm'),
                                   ),
@@ -679,6 +681,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                     List<CorridasRecord>
                                         containerCorridasRecordList =
                                         snapshot.data!;
+
                                     return Container(
                                       decoration: BoxDecoration(),
                                       child: Column(
@@ -759,6 +762,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                   final corridasMotoboy =
                                                       containerCorridasRecordList
                                                           .toList();
+
                                                   return SingleChildScrollView(
                                                     child: Column(
                                                       mainAxisSize:

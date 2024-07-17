@@ -141,6 +141,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
               );
             }
             List<AjudaRecord> todasasRuasAjudaRecordList = snapshot.data!;
+
             return Container(
               width: double.infinity,
               height: double.infinity,
@@ -232,6 +233,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                     builder: (context) {
                                       final ruas =
                                           todasasRuasAjudaRecordList.toList();
+
                                       return SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,

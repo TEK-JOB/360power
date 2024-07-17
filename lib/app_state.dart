@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -92,6 +93,12 @@ class FFAppState extends ChangeNotifier {
     value != null
         ? prefs.setString('ff_AppPontp', value.path)
         : prefs.remove('ff_AppPontp');
+  }
+
+  String _StatusApp = '';
+  String get StatusApp => _StatusApp;
+  set StatusApp(String value) {
+    _StatusApp = value;
   }
 }
 

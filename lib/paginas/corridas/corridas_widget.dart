@@ -136,7 +136,7 @@ class _CorridasWidgetState extends State<CorridasWidget>
                       child: SingleChildScrollView(
                         primary: false,
                         child: Column(
-                          mainAxisSize: MainAxisSize.min,
+                          mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             if (responsiveVisibility(
@@ -185,7 +185,7 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 16.0, 0.0),
+                                      0.0, 0.0, 16.0, 16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -242,9 +242,10 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                     List<ComerciosRecord>
                                         listComercoComerciosRecordList =
                                         snapshot.data!;
+
                                     return Container(
                                       width: double.infinity,
-                                      height: 160.0,
+                                      height: 200.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -349,6 +350,7 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                                     final comercioopt =
                                                         listComercoComerciosRecordList
                                                             .toList();
+
                                                     return Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -934,6 +936,7 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                   List<CorridasRecord>
                                       containerCorridasRecordList =
                                       snapshot.data!;
+
                                   return Container(
                                     decoration: BoxDecoration(),
                                     child: Column(
@@ -1224,6 +1227,7 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                               final corridasDoCocmercio =
                                                   containerCorridasRecordList
                                                       .toList();
+
                                               return SingleChildScrollView(
                                                 child: Column(
                                                   mainAxisSize:
@@ -1342,9 +1346,11 @@ class _CorridasWidgetState extends State<CorridasWidget>
                                                                         ),
                                                                       );
                                                                     }
+
                                                                     final haderComerciosRecord =
                                                                         snapshot
                                                                             .data!;
+
                                                                     return Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize

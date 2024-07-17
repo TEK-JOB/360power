@@ -51,18 +51,18 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
     _model = createModel(context, () => EdtCorridaModel());
 
     _model.idTextController ??=
-        TextEditingController(text: widget.corrida?.idPedido);
+        TextEditingController(text: widget!.corrida?.idPedido);
     _model.idFocusNode ??= FocusNode();
 
     _model.bairroTextController ??= TextEditingController();
 
     _model.foneTextController ??=
-        TextEditingController(text: widget.corrida?.foneDestino);
+        TextEditingController(text: widget!.corrida?.foneDestino);
     _model.foneFocusNode ??= FocusNode();
 
     _model.prcoPedidoTextController ??= TextEditingController(
         text: formatNumber(
-      widget.corrida?.valorProduto,
+      widget!.corrida?.valorProduto,
       formatType: FormatType.decimal,
       decimalType: DecimalType.commaDecimal,
       currency: 'R\$ ',
@@ -70,7 +70,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
     _model.prcoPedidoFocusNode ??= FocusNode();
 
     _model.detalhesTextController ??=
-        TextEditingController(text: widget.corrida?.detalhe);
+        TextEditingController(text: widget!.corrida?.detalhe);
     _model.detalhesFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -323,6 +323,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                               }
                               List<BairroRecord> containerBairroRecordList =
                                   snapshot.data!;
+
                               return Container(
                                 width: double.infinity,
                                 constraints: BoxConstraints(
@@ -1007,7 +1008,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                       SwitchListTile.adaptive(
                                                     value: _model
                                                             .switchListTileValue ??=
-                                                        widget.corrida!.pago,
+                                                        widget!.corrida!.pago,
                                                     onChanged:
                                                         (newValue) async {
                                                       setState(() => _model
@@ -1203,7 +1204,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                       rotaRecord.where(
                                                     'CodigoRota',
                                                     isEqualTo:
-                                                        '${widget.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
+                                                        '${widget!.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
                                                   ),
                                                   singleRecord: true,
                                                 ),
@@ -1228,6 +1229,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                   List<RotaRecord>
                                                       containerRotaRecordList =
                                                       snapshot.data!;
+
                                                   // Return an empty Container when the item does not exist.
                                                   if (snapshot.data!.isEmpty) {
                                                     return Container();

@@ -119,7 +119,6 @@ final parametersBuilderMap =
   'Corridas': ParameterData.none(),
   'Home': ParameterData.none(),
   'MeusMotoboys': ParameterData.none(),
-  'MeusComercios2': ParameterData.none(),
   'list': ParameterData.none(),
   'perfil': ParameterData.none(),
   'Dashboard': ParameterData.none(),
@@ -157,7 +156,15 @@ final parametersBuilderMap =
               data, 'comercioSelect', ComerciosRecord.fromSnapshot),
         },
       ),
-  'listdet': ParameterData.none(),
+  'PagPix': (data) async => ParameterData(
+        allParams: {
+          'idPix': getParameter<String>(data, 'idPix'),
+          'qrcode': getParameter<String>(data, 'qrcode'),
+          'chavePix': getParameter<String>(data, 'chavePix'),
+          'url': getParameter<String>(data, 'url'),
+          'status': getParameter<String>(data, 'status'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

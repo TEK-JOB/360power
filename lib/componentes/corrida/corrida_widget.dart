@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
+import '/componentes/endere_comercio/endere_comercio_widget.dart';
 import '/componentes/tranferir_corrida/tranferir_corrida_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -76,7 +77,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                 ),
               );
             }
+
             final containerPontoRecord = snapshot.data!;
+
             return Container(
               width: double.infinity,
               height: double.infinity,
@@ -162,7 +165,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    if (widget.parametCorrida?.aceito == false)
+                                    if (widget!.parametCorrida?.aceito == false)
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
@@ -201,7 +204,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     ) ??
                                                     false;
                                             if (confirmDialogResponse) {
-                                              await widget
+                                              await widget!
                                                   .parametCorrida!.reference
                                                   .update({
                                                 ...createCorridasRecordData(
@@ -264,7 +267,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                           ),
                                         ),
                                       ),
-                                    if (widget.parametCorrida?.status ==
+                                    if (widget!.parametCorrida?.status ==
                                         'Agendada')
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -307,7 +310,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                             if (confirmDialogResponse) {
                                               Navigator.pop(context);
 
-                                              await widget
+                                              await widget!
                                                   .parametCorrida!.reference
                                                   .update({
                                                 ...createCorridasRecordData(
@@ -345,7 +348,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 notificationTitle:
                                                     'Nova corrida',
                                                 notificationText:
-                                                    '${widget.parametCorrida?.nomeComercio}Enviou uma nova corrida: ',
+                                                    '${widget!.parametCorrida?.nomeComercio}Enviou uma nova corrida: ',
                                                 notificationSound: 'default',
                                                 userRefs: _model.ashemotoboy3!
                                                     .map((e) => e.reference)
@@ -408,7 +411,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                           ),
                                         ),
                                       ),
-                                    if (widget.parametCorrida?.pago == false)
+                                    if (widget!.parametCorrida?.pago == false)
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 16.0, 0.0),
@@ -447,7 +450,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     ) ??
                                                     false;
                                             if (confirmDialogResponse) {
-                                              await widget
+                                              await widget!
                                                   .parametCorrida!.reference
                                                   .update({
                                                 ...createCorridasRecordData(
@@ -460,16 +463,16 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   },
                                                 ),
                                               });
-                                              if (widget.parametCorrida
+                                              if (widget!.parametCorrida
                                                       ?.concluido ==
                                                   true) {
-                                                await widget
+                                                await widget!
                                                     .parametCorrida!.motoboy!
                                                     .update({
                                                   ...mapToFirestore(
                                                     {
                                                       'Divida': FieldValue
-                                                          .increment(-(widget
+                                                          .increment(-(widget!
                                                               .parametCorrida!
                                                               .valorProduto)),
                                                     },
@@ -567,7 +570,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     ) ??
                                                     false;
                                             if (confirmDialogResponse) {
-                                              await widget
+                                              await widget!
                                                   .parametCorrida!.reference
                                                   .delete();
                                               Navigator.pop(context);
@@ -633,7 +636,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        if (widget.parametCorrida?.status ==
+                                        if (widget!.parametCorrida?.status ==
                                             'Disponivel')
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
@@ -681,7 +684,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               ) ??
                                                               false;
                                                       if (confirmDialogResponse) {
-                                                        await widget
+                                                        await widget!
                                                             .parametCorrida!
                                                             .reference
                                                             .delete();
@@ -758,7 +761,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      if (widget.parametCorrida
+                                                      if (widget!.parametCorrida
                                                               ?.disponivel ==
                                                           true) {
                                                         if (valueOrDefault<
@@ -770,7 +773,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                   .filaMotoboys
                                                                   .first ==
                                                               currentUserReference) {
-                                                            await widget
+                                                            await widget!
                                                                 .parametCorrida!
                                                                 .reference
                                                                 .update({
@@ -849,7 +852,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                   .filaMotoboys
                                                                   .length ==
                                                               0) {
-                                                            await widget
+                                                            await widget!
                                                                 .parametCorrida!
                                                                 .reference
                                                                 .update({
@@ -988,16 +991,16 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                 ),
                                             ],
                                           ),
-                                        if (widget.parametCorrida?.status ==
+                                        if (widget!.parametCorrida?.status ==
                                             'Aceita')
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              if (widget.parametCorrida?.zap !=
+                                              if (widget!.parametCorrida?.zap !=
                                                       null &&
-                                                  widget.parametCorrida?.zap !=
+                                                  widget!.parametCorrida?.zap !=
                                                       '')
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
@@ -1006,7 +1009,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       await launchURL(
-                                                          'https://api.whatsapp.com/send?phone=55${widget.parametCorrida?.zap}&text=oi');
+                                                          'https://api.whatsapp.com/send?phone=55${widget!.parametCorrida?.zap}&text=oi');
                                                     },
                                                     text: 'Chamar',
                                                     icon: FaIcon(
@@ -1071,7 +1074,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    await widget.parametCorrida!
+                                                    await widget!
+                                                        .parametCorrida!
                                                         .reference
                                                         .update({
                                                       ...createCorridasRecordData(
@@ -1162,7 +1166,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             child:
                                                                 TranferirCorridaWidget(
                                                               corridaTransfere:
-                                                                  widget
+                                                                  widget!
                                                                       .parametCorrida!,
                                                             ),
                                                           );
@@ -1265,7 +1269,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             ) ??
                                                             false;
                                                     if (confirmDialogResponse) {
-                                                      await widget
+                                                      await widget!
                                                           .parametCorrida!
                                                           .reference
                                                           .update({
@@ -1348,14 +1352,15 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               ),
                                             ],
                                           ),
-                                        if (widget.parametCorrida?.status ==
+                                        if (widget!.parametCorrida?.status ==
                                             'Coletado')
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              if (widget.parametCorrida?.pago ==
+                                              if (widget!
+                                                      .parametCorrida?.pago ==
                                                   true)
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
@@ -1363,7 +1368,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      await widget
+                                                      await widget!
                                                           .parametCorrida!
                                                           .reference
                                                           .update(
@@ -1429,9 +1434,9 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              if (widget.parametCorrida?.zap !=
+                                              if (widget!.parametCorrida?.zap !=
                                                       null &&
-                                                  widget.parametCorrida?.zap !=
+                                                  widget!.parametCorrida?.zap !=
                                                       '')
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
@@ -1440,7 +1445,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       await launchURL(
-                                                          'https://api.whatsapp.com/send?phone=55${widget.parametCorrida?.zap}&text=oi');
+                                                          'https://api.whatsapp.com/send?phone=55${widget!.parametCorrida?.zap}&text=oi');
                                                     },
                                                     text: 'Chamar',
                                                     icon: FaIcon(
@@ -1505,7 +1510,8 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         0.0, 0.0, 16.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    await widget.parametCorrida!
+                                                    await widget!
+                                                        .parametCorrida!
                                                         .reference
                                                         .update({
                                                       ...createCorridasRecordData(
@@ -1519,20 +1525,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         },
                                                       ),
                                                     });
-
-                                                    await currentUserReference!
-                                                        .update({
-                                                      ...createUsersRecordData(
-                                                        nafila: true,
-                                                      ),
-                                                      ...mapToFirestore(
-                                                        {
-                                                          'Alterado_em': FieldValue
-                                                              .serverTimestamp(),
-                                                        },
-                                                      ),
-                                                    });
-                                                    if (widget.parametCorrida
+                                                    if (widget!.parametCorrida
                                                             ?.pago ==
                                                         true) {
                                                       await currentUserReference!
@@ -1543,7 +1536,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ...mapToFirestore(
                                                           {
                                                             'GanhosHoje': FieldValue
-                                                                .increment(widget
+                                                                .increment(widget!
                                                                     .parametCorrida!
                                                                     .valorCorrida),
                                                             'PagarHoje':
@@ -1566,7 +1559,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ...mapToFirestore(
                                                           {
                                                             'GanhosHoje': FieldValue
-                                                                .increment(widget
+                                                                .increment(widget!
                                                                     .parametCorrida!
                                                                     .valorCorrida),
                                                             'PagarHoje':
@@ -1574,7 +1567,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     .increment(
                                                                         1.0),
                                                             'Divida': FieldValue
-                                                                .increment(widget
+                                                                .increment(widget!
                                                                     .parametCorrida!
                                                                     .valorProduto),
                                                             'qtdCorridasHoje':
@@ -1662,7 +1655,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             child:
                                                                 TranferirCorridaWidget(
                                                               corridaTransfere:
-                                                                  widget
+                                                                  widget!
                                                                       .parametCorrida!,
                                                             ),
                                                           );
@@ -1765,7 +1758,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             ) ??
                                                             false;
                                                     if (confirmDialogResponse) {
-                                                      await widget
+                                                      await widget!
                                                           .parametCorrida!
                                                           .reference
                                                           .update({
@@ -1848,6 +1841,85 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                               ),
                                             ],
                                           ),
+                                        Builder(
+                                          builder: (context) => Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 16.0, 0.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder: (dialogContext) {
+                                                    return Dialog(
+                                                      elevation: 0,
+                                                      insetPadding:
+                                                          EdgeInsets.zero,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                                  0.0, 0.0)
+                                                              .resolve(
+                                                                  Directionality.of(
+                                                                      context)),
+                                                      child:
+                                                          EndereComercioWidget(
+                                                        comercio: widget!
+                                                            .parametCorrida!
+                                                            .comercio!,
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then(
+                                                    (value) => setState(() {}));
+                                              },
+                                              text: 'Comercio',
+                                              icon: Icon(
+                                                Icons.location_pin,
+                                                color: Color(0xFFF29200),
+                                                size: 24.0,
+                                              ),
+                                              options: FFButtonOptions(
+                                                width: 130.0,
+                                                height: 45.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                                elevation: 8.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                hoverColor: Color(0xFFF29200),
+                                                hoverTextColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                hoverElevation: 3.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -1917,7 +1989,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
-                                                                widget
+                                                                widget!
                                                                     .parametCorrida
                                                                     ?.nomeComercio,
                                                                 'Comercio sem nome',
@@ -1956,7 +2028,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                           child: Text(
                                                             dateTimeFormat(
                                                               'd/M/y',
-                                                              widget
+                                                              widget!
                                                                   .parametCorrida!
                                                                   .disponivelEm!,
                                                               locale: FFLocalizations
@@ -1992,7 +2064,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                       0.0),
                                                           child: Text(
                                                             formatNumber(
-                                                              widget
+                                                              widget!
                                                                   .parametCorrida!
                                                                   .valorCorrida,
                                                               formatType:
@@ -2025,7 +2097,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         Text(
                                                           valueOrDefault<
                                                               String>(
-                                                            widget
+                                                            widget!
                                                                 .parametCorrida
                                                                 ?.idPedido,
                                                             'Sem id',
@@ -2098,7 +2170,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     .circle,
                                                                 border:
                                                                     Border.all(
-                                                                  color: widget
+                                                                  color: widget!
                                                                               .parametCorrida
                                                                               ?.pago ==
                                                                           true
@@ -2112,7 +2184,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                               child: Icon(
                                                                 Icons
                                                                     .monetization_on_rounded,
-                                                                color: widget
+                                                                color: widget!
                                                                             .parametCorrida
                                                                             ?.pago ==
                                                                         true
@@ -2132,7 +2204,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                widget.parametCorrida
+                                                                widget!.parametCorrida
                                                                             ?.pago ==
                                                                         true
                                                                     ? 'Pago em: '
@@ -2143,7 +2215,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: widget.parametCorrida?.pago ==
+                                                                      color: widget!.parametCorrida?.pago ==
                                                                               true
                                                                           ? Color(
                                                                               0xFF5CF91B)
@@ -2159,7 +2231,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     ),
                                                               ),
                                                             ),
-                                                            if (widget
+                                                            if (widget!
                                                                     .parametCorrida
                                                                     ?.pago ==
                                                                 true)
@@ -2174,7 +2246,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .disponivelEm!,
                                                                     locale: FFLocalizations.of(
@@ -2254,7 +2326,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           TextSpan(
                                                                         children: [
                                                                           TextSpan(
-                                                                            text: widget.parametCorrida?.pago == true
+                                                                            text: widget!.parametCorrida?.pago == true
                                                                                 ? 'Pagamento efetuado com sucesso'
                                                                                 : 'Pagamento não realizado',
                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -2294,7 +2366,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                        if (!widget
+                                                        if (!widget!
                                                             .parametCorrida!
                                                             .pago)
                                                           Padding(
@@ -2311,7 +2383,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                         pixRecord
                                                                             .where(
                                                                   'ComercioPix',
-                                                                  isEqualTo: widget
+                                                                  isEqualTo: widget!
                                                                       .parametCorrida
                                                                       ?.comercio,
                                                                 ),
@@ -2345,6 +2417,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                     pixPixRecordList =
                                                                     snapshot
                                                                         .data!;
+
                                                                 // Return an empty Container when the item does not exist.
                                                                 if (snapshot
                                                                     .data!
@@ -2671,7 +2744,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                       ],
                                                     ),
                                                   ),
-                                                  if (widget.parametCorrida
+                                                  if (widget!.parametCorrida
                                                           ?.agendado ==
                                                       true)
                                                     Container(
@@ -2768,7 +2841,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .aggendadoEm!,
                                                                     locale: FFLocalizations.of(
@@ -2877,7 +2950,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ],
                                                       ),
                                                     ),
-                                                  if (widget.parametCorrida
+                                                  if (widget!.parametCorrida
                                                           ?.disponivel ==
                                                       true)
                                                     Container(
@@ -2974,7 +3047,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .disponivelEm!,
                                                                     locale: FFLocalizations.of(
@@ -3055,7 +3128,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                           Text(
                                                                         valueOrDefault<
                                                                             String>(
-                                                                          widget
+                                                                          widget!
                                                                               .parametCorrida
                                                                               ?.detalhe,
                                                                           'Sem detalhe',
@@ -3080,7 +3153,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ],
                                                       ),
                                                     ),
-                                                  if (widget.parametCorrida
+                                                  if (widget!.parametCorrida
                                                           ?.aceito ==
                                                       true)
                                                     Container(
@@ -3177,7 +3250,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .aceitoEm!,
                                                                     locale: FFLocalizations.of(
@@ -3274,7 +3347,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                             ),
                                                                             TextSpan(
                                                                               text: valueOrDefault<String>(
-                                                                                widget.parametCorrida?.nomeMotoboy,
+                                                                                widget!.parametCorrida?.nomeMotoboy,
                                                                                 'sem nome',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -3319,7 +3392,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ],
                                                       ),
                                                     ),
-                                                  if (widget.parametCorrida
+                                                  if (widget!.parametCorrida
                                                           ?.coletado ==
                                                       true)
                                                     Container(
@@ -3416,7 +3489,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .coletadoEm!,
                                                                     locale: FFLocalizations.of(
@@ -3551,7 +3624,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                         ],
                                                       ),
                                                     ),
-                                                  if (widget.parametCorrida
+                                                  if (widget!.parametCorrida
                                                           ?.concluido ==
                                                       true)
                                                     Container(
@@ -3644,7 +3717,7 @@ class _CorridaWidgetState extends State<CorridaWidget> {
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'H:mm:s',
-                                                                    widget
+                                                                    widget!
                                                                         .parametCorrida!
                                                                         .concluidoEm!,
                                                                     locale: FFLocalizations.of(

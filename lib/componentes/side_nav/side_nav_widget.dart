@@ -144,7 +144,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             color: () {
                               if (_model.painelHovered!) {
                                 return Color(0xC8FFEB6E);
-                              } else if (widget.selectedNav == 1) {
+                              } else if (widget!.selectedNav == 1) {
                                 return Color(0x4C363543);
                               } else {
                                 return FlutterFlowTheme.of(context)
@@ -162,7 +162,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 Icon(
                                   Icons.dashboard_outlined,
-                                  color: widget.selectedNav == 1
+                                  color: widget!.selectedNav == 1
                                       ? Color(0xFFF8B400)
                                       : FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -226,7 +226,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             color: () {
                               if (_model.motoboysHovered!) {
                                 return Color(0xC8FFEB6E);
-                              } else if (widget.selectedNav == 2) {
+                              } else if (widget!.selectedNav == 2) {
                                 return Color(0x4C363543);
                               } else {
                                 return FlutterFlowTheme.of(context)
@@ -244,7 +244,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 Icon(
                                   Icons.sports_motorsports_outlined,
-                                  color: widget.selectedNav == 2
+                                  color: widget!.selectedNav == 2
                                       ? Color(0xFFF8B400)
                                       : FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -308,7 +308,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             color: () {
                               if (_model.comerciosHovered!) {
                                 return Color(0xC8FFEB6E);
-                              } else if (widget.selectedNav == 3) {
+                              } else if (widget!.selectedNav == 3) {
                                 return Color(0x4C363543);
                               } else {
                                 return FlutterFlowTheme.of(context)
@@ -326,7 +326,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 Icon(
                                   Icons.storefront_sharp,
-                                  color: widget.selectedNav == 3
+                                  color: widget!.selectedNav == 3
                                       ? Color(0xFFF8B400)
                                       : FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -390,7 +390,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             color: () {
                               if (_model.corridaHovered!) {
                                 return Color(0xC8FFEB6E);
-                              } else if (widget.selectedNav == 4) {
+                              } else if (widget!.selectedNav == 4) {
                                 return Color(0x4C363543);
                               } else {
                                 return FlutterFlowTheme.of(context)
@@ -408,7 +408,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 FaIcon(
                                   FontAwesomeIcons.motorcycle,
-                                  color: widget.selectedNav == 4
+                                  color: widget!.selectedNav == 4
                                       ? Color(0xFFF8B400)
                                       : FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -481,7 +481,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 Icon(
                                   Icons.waving_hand_outlined,
-                                  color: widget.selectedNav == 0
+                                  color: widget!.selectedNav == 0
                                       ? Color(0xFFF8B400)
                                       : FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -765,7 +765,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: AutoSizeText(
-                                'Versão 0.50',
+                                'Versão 0.54',
                                 minFontSize: 10.0,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium

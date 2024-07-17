@@ -263,12 +263,13 @@ class _TabelaPrecosWidgetState extends State<TabelaPrecosWidget>
                               0.0, 8.0, 0.0, 0.0),
                           child: Builder(
                             builder: (context) {
-                              final rotasDoBairro = widget
+                              final rotasDoBairro = widget!
                                       .bairroComercio?.listRotas
                                       ?.map((e) => e.id)
                                       .toList()
                                       ?.toList() ??
                                   [];
+
                               return SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -280,7 +281,7 @@ class _TabelaPrecosWidgetState extends State<TabelaPrecosWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 4.0, 8.0, 4.0),
                                       child: StreamBuilder<RotaRecord>(
-                                        stream: RotaRecord.getDocument(widget
+                                        stream: RotaRecord.getDocument(widget!
                                             .bairroComercio!
                                             .listRotas[rotasDoBairroIndex]),
                                         builder: (context, snapshot) {
@@ -301,8 +302,10 @@ class _TabelaPrecosWidgetState extends State<TabelaPrecosWidget>
                                               ),
                                             );
                                           }
+
                                           final origemSelectRotaRecord =
                                               snapshot.data!;
+
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:

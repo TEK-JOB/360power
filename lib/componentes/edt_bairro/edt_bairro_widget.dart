@@ -44,7 +44,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
     _model = createModel(context, () => EdtBairroModel());
 
     _model.bairroTextController ??=
-        TextEditingController(text: widget.editBairro?.nome);
+        TextEditingController(text: widget!.editBairro?.nome);
     _model.bairroFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -309,7 +309,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                               return;
                             }
 
-                            await widget.editBairro!.reference
+                            await widget!.editBairro!.reference
                                 .update(createBairroRecordData(
                               nome: _model.bairroTextController.text,
                             ));

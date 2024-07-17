@@ -271,6 +271,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                 }
                                 List<UsersRecord> columnUsersRecordList =
                                     snapshot.data!;
+
                                 return SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -289,22 +290,11 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             await columnUsersRecord.reference
-                                                .update({
-                                              ...createUsersRecordData(
-                                                impedido: true,
-                                              ),
-                                              ...mapToFirestore(
-                                                {
-                                                  'MinhasCorridas':
-                                                      FieldValue.arrayUnion([
-                                                    widget.corridaTransfere
-                                                        ?.reference
-                                                  ]),
-                                                },
-                                              ),
-                                            });
+                                                .update(createUsersRecordData(
+                                              impedido: true,
+                                            ));
 
-                                            await widget
+                                            await widget!
                                                 .corridaTransfere!.reference
                                                 .update(
                                                     createCorridasRecordData(
@@ -314,20 +304,10 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                   columnUsersRecord.displayName,
                                             ));
 
-                                            await currentUserReference!.update({
-                                              ...createUsersRecordData(
-                                                impedido: false,
-                                              ),
-                                              ...mapToFirestore(
-                                                {
-                                                  'MinhasCorridas':
-                                                      FieldValue.arrayRemove([
-                                                    widget.corridaTransfere
-                                                        ?.reference
-                                                  ]),
-                                                },
-                                              ),
-                                            });
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              impedido: false,
+                                            ));
                                             Navigator.pop(context);
                                           },
                                           child: Container(

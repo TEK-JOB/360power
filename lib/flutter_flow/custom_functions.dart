@@ -24,3 +24,22 @@ String? limpaCamposTelefone(String? telefone) {
       .replaceAll('.', '')
       .replaceAll(' ', '');
 }
+
+String? gerarUUID4() {
+  // gere para mim um codigo UUID4
+  String uuid = '';
+  final random = math.Random();
+  for (int i = 0; i < 32; i++) {
+    if (i == 8 || i == 12 || i == 16 || i == 20) {
+      uuid += '-';
+    }
+    final digit = random.nextInt(16).toRadixString(16);
+    uuid += digit;
+  }
+  return uuid;
+}
+
+String imgbase64(String codigobase64) {
+  // exibir uma imagem decodificando um codigo com base64
+  return 'data:image/png;base64,$codigobase64';
+}

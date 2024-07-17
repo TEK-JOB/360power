@@ -162,6 +162,7 @@ class _ListRotasWidgetState extends State<ListRotasWidget>
               }
               List<BairroRecord> todososBairrosBairroRecordList =
                   snapshot.data!;
+
               return Container(
                 width: double.infinity,
                 height: double.infinity,
@@ -360,6 +361,7 @@ class _ListRotasWidgetState extends State<ListRotasWidget>
                                               final bairrosdaOrigemPagina =
                                                   todososBairrosBairroRecordList
                                                       .toList();
+
                                               return SingleChildScrollView(
                                                 scrollDirection:
                                                     Axis.horizontal,
@@ -547,6 +549,7 @@ class _ListRotasWidgetState extends State<ListRotasWidget>
                                                 .toList()
                                                 ?.toList() ??
                                             [];
+
                                         return SingleChildScrollView(
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -582,8 +585,10 @@ class _ListRotasWidgetState extends State<ListRotasWidget>
                                                         ),
                                                       );
                                                     }
+
                                                     final origemSelectRotaRecord =
                                                         snapshot.data!;
+
                                                     return Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -659,9 +664,11 @@ class _ListRotasWidgetState extends State<ListRotasWidget>
                                                                       ),
                                                                     );
                                                                   }
+
                                                                   final rowBairroRecord =
                                                                       snapshot
                                                                           .data!;
+
                                                                   return Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize

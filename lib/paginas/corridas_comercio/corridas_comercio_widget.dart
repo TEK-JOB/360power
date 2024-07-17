@@ -228,7 +228,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       valueOrDefault<String>(
-                                                    widget.comercioPag?.logo,
+                                                    widget!.comercioPag?.logo,
                                                     'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/logo%20vazia.png?alt=media&token=8bed6ce7-e61d-413c-a4fa-3ce61bbf47c8',
                                                   ),
                                                   width: 44.0,
@@ -258,7 +258,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                     children: [
                                                       Text(
                                                         valueOrDefault<String>(
-                                                          widget.comercioPag
+                                                          widget!.comercioPag
                                                               ?.nomeComercio,
                                                           'sem nome',
                                                         ),
@@ -284,7 +284,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                         child: AutoSizeText(
                                                           valueOrDefault<
                                                               String>(
-                                                            widget.comercioPag
+                                                            widget!.comercioPag
                                                                 ?.enderCompleto,
                                                             'Sem endereço',
                                                           ).maybeHandleOverflow(
@@ -394,7 +394,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                   )
                                   .where(
                                     'Comercio',
-                                    isEqualTo: widget.comercioPag?.reference,
+                                    isEqualTo: widget!.comercioPag?.reference,
                                   )
                                   .orderBy('DisponivelEm'),
                             ),
@@ -415,6 +415,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                               }
                               List<CorridasRecord> containerCorridasRecordList =
                                   snapshot.data!;
+
                               return Container(
                                 decoration: BoxDecoration(),
                                 child: Column(
@@ -481,6 +482,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                           final corridasPg =
                                               containerCorridasRecordList
                                                   .toList();
+
                                           return SingleChildScrollView(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,

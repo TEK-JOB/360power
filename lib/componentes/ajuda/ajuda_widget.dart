@@ -179,6 +179,7 @@ class _AjudaWidgetState extends State<AjudaWidget>
                       );
                     }
                     List<AjudaRecord> containerAjudaRecordList = snapshot.data!;
+
                     return Container(
                       width: 550.0,
                       height: 550.0,

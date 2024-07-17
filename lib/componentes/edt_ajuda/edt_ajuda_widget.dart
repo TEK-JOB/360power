@@ -46,14 +46,14 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
 
     _model.ruaTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget.ajudaPg?.rua,
+      widget!.ajudaPg?.rua,
       'Sem rua informada',
     ));
     _model.ruaFocusNode ??= FocusNode();
 
     _model.ajudafTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget.ajudaPg?.ajuda,
+      widget!.ajudaPg?.ajuda,
       'Sem ajuda informada',
     ));
     _model.ajudafFocusNode ??= FocusNode();
@@ -459,7 +459,7 @@ class _EdtAjudaWidgetState extends State<EdtAjudaWidget>
                                       return;
                                     }
 
-                                    await widget.ajudaPg!.reference
+                                    await widget!.ajudaPg!.reference
                                         .update(createAjudaRecordData(
                                       rua: _model.ruaTextController.text,
                                       ajuda: _model.ajudafTextController.text,

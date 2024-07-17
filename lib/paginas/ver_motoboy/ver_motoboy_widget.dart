@@ -164,7 +164,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget.motoboySelect!),
+      stream: UsersRecord.getDocument(widget!.motoboySelect!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -183,7 +183,9 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
             ),
           );
         }
+
         final verMotoboyUsersRecord = snapshot.data!;
+
         return Title(
             title: 'VerMotoboy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -208,7 +210,9 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                         ),
                       );
                     }
+
                     final containerPontoRecord = snapshot.data!;
+
                     return Container(
                       decoration: BoxDecoration(),
                       child: Column(
@@ -680,7 +684,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                           queryParameters: {
                                                             'motoboy':
                                                                 serializeParam(
-                                                              widget
+                                                              widget!
                                                                   .motoboySelect,
                                                               ParamType
                                                                   .DocumentReference,
@@ -794,7 +798,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 'LitMotoboys':
                                                                     FieldValue
                                                                         .arrayRemove([
-                                                                  widget
+                                                                  widget!
                                                                       .motoboySelect
                                                                 ]),
                                                               },
@@ -809,7 +813,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                 'FilaMotoboys':
                                                                     FieldValue
                                                                         .arrayRemove([
-                                                                  widget
+                                                                  widget!
                                                                       .motoboySelect
                                                                 ]),
                                                               },
@@ -1333,7 +1337,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           {
                                                                             'FilaMotoboys':
                                                                                 FieldValue.arrayUnion([
-                                                                              widget.motoboySelect
+                                                                              widget!.motoboySelect
                                                                             ]),
                                                                           },
                                                                         ),
@@ -1356,7 +1360,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                           {
                                                                             'FilaMotoboys':
                                                                                 FieldValue.arrayRemove([
-                                                                              widget.motoboySelect
+                                                                              widget!.motoboySelect
                                                                             ]),
                                                                           },
                                                                         ),
@@ -1486,6 +1490,8 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                               createUsersRecordData(
                                                                         ativo:
                                                                             true,
+                                                                        impedido:
+                                                                            false,
                                                                       ));
                                                                     } else {
                                                                       await verMotoboyUsersRecord
@@ -1655,6 +1661,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                         verMotoboyUsersRecord
                                                                             .documentosList
                                                                             .toList();
+
                                                                     return SingleChildScrollView(
                                                                       child:
                                                                           Column(
@@ -1765,7 +1772,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                           ) ??
                                                                                                           false;
                                                                                                       if (confirmDialogResponse) {
-                                                                                                        await widget.motoboySelect!.update({
+                                                                                                        await widget!.motoboySelect!.update({
                                                                                                           ...mapToFirestore(
                                                                                                             {
                                                                                                               'DocumentosList': FieldValue.arrayRemove([docsDoMotoboyItem]),
@@ -2083,6 +2090,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     columnCorridasRecordList =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return SingleChildScrollView(
                                                                   child: Column(
                                                                     mainAxisSize:
@@ -2177,7 +2185,9 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                                                     ),
                                                                                                   );
                                                                                                 }
+
                                                                                                 final imageComerciosRecord = snapshot.data!;
+
                                                                                                 return ClipRRect(
                                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                                   child: Image.network(
@@ -2477,8 +2487,10 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                             createUsersRecordData(
                                                                       pagarHoje:
                                                                           0.0,
-                                                                      bloqueado:
+                                                                      impedido:
                                                                           false,
+                                                                      ativo:
+                                                                          true,
                                                                     ));
                                                                     return;
                                                                   } else {
@@ -2610,8 +2622,10 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                       ),
                                                     );
                                                   }
+
                                                   final columnEnderecoRecord =
                                                       snapshot.data!;
+
                                                   return Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3007,6 +3021,7 @@ class _VerMotoboyWidgetState extends State<VerMotoboyWidget>
                                                                     bairroBairroRecordList =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return Container(
                                                                   width: 300.0,
                                                                   child:

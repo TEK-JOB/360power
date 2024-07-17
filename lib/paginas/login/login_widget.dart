@@ -190,7 +190,8 @@ class _LoginWidgetState extends State<LoginWidget>
                               ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 8.0, 8.0, 0.0),
                           child: Container(
                             width: 300.0,
                             child: TextFormField(
@@ -262,7 +263,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 8.0, 8.0, 8.0),
+                              8.0, 11.0, 8.0, 0.0),
                           child: Container(
                             width: 300.0,
                             child: TextFormField(

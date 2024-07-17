@@ -126,7 +126,9 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                       ),
                     );
                   }
+
                   final containerPontoRecord = snapshot.data!;
+
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
@@ -426,6 +428,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                     final filaDoPonto = containerPontoRecord
                                         .filaMotoboys
                                         .toList();
+
                                     return SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -459,8 +462,10 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                     ),
                                                   );
                                                 }
+
                                                 final userList5UsersRecord =
                                                     snapshot.data!;
+
                                                 return Container(
                                                   width: double.infinity,
                                                   height: 60.0,

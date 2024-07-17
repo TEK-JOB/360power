@@ -207,6 +207,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
               }
               List<BairroRecord> todososBairrosBairroRecordList =
                   snapshot.data!;
+
               return Material(
                 color: Colors.transparent,
                 elevation: 8.0,
@@ -513,6 +514,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                 final bairrosdaOrigemPagina =
                                                     todososBairrosBairroRecordList
                                                         .toList();
+
                                                 return SingleChildScrollView(
                                                   scrollDirection:
                                                       Axis.horizontal,
@@ -894,6 +896,7 @@ class _CadRotaWidgetState extends State<CadRotaWidget>
                                                                     .reference) !=
                                                             true)
                                                         .toList();
+
                                                 return SingleChildScrollView(
                                                   scrollDirection:
                                                       Axis.horizontal,

@@ -202,6 +202,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                     ?.toList() ??
                                                 [])
                                             .toList();
+
                                         return SingleChildScrollView(
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -287,9 +288,11 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                                   ),
                                                                 );
                                                               }
+
                                                               final rowComerciosRecord =
                                                                   snapshot
                                                                       .data!;
+
                                                               return InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,

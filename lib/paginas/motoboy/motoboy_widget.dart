@@ -252,7 +252,9 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
               ),
             );
           }
+
           final motoboyPontoRecord = snapshot.data!;
+
           return Title(
               title: 'motoboy',
               color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -300,6 +302,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                       }
                       List<CorridasRecord> containerCorridasRecordList =
                           snapshot.data!;
+
                       return Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -469,7 +472,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: AutoSizeText(
-                                                    'Versão 0.50',
+                                                    'Versão 0.54',
                                                     minFontSize: 10.0,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1851,6 +1854,8 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                         0.0,
                                                                     ativo:
                                                                         false,
+                                                                    impedido:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -2160,6 +2165,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 motoboyPontoRecord
                                                                     .filaMotoboys
                                                                     .toList();
+
                                                             return SingleChildScrollView(
                                                               primary: false,
                                                               child: Column(
@@ -2199,9 +2205,11 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           ),
                                                                         );
                                                                       }
+
                                                                       final textUsersRecord =
                                                                           snapshot
                                                                               .data!;
+
                                                                       return Text(
                                                                         '${(filaIndex + 1).toString()} - ${textUsersRecord.nome}',
                                                                         style: FlutterFlowTheme.of(context)
@@ -2739,6 +2747,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     e.status ==
                                                                     'Disponivel')
                                                                 .toList();
+
                                                         return SingleChildScrollView(
                                                           child: Column(
                                                             mainAxisSize:
@@ -4124,6 +4133,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     (e.status ==
                                                                         'Aceita'))
                                                                 .toList();
+
                                                         return SingleChildScrollView(
                                                           child: Column(
                                                             mainAxisSize:
@@ -5487,6 +5497,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     (e.motoboy ==
                                                                         currentUserReference))
                                                                 .toList();
+
                                                         return SingleChildScrollView(
                                                           child: Column(
                                                             mainAxisSize:
@@ -6850,6 +6861,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     (e.motoboy ==
                                                                         currentUserReference))
                                                                 .toList();
+
                                                         return SingleChildScrollView(
                                                           primary: false,
                                                           child: Column(

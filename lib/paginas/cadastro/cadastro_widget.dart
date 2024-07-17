@@ -112,7 +112,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.kadBairroTextController?.text = 'centro';
+        }));
   }
 
   @override
@@ -1152,7 +1154,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                   padding: EdgeInsets.all(4.0),
                                   child: StreamBuilder<List<BairroRecord>>(
                                     stream: queryBairroRecord(
-                                      parent: widget.de,
+                                      parent: widget!.de,
                                     ),
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
@@ -1172,6 +1174,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                       }
                                       List<BairroRecord> tab2BairroRecordList =
                                           snapshot.data!;
+
                                       return Material(
                                         color: Colors.transparent,
                                         elevation: 8.0,
@@ -1514,7 +1517,9 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                         child: Autocomplete<
                                                             String>(
                                                           initialValue:
-                                                              TextEditingValue(),
+                                                              TextEditingValue(
+                                                                  text:
+                                                                      'centro'),
                                                           optionsBuilder:
                                                               (textEditingValue) {
                                                             if (textEditingValue
@@ -2531,9 +2536,10 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                 cpf: _model
                                                                     .cpfTextController
                                                                     .text,
-                                                                tipo: widget.tp,
+                                                                tipo:
+                                                                    widget!.tp,
                                                                 ponto:
-                                                                    widget.de,
+                                                                    widget!.de,
                                                                 qtdCorridasHoje:
                                                                     0,
                                                                 ganhosHoje: 0.0,
@@ -2746,7 +2752,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                     .enderCriado
                                                                     ?.reference,
                                                                 ponto:
-                                                                    widget.de,
+                                                                    widget!.de,
                                                                 telefoneComercio:
                                                                     _model
                                                                         .foneTextController
@@ -2787,7 +2793,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                             local:
                                                                                 _model.enderCriado?.reference,
                                                                             ponto:
-                                                                                widget.de,
+                                                                                widget!.de,
                                                                             telefoneComercio:
                                                                                 _model.foneTextController.text,
                                                                             idInterno:
@@ -2811,7 +2817,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                               _shouldSetState =
                                                                   true;
 
-                                                              await widget.de!
+                                                              await widget!.de!
                                                                   .update({
                                                                 ...mapToFirestore(
                                                                   {
@@ -2862,7 +2868,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                         ?.tipo,
                                                                     '') ==
                                                                 'motoboy') {
-                                                              await widget.de!
+                                                              await widget!.de!
                                                                   .update({
                                                                 ...mapToFirestore(
                                                                   {

@@ -41,6 +41,24 @@
       ]
     },
     {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Nome",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "Corridas",
       "queryScope": "COLLECTION",
       "fields": [
@@ -163,6 +181,20 @@
       ]
     },
     {
+      "collectionGroup": "Comercios",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Ponto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "NomeComercio",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "Corridas",
       "queryScope": "COLLECTION",
       "fields": [
@@ -194,6 +226,10 @@
         },
         {
           "fieldPath": "Ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Impedido",
           "order": "ASCENDING"
         },
         {

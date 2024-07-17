@@ -85,7 +85,7 @@ class _VerDocumentoWidgetState extends State<VerDocumentoWidget> {
               ),
               child: Image.network(
                 valueOrDefault<String>(
-                  widget.documento,
+                  widget!.documento,
                   'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/sem%20logo2.png?alt=media&token=b0fab6b5-01c2-4681-bf51-f2989da1ad72',
                 ),
                 width: double.infinity,

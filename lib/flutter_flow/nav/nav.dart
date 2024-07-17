@@ -89,174 +89,192 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/',
           builder: (context, _) =>
               appStateNotifier.loggedIn ? LoadingWidget() : LoginWidget(),
-        ),
-        FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: 'erro404',
-          path: '/erro404',
-          builder: (context, params) => Erro404Widget(),
-        ),
-        FFRoute(
-          name: 'Cadastro',
-          path: '/cadastro',
-          builder: (context, params) => CadastroWidget(
-            tp: params.getParam(
-              'tp',
-              ParamType.String,
+          routes: [
+            FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => LoginWidget(),
             ),
-            de: params.getParam(
-              'de',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['Ponto'],
+            FFRoute(
+              name: 'erro404',
+              path: 'erro404',
+              builder: (context, params) => Erro404Widget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'Corridas',
-          path: '/corridas',
-          requireAuth: true,
-          builder: (context, params) => CorridasWidget(),
-        ),
-        FFRoute(
-          name: 'Home',
-          path: '/home',
-          requireAuth: true,
-          builder: (context, params) => HomeWidget(),
-        ),
-        FFRoute(
-          name: 'MeusMotoboys',
-          path: '/meusMotoboys',
-          requireAuth: true,
-          builder: (context, params) => MeusMotoboysWidget(),
-        ),
-        FFRoute(
-          name: 'MeusComercios2',
-          path: '/meusComercios2',
-          requireAuth: true,
-          builder: (context, params) => MeusComercios2Widget(),
-        ),
-        FFRoute(
-          name: 'list',
-          path: '/list',
-          builder: (context, params) => ListWidget(),
-        ),
-        FFRoute(
-          name: 'perfil',
-          path: '/perfil',
-          builder: (context, params) => PerfilWidget(),
-        ),
-        FFRoute(
-          name: 'Dashboard',
-          path: '/dashboard',
-          builder: (context, params) => DashboardWidget(),
-        ),
-        FFRoute(
-          name: 'loading',
-          path: '/loading',
-          builder: (context, params) => LoadingWidget(),
-        ),
-        FFRoute(
-          name: 'Qr',
-          path: '/qr',
-          builder: (context, params) => QrWidget(
-            tipo: params.getParam(
-              'tipo',
-              ParamType.String,
+            FFRoute(
+              name: 'Cadastro',
+              path: 'cadastro',
+              builder: (context, params) => CadastroWidget(
+                tp: params.getParam(
+                  'tp',
+                  ParamType.String,
+                ),
+                de: params.getParam(
+                  'de',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['Ponto'],
+                ),
+              ),
             ),
-            ponto: params.getParam(
-              'ponto',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['Ponto'],
+            FFRoute(
+              name: 'Corridas',
+              path: 'corridas',
+              requireAuth: true,
+              builder: (context, params) => CorridasWidget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'Comercio',
-          path: '/comercio',
-          requireAuth: true,
-          builder: (context, params) => ComercioWidget(),
-        ),
-        FFRoute(
-          name: 'Motoboy',
-          path: '/motoboy',
-          requireAuth: true,
-          builder: (context, params) => MotoboyWidget(),
-        ),
-        FFRoute(
-          name: 'VerMotoboy',
-          path: '/verMotoboy',
-          builder: (context, params) => VerMotoboyWidget(
-            motoboySelect: params.getParam(
-              'motoboySelect',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users'],
+            FFRoute(
+              name: 'Home',
+              path: 'home',
+              requireAuth: true,
+              builder: (context, params) => HomeWidget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'documentos',
-          path: '/documentos',
-          builder: (context, params) => DocumentosWidget(),
-        ),
-        FFRoute(
-          name: 'CorridasMotoboy',
-          path: '/corridasMotoboy',
-          requireAuth: true,
-          builder: (context, params) => CorridasMotoboyWidget(
-            motoboy: params.getParam(
-              'motoboy',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users'],
+            FFRoute(
+              name: 'MeusMotoboys',
+              path: 'meusMotoboys',
+              requireAuth: true,
+              builder: (context, params) => MeusMotoboysWidget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'CorridasComercio',
-          path: '/corridasComercio',
-          requireAuth: true,
-          asyncParams: {
-            'comercioPag': getDoc(['Comercios'], ComerciosRecord.fromSnapshot),
-          },
-          builder: (context, params) => CorridasComercioWidget(
-            comercioPag: params.getParam(
-              'comercioPag',
-              ParamType.Document,
+            FFRoute(
+              name: 'list',
+              path: 'list',
+              builder: (context, params) => ListWidget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'MeusComercios',
-          path: '/meusComercios',
-          requireAuth: true,
-          builder: (context, params) => MeusComerciosWidget(),
-        ),
-        FFRoute(
-          name: 'VerComercio',
-          path: '/verComercio',
-          asyncParams: {
-            'comercioSelect':
-                getDoc(['Comercios'], ComerciosRecord.fromSnapshot),
-          },
-          builder: (context, params) => VerComercioWidget(
-            comercioSelect: params.getParam(
-              'comercioSelect',
-              ParamType.Document,
+            FFRoute(
+              name: 'perfil',
+              path: 'perfil',
+              builder: (context, params) => PerfilWidget(),
             ),
-          ),
+            FFRoute(
+              name: 'Dashboard',
+              path: 'dashboard',
+              builder: (context, params) => DashboardWidget(),
+            ),
+            FFRoute(
+              name: 'loading',
+              path: 'loading',
+              builder: (context, params) => LoadingWidget(),
+            ),
+            FFRoute(
+              name: 'Qr',
+              path: 'qr',
+              builder: (context, params) => QrWidget(
+                tipo: params.getParam(
+                  'tipo',
+                  ParamType.String,
+                ),
+                ponto: params.getParam(
+                  'ponto',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['Ponto'],
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'Comercio',
+              path: 'comercio',
+              requireAuth: true,
+              builder: (context, params) => ComercioWidget(),
+            ),
+            FFRoute(
+              name: 'Motoboy',
+              path: 'motoboy',
+              requireAuth: true,
+              builder: (context, params) => MotoboyWidget(),
+            ),
+            FFRoute(
+              name: 'VerMotoboy',
+              path: 'verMotoboy',
+              builder: (context, params) => VerMotoboyWidget(
+                motoboySelect: params.getParam(
+                  'motoboySelect',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['users'],
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'documentos',
+              path: 'documentos',
+              builder: (context, params) => DocumentosWidget(),
+            ),
+            FFRoute(
+              name: 'CorridasMotoboy',
+              path: 'corridasMotoboy',
+              requireAuth: true,
+              builder: (context, params) => CorridasMotoboyWidget(
+                motoboy: params.getParam(
+                  'motoboy',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['users'],
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'CorridasComercio',
+              path: 'corridasComercio',
+              requireAuth: true,
+              asyncParams: {
+                'comercioPag':
+                    getDoc(['Comercios'], ComerciosRecord.fromSnapshot),
+              },
+              builder: (context, params) => CorridasComercioWidget(
+                comercioPag: params.getParam(
+                  'comercioPag',
+                  ParamType.Document,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'MeusComercios',
+              path: 'meusComercios',
+              requireAuth: true,
+              builder: (context, params) => MeusComerciosWidget(),
+            ),
+            FFRoute(
+              name: 'VerComercio',
+              path: 'verComercio',
+              asyncParams: {
+                'comercioSelect':
+                    getDoc(['Comercios'], ComerciosRecord.fromSnapshot),
+              },
+              builder: (context, params) => VerComercioWidget(
+                comercioSelect: params.getParam(
+                  'comercioSelect',
+                  ParamType.Document,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'PagPix',
+              path: 'pagPix',
+              builder: (context, params) => PagPixWidget(
+                idPix: params.getParam(
+                  'idPix',
+                  ParamType.String,
+                ),
+                qrcode: params.getParam(
+                  'qrcode',
+                  ParamType.String,
+                ),
+                chavePix: params.getParam(
+                  'chavePix',
+                  ParamType.String,
+                ),
+                url: params.getParam(
+                  'url',
+                  ParamType.String,
+                ),
+                status: params.getParam(
+                  'status',
+                  ParamType.String,
+                ),
+              ),
+            )
+          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
-        FFRoute(
-          name: 'listdet',
-          path: '/listdet',
-          builder: (context, params) => ListdetWidget(),
-        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

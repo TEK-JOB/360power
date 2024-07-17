@@ -153,7 +153,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
               ),
             );
           }
+
           final homePontoRecord = snapshot.data!;
+
           return Title(
               title: 'Home',
               color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -892,6 +894,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   ganhosHoje:
                                                                       0.0,
                                                                   ativo: false,
+                                                                  impedido:
+                                                                      false,
                                                                 ),
                                                                 ...mapToFirestore(
                                                                   {
@@ -955,7 +959,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   .reference
                                                                   .update(
                                                                       createComerciosRecordData(
-                                                                online: true,
+                                                                online: false,
                                                                 qtdCorridasHoje:
                                                                     0,
                                                               ));
@@ -2057,6 +2061,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         List<CorridasRecord>
                                                                             columnCorridasRecordList =
                                                                             snapshot.data!;
+
                                                                         return Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
@@ -2085,7 +2090,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                         ),
                                                                                       );
                                                                                     }
+
                                                                                     final containerComerciosRecord = snapshot.data!;
+
                                                                                     return InkWell(
                                                                                       splashColor: Colors.transparent,
                                                                                       focusColor: Colors.transparent,
@@ -2346,6 +2353,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               homePontoRecord
                                                                   .filaMotoboys
                                                                   .toList();
+
                                                           return SingleChildScrollView(
                                                             child: Column(
                                                               mainAxisSize:
@@ -2392,9 +2400,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           ),
                                                                         );
                                                                       }
+
                                                                       final userList5UsersRecord =
                                                                           snapshot
                                                                               .data!;
+
                                                                       return Container(
                                                                         width: double
                                                                             .infinity,

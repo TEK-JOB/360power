@@ -68,7 +68,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
               ),
             );
           }
+
           final comercioComerciosRecord = snapshot.data!;
+
           return Title(
               title: 'Comercio',
               color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -98,7 +100,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                           ),
                         );
                       }
+
                       final columnBairroRecord = snapshot.data!;
+
                       return Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -214,7 +218,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: AutoSizeText(
-                                            'Versão 0.50',
+                                            'Versão 0.54',
                                             minFontSize: 10.0,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -264,7 +268,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                               ),
                                             );
                                           }
+
                                           final rowPontoRecord = snapshot.data!;
+
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -328,6 +334,33 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                           },
                                                         ).then((value) =>
                                                             setState(() {}));
+
+                                                        if (comercioComerciosRecord
+                                                                .online ==
+                                                            true) {
+                                                          return;
+                                                        }
+
+                                                        await comercioComerciosRecord
+                                                            .reference
+                                                            .update(
+                                                                createComerciosRecordData(
+                                                          online: true,
+                                                        ));
+
+                                                        await rowPontoRecord
+                                                            .reference
+                                                            .update({
+                                                          ...mapToFirestore(
+                                                            {
+                                                              'QtdComercioAtv':
+                                                                  FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                            },
+                                                          ),
+                                                        });
+                                                        return;
                                                       },
                                                       child: Material(
                                                         color:
@@ -1693,6 +1726,7 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                     List<CorridasRecord>
                                                         columnCorridasRecordList =
                                                         snapshot.data!;
+
                                                     return SingleChildScrollView(
                                                       child: Column(
                                                         mainAxisSize:
@@ -2893,7 +2927,9 @@ class _ComercioWidgetState extends State<ComercioWidget> {
                                                                                               ),
                                                                                             );
                                                                                           }
+
                                                                                           final containerUsersRecord = snapshot.data!;
+
                                                                                           return Container(
                                                                                             width: double.infinity,
                                                                                             decoration: BoxDecoration(
