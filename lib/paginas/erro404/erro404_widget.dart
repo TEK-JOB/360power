@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'erro404_model.dart';
 export 'erro404_model.dart';
 
@@ -49,7 +47,7 @@ class _Erro404WidgetState extends State<Erro404Widget> {
               Expanded(
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 1.0,
@@ -68,9 +66,9 @@ class _Erro404WidgetState extends State<Erro404Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 50.0, 8.0, 20.0),
                                 child: AutoSizeText(
                                   'Pagina não encontrada',
@@ -86,9 +84,9 @@ class _Erro404WidgetState extends State<Erro404Widget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 16.0, 8.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -98,11 +96,11 @@ class _Erro404WidgetState extends State<Erro404Widget> {
                                   options: FFButtonOptions(
                                     width: 200.0,
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFFF29200),
+                                    color: const Color(0xFFF29200),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -112,7 +110,7 @@ class _Erro404WidgetState extends State<Erro404Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 8.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -124,7 +122,7 @@ class _Erro404WidgetState extends State<Erro404Widget> {
                                           .primaryText,
                                       width: 1.0,
                                     ),
-                                    hoverTextColor: Color(0xFFF29200),
+                                    hoverTextColor: const Color(0xFFF29200),
                                   ),
                                 ),
                               ),

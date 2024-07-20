@@ -3,12 +3,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'resetsenha_model.dart';
 export 'resetsenha_model.dart';
 
@@ -54,8 +50,8 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +70,8 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -94,8 +90,8 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -114,8 +110,8 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -140,17 +136,17 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: 450.0,
             maxHeight: 350.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x1A000000),
@@ -163,7 +159,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Padding(
-            padding: EdgeInsets.all(18.0),
+            padding: const EdgeInsets.all(18.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,7 +180,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
                       child: Text(
                         'Digite abaixo, o e-mail associado à sua conta e enviaremos um link.',
                         textAlign: TextAlign.center,
@@ -199,8 +195,8 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
                     width: 300.0,
                     child: TextFormField(
                       controller: _model.emailAddressTextController,
@@ -212,7 +208,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFF29200),
+                                  color: const Color(0xFFF29200),
                                   letterSpacing: 0.0,
                                 ),
                         hintText: 'Insira o seu e-mail',
@@ -231,7 +227,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                           borderRadius: BorderRadius.circular(36.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFF29200),
                             width: 2.0,
                           ),
@@ -251,7 +247,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                           ),
                           borderRadius: BorderRadius.circular(36.0),
                         ),
-                        contentPadding: EdgeInsets.all(18.0),
+                        contentPadding: const EdgeInsets.all(18.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
@@ -265,7 +261,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                       animationsMap['textFieldOnPageLoadAnimation']!),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -278,20 +274,20 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                         options: FFButtonOptions(
                           width: 150.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFFF29200),
+                                    color: const Color(0xFFF29200),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -301,13 +297,13 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                           animationsMap['buttonOnPageLoadAnimation1']!),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             if (_model
                                 .emailAddressTextController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text(
                                     'E-mail é obrigatório',
                                   ),
@@ -325,11 +321,11 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFF29200),
+                            color: const Color(0xFFF29200),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -339,7 +335,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 8.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -350,7 +346,7 @@ class _ResetsenhaWidgetState extends State<ResetsenhaWidget>
                               color: FlutterFlowTheme.of(context).primaryText,
                               width: 1.0,
                             ),
-                            hoverTextColor: Color(0xFFF29200),
+                            hoverTextColor: const Color(0xFFF29200),
                           ),
                         ).animateOnPageLoad(
                             animationsMap['buttonOnPageLoadAnimation2']!),

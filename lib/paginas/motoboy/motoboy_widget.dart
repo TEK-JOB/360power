@@ -9,18 +9,13 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:provider/provider.dart';
 import 'motoboy_model.dart';
 export 'motoboy_model.dart';
 
@@ -53,13 +48,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Bloqueado'),
-                  content: Text(
+                  title: const Text('Bloqueado'),
+                  content: const Text(
                       'Parece que você está bloqueado, fale com o gestor do ponto'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
+                      child: const Text('Ok'),
                     ),
                   ],
                 );
@@ -81,13 +76,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Atenção'),
-                  content: Text(
+                  title: const Text('Atenção'),
+                  content: const Text(
                       'Parece que você não está Ativo, Deseja ativar seu dia'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Sim'),
+                      child: const Text('Sim'),
                     ),
                   ],
                 );
@@ -98,13 +93,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                 context: context,
                 builder: (alertDialogContext) {
                   return AlertDialog(
-                    title: Text('Atenção'),
-                    content: Text(
+                    title: const Text('Atenção'),
+                    content: const Text(
                         'Parece que você tem pendências com o ponto, fale com o Gerente'),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
+                        child: const Text('Ok'),
                       ),
                     ],
                   );
@@ -146,13 +141,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
             context: context,
             builder: (alertDialogContext) {
               return AlertDialog(
-                title: Text('Atenção'),
-                content: Text(
+                title: const Text('Atenção'),
+                content: const Text(
                     'Parece que você ainda não está liberado, envie ou revise seus documentos, '),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
+                    child: const Text('Ok'),
                   ),
                 ],
               );
@@ -194,8 +189,8 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -214,8 +209,8 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -288,7 +283,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
-                        return Center(
+                        return const Center(
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
@@ -306,13 +301,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                       return Container(
                         width: double.infinity,
                         height: double.infinity,
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           minWidth: 300.0,
                           minHeight: 500.0,
                           maxWidth: 2000.0,
                           maxHeight: 2000.0,
                         ),
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -331,7 +326,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                         child: Container(
                                           width: 100.0,
                                           height: 130.0,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 6.0,
@@ -363,7 +358,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 50.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
@@ -373,7 +368,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 0.0, 8.0),
                                                   child: ClipRRect(
@@ -406,7 +401,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -438,7 +433,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -468,11 +463,11 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: AutoSizeText(
-                                                    'Versão 0.54',
+                                                    'Versão 0.55',
                                                     minFontSize: 10.0,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -492,11 +487,11 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                     ],
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
                                       height: 110.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                         child: Row(
@@ -505,10 +500,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 0.0),
                                                 child: ListView(
@@ -524,7 +519,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         builder: (context) =>
                                                             Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       8.0,
@@ -555,7 +550,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     backgroundColor:
                                                                         Colors
                                                                             .transparent,
-                                                                    alignment: AlignmentDirectional(
+                                                                    alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0)
                                                                         .resolve(
@@ -570,7 +565,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           : FocusScope.of(context)
                                                                               .unfocus(),
                                                                       child:
-                                                                          FilaWidget(),
+                                                                          const FilaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -584,7 +579,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -608,7 +603,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
-                                                                        boxShadow: [
+                                                                        boxShadow: const [
                                                                           BoxShadow(
                                                                             blurRadius:
                                                                                 6.0,
@@ -625,7 +620,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                             .circle,
                                                                       ),
                                                                       child:
-                                                                          Align(
+                                                                          const Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
@@ -661,7 +656,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -686,7 +681,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -707,7 +702,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             6.0,
@@ -723,7 +718,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: Align(
+                                                                  child: const Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
@@ -763,7 +758,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       builder: (context) =>
                                                           Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -791,7 +786,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   backgroundColor:
                                                                       Colors
                                                                           .transparent,
-                                                                  alignment: AlignmentDirectional(
+                                                                  alignment: const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0)
                                                                       .resolve(
@@ -807,7 +802,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                         : FocusScope.of(context)
                                                                             .unfocus(),
                                                                     child:
-                                                                        AjudaWidget(),
+                                                                        const AjudaWidget(),
                                                                   ),
                                                                 );
                                                               },
@@ -822,7 +817,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -845,7 +840,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: [
+                                                                      boxShadow: const [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -862,7 +857,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -902,7 +897,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -936,7 +931,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -957,7 +952,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             6.0,
@@ -973,7 +968,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: Align(
+                                                                  child: const Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
@@ -1012,7 +1007,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -1045,7 +1040,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1066,7 +1061,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             6.0,
@@ -1082,7 +1077,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: Align(
+                                                                  child: const Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
@@ -1121,7 +1116,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -1177,7 +1172,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1198,7 +1193,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             6.0,
@@ -1214,7 +1209,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: Align(
+                                                                  child: const Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
@@ -1254,7 +1249,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       builder: (context) =>
                                                           Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -1282,7 +1277,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   backgroundColor:
                                                                       Colors
                                                                           .transparent,
-                                                                  alignment: AlignmentDirectional(
+                                                                  alignment: const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0)
                                                                       .resolve(
@@ -1298,7 +1293,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                         : FocusScope.of(context)
                                                                             .unfocus(),
                                                                     child:
-                                                                        PagamentosWidget(),
+                                                                        const PagamentosWidget(),
                                                                   ),
                                                                 );
                                                               },
@@ -1313,7 +1308,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1336,7 +1331,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: [
+                                                                      boxShadow: const [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -1353,7 +1348,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1393,7 +1388,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   8.0,
@@ -1417,22 +1412,22 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     builder:
                                                                         (alertDialogContext) {
                                                                       return AlertDialog(
-                                                                        title: Text(
+                                                                        title: const Text(
                                                                             'Sair?'),
                                                                         content:
-                                                                            Text('Você está Saindo do ponto. Deseja mesmo encerrar o expediente hoje?'),
+                                                                            const Text('Você está Saindo do ponto. Deseja mesmo encerrar o expediente hoje?'),
                                                                         actions: [
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext, false),
                                                                             child:
-                                                                                Text('Não'),
+                                                                                const Text('Não'),
                                                                           ),
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext, true),
                                                                             child:
-                                                                                Text('Sim Sair'),
+                                                                                const Text('Sim Sair'),
                                                                           ),
                                                                         ],
                                                                       );
@@ -1467,7 +1462,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1488,7 +1483,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             6.0,
@@ -1504,7 +1499,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: Align(
+                                                                  child: const Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
@@ -1546,7 +1541,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -1562,7 +1557,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            var _shouldSetState =
+                                                            var shouldSetState =
                                                                 false;
                                                             var confirmDialogResponse =
                                                                 await showDialog<
@@ -1573,17 +1568,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Fechar?'),
+                                                                              const Text('Fechar?'),
                                                                           content:
-                                                                              Text('Você está fechando o ponto. Deseja mesmo encerrar o expediente hoje?'),
+                                                                              const Text('Você está fechando o ponto. Deseja mesmo encerrar o expediente hoje?'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('Não'),
+                                                                              child: const Text('Não'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('Sim fechar'),
+                                                                              child: const Text('Sim fechar'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1619,7 +1614,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               isEqualTo: motoboyPontoRecord.reference,
                                                                             ),
                                                               );
-                                                              _shouldSetState =
+                                                              shouldSetState =
                                                                   true;
                                                               _model
                                                                   .contar = _model
@@ -1652,33 +1647,36 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: Text(
+                                                                    title: const Text(
                                                                         'Fechado'),
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         'O ponto foi fechado con sucesso!!!'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:
                                                                             () =>
                                                                                 Navigator.pop(alertDialogContext),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Ok'),
                                                                       ),
                                                                     ],
                                                                   );
                                                                 },
                                                               );
-                                                              if (_shouldSetState)
+                                                              if (shouldSetState) {
                                                                 setState(() {});
+                                                              }
                                                               return;
                                                             } else {
-                                                              if (_shouldSetState)
+                                                              if (shouldSetState) {
                                                                 setState(() {});
+                                                              }
                                                               return;
                                                             }
 
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                           },
                                                           child: Column(
                                                             mainAxisSize:
@@ -1687,7 +1685,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1710,7 +1708,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: [
+                                                                      boxShadow: const [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -1727,7 +1725,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1769,7 +1767,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -1785,7 +1783,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            var _shouldSetState =
+                                                            var shouldSetState =
                                                                 false;
                                                             var confirmDialogResponse =
                                                                 await showDialog<
@@ -1796,17 +1794,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Abrir?'),
+                                                                              const Text('Abrir?'),
                                                                           content:
-                                                                              Text('Você está Abrindo o ponto. Deseja mesmo iniciar o expediente hoje?'),
+                                                                              const Text('Você está Abrindo o ponto. Deseja mesmo iniciar o expediente hoje?'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('Não'),
+                                                                              child: const Text('Não'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('Sim Abrir'),
+                                                                              child: const Text('Sim Abrir'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1828,7 +1826,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               isEqualTo: motoboyPontoRecord.reference,
                                                                             ),
                                                               );
-                                                              _shouldSetState =
+                                                              shouldSetState =
                                                                   true;
                                                               _model
                                                                   .contar = _model
@@ -1901,7 +1899,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           .reference,
                                                                 ),
                                                               );
-                                                              _shouldSetState =
+                                                              shouldSetState =
                                                                   true;
                                                               _model
                                                                   .contar = _model
@@ -1934,33 +1932,36 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: Text(
+                                                                    title: const Text(
                                                                         'Aberto'),
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         'Ponto Aberto com sucesso!!!'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:
                                                                             () =>
                                                                                 Navigator.pop(alertDialogContext),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Ok'),
                                                                       ),
                                                                     ],
                                                                   );
                                                                 },
                                                               );
-                                                              if (_shouldSetState)
+                                                              if (shouldSetState) {
                                                                 setState(() {});
+                                                              }
                                                               return;
                                                             } else {
-                                                              if (_shouldSetState)
+                                                              if (shouldSetState) {
                                                                 setState(() {});
+                                                              }
                                                               return;
                                                             }
 
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                           },
                                                           child: Column(
                                                             mainAxisSize:
@@ -1969,7 +1970,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1992,7 +1993,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      boxShadow: [
+                                                                      boxShadow: const [
                                                                         BoxShadow(
                                                                           blurRadius:
                                                                               6.0,
@@ -2009,7 +2010,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -2047,7 +2048,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         ),
                                                       ),
                                                   ].divide(
-                                                      SizedBox(width: 24.0)),
+                                                      const SizedBox(width: 24.0)),
                                                 ),
                                               ),
                                             ),
@@ -2058,14 +2059,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                   ),
                                   if (_model.ver)
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
                                       child: Container(
                                         width: double.infinity,
                                         height: 160.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 15.0, 16.0, 0.0),
                                           child: ListView(
                                             padding: EdgeInsets.zero,
@@ -2073,14 +2074,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                             scrollDirection: Axis.horizontal,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 8.0),
                                                 child: Container(
                                                   width: 325.0,
                                                   height: 190.0,
                                                   decoration: BoxDecoration(
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 6.0,
                                                         color:
@@ -2091,7 +2092,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         ),
                                                       )
                                                     ],
-                                                    gradient: LinearGradient(
+                                                    gradient: const LinearGradient(
                                                       colors: [
                                                         Color(0xFF4B9EF2),
                                                         Color(0xFF3754FB)
@@ -2109,7 +2110,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2119,7 +2120,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2133,7 +2134,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              Icon(
+                                                              const Icon(
                                                                 Icons
                                                                     .format_list_numbered,
                                                                 color: Colors
@@ -2189,7 +2190,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                       // Customize what your widget looks like when it's loading.
                                                                       if (!snapshot
                                                                           .hasData) {
-                                                                        return Center(
+                                                                        return const Center(
                                                                           child:
                                                                               SizedBox(
                                                                             width:
@@ -2234,14 +2235,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 8.0),
                                                 child: Container(
                                                   width: 325.0,
                                                   height: 190.0,
                                                   decoration: BoxDecoration(
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 6.0,
                                                         color:
@@ -2252,7 +2253,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         ),
                                                       )
                                                     ],
-                                                    gradient: LinearGradient(
+                                                    gradient: const LinearGradient(
                                                       colors: [
                                                         Color(0xFFAA4BF2),
                                                         Color(0xFFE962FD)
@@ -2270,7 +2271,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2280,7 +2281,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2294,7 +2295,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              Icon(
+                                                              const Icon(
                                                                 Icons
                                                                     .sports_motorsports,
                                                                 color: Colors
@@ -2345,14 +2346,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 8.0),
                                                 child: Container(
                                                   width: 325.0,
                                                   height: 190.0,
                                                   decoration: BoxDecoration(
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 6.0,
                                                         color:
@@ -2363,7 +2364,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         ),
                                                       )
                                                     ],
-                                                    gradient: LinearGradient(
+                                                    gradient: const LinearGradient(
                                                       colors: [
                                                         Color(0xFF70B24C),
                                                         Color(0xFF4EFF9A)
@@ -2381,7 +2382,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2391,7 +2392,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2405,7 +2406,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              FaIcon(
+                                                              const FaIcon(
                                                                 FontAwesomeIcons
                                                                     .moneyBillWaveAlt,
                                                                 color: Colors
@@ -2464,14 +2465,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 8.0),
                                                 child: Container(
                                                   width: 325.0,
                                                   height: 190.0,
                                                   decoration: BoxDecoration(
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 6.0,
                                                         color:
@@ -2482,7 +2483,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                         ),
                                                       )
                                                     ],
-                                                    gradient: LinearGradient(
+                                                    gradient: const LinearGradient(
                                                       colors: [
                                                         Color(0xFFF2D74B),
                                                         Color(0xFFFD9462)
@@ -2500,7 +2501,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2510,7 +2511,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2524,7 +2525,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 MainAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              Icon(
+                                                              const Icon(
                                                                 Icons
                                                                     .money_off_csred_rounded,
                                                                 color: Colors
@@ -2594,12 +2595,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                 currentUserDocument?.escolhido, false))
                               Flexible(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Column(
                                     children: [
                                       Align(
-                                        alignment: Alignment(0.0, 0),
+                                        alignment: const Alignment(0.0, 0),
                                         child: TabBar(
                                           isScrollable: true,
                                           labelColor:
@@ -2616,10 +2617,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                   ),
-                                          unselectedLabelStyle: TextStyle(),
-                                          indicatorColor: Color(0xFFF8BA0B),
-                                          padding: EdgeInsets.all(4.0),
-                                          tabs: [
+                                          unselectedLabelStyle: const TextStyle(),
+                                          indicatorColor: const Color(0xFFF8BA0B),
+                                          padding: const EdgeInsets.all(4.0),
+                                          tabs: const [
                                             Tab(
                                               text: 'Disponivel',
                                             ),
@@ -2649,7 +2650,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                           controller: _model.tabBarController,
                                           children: [
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: SingleChildScrollView(
                                                 primary: false,
                                                 child: Column(
@@ -2660,7 +2661,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -2684,21 +2685,21 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           width: 35.0,
                                                           height: 35.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2716,7 +2717,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                           ),
@@ -2735,7 +2736,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 .primaryText,
                                                           ),
                                                           hoverTextColor:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -2761,7 +2762,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   disponiveis[
                                                                       disponiveisIndex];
                                                               return Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -2773,7 +2774,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   elevation:
                                                                       16.0,
                                                                   shape:
-                                                                      RoundedRectangleBorder(
+                                                                      const RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius
                                                                             .only(
@@ -2799,7 +2800,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          BorderRadius
+                                                                          const BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(8.0),
@@ -2827,7 +2828,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               .start,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               8.0,
                                                                               0.0,
@@ -2842,7 +2843,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               Expanded(
                                                                                 child: Builder(
                                                                                   builder: (context) => Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                     child: InkWell(
                                                                                       splashColor: Colors.transparent,
                                                                                       focusColor: Colors.transparent,
@@ -2856,7 +2857,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               elevation: 0,
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
-                                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                               child: GestureDetector(
                                                                                                 onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                 child: CorridaWidget(
@@ -2872,7 +2873,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                             child: AutoSizeText(
                                                                                               valueOrDefault<String>(
                                                                                                 disponiveisItem.nomeComercio,
@@ -2902,7 +2903,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                             ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'relative',
@@ -2923,7 +2924,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             phone: false,
                                                                                           ))
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                               child: Text(
                                                                                                 formatNumber(
                                                                                                   disponiveisItem.valorCorrida,
@@ -2948,7 +2949,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               ),
                                                                               if (_model.abrir != disponiveisIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -2974,7 +2975,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 ),
                                                                               if (_model.abrir == disponiveisIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -3008,17 +3009,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Container(
                                                                                       width: double.infinity,
-                                                                                      constraints: BoxConstraints(
+                                                                                      constraints: const BoxConstraints(
                                                                                         maxWidth: 900.0,
                                                                                       ),
-                                                                                      decoration: BoxDecoration(
+                                                                                      decoration: const BoxDecoration(
                                                                                         color: Colors.transparent,
                                                                                       ),
                                                                                       child: Column(
@@ -3037,23 +3038,23 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   shape: BoxShape.circle,
                                                                                                   border: Border.all(
-                                                                                                    color: disponiveisItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                    color: disponiveisItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                     width: 2.0,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.monetization_on_rounded,
-                                                                                                  color: disponiveisItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                  color: disponiveisItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                   size: 24.0,
                                                                                                 ),
                                                                                               ),
                                                                                               Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                 child: Text(
                                                                                                   disponiveisItem.pago == true ? 'Pago' : 'Receber',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                        color: disponiveisItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                        color: disponiveisItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.bold,
@@ -3062,12 +3063,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ),
                                                                                               if (disponiveisItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     'Pago em:  ',
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -3076,7 +3077,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (disponiveisItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3085,7 +3086,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -3094,7 +3095,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (disponiveisItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3103,7 +3104,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -3113,7 +3114,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             ],
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                             child: Container(
                                                                                               width: double.infinity,
                                                                                               decoration: BoxDecoration(
@@ -3124,14 +3125,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.min,
                                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                       child: RichText(
                                                                                                         textScaler: MediaQuery.of(context).textScaler,
                                                                                                         text: TextSpan(
@@ -3149,7 +3150,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ],
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFF606A85),
+                                                                                                                color: const Color(0xFF606A85),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w500,
@@ -3157,13 +3158,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    Divider(
+                                                                                                    const Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -3174,10 +3175,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (disponiveisItem.agendado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -3192,14 +3193,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.businessTime,
@@ -3210,7 +3211,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Agendado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3224,7 +3225,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3241,7 +3242,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3260,12 +3261,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -3285,7 +3286,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                         child: Column(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -3305,7 +3306,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         elevation: 0,
                                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                         child: GestureDetector(
                                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                           child: CorridaWidget(
@@ -3320,7 +3321,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                                   text: TextSpan(
                                                                                                                     children: [
-                                                                                                                      TextSpan(
+                                                                                                                      const TextSpan(
                                                                                                                         text: 'Detalhe:',
                                                                                                                         style: TextStyle(),
                                                                                                                       ),
@@ -3328,7 +3329,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         text: 'Clique pra ver',
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                                              color: Color(0xFFF8B400),
+                                                                                                                              color: const Color(0xFFF8B400),
                                                                                                                               fontSize: 14.0,
                                                                                                                               letterSpacing: 0.0,
                                                                                                                               fontWeight: FontWeight.bold,
@@ -3337,7 +3338,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                     ],
                                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          color: Color(0xFF606A85),
+                                                                                                                          color: const Color(0xFF606A85),
                                                                                                                           fontSize: 14.0,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                           fontWeight: FontWeight.w500,
@@ -3346,13 +3347,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                            Divider(
+                                                                                                            const Divider(
                                                                                                               height: 1.0,
                                                                                                               thickness: 1.0,
                                                                                                               indent: 0.0,
                                                                                                               color: Color(0xFFE5E7EB),
                                                                                                             ),
-                                                                                                          ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -3366,10 +3367,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (disponiveisItem.disponivel == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -3384,14 +3385,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.boxOpen,
@@ -3402,7 +3403,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Disponivel',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3416,7 +3417,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3433,7 +3434,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3452,12 +3453,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -3476,7 +3477,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -3496,7 +3497,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       elevation: 0,
                                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                       child: GestureDetector(
                                                                                                                         onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                         child: CorridaWidget(
@@ -3511,7 +3512,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                                                 text: TextSpan(
                                                                                                                   children: [
-                                                                                                                    TextSpan(
+                                                                                                                    const TextSpan(
                                                                                                                       text: 'Detalhe:',
                                                                                                                       style: TextStyle(),
                                                                                                                     ),
@@ -3519,7 +3520,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       text: 'Clique pra ver',
                                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                                            color: Color(0xFFF8B400),
+                                                                                                                            color: const Color(0xFFF8B400),
                                                                                                                             fontSize: 14.0,
                                                                                                                             letterSpacing: 0.0,
                                                                                                                             fontWeight: FontWeight.bold,
@@ -3528,7 +3529,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   ],
                                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                                        color: Color(0xFF606A85),
+                                                                                                                        color: const Color(0xFF606A85),
                                                                                                                         fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontWeight: FontWeight.w500,
@@ -3537,13 +3538,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                          Divider(
+                                                                                                          const Divider(
                                                                                                             height: 1.0,
                                                                                                             thickness: 1.0,
                                                                                                             indent: 0.0,
                                                                                                             color: Color(0xFFE5E7EB),
                                                                                                           ),
-                                                                                                        ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                        ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
@@ -3556,10 +3557,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (disponiveisItem.aceito == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -3574,14 +3575,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: Icon(
                                                                                                       Icons.sports_motorsports,
@@ -3592,7 +3593,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Aceita',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3606,7 +3607,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3623,7 +3624,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3642,12 +3643,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -3662,18 +3663,18 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
                                                                                                             children: [
-                                                                                                              TextSpan(
+                                                                                                              const TextSpan(
                                                                                                                 text: 'Motoboy:',
                                                                                                                 style: TextStyle(),
                                                                                                               ),
@@ -3681,7 +3682,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: valueOrDefault(currentUserDocument?.nome, ''),
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -3690,7 +3691,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -3698,13 +3699,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -3715,10 +3716,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (disponiveisItem.coletado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -3733,14 +3734,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.box,
@@ -3751,7 +3752,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Coletado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3765,7 +3766,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3782,7 +3783,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3801,12 +3802,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -3821,13 +3822,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -3836,7 +3837,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Motoboy ja coletou o Pedido',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -3845,7 +3846,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -3853,13 +3854,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -3870,10 +3871,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (disponiveisItem.concluido == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Colors.transparent,
                                                                                         ),
                                                                                         child: Column(
@@ -3889,14 +3890,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Icon(
+                                                                                                  child: const Icon(
                                                                                                     Icons.home,
                                                                                                     color: Color(0xFFF8B400),
                                                                                                     size: 24.0,
@@ -3904,7 +3905,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Finalizada',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3918,7 +3919,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -3935,7 +3936,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -3954,7 +3955,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
@@ -3965,14 +3966,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.min,
                                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -3981,7 +3982,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Concluido com sucesso!',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -3990,7 +3991,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -3998,13 +3999,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -4032,7 +4033,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                               ),
                                             ),
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: SingleChildScrollView(
                                                 primary: false,
                                                 child: Column(
@@ -4043,7 +4044,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -4068,21 +4069,21 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           width: 35.0,
                                                           height: 35.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -4100,7 +4101,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                           ),
@@ -4119,7 +4120,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 .primaryText,
                                                           ),
                                                           hoverTextColor:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -4146,7 +4147,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   aceitos[
                                                                       aceitosIndex];
                                                               return Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -4158,7 +4159,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   elevation:
                                                                       16.0,
                                                                   shape:
-                                                                      RoundedRectangleBorder(
+                                                                      const RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius
                                                                             .only(
@@ -4184,7 +4185,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          BorderRadius
+                                                                          const BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(8.0),
@@ -4212,7 +4213,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               .start,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               8.0,
                                                                               0.0,
@@ -4239,7 +4240,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: GestureDetector(
                                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                               child: CorridaWidget(
@@ -4255,7 +4256,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             valueOrDefault<String>(
                                                                                               aceitosItem.nomeComercio,
@@ -4269,7 +4270,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             'Id: ${aceitosItem.idPedido}',
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -4286,7 +4287,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           phone: false,
                                                                                         ))
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                             child: Text(
                                                                                               formatNumber(
                                                                                                 aceitosItem.valorCorrida,
@@ -4310,7 +4311,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               ),
                                                                               if (_model.abrir != aceitosIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -4336,7 +4337,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 ),
                                                                               if (_model.abrir == aceitosIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -4370,17 +4371,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Container(
                                                                                       width: double.infinity,
-                                                                                      constraints: BoxConstraints(
+                                                                                      constraints: const BoxConstraints(
                                                                                         maxWidth: 900.0,
                                                                                       ),
-                                                                                      decoration: BoxDecoration(
+                                                                                      decoration: const BoxDecoration(
                                                                                         color: Colors.transparent,
                                                                                       ),
                                                                                       child: Column(
@@ -4399,24 +4400,24 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   shape: BoxShape.circle,
                                                                                                   border: Border.all(
-                                                                                                    color: aceitosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                    color: aceitosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                     width: 2.0,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.monetization_on_rounded,
-                                                                                                  color: aceitosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                  color: aceitosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                   size: 24.0,
                                                                                                 ),
                                                                                               ),
                                                                                               Expanded(
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     aceitosItem.pago == true ? 'Pago' : 'Receber',
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: aceitosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                          color: aceitosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.bold,
@@ -4426,12 +4427,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ),
                                                                                               if (aceitosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     'Pago em:  ',
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -4440,7 +4441,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (aceitosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -4449,7 +4450,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -4458,7 +4459,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (aceitosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -4467,7 +4468,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -4477,7 +4478,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             ],
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                             child: Container(
                                                                                               width: double.infinity,
                                                                                               decoration: BoxDecoration(
@@ -4488,14 +4489,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.min,
                                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                       child: RichText(
                                                                                                         textScaler: MediaQuery.of(context).textScaler,
                                                                                                         text: TextSpan(
@@ -4513,7 +4514,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ],
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFF606A85),
+                                                                                                                color: const Color(0xFF606A85),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w500,
@@ -4521,13 +4522,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    Divider(
+                                                                                                    const Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -4538,10 +4539,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (aceitosItem.agendado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -4556,14 +4557,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.businessTime,
@@ -4574,7 +4575,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Agendado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4588,7 +4589,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -4605,7 +4606,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -4624,12 +4625,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -4649,7 +4650,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                         child: Column(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4669,7 +4670,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         elevation: 0,
                                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                         child: GestureDetector(
                                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                           child: CorridaWidget(
@@ -4684,7 +4685,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                                   text: TextSpan(
                                                                                                                     children: [
-                                                                                                                      TextSpan(
+                                                                                                                      const TextSpan(
                                                                                                                         text: 'Detalhe:',
                                                                                                                         style: TextStyle(),
                                                                                                                       ),
@@ -4692,7 +4693,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         text: 'Clique pra ver',
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                                              color: Color(0xFFF8B400),
+                                                                                                                              color: const Color(0xFFF8B400),
                                                                                                                               fontSize: 14.0,
                                                                                                                               letterSpacing: 0.0,
                                                                                                                               fontWeight: FontWeight.bold,
@@ -4701,7 +4702,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                     ],
                                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          color: Color(0xFF606A85),
+                                                                                                                          color: const Color(0xFF606A85),
                                                                                                                           fontSize: 14.0,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                           fontWeight: FontWeight.w500,
@@ -4710,13 +4711,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                            Divider(
+                                                                                                            const Divider(
                                                                                                               height: 1.0,
                                                                                                               thickness: 1.0,
                                                                                                               indent: 0.0,
                                                                                                               color: Color(0xFFE5E7EB),
                                                                                                             ),
-                                                                                                          ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -4730,10 +4731,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (aceitosItem.disponivel == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -4748,14 +4749,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.boxOpen,
@@ -4766,7 +4767,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Disponivel',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4780,7 +4781,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -4797,7 +4798,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -4816,12 +4817,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -4840,7 +4841,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -4860,7 +4861,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       elevation: 0,
                                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                       child: GestureDetector(
                                                                                                                         onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                         child: CorridaWidget(
@@ -4875,7 +4876,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                                                 text: TextSpan(
                                                                                                                   children: [
-                                                                                                                    TextSpan(
+                                                                                                                    const TextSpan(
                                                                                                                       text: 'Detalhe:',
                                                                                                                       style: TextStyle(),
                                                                                                                     ),
@@ -4883,7 +4884,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       text: 'Clique pra ver',
                                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                                            color: Color(0xFFF8B400),
+                                                                                                                            color: const Color(0xFFF8B400),
                                                                                                                             fontSize: 14.0,
                                                                                                                             letterSpacing: 0.0,
                                                                                                                             fontWeight: FontWeight.bold,
@@ -4892,7 +4893,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   ],
                                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                                        color: Color(0xFF606A85),
+                                                                                                                        color: const Color(0xFF606A85),
                                                                                                                         fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontWeight: FontWeight.w500,
@@ -4901,13 +4902,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                          Divider(
+                                                                                                          const Divider(
                                                                                                             height: 1.0,
                                                                                                             thickness: 1.0,
                                                                                                             indent: 0.0,
                                                                                                             color: Color(0xFFE5E7EB),
                                                                                                           ),
-                                                                                                        ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                        ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
@@ -4920,10 +4921,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (aceitosItem.aceito == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -4938,14 +4939,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: Icon(
                                                                                                       Icons.sports_motorsports,
@@ -4956,7 +4957,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Aceita',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4970,7 +4971,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -4987,7 +4988,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -5006,12 +5007,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -5026,18 +5027,18 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
                                                                                                             children: [
-                                                                                                              TextSpan(
+                                                                                                              const TextSpan(
                                                                                                                 text: 'Motoboy:',
                                                                                                                 style: TextStyle(),
                                                                                                               ),
@@ -5045,7 +5046,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: valueOrDefault(currentUserDocument?.nome, ''),
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -5054,7 +5055,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -5062,13 +5063,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -5079,10 +5080,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (aceitosItem.coletado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -5097,14 +5098,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.box,
@@ -5115,7 +5116,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Coletado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5129,7 +5130,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -5146,7 +5147,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -5165,12 +5166,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -5185,13 +5186,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -5200,7 +5201,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Motoboy ja coletou o Pedido',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -5209,7 +5210,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -5217,13 +5218,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -5234,10 +5235,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (aceitosItem.concluido == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Colors.transparent,
                                                                                         ),
                                                                                         child: Column(
@@ -5253,14 +5254,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Icon(
+                                                                                                  child: const Icon(
                                                                                                     Icons.home,
                                                                                                     color: Color(0xFFF8B400),
                                                                                                     size: 24.0,
@@ -5268,7 +5269,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Finalizada',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5282,7 +5283,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -5299,7 +5300,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -5318,7 +5319,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
@@ -5329,14 +5330,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.min,
                                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -5345,7 +5346,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Concluido com sucesso!',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -5354,7 +5355,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -5362,13 +5363,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -5396,7 +5397,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                               ),
                                             ),
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: SingleChildScrollView(
                                                 primary: false,
                                                 child: Column(
@@ -5407,7 +5408,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -5432,21 +5433,21 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           width: 35.0,
                                                           height: 35.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -5464,7 +5465,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                           ),
@@ -5483,7 +5484,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 .primaryText,
                                                           ),
                                                           hoverTextColor:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -5510,7 +5511,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   coletado[
                                                                       coletadoIndex];
                                                               return Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -5522,7 +5523,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   elevation:
                                                                       16.0,
                                                                   shape:
-                                                                      RoundedRectangleBorder(
+                                                                      const RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius
                                                                             .only(
@@ -5548,7 +5549,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          BorderRadius
+                                                                          const BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(8.0),
@@ -5576,7 +5577,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               .start,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               8.0,
                                                                               0.0,
@@ -5603,7 +5604,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: GestureDetector(
                                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                               child: CorridaWidget(
@@ -5619,7 +5620,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             valueOrDefault<String>(
                                                                                               coletadoItem.nomeComercio,
@@ -5633,7 +5634,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             'Id: ${coletadoItem.idPedido}',
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -5650,7 +5651,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           phone: false,
                                                                                         ))
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                             child: Text(
                                                                                               formatNumber(
                                                                                                 coletadoItem.valorCorrida,
@@ -5674,7 +5675,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               ),
                                                                               if (_model.abrir != coletadoIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -5700,7 +5701,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 ),
                                                                               if (_model.abrir == coletadoIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -5734,17 +5735,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Container(
                                                                                       width: double.infinity,
-                                                                                      constraints: BoxConstraints(
+                                                                                      constraints: const BoxConstraints(
                                                                                         maxWidth: 900.0,
                                                                                       ),
-                                                                                      decoration: BoxDecoration(
+                                                                                      decoration: const BoxDecoration(
                                                                                         color: Colors.transparent,
                                                                                       ),
                                                                                       child: Column(
@@ -5763,24 +5764,24 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   shape: BoxShape.circle,
                                                                                                   border: Border.all(
-                                                                                                    color: coletadoItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                    color: coletadoItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                     width: 2.0,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.monetization_on_rounded,
-                                                                                                  color: coletadoItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                  color: coletadoItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                   size: 24.0,
                                                                                                 ),
                                                                                               ),
                                                                                               Expanded(
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     coletadoItem.pago == true ? 'Pago' : 'Receber',
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: coletadoItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                          color: coletadoItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.bold,
@@ -5790,12 +5791,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ),
                                                                                               if (coletadoItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     'Pago em:  ',
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -5804,7 +5805,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (coletadoItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -5813,7 +5814,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -5822,7 +5823,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (coletadoItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -5831,7 +5832,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -5841,7 +5842,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             ],
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                             child: Container(
                                                                                               width: double.infinity,
                                                                                               decoration: BoxDecoration(
@@ -5852,14 +5853,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.min,
                                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                       child: RichText(
                                                                                                         textScaler: MediaQuery.of(context).textScaler,
                                                                                                         text: TextSpan(
@@ -5877,7 +5878,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ],
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFF606A85),
+                                                                                                                color: const Color(0xFF606A85),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w500,
@@ -5885,13 +5886,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    Divider(
+                                                                                                    const Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -5902,10 +5903,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (coletadoItem.agendado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -5920,14 +5921,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.businessTime,
@@ -5938,7 +5939,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Agendado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -5952,7 +5953,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -5969,7 +5970,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -5988,12 +5989,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -6013,7 +6014,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                         child: Column(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -6033,7 +6034,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         elevation: 0,
                                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                         child: GestureDetector(
                                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                           child: CorridaWidget(
@@ -6048,7 +6049,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                                   text: TextSpan(
                                                                                                                     children: [
-                                                                                                                      TextSpan(
+                                                                                                                      const TextSpan(
                                                                                                                         text: 'Detalhe:',
                                                                                                                         style: TextStyle(),
                                                                                                                       ),
@@ -6056,7 +6057,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         text: 'Clique pra ver',
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                                              color: Color(0xFFF8B400),
+                                                                                                                              color: const Color(0xFFF8B400),
                                                                                                                               fontSize: 14.0,
                                                                                                                               letterSpacing: 0.0,
                                                                                                                               fontWeight: FontWeight.bold,
@@ -6065,7 +6066,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                     ],
                                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          color: Color(0xFF606A85),
+                                                                                                                          color: const Color(0xFF606A85),
                                                                                                                           fontSize: 14.0,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                           fontWeight: FontWeight.w500,
@@ -6074,13 +6075,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                            Divider(
+                                                                                                            const Divider(
                                                                                                               height: 1.0,
                                                                                                               thickness: 1.0,
                                                                                                               indent: 0.0,
                                                                                                               color: Color(0xFFE5E7EB),
                                                                                                             ),
-                                                                                                          ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -6094,10 +6095,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (coletadoItem.disponivel == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -6112,14 +6113,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.boxOpen,
@@ -6130,7 +6131,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Disponivel',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -6144,7 +6145,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -6161,7 +6162,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -6180,12 +6181,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -6204,7 +6205,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -6224,7 +6225,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       elevation: 0,
                                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                       child: GestureDetector(
                                                                                                                         onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                         child: CorridaWidget(
@@ -6239,7 +6240,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                                                 text: TextSpan(
                                                                                                                   children: [
-                                                                                                                    TextSpan(
+                                                                                                                    const TextSpan(
                                                                                                                       text: 'Detalhe:',
                                                                                                                       style: TextStyle(),
                                                                                                                     ),
@@ -6247,7 +6248,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       text: 'Clique pra ver',
                                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                                            color: Color(0xFFF8B400),
+                                                                                                                            color: const Color(0xFFF8B400),
                                                                                                                             fontSize: 14.0,
                                                                                                                             letterSpacing: 0.0,
                                                                                                                             fontWeight: FontWeight.bold,
@@ -6256,7 +6257,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   ],
                                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                                        color: Color(0xFF606A85),
+                                                                                                                        color: const Color(0xFF606A85),
                                                                                                                         fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontWeight: FontWeight.w500,
@@ -6265,13 +6266,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                          Divider(
+                                                                                                          const Divider(
                                                                                                             height: 1.0,
                                                                                                             thickness: 1.0,
                                                                                                             indent: 0.0,
                                                                                                             color: Color(0xFFE5E7EB),
                                                                                                           ),
-                                                                                                        ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                        ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
@@ -6284,10 +6285,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (coletadoItem.aceito == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -6302,14 +6303,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: Icon(
                                                                                                       Icons.sports_motorsports,
@@ -6320,7 +6321,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Aceita',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -6334,7 +6335,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -6351,7 +6352,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -6370,12 +6371,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -6390,18 +6391,18 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
                                                                                                             children: [
-                                                                                                              TextSpan(
+                                                                                                              const TextSpan(
                                                                                                                 text: 'Motoboy:',
                                                                                                                 style: TextStyle(),
                                                                                                               ),
@@ -6409,7 +6410,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: valueOrDefault(currentUserDocument?.nome, ''),
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -6418,7 +6419,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -6426,13 +6427,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -6443,10 +6444,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (coletadoItem.coletado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -6461,14 +6462,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.box,
@@ -6479,7 +6480,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Coletado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -6493,7 +6494,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -6510,7 +6511,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -6529,12 +6530,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -6549,13 +6550,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -6564,7 +6565,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Motoboy ja coletou o Pedido',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -6573,7 +6574,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -6581,13 +6582,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -6598,10 +6599,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (coletadoItem.concluido == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Colors.transparent,
                                                                                         ),
                                                                                         child: Column(
@@ -6617,14 +6618,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Icon(
+                                                                                                  child: const Icon(
                                                                                                     Icons.home,
                                                                                                     color: Color(0xFFF8B400),
                                                                                                     size: 24.0,
@@ -6632,7 +6633,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Finalizada',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -6646,7 +6647,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -6663,7 +6664,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -6682,7 +6683,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
@@ -6693,14 +6694,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.min,
                                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -6709,7 +6710,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Concluido com sucesso!',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -6718,7 +6719,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -6726,13 +6727,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -6760,7 +6761,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                               ),
                                             ),
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: SingleChildScrollView(
                                                 primary: false,
                                                 child: Column(
@@ -6771,7 +6772,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -6796,21 +6797,21 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           width: 35.0,
                                                           height: 35.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -6828,7 +6829,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   ),
                                                           elevation: 8.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                           ),
@@ -6847,7 +6848,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                 .primaryText,
                                                           ),
                                                           hoverTextColor:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                         ),
                                                       ),
                                                     ),
@@ -6876,7 +6877,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   concluidos[
                                                                       concluidosIndex];
                                                               return Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -6888,7 +6889,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                   elevation:
                                                                       16.0,
                                                                   shape:
-                                                                      RoundedRectangleBorder(
+                                                                      const RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius
                                                                             .only(
@@ -6914,7 +6915,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          BorderRadius
+                                                                          const BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(8.0),
@@ -6942,7 +6943,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               .start,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               8.0,
                                                                               0.0,
@@ -6969,7 +6970,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: GestureDetector(
                                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                               child: CorridaWidget(
@@ -6985,7 +6986,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             valueOrDefault<String>(
                                                                                               concluidosItem.nomeComercio,
@@ -6999,7 +7000,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             'Id: ${concluidosItem.idPedido}',
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -7012,7 +7013,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                           child: Text(
                                                                                             formatNumber(
                                                                                               concluidosItem.valorCorrida,
@@ -7036,7 +7037,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                               ),
                                                                               if (_model.abrir != concluidosIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -7062,7 +7063,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 ),
                                                                               if (_model.abrir == concluidosIndex)
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -7096,17 +7097,17 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(58.0, 0.0, 0.0, 12.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Container(
                                                                                       width: double.infinity,
-                                                                                      constraints: BoxConstraints(
+                                                                                      constraints: const BoxConstraints(
                                                                                         maxWidth: 900.0,
                                                                                       ),
-                                                                                      decoration: BoxDecoration(
+                                                                                      decoration: const BoxDecoration(
                                                                                         color: Colors.transparent,
                                                                                       ),
                                                                                       child: Column(
@@ -7125,24 +7126,24 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   shape: BoxShape.circle,
                                                                                                   border: Border.all(
-                                                                                                    color: concluidosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                    color: concluidosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                     width: 2.0,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.monetization_on_rounded,
-                                                                                                  color: concluidosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                  color: concluidosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                   size: 24.0,
                                                                                                 ),
                                                                                               ),
                                                                                               Expanded(
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                   child: Text(
                                                                                                     concluidosItem.pago == true ? 'Pago' : 'Receber',
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: concluidosItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                          color: concluidosItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.bold,
@@ -7152,12 +7153,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ),
                                                                                               if (concluidosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     'Pago em:  ',
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -7166,7 +7167,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (concluidosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -7175,7 +7176,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -7184,7 +7185,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               if (concluidosItem.pago == true)
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -7193,7 +7194,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF2C9A60),
+                                                                                                          color: const Color(0xFF2C9A60),
                                                                                                           fontSize: 12.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -7203,7 +7204,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                             ],
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                             child: Container(
                                                                                               width: double.infinity,
                                                                                               decoration: BoxDecoration(
@@ -7214,14 +7215,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.min,
                                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                       child: RichText(
                                                                                                         textScaler: MediaQuery.of(context).textScaler,
                                                                                                         text: TextSpan(
@@ -7239,7 +7240,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ],
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFF606A85),
+                                                                                                                color: const Color(0xFF606A85),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w500,
@@ -7247,13 +7248,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    Divider(
+                                                                                                    const Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -7264,10 +7265,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (concluidosItem.agendado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -7282,14 +7283,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.businessTime,
@@ -7300,7 +7301,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Agendado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -7314,7 +7315,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -7331,7 +7332,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -7350,12 +7351,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -7375,7 +7376,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   children: [
                                                                                                     Expanded(
                                                                                                       child: Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                         child: Column(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -7395,7 +7396,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         elevation: 0,
                                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                         child: GestureDetector(
                                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                           child: CorridaWidget(
@@ -7410,7 +7411,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                                   text: TextSpan(
                                                                                                                     children: [
-                                                                                                                      TextSpan(
+                                                                                                                      const TextSpan(
                                                                                                                         text: 'Detalhe:',
                                                                                                                         style: TextStyle(),
                                                                                                                       ),
@@ -7418,7 +7419,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                         text: 'Clique pra ver',
                                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                                              color: Color(0xFFF8B400),
+                                                                                                                              color: const Color(0xFFF8B400),
                                                                                                                               fontSize: 14.0,
                                                                                                                               letterSpacing: 0.0,
                                                                                                                               fontWeight: FontWeight.bold,
@@ -7427,7 +7428,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                     ],
                                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                                          color: Color(0xFF606A85),
+                                                                                                                          color: const Color(0xFF606A85),
                                                                                                                           fontSize: 14.0,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                           fontWeight: FontWeight.w500,
@@ -7436,13 +7437,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                            Divider(
+                                                                                                            const Divider(
                                                                                                               height: 1.0,
                                                                                                               thickness: 1.0,
                                                                                                               indent: 0.0,
                                                                                                               color: Color(0xFFE5E7EB),
                                                                                                             ),
-                                                                                                          ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -7456,10 +7457,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (concluidosItem.disponivel == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -7474,14 +7475,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.boxOpen,
@@ -7492,7 +7493,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Disponivel',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -7506,7 +7507,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -7523,7 +7524,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -7542,12 +7543,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -7566,7 +7567,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -7586,7 +7587,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       elevation: 0,
                                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                       child: GestureDetector(
                                                                                                                         onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                         child: CorridaWidget(
@@ -7601,7 +7602,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 textScaler: MediaQuery.of(context).textScaler,
                                                                                                                 text: TextSpan(
                                                                                                                   children: [
-                                                                                                                    TextSpan(
+                                                                                                                    const TextSpan(
                                                                                                                       text: 'Detalhe:',
                                                                                                                       style: TextStyle(),
                                                                                                                     ),
@@ -7609,7 +7610,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                       text: 'Clique pra ver',
                                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                                            color: Color(0xFFF8B400),
+                                                                                                                            color: const Color(0xFFF8B400),
                                                                                                                             fontSize: 14.0,
                                                                                                                             letterSpacing: 0.0,
                                                                                                                             fontWeight: FontWeight.bold,
@@ -7618,7 +7619,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                   ],
                                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                                        color: Color(0xFF606A85),
+                                                                                                                        color: const Color(0xFF606A85),
                                                                                                                         fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontWeight: FontWeight.w500,
@@ -7627,13 +7628,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                          Divider(
+                                                                                                          const Divider(
                                                                                                             height: 1.0,
                                                                                                             thickness: 1.0,
                                                                                                             indent: 0.0,
                                                                                                             color: Color(0xFFE5E7EB),
                                                                                                           ),
-                                                                                                        ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                        ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
@@ -7646,10 +7647,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (concluidosItem.aceito == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -7664,14 +7665,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: Icon(
                                                                                                       Icons.sports_motorsports,
@@ -7682,7 +7683,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Aceita',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -7696,7 +7697,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -7713,7 +7714,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -7732,12 +7733,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -7752,18 +7753,18 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
                                                                                                             children: [
-                                                                                                              TextSpan(
+                                                                                                              const TextSpan(
                                                                                                                 text: 'Motoboy:',
                                                                                                                 style: TextStyle(),
                                                                                                               ),
@@ -7771,7 +7772,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: valueOrDefault(currentUserDocument?.nome, ''),
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -7780,7 +7781,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -7788,13 +7789,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -7805,10 +7806,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (concluidosItem.coletado == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
                                                                                         child: Column(
@@ -7823,14 +7824,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Align(
+                                                                                                  child: const Align(
                                                                                                     alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                     child: FaIcon(
                                                                                                       FontAwesomeIcons.box,
@@ -7841,7 +7842,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Coletado',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -7855,7 +7856,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -7872,7 +7873,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -7891,12 +7892,12 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                  boxShadow: [
+                                                                                                  boxShadow: const [
                                                                                                     BoxShadow(
                                                                                                       blurRadius: 0.0,
                                                                                                       color: Color(0xFFF8B400),
@@ -7911,13 +7912,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -7926,7 +7927,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Motoboy ja coletou o Pedido',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -7935,7 +7936,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -7943,13 +7944,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -7960,10 +7961,10 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                     if (concluidosItem.concluido == true)
                                                                                       Container(
                                                                                         width: double.infinity,
-                                                                                        constraints: BoxConstraints(
+                                                                                        constraints: const BoxConstraints(
                                                                                           maxWidth: 900.0,
                                                                                         ),
-                                                                                        decoration: BoxDecoration(
+                                                                                        decoration: const BoxDecoration(
                                                                                           color: Colors.transparent,
                                                                                         ),
                                                                                         child: Column(
@@ -7979,14 +7980,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   width: 32.0,
                                                                                                   height: 32.0,
                                                                                                   decoration: BoxDecoration(
-                                                                                                    color: Color(0x4D9489F5),
+                                                                                                    color: const Color(0x4D9489F5),
                                                                                                     shape: BoxShape.circle,
                                                                                                     border: Border.all(
-                                                                                                      color: Color(0xFFF8B400),
+                                                                                                      color: const Color(0xFFF8B400),
                                                                                                       width: 2.0,
                                                                                                     ),
                                                                                                   ),
-                                                                                                  child: Icon(
+                                                                                                  child: const Icon(
                                                                                                     Icons.home,
                                                                                                     color: Color(0xFFF8B400),
                                                                                                     size: 24.0,
@@ -7994,7 +7995,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                 ),
                                                                                                 Expanded(
                                                                                                   child: Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       'Finalizada',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -8008,7 +8009,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'd/M',
@@ -8025,7 +8026,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                                   child: Text(
                                                                                                     dateTimeFormat(
                                                                                                       'H:mm:s',
@@ -8044,7 +8045,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                               child: Container(
                                                                                                 width: double.infinity,
                                                                                                 decoration: BoxDecoration(
@@ -8055,14 +8056,14 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.min,
                                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                         child: RichText(
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
@@ -8071,7 +8072,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                                 text: 'Concluido com sucesso!',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -8080,7 +8081,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -8088,13 +8089,13 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -8131,7 +8132,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                             Container(
                               width: 100.0,
                               height: 2.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Opacity(
                                 opacity: 0.0,
                                 child: FlutterFlowCalendar(
@@ -8191,7 +8192,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                 currentUserDocument?.escolhido, false))
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsets.all(16.0),
+                                  padding: const EdgeInsets.all(16.0),
                                   child: Container(
                                     width: double.infinity,
                                     height: 650.0,
@@ -8201,7 +8202,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
@@ -8236,7 +8237,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                               'textOnPageLoadAnimation']!),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 16.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -8254,7 +8255,7 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                       _model.tabBarController!
                                                           .animateTo(
                                                         1,
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 300),
                                                         curve: Curves.ease,
                                                       );
@@ -8265,11 +8266,11 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                     width: 150.0,
                                                     height: 50.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -8282,11 +8283,11 @@ class _MotoboyWidgetState extends State<MotoboyWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),

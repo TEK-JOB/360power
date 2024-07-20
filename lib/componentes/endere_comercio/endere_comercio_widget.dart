@@ -3,16 +3,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'endere_comercio_model.dart';
 export 'endere_comercio_model.dart';
 
@@ -85,8 +80,8 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -111,7 +106,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,11 +119,11 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                 sigmaY: 2.0,
               ),
               child: FutureBuilder<ComerciosRecord>(
-                future: ComerciosRecord.getDocumentOnce(widget!.comercio!),
+                future: ComerciosRecord.getDocumentOnce(widget.comercio!),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return Center(
+                    return const Center(
                       child: SizedBox(
                         width: 50.0,
                         height: 50.0,
@@ -144,14 +139,14 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                   final containerComerciosRecord = snapshot.data!;
 
                   return Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: FutureBuilder<EnderecoRecord>(
                       future: EnderecoRecord.getDocumentOnce(
                           containerComerciosRecord.local!),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
-                          return Center(
+                          return const Center(
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
@@ -167,16 +162,16 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                         final containerEnderecoRecord = snapshot.data!;
 
                         return Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: FutureBuilder<BairroRecord>(
                               future: BairroRecord.getDocumentOnce(
                                   containerEnderecoRecord.bairro2!),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
@@ -198,7 +193,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x1A000000),
@@ -217,7 +212,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                         child: Column(
                                           children: [
                                             Align(
-                                              alignment: Alignment(0.0, 0),
+                                              alignment: const Alignment(0.0, 0),
                                               child: TabBar(
                                                 labelColor:
                                                     FlutterFlowTheme.of(context)
@@ -234,11 +229,11 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           letterSpacing: 0.0,
                                                         ),
                                                 unselectedLabelStyle:
-                                                    TextStyle(),
+                                                    const TextStyle(),
                                                 indicatorColor:
-                                                    Color(0xFFF29200),
-                                                padding: EdgeInsets.all(4.0),
-                                                tabs: [
+                                                    const Color(0xFFF29200),
+                                                padding: const EdgeInsets.all(4.0),
+                                                tabs: const [
                                                   Tab(
                                                     text: 'Endereço',
                                                     icon: Icon(
@@ -285,7 +280,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -299,7 +294,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 300.0,
                                                                   child:
                                                                       TextFormField(
@@ -329,7 +324,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -361,7 +356,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -395,7 +390,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -422,7 +417,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -436,7 +431,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 300.0,
                                                                   child:
                                                                       TextFormField(
@@ -466,7 +461,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -496,7 +491,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -530,7 +525,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -557,7 +552,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -571,7 +566,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 300.0,
                                                                   child:
                                                                       TextFormField(
@@ -601,7 +596,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -633,7 +628,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -667,7 +662,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -694,7 +689,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -708,7 +703,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 70.0,
                                                                   child:
                                                                       TextFormField(
@@ -738,7 +733,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -770,7 +765,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -804,7 +799,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -826,14 +821,14 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           6.0,
                                                                           0.0,
                                                                           6.0,
                                                                           0.0),
                                                                   child:
-                                                                      Container(
+                                                                      SizedBox(
                                                                     width:
                                                                         150.0,
                                                                     child:
@@ -861,7 +856,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             .labelMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
-                                                                              color: Color(0xFFF29200),
+                                                                              color: const Color(0xFFF29200),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         hintText:
@@ -888,7 +883,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                         focusedBorder:
                                                                             OutlineInputBorder(
                                                                           borderSide:
-                                                                              BorderSide(
+                                                                              const BorderSide(
                                                                             color:
                                                                                 Color(0xFFF29200),
                                                                             width:
@@ -922,7 +917,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                               BorderRadius.circular(36.0),
                                                                         ),
                                                                         contentPadding:
-                                                                            EdgeInsets.all(18.0),
+                                                                            const EdgeInsets.all(18.0),
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -946,7 +941,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                Container(
+                                                                SizedBox(
                                                                   width: 70.0,
                                                                   child:
                                                                       TextFormField(
@@ -976,7 +971,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1006,7 +1001,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -1040,7 +1035,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -1069,13 +1064,13 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
                                                                         0.0,
                                                                         0.0),
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -1102,7 +1097,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1137,7 +1132,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1176,7 +1171,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1201,13 +1196,13 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
                                                                         0.0,
                                                                         0.0),
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -1234,7 +1229,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1269,7 +1264,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1308,7 +1303,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1340,7 +1335,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                         MainAxisSize.max,
                                                     children: [
                                                       Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             16.0),
                                                         child: StreamBuilder<
                                                             List<PixRecord>>(
@@ -1351,7 +1346,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                     pixRecord
                                                                         .where(
                                                               'ComercioPix',
-                                                              isEqualTo: widget!
+                                                              isEqualTo: widget
                                                                   .comercio,
                                                             ),
                                                             singleRecord: true,
@@ -1361,7 +1356,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                             // Customize what your widget looks like when it's loading.
                                                             if (!snapshot
                                                                 .hasData) {
-                                                              return Center(
+                                                              return const Center(
                                                                 child: SizedBox(
                                                                   width: 50.0,
                                                                   height: 50.0,
@@ -1420,11 +1415,11 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
-                                                                        Color(
+                                                                        const Color(
                                                                             0xFFF29200),
                                                                   ),
                                                                 );
@@ -1455,7 +1450,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           18.0,
                                                                           0.0,
@@ -1472,7 +1467,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1490,7 +1485,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1502,7 +1497,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.start,
                                                                         children: [
-                                                                          Padding(
+                                                                          const Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
@@ -1525,7 +1520,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                                 ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1548,7 +1543,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1560,7 +1555,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.start,
                                                                         children: [
-                                                                          Padding(
+                                                                          const Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
@@ -1583,7 +1578,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                                 ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1606,7 +1601,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1618,7 +1613,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.start,
                                                                         children: [
-                                                                          Padding(
+                                                                          const Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
@@ -1641,7 +1636,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                                 ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1664,7 +1659,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1676,7 +1671,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.start,
                                                                         children: [
-                                                                          Padding(
+                                                                          const Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
@@ -1701,8 +1696,8 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                                           Flexible(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                              child: Container(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                                              child: SizedBox(
                                                                                 width: 200.0,
                                                                                 child: TextFormField(
                                                                                   controller: _model.copieChaveTextController ??= TextEditingController(
@@ -1756,7 +1751,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 24.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1764,7 +1759,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       8.0, 16.0, 8.0, 16.0),
                                               child: FFButtonWidget(
@@ -1775,14 +1770,14 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                 options: FFButtonOptions(
                                                   width: 180.0,
                                                   height: 50.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFFF29200),
+                                                  color: const Color(0xFFF29200),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -1796,7 +1791,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 8.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -1814,7 +1809,7 @@ class _EndereComercioWidgetState extends State<EndereComercioWidget>
                                                     width: 1.0,
                                                   ),
                                                   hoverTextColor:
-                                                      Color(0xFFF29200),
+                                                      const Color(0xFFF29200),
                                                 ),
                                               ).animateOnPageLoad(animationsMap[
                                                   'buttonOnPageLoadAnimation']!),

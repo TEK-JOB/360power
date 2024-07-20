@@ -121,10 +121,6 @@
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "Nafila",
-          "order": "ASCENDING"
-        },
-        {
           "fieldPath": "uid",
           "order": "ASCENDING"
         }
@@ -208,6 +204,20 @@
         },
         {
           "fieldPath": "Concluido",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "DisponivelEm",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Corridas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Comercio",
           "order": "ASCENDING"
         },
         {

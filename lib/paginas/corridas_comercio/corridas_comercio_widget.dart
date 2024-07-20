@@ -5,16 +5,11 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'corridas_comercio_model.dart';
 export 'corridas_comercio_model.dart';
 
@@ -59,8 +54,8 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -102,7 +97,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 1170.0,
                     ),
                     decoration: BoxDecoration(
@@ -115,7 +110,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 1.0, 0.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -123,9 +118,9 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -140,14 +135,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                       onTap: () async {
                                         context.safePop();
                                       },
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.chevron_left_sharp,
                                         color: Color(0xFFF29200),
                                         size: 44.0,
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           4.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Corridas',
@@ -167,7 +162,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Material(
                               color: Colors.transparent,
@@ -192,7 +187,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -203,7 +198,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              borderRadius: BorderRadius.only(
+                                              borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(10.0),
                                                 bottomRight:
@@ -212,23 +207,23 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                 topRight: Radius.circular(10.0),
                                               ),
                                               border: Border.all(
-                                                color: Color(0xFFF29200),
+                                                color: const Color(0xFFF29200),
                                                 width: 2.0,
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2.0),
+                                              padding: const EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: Duration(
+                                                  fadeInDuration: const Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: Duration(
+                                                  fadeOutDuration: const Duration(
                                                       milliseconds: 500),
                                                   imageUrl:
                                                       valueOrDefault<String>(
-                                                    widget!.comercioPag?.logo,
+                                                    widget.comercioPag?.logo,
                                                     'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/logo%20vazia.png?alt=media&token=8bed6ce7-e61d-413c-a4fa-3ce61bbf47c8',
                                                   ),
                                                   width: 44.0,
@@ -246,7 +241,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 4.0, 0.0, 4.0),
                                                   child: Column(
@@ -258,7 +253,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                     children: [
                                                       Text(
                                                         valueOrDefault<String>(
-                                                          widget!.comercioPag
+                                                          widget.comercioPag
                                                               ?.nomeComercio,
                                                           'sem nome',
                                                         ),
@@ -275,7 +270,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -284,7 +279,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                         child: AutoSizeText(
                                                           valueOrDefault<
                                                               String>(
-                                                            widget!.comercioPag
+                                                            widget.comercioPag
                                                                 ?.enderCompleto,
                                                             'Sem endereço',
                                                           ).maybeHandleOverflow(
@@ -317,10 +312,10 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 0.0),
                             child: FlutterFlowCalendar(
-                              color: Color(0xFFF29200),
+                              color: const Color(0xFFF29200),
                               iconColor:
                                   FlutterFlowTheme.of(context).secondaryText,
                               weekFormat: true,
@@ -394,14 +389,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                   )
                                   .where(
                                     'Comercio',
-                                    isEqualTo: widget!.comercioPag?.reference,
+                                    isEqualTo: widget.comercioPag?.reference,
                                   )
                                   .orderBy('DisponivelEm'),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -417,13 +412,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                   snapshot.data!;
 
                               return Container(
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           18.0, 16.0, 8.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
@@ -435,12 +430,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                           width: 200.0,
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0xFFF29200),
+                                          color: const Color(0xFFF29200),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
@@ -452,7 +447,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 8.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -466,7 +461,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                 .primaryText,
                                             width: 1.0,
                                           ),
-                                          hoverTextColor: Color(0xFFF29200),
+                                          hoverTextColor: const Color(0xFFF29200),
                                         ),
                                       ),
                                     ),
@@ -492,14 +487,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                 final corridasPgItem =
                                                     corridasPg[corridasPgIndex];
                                                 return Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 8.0, 16.0, 8.0),
                                                   child: Material(
                                                     color: Colors.transparent,
                                                     elevation: 16.0,
                                                     shape:
-                                                        RoundedRectangleBorder(
+                                                        const RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.only(
                                                         bottomLeft:
@@ -522,7 +517,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   8.0),
@@ -550,7 +545,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         8.0,
@@ -590,7 +585,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                         .spaceBetween,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             16.0,
@@ -612,17 +607,17 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                             40.0,
                                                                         height:
                                                                             40.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
@@ -634,7 +629,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                         elevation:
                                                                             8.0,
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -652,7 +647,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                               1.0,
                                                                         ),
                                                                         hoverTextColor:
-                                                                            Color(0xFFF29200),
+                                                                            const Color(0xFFF29200),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -676,7 +671,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                         ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
@@ -714,7 +709,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                         false,
                                                                   ))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
@@ -778,7 +773,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           58.0,
                                                                           0.0,
@@ -796,12 +791,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                         width: double
                                                                             .infinity,
                                                                         constraints:
-                                                                            BoxConstraints(
+                                                                            const BoxConstraints(
                                                                           maxWidth:
                                                                               900.0,
                                                                         ),
                                                                         decoration:
-                                                                            BoxDecoration(
+                                                                            const BoxDecoration(
                                                                           color:
                                                                               Colors.transparent,
                                                                         ),
@@ -825,23 +820,23 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     shape: BoxShape.circle,
                                                                                     border: Border.all(
-                                                                                      color: corridasPgItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                      color: corridasPgItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                       width: 2.0,
                                                                                     ),
                                                                                   ),
                                                                                   child: Icon(
                                                                                     Icons.monetization_on_rounded,
-                                                                                    color: corridasPgItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                    color: corridasPgItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                     size: 24.0,
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     corridasPgItem.pago == true ? 'Pago' : 'Receber',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: corridasPgItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                          color: corridasPgItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                           fontSize: 14.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.bold,
@@ -850,12 +845,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ),
                                                                                 if (corridasPgItem.pago == true)
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       'Pago em:  ',
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                            color: Color(0xFF2C9A60),
+                                                                                            color: const Color(0xFF2C9A60),
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
@@ -864,7 +859,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                 if (corridasPgItem.pago == true)
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -873,7 +868,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                            color: Color(0xFF2C9A60),
+                                                                                            color: const Color(0xFF2C9A60),
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
@@ -882,7 +877,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                 if (corridasPgItem.pago == true)
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -891,7 +886,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                            color: Color(0xFF2C9A60),
+                                                                                            color: const Color(0xFF2C9A60),
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
@@ -901,7 +896,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                               ],
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
@@ -912,14 +907,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.min,
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                         child: RichText(
                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                           text: TextSpan(
@@ -937,7 +932,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                             ],
                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: Color(0xFF606A85),
+                                                                                                  color: const Color(0xFF606A85),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
@@ -945,13 +940,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                      Divider(
+                                                                                      const Divider(
                                                                                         height: 1.0,
                                                                                         thickness: 1.0,
                                                                                         indent: 0.0,
                                                                                         color: Color(0xFFE5E7EB),
                                                                                       ),
-                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -966,12 +961,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                           width:
                                                                               double.infinity,
                                                                           constraints:
-                                                                              BoxConstraints(
+                                                                              const BoxConstraints(
                                                                             maxWidth:
                                                                                 900.0,
                                                                           ),
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0x00FFFFFF),
                                                                           ),
@@ -990,14 +985,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     width: 32.0,
                                                                                     height: 32.0,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: Color(0x4D9489F5),
+                                                                                      color: const Color(0x4D9489F5),
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
-                                                                                        color: Color(0xFFF8B400),
+                                                                                        color: const Color(0xFFF8B400),
                                                                                         width: 2.0,
                                                                                       ),
                                                                                     ),
-                                                                                    child: Align(
+                                                                                    child: const Align(
                                                                                       alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: FaIcon(
                                                                                         FontAwesomeIcons.businessTime,
@@ -1008,7 +1003,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       child: Text(
                                                                                         'Agendado',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1022,7 +1017,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -1039,7 +1034,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -1058,12 +1053,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    boxShadow: [
+                                                                                    boxShadow: const [
                                                                                       BoxShadow(
                                                                                         blurRadius: 0.0,
                                                                                         color: Color(0xFFF8B400),
@@ -1083,7 +1078,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             mainAxisAlignment: MainAxisAlignment.center,
@@ -1103,7 +1098,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: GestureDetector(
                                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                             child: CorridaWidget(
@@ -1118,7 +1113,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                                     text: TextSpan(
                                                                                                       children: [
-                                                                                                        TextSpan(
+                                                                                                        const TextSpan(
                                                                                                           text: 'Detalhe:',
                                                                                                           style: TextStyle(),
                                                                                                         ),
@@ -1126,7 +1121,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                           text: 'Clique pra ver',
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFFF8B400),
+                                                                                                                color: const Color(0xFFF8B400),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.bold,
@@ -1135,7 +1130,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                       ],
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                            color: Color(0xFF606A85),
+                                                                                                            color: const Color(0xFF606A85),
                                                                                                             fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
@@ -1144,13 +1139,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                              Divider(
+                                                                                              const Divider(
                                                                                                 height: 1.0,
                                                                                                 thickness: 1.0,
                                                                                                 indent: 0.0,
                                                                                                 color: Color(0xFFE5E7EB),
                                                                                               ),
-                                                                                            ].addToEnd(SizedBox(height: 12.0)),
+                                                                                            ].addToEnd(const SizedBox(height: 12.0)),
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -1168,12 +1163,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                           width:
                                                                               double.infinity,
                                                                           constraints:
-                                                                              BoxConstraints(
+                                                                              const BoxConstraints(
                                                                             maxWidth:
                                                                                 900.0,
                                                                           ),
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0x00FFFFFF),
                                                                           ),
@@ -1192,14 +1187,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     width: 32.0,
                                                                                     height: 32.0,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: Color(0x4D9489F5),
+                                                                                      color: const Color(0x4D9489F5),
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
-                                                                                        color: Color(0xFFF8B400),
+                                                                                        color: const Color(0xFFF8B400),
                                                                                         width: 2.0,
                                                                                       ),
                                                                                     ),
-                                                                                    child: Align(
+                                                                                    child: const Align(
                                                                                       alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: FaIcon(
                                                                                         FontAwesomeIcons.boxOpen,
@@ -1210,7 +1205,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       child: Text(
                                                                                         'Disponivel',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1224,7 +1219,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -1241,7 +1236,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -1260,12 +1255,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    boxShadow: [
+                                                                                    boxShadow: const [
                                                                                       BoxShadow(
                                                                                         blurRadius: 0.0,
                                                                                         color: Color(0xFFF8B400),
@@ -1284,7 +1279,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -1304,7 +1299,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                           child: CorridaWidget(
@@ -1319,7 +1314,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                   text: TextSpan(
                                                                                                     children: [
-                                                                                                      TextSpan(
+                                                                                                      const TextSpan(
                                                                                                         text: 'Detalhe:',
                                                                                                         style: TextStyle(),
                                                                                                       ),
@@ -1327,7 +1322,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                         text: 'Clique pra ver',
                                                                                                         style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                               fontFamily: 'Plus Jakarta Sans',
-                                                                                                              color: Color(0xFFF8B400),
+                                                                                                              color: const Color(0xFFF8B400),
                                                                                                               fontSize: 14.0,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.bold,
@@ -1336,7 +1331,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF606A85),
+                                                                                                          color: const Color(0xFF606A85),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -1345,13 +1340,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             ),
-                                                                                            Divider(
+                                                                                            const Divider(
                                                                                               height: 1.0,
                                                                                               thickness: 1.0,
                                                                                               indent: 0.0,
                                                                                               color: Color(0xFFE5E7EB),
                                                                                             ),
-                                                                                          ].addToEnd(SizedBox(height: 12.0)),
+                                                                                          ].addToEnd(const SizedBox(height: 12.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -1368,12 +1363,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                           width:
                                                                               double.infinity,
                                                                           constraints:
-                                                                              BoxConstraints(
+                                                                              const BoxConstraints(
                                                                             maxWidth:
                                                                                 900.0,
                                                                           ),
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0x00FFFFFF),
                                                                           ),
@@ -1392,14 +1387,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     width: 32.0,
                                                                                     height: 32.0,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: Color(0x4D9489F5),
+                                                                                      color: const Color(0x4D9489F5),
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
-                                                                                        color: Color(0xFFF8B400),
+                                                                                        color: const Color(0xFFF8B400),
                                                                                         width: 2.0,
                                                                                       ),
                                                                                     ),
-                                                                                    child: Align(
+                                                                                    child: const Align(
                                                                                       alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: Icon(
                                                                                         Icons.sports_motorsports,
@@ -1410,7 +1405,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       child: Text(
                                                                                         'Aceita',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1424,7 +1419,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -1441,7 +1436,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -1460,12 +1455,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    boxShadow: [
+                                                                                    boxShadow: const [
                                                                                       BoxShadow(
                                                                                         blurRadius: 0.0,
                                                                                         color: Color(0xFFF8B400),
@@ -1480,18 +1475,18 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                           child: RichText(
                                                                                             textScaler: MediaQuery.of(context).textScaler,
                                                                                             text: TextSpan(
                                                                                               children: [
-                                                                                                TextSpan(
+                                                                                                const TextSpan(
                                                                                                   text: 'Motoboy:',
                                                                                                   style: TextStyle(),
                                                                                                 ),
@@ -1499,7 +1494,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                   text: corridasPgItem.nomeMotoboy,
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                        color: Color(0xFFF8B400),
+                                                                                                        color: const Color(0xFFF8B400),
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.bold,
@@ -1508,7 +1503,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                               ],
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF606A85),
+                                                                                                    color: const Color(0xFF606A85),
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1516,13 +1511,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                        Divider(
+                                                                                        const Divider(
                                                                                           height: 1.0,
                                                                                           thickness: 1.0,
                                                                                           indent: 0.0,
                                                                                           color: Color(0xFFE5E7EB),
                                                                                         ),
-                                                                                      ].addToEnd(SizedBox(height: 12.0)),
+                                                                                      ].addToEnd(const SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1537,12 +1532,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                           width:
                                                                               double.infinity,
                                                                           constraints:
-                                                                              BoxConstraints(
+                                                                              const BoxConstraints(
                                                                             maxWidth:
                                                                                 900.0,
                                                                           ),
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0x00FFFFFF),
                                                                           ),
@@ -1561,14 +1556,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     width: 32.0,
                                                                                     height: 32.0,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: Color(0x4D9489F5),
+                                                                                      color: const Color(0x4D9489F5),
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
-                                                                                        color: Color(0xFFF8B400),
+                                                                                        color: const Color(0xFFF8B400),
                                                                                         width: 2.0,
                                                                                       ),
                                                                                     ),
-                                                                                    child: Align(
+                                                                                    child: const Align(
                                                                                       alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       child: FaIcon(
                                                                                         FontAwesomeIcons.box,
@@ -1579,7 +1574,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       child: Text(
                                                                                         'Coletado',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1593,7 +1588,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -1610,7 +1605,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -1629,12 +1624,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    boxShadow: [
+                                                                                    boxShadow: const [
                                                                                       BoxShadow(
                                                                                         blurRadius: 0.0,
                                                                                         color: Color(0xFFF8B400),
@@ -1649,13 +1644,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                           child: RichText(
                                                                                             textScaler: MediaQuery.of(context).textScaler,
                                                                                             text: TextSpan(
@@ -1664,7 +1659,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                   text: 'Motoboy ja coletou o Pedido',
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                        color: Color(0xFFF8B400),
+                                                                                                        color: const Color(0xFFF8B400),
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.bold,
@@ -1673,7 +1668,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                               ],
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF606A85),
+                                                                                                    color: const Color(0xFF606A85),
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1681,13 +1676,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                        Divider(
+                                                                                        const Divider(
                                                                                           height: 1.0,
                                                                                           thickness: 1.0,
                                                                                           indent: 0.0,
                                                                                           color: Color(0xFFE5E7EB),
                                                                                         ),
-                                                                                      ].addToEnd(SizedBox(height: 12.0)),
+                                                                                      ].addToEnd(const SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1702,12 +1697,12 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                           width:
                                                                               double.infinity,
                                                                           constraints:
-                                                                              BoxConstraints(
+                                                                              const BoxConstraints(
                                                                             maxWidth:
                                                                                 900.0,
                                                                           ),
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Colors.transparent,
                                                                           ),
@@ -1728,14 +1723,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     width: 32.0,
                                                                                     height: 32.0,
                                                                                     decoration: BoxDecoration(
-                                                                                      color: Color(0x4D9489F5),
+                                                                                      color: const Color(0x4D9489F5),
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
-                                                                                        color: Color(0xFFF8B400),
+                                                                                        color: const Color(0xFFF8B400),
                                                                                         width: 2.0,
                                                                                       ),
                                                                                     ),
-                                                                                    child: Icon(
+                                                                                    child: const Icon(
                                                                                       Icons.home,
                                                                                       color: Color(0xFFF8B400),
                                                                                       size: 24.0,
@@ -1743,7 +1738,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         'Finalizada',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1757,7 +1752,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'd/M',
@@ -1774,7 +1769,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'H:mm:s',
@@ -1793,7 +1788,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                 ],
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
@@ -1804,14 +1799,14 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.min,
                                                                                       mainAxisAlignment: MainAxisAlignment.start,
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                           child: RichText(
                                                                                             textScaler: MediaQuery.of(context).textScaler,
                                                                                             text: TextSpan(
@@ -1820,7 +1815,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                                   text: 'Concluido com sucesso!',
                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                        color: Color(0xFFF8B400),
+                                                                                                        color: const Color(0xFFF8B400),
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.bold,
@@ -1829,7 +1824,7 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                               ],
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF606A85),
+                                                                                                    color: const Color(0xFF606A85),
                                                                                                     fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1837,13 +1832,13 @@ class _CorridasComercioWidgetState extends State<CorridasComercioWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                        Divider(
+                                                                                        const Divider(
                                                                                           height: 1.0,
                                                                                           thickness: 1.0,
                                                                                           indent: 0.0,
                                                                                           color: Color(0xFFE5E7EB),
                                                                                         ),
-                                                                                      ].addToEnd(SizedBox(height: 12.0)),
+                                                                                      ].addToEnd(const SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),

@@ -5,17 +5,11 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'corridas_motoboy_model.dart';
 export 'corridas_motoboy_model.dart';
 
@@ -60,8 +54,8 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -79,8 +73,8 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -98,8 +92,8 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 90.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 90.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -124,13 +118,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(widget!.motoboy!),
+      stream: UsersRecord.getDocument(widget.motoboy!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-            body: Center(
+            body: const Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
@@ -176,7 +170,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 1.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -184,9 +178,9 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -201,7 +195,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                           onTap: () async {
                                             context.safePop();
                                           },
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.chevron_left_sharp,
                                             color: Color(0xFFF29200),
                                             size: 44.0,
@@ -209,7 +203,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 16.0, 0.0, 0.0),
                                           child: Text(
                                             'Corridas',
@@ -229,7 +223,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Material(
                                   color: Colors.transparent,
@@ -240,7 +234,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                   child: Container(
                                     width: double.infinity,
                                     height: 270.0,
-                                    constraints: BoxConstraints(
+                                    constraints: const BoxConstraints(
                                       maxWidth: 390.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -256,7 +250,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -268,7 +262,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                           context)
                                                       .primaryText,
                                                   borderRadius:
-                                                      BorderRadius.only(
+                                                      const BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(10.0),
                                                     bottomRight:
@@ -279,20 +273,20 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                         Radius.circular(10.0),
                                                   ),
                                                   border: Border.all(
-                                                    color: Color(0xFFF29200),
+                                                    color: const Color(0xFFF29200),
                                                     width: 2.0,
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
                                                     child: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
+                                                      fadeInDuration: const Duration(
                                                           milliseconds: 500),
-                                                      fadeOutDuration: Duration(
+                                                      fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl: valueOrDefault<
                                                           String>(
@@ -317,7 +311,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -345,7 +339,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -392,7 +386,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Container(
@@ -407,7 +401,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -420,7 +414,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Icon(
+                                                        const Icon(
                                                           Icons
                                                               .sports_motorsports,
                                                           color:
@@ -429,7 +423,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -475,7 +469,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Container(
@@ -490,7 +484,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -503,7 +497,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Icon(
+                                                        const Icon(
                                                           Icons
                                                               .monetization_on_outlined,
                                                           color:
@@ -512,7 +506,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -572,10 +566,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: FlutterFlowCalendar(
-                                  color: Color(0xFFF29200),
+                                  color: const Color(0xFFF29200),
                                   iconColor: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   weekFormat: true,
@@ -640,7 +634,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                     ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: StreamBuilder<List<CorridasRecord>>(
                                   stream: queryCorridasRecord(
@@ -658,14 +652,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                             )
                                             .where(
                                               'Motoboy',
-                                              isEqualTo: widget!.motoboy,
+                                              isEqualTo: widget.motoboy,
                                             )
                                             .orderBy('DisponivelEm'),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
-                                      return Center(
+                                      return const Center(
                                         child: SizedBox(
                                           width: 50.0,
                                           height: 50.0,
@@ -683,7 +677,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                         snapshot.data!;
 
                                     return Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -693,7 +687,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     18.0, 16.0, 8.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () {
@@ -705,14 +699,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                               options: FFButtonOptions(
                                                 width: 200.0,
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFFF29200),
+                                                color: const Color(0xFFF29200),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
@@ -725,7 +719,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                                 elevation: 8.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -741,13 +735,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                   width: 1.0,
                                                 ),
                                                 hoverTextColor:
-                                                    Color(0xFFF29200),
+                                                    const Color(0xFFF29200),
                                               ),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: Container(
                                               width: double.infinity,
@@ -776,7 +770,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                 corridasMotoboyIndex];
                                                         return Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       8.0,
@@ -787,7 +781,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                 .transparent,
                                                             elevation: 16.0,
                                                             shape:
-                                                                RoundedRectangleBorder(
+                                                                const RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
@@ -811,13 +805,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                 color: corridasMotoboyItem
                                                                             .status !=
                                                                         'Concluido'
-                                                                    ? Color(
+                                                                    ? const Color(
                                                                         0xFF780508)
                                                                     : FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -847,7 +841,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                         .center,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             8.0,
@@ -862,7 +856,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               .spaceBetween,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               16.0,
                                                                               8.0,
@@ -879,16 +873,16 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                 FFButtonOptions(
                                                                               width: 40.0,
                                                                               height: 40.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: Color(0xFFF29200),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: const Color(0xFFF29200),
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Readex Pro',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                               elevation: 8.0,
-                                                                              borderSide: BorderSide(
+                                                                              borderSide: const BorderSide(
                                                                                 color: Colors.transparent,
                                                                                 width: 1.0,
                                                                               ),
@@ -898,7 +892,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 width: 1.0,
                                                                               ),
-                                                                              hoverTextColor: Color(0xFFF29200),
+                                                                              hoverTextColor: const Color(0xFFF29200),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -919,7 +913,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                       elevation: 0,
                                                                                       insetPadding: EdgeInsets.zero,
                                                                                       backgroundColor: Colors.transparent,
-                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                       child: GestureDetector(
                                                                                         onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                         child: CorridaWidget(
@@ -935,7 +929,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
                                                                                       valueOrDefault<String>(
                                                                                         corridasMotoboyItem.nomeComercio,
@@ -958,7 +952,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
                                                                                     child: Text(
                                                                                       dateTimeFormat(
                                                                                         'Hm',
@@ -979,7 +973,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                     phone: false,
                                                                                   ))
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                       child: Text(
                                                                                         formatNumber(
                                                                                           corridasMotoboyItem.valorCorrida,
@@ -1063,7 +1057,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               58.0,
                                                                               0.0,
                                                                               0.0,
@@ -1077,10 +1071,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                             children: [
                                                                               Container(
                                                                                 width: double.infinity,
-                                                                                constraints: BoxConstraints(
+                                                                                constraints: const BoxConstraints(
                                                                                   maxWidth: 900.0,
                                                                                 ),
-                                                                                decoration: BoxDecoration(
+                                                                                decoration: const BoxDecoration(
                                                                                   color: Colors.transparent,
                                                                                 ),
                                                                                 child: Column(
@@ -1099,23 +1093,23 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             shape: BoxShape.circle,
                                                                                             border: Border.all(
-                                                                                              color: corridasMotoboyItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                              color: corridasMotoboyItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                               width: 2.0,
                                                                                             ),
                                                                                           ),
                                                                                           child: Icon(
                                                                                             Icons.monetization_on_rounded,
-                                                                                            color: corridasMotoboyItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                            color: corridasMotoboyItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                             size: 24.0,
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             corridasMotoboyItem.pago == true ? 'Pago' : 'Receber',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                  color: corridasMotoboyItem.pago == true ? Color(0xFF5CF91B) : Color(0xFFF20A43),
+                                                                                                  color: corridasMotoboyItem.pago == true ? const Color(0xFF5CF91B) : const Color(0xFFF20A43),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
@@ -1124,12 +1118,12 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ),
                                                                                         if (corridasMotoboyItem.pago == true)
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               'Pago em:  ',
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF2C9A60),
+                                                                                                    color: const Color(0xFF2C9A60),
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1138,7 +1132,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                         if (corridasMotoboyItem.pago == true)
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1147,7 +1141,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF2C9A60),
+                                                                                                    color: const Color(0xFF2C9A60),
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1156,7 +1150,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                         if (corridasMotoboyItem.pago == true)
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -1165,7 +1159,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: Color(0xFF2C9A60),
+                                                                                                    color: const Color(0xFF2C9A60),
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
@@ -1175,7 +1169,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                       child: Container(
                                                                                         width: double.infinity,
                                                                                         decoration: BoxDecoration(
@@ -1186,14 +1180,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.min,
                                                                                             mainAxisAlignment: MainAxisAlignment.start,
                                                                                             crossAxisAlignment: CrossAxisAlignment.start,
                                                                                             children: [
                                                                                               Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                 child: RichText(
                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                   text: TextSpan(
@@ -1211,7 +1205,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                           fontFamily: 'Plus Jakarta Sans',
-                                                                                                          color: Color(0xFF606A85),
+                                                                                                          color: const Color(0xFF606A85),
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           fontWeight: FontWeight.w500,
@@ -1219,13 +1213,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                              Divider(
+                                                                                              const Divider(
                                                                                                 height: 1.0,
                                                                                                 thickness: 1.0,
                                                                                                 indent: 0.0,
                                                                                                 color: Color(0xFFE5E7EB),
                                                                                               ),
-                                                                                            ].addToEnd(SizedBox(height: 12.0)),
+                                                                                            ].addToEnd(const SizedBox(height: 12.0)),
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -1236,10 +1230,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               if (corridasMotoboyItem.agendado == true)
                                                                                 Container(
                                                                                   width: double.infinity,
-                                                                                  constraints: BoxConstraints(
+                                                                                  constraints: const BoxConstraints(
                                                                                     maxWidth: 900.0,
                                                                                   ),
-                                                                                  decoration: BoxDecoration(
+                                                                                  decoration: const BoxDecoration(
                                                                                     color: Color(0x00FFFFFF),
                                                                                   ),
                                                                                   child: Column(
@@ -1254,14 +1248,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             width: 32.0,
                                                                                             height: 32.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: Color(0x4D9489F5),
+                                                                                              color: const Color(0x4D9489F5),
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: Color(0xFFF8B400),
+                                                                                                color: const Color(0xFFF8B400),
                                                                                                 width: 2.0,
                                                                                               ),
                                                                                             ),
-                                                                                            child: Align(
+                                                                                            child: const Align(
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: FaIcon(
                                                                                                 FontAwesomeIcons.businessTime,
@@ -1272,7 +1266,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Agendado',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1286,7 +1280,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1303,7 +1297,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -1322,12 +1316,12 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           decoration: BoxDecoration(
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            boxShadow: [
+                                                                                            boxShadow: const [
                                                                                               BoxShadow(
                                                                                                 blurRadius: 0.0,
                                                                                                 color: Color(0xFFF8B400),
@@ -1347,7 +1341,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             children: [
                                                                                               Expanded(
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -1367,7 +1361,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                                   elevation: 0,
                                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                                   backgroundColor: Colors.transparent,
-                                                                                                                  alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                   child: GestureDetector(
                                                                                                                     onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                     child: CorridaWidget(
@@ -1382,7 +1376,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                             textScaler: MediaQuery.of(context).textScaler,
                                                                                                             text: TextSpan(
                                                                                                               children: [
-                                                                                                                TextSpan(
+                                                                                                                const TextSpan(
                                                                                                                   text: 'Detalhe:',
                                                                                                                   style: TextStyle(),
                                                                                                                 ),
@@ -1390,7 +1384,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                                   text: 'Clique pra ver',
                                                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
-                                                                                                                        color: Color(0xFFF8B400),
+                                                                                                                        color: const Color(0xFFF8B400),
                                                                                                                         fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontWeight: FontWeight.bold,
@@ -1399,7 +1393,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                               ],
                                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                     fontFamily: 'Plus Jakarta Sans',
-                                                                                                                    color: Color(0xFF606A85),
+                                                                                                                    color: const Color(0xFF606A85),
                                                                                                                     fontSize: 14.0,
                                                                                                                     letterSpacing: 0.0,
                                                                                                                     fontWeight: FontWeight.w500,
@@ -1408,13 +1402,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                      Divider(
+                                                                                                      const Divider(
                                                                                                         height: 1.0,
                                                                                                         thickness: 1.0,
                                                                                                         indent: 0.0,
                                                                                                         color: Color(0xFFE5E7EB),
                                                                                                       ),
-                                                                                                    ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                    ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -1428,10 +1422,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               if (corridasMotoboyItem.disponivel == true)
                                                                                 Container(
                                                                                   width: double.infinity,
-                                                                                  constraints: BoxConstraints(
+                                                                                  constraints: const BoxConstraints(
                                                                                     maxWidth: 900.0,
                                                                                   ),
-                                                                                  decoration: BoxDecoration(
+                                                                                  decoration: const BoxDecoration(
                                                                                     color: Color(0x00FFFFFF),
                                                                                   ),
                                                                                   child: Column(
@@ -1446,14 +1440,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             width: 32.0,
                                                                                             height: 32.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: Color(0x4D9489F5),
+                                                                                              color: const Color(0x4D9489F5),
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: Color(0xFFF8B400),
+                                                                                                color: const Color(0xFFF8B400),
                                                                                                 width: 2.0,
                                                                                               ),
                                                                                             ),
-                                                                                            child: Align(
+                                                                                            child: const Align(
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: FaIcon(
                                                                                                 FontAwesomeIcons.boxOpen,
@@ -1464,7 +1458,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Disponivel',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1478,7 +1472,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1495,7 +1489,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -1514,12 +1508,12 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           decoration: BoxDecoration(
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            boxShadow: [
+                                                                                            boxShadow: const [
                                                                                               BoxShadow(
                                                                                                 blurRadius: 0.0,
                                                                                                 color: Color(0xFFF8B400),
@@ -1538,7 +1532,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                             children: [
                                                                                               Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -1558,7 +1552,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                                 elevation: 0,
                                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                                 child: GestureDetector(
                                                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                                   child: CorridaWidget(
@@ -1573,7 +1567,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                                           text: TextSpan(
                                                                                                             children: [
-                                                                                                              TextSpan(
+                                                                                                              const TextSpan(
                                                                                                                 text: 'Detalhe:',
                                                                                                                 style: TextStyle(),
                                                                                                               ),
@@ -1581,7 +1575,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                                 text: 'Clique pra ver',
                                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
-                                                                                                                      color: Color(0xFFF8B400),
+                                                                                                                      color: const Color(0xFFF8B400),
                                                                                                                       fontSize: 14.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                       fontWeight: FontWeight.bold,
@@ -1590,7 +1584,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                             ],
                                                                                                             style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                   fontFamily: 'Plus Jakarta Sans',
-                                                                                                                  color: Color(0xFF606A85),
+                                                                                                                  color: const Color(0xFF606A85),
                                                                                                                   fontSize: 14.0,
                                                                                                                   letterSpacing: 0.0,
                                                                                                                   fontWeight: FontWeight.w500,
@@ -1599,13 +1593,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                    Divider(
+                                                                                                    const Divider(
                                                                                                       height: 1.0,
                                                                                                       thickness: 1.0,
                                                                                                       indent: 0.0,
                                                                                                       color: Color(0xFFE5E7EB),
                                                                                                     ),
-                                                                                                  ].addToEnd(SizedBox(height: 12.0)),
+                                                                                                  ].addToEnd(const SizedBox(height: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ],
@@ -1618,10 +1612,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               if (corridasMotoboyItem.aceito == true)
                                                                                 Container(
                                                                                   width: double.infinity,
-                                                                                  constraints: BoxConstraints(
+                                                                                  constraints: const BoxConstraints(
                                                                                     maxWidth: 900.0,
                                                                                   ),
-                                                                                  decoration: BoxDecoration(
+                                                                                  decoration: const BoxDecoration(
                                                                                     color: Color(0x00FFFFFF),
                                                                                   ),
                                                                                   child: Column(
@@ -1636,14 +1630,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             width: 32.0,
                                                                                             height: 32.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: Color(0x4D9489F5),
+                                                                                              color: const Color(0x4D9489F5),
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: Color(0xFFF8B400),
+                                                                                                color: const Color(0xFFF8B400),
                                                                                                 width: 2.0,
                                                                                               ),
                                                                                             ),
-                                                                                            child: Align(
+                                                                                            child: const Align(
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: Icon(
                                                                                                 Icons.sports_motorsports,
@@ -1654,7 +1648,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Aceita',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1668,7 +1662,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1685,7 +1679,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -1704,12 +1698,12 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           decoration: BoxDecoration(
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            boxShadow: [
+                                                                                            boxShadow: const [
                                                                                               BoxShadow(
                                                                                                 blurRadius: 0.0,
                                                                                                 color: Color(0xFFF8B400),
@@ -1724,18 +1718,18 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                   child: RichText(
                                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                                     text: TextSpan(
                                                                                                       children: [
-                                                                                                        TextSpan(
+                                                                                                        const TextSpan(
                                                                                                           text: 'Motoboy:',
                                                                                                           style: TextStyle(),
                                                                                                         ),
@@ -1743,7 +1737,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                           text: corridasMotoboyUsersRecord.displayName,
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFFF8B400),
+                                                                                                                color: const Color(0xFFF8B400),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.bold,
@@ -1752,7 +1746,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                       ],
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                            color: Color(0xFF606A85),
+                                                                                                            color: const Color(0xFF606A85),
                                                                                                             fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
@@ -1760,13 +1754,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                                Divider(
+                                                                                                const Divider(
                                                                                                   height: 1.0,
                                                                                                   thickness: 1.0,
                                                                                                   indent: 0.0,
                                                                                                   color: Color(0xFFE5E7EB),
                                                                                                 ),
-                                                                                              ].addToEnd(SizedBox(height: 12.0)),
+                                                                                              ].addToEnd(const SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -1777,10 +1771,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               if (corridasMotoboyItem.coletado == true)
                                                                                 Container(
                                                                                   width: double.infinity,
-                                                                                  constraints: BoxConstraints(
+                                                                                  constraints: const BoxConstraints(
                                                                                     maxWidth: 900.0,
                                                                                   ),
-                                                                                  decoration: BoxDecoration(
+                                                                                  decoration: const BoxDecoration(
                                                                                     color: Color(0x00FFFFFF),
                                                                                   ),
                                                                                   child: Column(
@@ -1795,14 +1789,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             width: 32.0,
                                                                                             height: 32.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: Color(0x4D9489F5),
+                                                                                              color: const Color(0x4D9489F5),
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: Color(0xFFF8B400),
+                                                                                                color: const Color(0xFFF8B400),
                                                                                                 width: 2.0,
                                                                                               ),
                                                                                             ),
-                                                                                            child: Align(
+                                                                                            child: const Align(
                                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                                               child: FaIcon(
                                                                                                 FontAwesomeIcons.box,
@@ -1813,7 +1807,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Coletado',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1827,7 +1821,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1844,7 +1838,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -1863,12 +1857,12 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           decoration: BoxDecoration(
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            boxShadow: [
+                                                                                            boxShadow: const [
                                                                                               BoxShadow(
                                                                                                 blurRadius: 0.0,
                                                                                                 color: Color(0xFFF8B400),
@@ -1883,13 +1877,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                                                   child: RichText(
                                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                                     text: TextSpan(
@@ -1898,7 +1892,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                           text: 'Motoboy ja coletou o Pedido',
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFFF8B400),
+                                                                                                                color: const Color(0xFFF8B400),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.bold,
@@ -1907,7 +1901,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                       ],
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                            color: Color(0xFF606A85),
+                                                                                                            color: const Color(0xFF606A85),
                                                                                                             fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
@@ -1915,13 +1909,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                                Divider(
+                                                                                                const Divider(
                                                                                                   height: 1.0,
                                                                                                   thickness: 1.0,
                                                                                                   indent: 0.0,
                                                                                                   color: Color(0xFFE5E7EB),
                                                                                                 ),
-                                                                                              ].addToEnd(SizedBox(height: 12.0)),
+                                                                                              ].addToEnd(const SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -1932,10 +1926,10 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                               if (corridasMotoboyItem.concluido == true)
                                                                                 Container(
                                                                                   width: double.infinity,
-                                                                                  constraints: BoxConstraints(
+                                                                                  constraints: const BoxConstraints(
                                                                                     maxWidth: 900.0,
                                                                                   ),
-                                                                                  decoration: BoxDecoration(
+                                                                                  decoration: const BoxDecoration(
                                                                                     color: Colors.transparent,
                                                                                   ),
                                                                                   child: Column(
@@ -1951,14 +1945,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             width: 32.0,
                                                                                             height: 32.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: Color(0x4D9489F5),
+                                                                                              color: const Color(0x4D9489F5),
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: Color(0xFFF8B400),
+                                                                                                color: const Color(0xFFF8B400),
                                                                                                 width: 2.0,
                                                                                               ),
                                                                                             ),
-                                                                                            child: Icon(
+                                                                                            child: const Icon(
                                                                                               Icons.home,
                                                                                               color: Color(0xFFF8B400),
                                                                                               size: 24.0,
@@ -1966,7 +1960,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                           ),
                                                                                           Expanded(
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 'Finalizada',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1980,7 +1974,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'd/M',
@@ -1997,7 +1991,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                             child: Text(
                                                                                               dateTimeFormat(
                                                                                                 'H:mm:s',
@@ -2016,7 +2010,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           decoration: BoxDecoration(
@@ -2027,14 +2021,14 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                             ),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.min,
                                                                                               mainAxisAlignment: MainAxisAlignment.start,
                                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                                   child: RichText(
                                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                                     text: TextSpan(
@@ -2043,7 +2037,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                           text: 'Concluido com sucesso!',
                                                                                                           style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
-                                                                                                                color: Color(0xFFF8B400),
+                                                                                                                color: const Color(0xFFF8B400),
                                                                                                                 fontSize: 14.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.bold,
@@ -2052,7 +2046,7 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                       ],
                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                             fontFamily: 'Plus Jakarta Sans',
-                                                                                                            color: Color(0xFF606A85),
+                                                                                                            color: const Color(0xFF606A85),
                                                                                                             fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
@@ -2060,13 +2054,13 @@ class _CorridasMotoboyWidgetState extends State<CorridasMotoboyWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                                Divider(
+                                                                                                const Divider(
                                                                                                   height: 1.0,
                                                                                                   thickness: 1.0,
                                                                                                   indent: 0.0,
                                                                                                   color: Color(0xFFE5E7EB),
                                                                                                 ),
-                                                                                              ].addToEnd(SizedBox(height: 12.0)),
+                                                                                              ].addToEnd(const SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),

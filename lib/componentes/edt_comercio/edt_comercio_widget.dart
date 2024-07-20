@@ -9,16 +9,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'edt_comercio_model.dart';
 export 'edt_comercio_model.dart';
 
@@ -71,7 +65,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
 
     _model.bairroTextController ??= TextEditingController(
         text: valueOrDefault<String>(
-      widget!.bairro?.nome,
+      widget.bairro?.nome,
       'sem nome',
     ));
 
@@ -99,8 +93,8 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,8 +113,8 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -145,7 +139,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -153,13 +147,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: StreamBuilder<ComerciosRecord>(
-              stream: ComerciosRecord.getDocument(widget!.comercioEdt!),
+              stream: ComerciosRecord.getDocument(widget.comercioEdt!),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -177,22 +171,22 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                 return Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0x4D000000),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         maxWidth: 650.0,
                         maxHeight: 800.0,
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x19000000),
@@ -208,13 +202,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -226,7 +220,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                     child: Container(
                                       width: 48.0,
                                       height: 48.0,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: Color(0xFFF02E4B),
                                         borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(0.0),
@@ -235,7 +229,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                           topRight: Radius.circular(12.0),
                                         ),
                                       ),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.close_rounded,
                                         color: Colors.white,
                                         size: 36.0,
@@ -247,7 +241,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -264,9 +258,9 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation1']!),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 8.0),
                                     child: Text(
                                       'Altere os dados do comercio e clique em salvar',
@@ -289,7 +283,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                             child: Column(
                               children: [
                                 Align(
-                                  alignment: Alignment(0.0, 0),
+                                  alignment: const Alignment(0.0, 0),
                                   child: TabBar(
                                     labelColor: FlutterFlowTheme.of(context)
                                         .primaryText,
@@ -302,10 +296,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    unselectedLabelStyle: TextStyle(),
-                                    indicatorColor: Color(0xFFF29200),
-                                    padding: EdgeInsets.all(4.0),
-                                    tabs: [
+                                    unselectedLabelStyle: const TextStyle(),
+                                    indicatorColor: const Color(0xFFF29200),
+                                    padding: const EdgeInsets.all(4.0),
+                                    tabs: const [
                                       Tab(
                                         text: 'Designer',
                                       ),
@@ -337,7 +331,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Clique para alterar a aparência ',
@@ -356,13 +350,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                   ),
                                             ),
                                           ),
-                                          Container(
+                                          SizedBox(
                                             height: 190.0,
                                             child: Stack(
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 1.0),
                                                   child: Material(
                                                     color: Colors.transparent,
@@ -519,7 +513,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 1.0),
                                                               child: Material(
                                                                 color: Colors
@@ -553,7 +547,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             2.0,
                                                                             2.0,
@@ -583,9 +577,9 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, -1.0),
+                                                const AlignmentDirectional(0.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 8.0, 0.0, 16.0),
                                               child: Container(
@@ -606,7 +600,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(4.0),
+                                                  padding: const EdgeInsets.all(4.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -694,7 +688,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                   size: 16.0,
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -801,7 +795,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                   size: 16.0,
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -836,7 +830,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 40.0, 16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -845,11 +839,11 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(4.0),
+                                                        const EdgeInsets.all(4.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         setState(() {
@@ -863,7 +857,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                 _model.tabBarController!
                                                                         .index +
                                                                     1),
-                                                            duration: Duration(
+                                                            duration: const Duration(
                                                                 milliseconds:
                                                                     300),
                                                             curve: Curves.ease,
@@ -875,21 +869,21 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                         width: 100.0,
                                                         height: 45.0,
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         color:
-                                                            Color(0xFFF29200),
+                                                            const Color(0xFFF29200),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -904,7 +898,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 8.0,
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -924,7 +918,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                           width: 1.0,
                                                         ),
                                                         hoverTextColor:
-                                                            Color(0xFFF29200),
+                                                            const Color(0xFFF29200),
                                                       ),
                                                     ),
                                                   ),
@@ -939,10 +933,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                         children: [
                                           Expanded(
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -965,11 +959,11 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         8.0,
@@ -1006,9 +1000,9 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 300.0,
                                                                 child:
                                                                     TextFormField(
@@ -1039,7 +1033,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              Color(0xFFF29200),
+                                                                              const Color(0xFFF29200),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1072,7 +1066,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFF29200),
                                                                         width:
@@ -1109,7 +1103,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                               36.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             18.0),
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -1133,13 +1127,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           16.0,
                                                                           8.0,
                                                                           16.0),
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 300.0,
                                                                 child:
                                                                     TextFormField(
@@ -1166,7 +1160,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              Color(0xFFF29200),
+                                                                              const Color(0xFFF29200),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1199,7 +1193,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFF29200),
                                                                         width:
@@ -1236,7 +1230,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                               36.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             18.0),
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -1269,7 +1263,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1285,11 +1279,11 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           40.0,
                                                                           0.0,
@@ -1307,7 +1301,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           max(0,
                                                                               _model.tabBarController!.index - 1),
                                                                           duration:
-                                                                              Duration(milliseconds: 300),
+                                                                              const Duration(milliseconds: 300),
                                                                           curve:
                                                                               Curves.ease,
                                                                         );
@@ -1321,12 +1315,12 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           100.0,
                                                                       height:
                                                                           45.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1348,7 +1342,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                       elevation:
                                                                           8.0,
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
@@ -1358,7 +1352,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           BorderRadius.circular(
                                                                               8.0),
                                                                       hoverColor:
-                                                                          Color(
+                                                                          const Color(
                                                                               0xFFF29200),
                                                                       hoverTextColor:
                                                                           FlutterFlowTheme.of(context)
@@ -1371,11 +1365,11 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1404,7 +1398,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           min(_model.tabBarController!.length - 1,
                                                                               _model.tabBarController!.index + 1),
                                                                           duration:
-                                                                              Duration(milliseconds: 300),
+                                                                              const Duration(milliseconds: 300),
                                                                           curve:
                                                                               Curves.ease,
                                                                         );
@@ -1418,17 +1412,17 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           100.0,
                                                                       height:
                                                                           45.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFFF29200),
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
@@ -1444,7 +1438,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                       elevation:
                                                                           8.0,
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
@@ -1464,7 +1458,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                             1.0,
                                                                       ),
                                                                       hoverTextColor:
-                                                                          Color(
+                                                                          const Color(
                                                                               0xFFF29200),
                                                                     ),
                                                                   ),
@@ -1487,10 +1481,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                         children: [
                                           Expanded(
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: StreamBuilder<
                                                     EnderecoRecord>(
                                                   stream: EnderecoRecord
@@ -1500,7 +1494,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
                                                     if (!snapshot.hasData) {
-                                                      return Center(
+                                                      return const Center(
                                                         child: SizedBox(
                                                           width: 50.0,
                                                           height: 50.0,
@@ -1537,11 +1531,11 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           8.0,
@@ -1588,7 +1582,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                 // Customize what your widget looks like when it's loading.
                                                                 if (!snapshot
                                                                     .hasData) {
-                                                                  return Center(
+                                                                  return const Center(
                                                                     child:
                                                                         SizedBox(
                                                                       width:
@@ -1613,10 +1607,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
 
                                                                 return Container(
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             12.0,
@@ -1635,7 +1629,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                               .center,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               12.0,
                                                                               0.0,
@@ -1647,7 +1641,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              Container(
+                                                                              SizedBox(
                                                                                 width: 300.0,
                                                                                 child: TextFormField(
                                                                                   controller: _model.cidadeEndClienteTextController ??= TextEditingController(
@@ -1660,7 +1654,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                     labelText: 'Cidade',
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Readex Pro',
-                                                                                          color: Color(0xFFF29200),
+                                                                                          color: const Color(0xFFF29200),
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     hintText: 'Ex: São Paulo',
@@ -1677,7 +1671,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Color(0xFFF29200),
                                                                                         width: 2.0,
                                                                                       ),
@@ -1697,7 +1691,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
-                                                                                    contentPadding: EdgeInsets.all(18.0),
+                                                                                    contentPadding: const EdgeInsets.all(18.0),
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Readex Pro',
@@ -1712,7 +1706,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               0.0,
@@ -1724,7 +1718,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                             mainAxisAlignment:
                                                                                 MainAxisAlignment.center,
                                                                             children: [
-                                                                              Container(
+                                                                              SizedBox(
                                                                                 width: 300.0,
                                                                                 child: TextFormField(
                                                                                   controller: _model.ruaClienteTextController ??= TextEditingController(
@@ -1737,7 +1731,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                     labelText: 'Rua',
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Readex Pro',
-                                                                                          color: Color(0xFFF29200),
+                                                                                          color: const Color(0xFFF29200),
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     hintText: 'Digite o nome da sua rua',
@@ -1754,7 +1748,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Color(0xFFF29200),
                                                                                         width: 2.0,
                                                                                       ),
@@ -1774,7 +1768,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
-                                                                                    contentPadding: EdgeInsets.all(18.0),
+                                                                                    contentPadding: const EdgeInsets.all(18.0),
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Readex Pro',
@@ -1789,20 +1783,20 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               0.0,
                                                                               8.0),
                                                                           child:
-                                                                              Container(
+                                                                              SizedBox(
                                                                             width:
                                                                                 300.0,
                                                                             child:
                                                                                 Autocomplete<String>(
                                                                               initialValue: TextEditingValue(
                                                                                   text: valueOrDefault<String>(
-                                                                                widget!.bairro?.nome,
+                                                                                widget.bairro?.nome,
                                                                                 'sem nome',
                                                                               )),
                                                                               optionsBuilder: (textEditingValue) {
@@ -1824,7 +1818,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         fontFamily: 'Readex Pro',
                                                                                         letterSpacing: 0.0,
                                                                                       ),
-                                                                                  textHighlightStyle: TextStyle(),
+                                                                                  textHighlightStyle: const TextStyle(),
                                                                                   elevation: 4.0,
                                                                                   optionBackgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   optionHighlightColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -1859,7 +1853,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                   onEditingComplete: onEditingComplete,
                                                                                   onChanged: (_) => EasyDebounce.debounce(
                                                                                     '_model.bairroTextController',
-                                                                                    Duration(milliseconds: 2000),
+                                                                                    const Duration(milliseconds: 2000),
                                                                                     () async {
                                                                                       _model.novoBairro = containerBairroRecordList.where((e) => e.nome == _model.bairroSelectedOption).toList().first;
                                                                                       setState(() {});
@@ -1875,7 +1869,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                     labelText: 'Bairro',
                                                                                     labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Readex Pro',
-                                                                                          color: Color(0xFFF29200),
+                                                                                          color: const Color(0xFFF29200),
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     hintText: 'Pesquise um bairro',
@@ -1892,7 +1886,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Color(0xFFF29200),
                                                                                         width: 2.0,
                                                                                       ),
@@ -1912,7 +1906,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(36.0),
                                                                                     ),
-                                                                                    contentPadding: EdgeInsets.all(18.0),
+                                                                                    contentPadding: const EdgeInsets.all(18.0),
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Readex Pro',
@@ -1926,7 +1920,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               0.0,
@@ -1939,8 +1933,8 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 MainAxisAlignment.center,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                child: Container(
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                child: SizedBox(
                                                                                   width: 70.0,
                                                                                   child: TextFormField(
                                                                                     controller: _model.numEndClienteTextController ??= TextEditingController(
@@ -1953,7 +1947,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       labelText: 'Nº',
                                                                                       labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: 'Readex Pro',
-                                                                                            color: Color(0xFFF29200),
+                                                                                            color: const Color(0xFFF29200),
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       hintText: 'Nº',
@@ -1970,7 +1964,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         borderRadius: BorderRadius.circular(36.0),
                                                                                       ),
                                                                                       focusedBorder: OutlineInputBorder(
-                                                                                        borderSide: BorderSide(
+                                                                                        borderSide: const BorderSide(
                                                                                           color: Color(0xFFF29200),
                                                                                           width: 2.0,
                                                                                         ),
@@ -1990,7 +1984,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         ),
                                                                                         borderRadius: BorderRadius.circular(36.0),
                                                                                       ),
-                                                                                      contentPadding: EdgeInsets.all(18.0),
+                                                                                      contentPadding: const EdgeInsets.all(18.0),
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Readex Pro',
@@ -2002,10 +1996,10 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 ),
                                                                               ),
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                  child: Container(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                                                                                  child: SizedBox(
                                                                                     width: 120.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.cepTextController ??= TextEditingController(
@@ -2018,7 +2012,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         labelText: 'CEP',
                                                                                         labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                               fontFamily: 'Readex Pro',
-                                                                                              color: Color(0xFFF29200),
+                                                                                              color: const Color(0xFFF29200),
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                         hintText: 'Seu CEP',
@@ -2035,7 +2029,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                           borderRadius: BorderRadius.circular(36.0),
                                                                                         ),
                                                                                         focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
+                                                                                          borderSide: const BorderSide(
                                                                                             color: Color(0xFFF29200),
                                                                                             width: 2.0,
                                                                                           ),
@@ -2055,7 +2049,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(36.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsets.all(18.0),
+                                                                                        contentPadding: const EdgeInsets.all(18.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Readex Pro',
@@ -2075,7 +2069,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 controller: _model.ddUFValueController ??= FormFieldController<String>(
                                                                                   _model.ddUFValue ??= tab2EnderecoRecord.uf,
                                                                                 ),
-                                                                                options: [
+                                                                                options: const [
                                                                                   'AC',
                                                                                   'AL',
                                                                                   'AP',
@@ -2113,17 +2107,17 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 hintText: 'UF',
-                                                                                icon: Icon(
+                                                                                icon: const Icon(
                                                                                   Icons.keyboard_arrow_down_rounded,
                                                                                   color: Color(0xFFF29200),
                                                                                   size: 24.0,
                                                                                 ),
-                                                                                fillColor: Color(0x00FFFFFF),
+                                                                                fillColor: const Color(0x00FFFFFF),
                                                                                 elevation: 2.0,
                                                                                 borderColor: FlutterFlowTheme.of(context).secondaryText,
                                                                                 borderWidth: 2.0,
                                                                                 borderRadius: 24.0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                                margin: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                                 hidesUnderline: true,
                                                                                 isOverButton: true,
                                                                                 isSearchable: false,
@@ -2133,13 +2127,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               0.0,
                                                                               8.0),
                                                                           child:
-                                                                              Container(
+                                                                              SizedBox(
                                                                             width:
                                                                                 300.0,
                                                                             child:
@@ -2154,7 +2148,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 labelText: 'Ponto de Referencia',
                                                                                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                       fontFamily: 'Readex Pro',
-                                                                                      color: Color(0xFFF29200),
+                                                                                      color: const Color(0xFFF29200),
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 hintText: 'Ex: Portão azul, perto da praça',
@@ -2171,7 +2165,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                   borderRadius: BorderRadius.circular(36.0),
                                                                                 ),
                                                                                 focusedBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Color(0xFFF29200),
                                                                                     width: 2.0,
                                                                                   ),
@@ -2191,7 +2185,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                   ),
                                                                                   borderRadius: BorderRadius.circular(36.0),
                                                                                 ),
-                                                                                contentPadding: EdgeInsets.all(18.0),
+                                                                                contentPadding: const EdgeInsets.all(18.0),
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Readex Pro',
@@ -2203,13 +2197,13 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               0.0,
                                                                               8.0),
                                                                           child:
-                                                                              Container(
+                                                                              SizedBox(
                                                                             width:
                                                                                 300.0,
                                                                             child:
@@ -2224,7 +2218,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 labelText: 'Complemento',
                                                                                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                       fontFamily: 'Readex Pro',
-                                                                                      color: Color(0xFFF29200),
+                                                                                      color: const Color(0xFFF29200),
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 hintText: 'Ex: ap.4 ou fundo',
@@ -2241,7 +2235,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                   borderRadius: BorderRadius.circular(36.0),
                                                                                 ),
                                                                                 focusedBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Color(0xFFF29200),
                                                                                     width: 2.0,
                                                                                   ),
@@ -2261,7 +2255,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                   ),
                                                                                   borderRadius: BorderRadius.circular(36.0),
                                                                                 ),
-                                                                                contentPadding: EdgeInsets.all(18.0),
+                                                                                contentPadding: const EdgeInsets.all(18.0),
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Readex Pro',
@@ -2273,7 +2267,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               24.0,
                                                                               0.0,
@@ -2288,15 +2282,15 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 CrossAxisAlignment.center,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       setState(() {
                                                                                         _model.tabBarController!.animateTo(
                                                                                           max(0, _model.tabBarController!.index - 1),
-                                                                                          duration: Duration(milliseconds: 300),
+                                                                                          duration: const Duration(milliseconds: 300),
                                                                                           curve: Curves.ease,
                                                                                         );
                                                                                       });
@@ -2305,8 +2299,8 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 45.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
@@ -2314,12 +2308,12 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
-                                                                                      hoverColor: Color(0xFFF29200),
+                                                                                      hoverColor: const Color(0xFFF29200),
                                                                                       hoverTextColor: FlutterFlowTheme.of(context).primaryText,
                                                                                       hoverElevation: 3.0,
                                                                                     ),
@@ -2327,9 +2321,9 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                 ),
                                                                               ),
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 40.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 40.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       await tab2EnderecoRecord.reference.update(createEnderecoRecordData(
@@ -2345,7 +2339,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         bairro2: _model.novoBairro?.reference,
                                                                                       ));
 
-                                                                                      await widget!.comercioEdt!.update(createComerciosRecordData(
+                                                                                      await widget.comercioEdt!.update(createComerciosRecordData(
                                                                                         enderCompleto: tab2EnderecoRecord.localizar,
                                                                                       ));
                                                                                       Navigator.pop(context);
@@ -2354,16 +2348,16 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                     options: FFButtonOptions(
                                                                                       width: 100.0,
                                                                                       height: 45.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: Color(0xFFF29200),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFF29200),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                       elevation: 8.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2373,7 +2367,7 @@ class _EdtComercioWidgetState extends State<EdtComercioWidget>
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         width: 1.0,
                                                                                       ),
-                                                                                      hoverTextColor: Color(0xFFF29200),
+                                                                                      hoverTextColor: const Color(0xFFF29200),
                                                                                     ),
                                                                                   ),
                                                                                 ),

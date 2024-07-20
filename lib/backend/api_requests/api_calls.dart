@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
@@ -19,10 +17,10 @@ class StatusPixMPCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'Status Pix MP',
-      apiUrl: 'https://api.mercadopago.com/v1/payments/${idPix}',
+      apiUrl: 'https://api.mercadopago.com/v1/payments/$idPix',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer ${token}',
+        'Authorization': 'Bearer $token',
       },
       params: {},
       returnBody: true,
@@ -65,12 +63,12 @@ class CriarPagamentoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "description": "${description}",
-  "transaction_amount": ${transactionAmount},
-  "payment_method_id": "${paymentMethodId}",
+  "description": "$description",
+  "transaction_amount": $transactionAmount,
+  "payment_method_id": "$paymentMethodId",
   "payer": {
-    "email": "${email}",
-    "first_name": "${firstName}",
+    "email": "$email",
+    "first_name": "$firstName",
     "identification": {
       "type": "CPF",
       "number": "37865149840"
@@ -82,8 +80,8 @@ class CriarPagamentoCall {
       apiUrl: 'https://api.mercadopago.com/v1/payments',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer ${accessToken}',
-        'X-Idempotency-Key': '${stringrandomica}',
+        'Authorization': 'Bearer $accessToken',
+        'X-Idempotency-Key': '$stringrandomica',
       },
       params: {},
       body: ffApiRequestBody,

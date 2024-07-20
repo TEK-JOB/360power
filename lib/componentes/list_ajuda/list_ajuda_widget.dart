@@ -5,13 +5,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_ajuda_model.dart';
 export 'list_ajuda_model.dart';
 
@@ -54,8 +50,8 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +70,8 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -94,8 +90,8 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -120,15 +116,15 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: StreamBuilder<List<AjudaRecord>>(
           stream: queryAjudaRecord(),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return Center(
+              return const Center(
                 child: SizedBox(
                   width: 50.0,
                   height: 50.0,
@@ -145,13 +141,13 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
             return Container(
               width: double.infinity,
               height: double.infinity,
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 450.0,
                 maxHeight: 500.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 4.0,
                     color: Color(0x1A000000),
@@ -164,7 +160,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Container(
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,7 +172,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Text(
                               'Lista de ajuda',
@@ -194,7 +190,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 0.0),
                                 child: Text(
                                   'Essa é a lista de ruas cadastradas',
@@ -214,20 +210,20 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 4.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 250.0,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   minWidth: 300.0,
                                   minHeight: 250.0,
                                   maxWidth: 450.0,
                                   maxHeight: 300.0,
                                 ),
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Builder(
                                     builder: (context) {
@@ -241,7 +237,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                               (ruasIndex) {
                                             final ruasItem = ruas[ruasIndex];
                                             return Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 4.0, 8.0, 4.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -274,7 +270,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                                                 backgroundColor:
                                                                     Colors
                                                                         .transparent,
-                                                                alignment: AlignmentDirectional(
+                                                                alignment: const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0)
                                                                     .resolve(
@@ -309,7 +305,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
-                                                              boxShadow: [
+                                                              boxShadow: const [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       6.0,
@@ -338,7 +334,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -369,7 +365,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -418,7 +414,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -431,9 +427,9 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                             options: FFButtonOptions(
                               width: 150.0,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -441,11 +437,11 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFFF29200),
+                                    color: const Color(0xFFF29200),
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -455,7 +451,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                               animationsMap['buttonOnPageLoadAnimation1']!),
                           Builder(
                             builder: (context) => Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 16.0, 8.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -467,10 +463,10 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0)
+                                            const AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                        child: CadAjudaWidget(),
+                                        child: const CadAjudaWidget(),
                                       );
                                     },
                                   ).then((value) => setState(() {}));
@@ -479,11 +475,11 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                 options: FFButtonOptions(
                                   width: 200.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFF29200),
+                                  color: const Color(0xFFF29200),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -493,7 +489,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 8.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -505,7 +501,7 @@ class _ListAjudaWidgetState extends State<ListAjudaWidget>
                                         .primaryText,
                                     width: 1.0,
                                   ),
-                                  hoverTextColor: Color(0xFFF29200),
+                                  hoverTextColor: const Color(0xFFF29200),
                                 ),
                               ).animateOnPageLoad(
                                   animationsMap['buttonOnPageLoadAnimation2']!),

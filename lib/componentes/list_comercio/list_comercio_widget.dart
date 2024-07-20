@@ -5,13 +5,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'list_comercio_model.dart';
 export 'list_comercio_model.dart';
 
@@ -54,8 +49,8 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +69,8 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -100,19 +95,19 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: 450.0,
             maxHeight: 500.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x1A000000),
@@ -125,7 +120,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Container(
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Form(
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
@@ -135,7 +130,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(18.0),
+                      padding: const EdgeInsets.all(18.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -156,7 +151,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 0.0),
                                 child: Text(
                                   'Escolha um comercio para entrar',
@@ -174,32 +169,30 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                               ),
                             ],
                           ),
-                          if ((currentUserDocument?.meusComercios?.toList() ??
-                                      [])
-                                  .length >=
-                              1)
+                          if ((currentUserDocument?.meusComercios.toList() ??
+                                      []).isNotEmpty)
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 24.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Container(
                                   width: 300.0,
                                   height: 250.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     minWidth: 300.0,
                                     minHeight: 250.0,
                                     maxWidth: 450.0,
                                     maxHeight: 300.0,
                                   ),
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Builder(
                                       builder: (context) {
                                         final listFiliais = (currentUserDocument
                                                     ?.meusComercios
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .toList();
 
@@ -212,7 +205,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                               final listFiliaisItem =
                                                   listFiliais[listFiliaisIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 4.0, 8.0, 4.0),
                                                 child: Row(
@@ -242,7 +235,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                            boxShadow: [
+                                                            boxShadow: const [
                                                               BoxShadow(
                                                                 blurRadius: 6.0,
                                                                 color: Color(
@@ -270,7 +263,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                               // Customize what your widget looks like when it's loading.
                                                               if (!snapshot
                                                                   .hasData) {
-                                                                return Center(
+                                                                return const Center(
                                                                   child:
                                                                       SizedBox(
                                                                     width: 50.0,
@@ -322,7 +315,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                                   children: [
                                                                     Padding(
                                                                       padding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               8.0),
                                                                       child:
                                                                           ClipRRect(
@@ -347,7 +340,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             12.0,
@@ -397,7 +390,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                               width: 350.0,
                               height: 50.0,
                               decoration: BoxDecoration(
-                                color: Color(0xFF0F9839),
+                                color: const Color(0xFF0F9839),
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Builder(
@@ -414,11 +407,11 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                           elevation: 0,
                                           insetPadding: EdgeInsets.zero,
                                           backgroundColor: Colors.transparent,
-                                          alignment: AlignmentDirectional(
+                                          alignment: const AlignmentDirectional(
                                                   0.0, 0.0)
                                               .resolve(
                                                   Directionality.of(context)),
-                                          child: CadComercioWidget(),
+                                          child: const CadComercioWidget(),
                                         );
                                       },
                                     ).then((value) => setState(() {}));
@@ -429,7 +422,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 12.0, 0.0),
                                           child: Text(
                                             'Cadastrar outro comercio',
@@ -455,7 +448,7 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -468,9 +461,9 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -478,11 +471,11 @@ class _ListComercioWidgetState extends State<ListComercioWidget>
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFF29200),
+                                  color: const Color(0xFFF29200),
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

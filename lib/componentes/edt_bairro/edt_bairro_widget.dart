@@ -1,16 +1,10 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'edt_bairro_model.dart';
 export 'edt_bairro_model.dart';
 
@@ -44,7 +38,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
     _model = createModel(context, () => EdtBairroModel());
 
     _model.bairroTextController ??=
-        TextEditingController(text: widget!.editBairro?.nome);
+        TextEditingController(text: widget.editBairro?.nome);
     _model.bairroFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -62,8 +56,8 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -82,8 +76,8 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -102,8 +96,8 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -122,8 +116,8 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -148,17 +142,17 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxWidth: 450.0,
             maxHeight: 350.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x1A000000),
@@ -174,7 +168,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -199,8 +193,8 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                       animationsMap['textOnPageLoadAnimation']!),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                    child: Container(
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    child: SizedBox(
                       width: 300.0,
                       child: TextFormField(
                         controller: _model.bairroTextController,
@@ -212,7 +206,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                           labelStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFFF29200),
+                                    color: const Color(0xFFF29200),
                                     letterSpacing: 0.0,
                                   ),
                           hintText: 'nome do bairro',
@@ -232,7 +226,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                             borderRadius: BorderRadius.circular(36.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFFF29200),
                               width: 2.0,
                             ),
@@ -252,7 +246,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                             ),
                             borderRadius: BorderRadius.circular(36.0),
                           ),
-                          contentPadding: EdgeInsets.all(18.0),
+                          contentPadding: const EdgeInsets.all(18.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
@@ -267,7 +261,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -280,9 +274,9 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -290,11 +284,11 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFF29200),
+                                  color: const Color(0xFFF29200),
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -309,7 +303,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                               return;
                             }
 
-                            await widget!.editBairro!.reference
+                            await widget.editBairro!.reference
                                 .update(createBairroRecordData(
                               nome: _model.bairroTextController.text,
                             ));
@@ -319,11 +313,11 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFF29200),
+                            color: const Color(0xFFF29200),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -333,7 +327,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 8.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -344,7 +338,7 @@ class _EdtBairroWidgetState extends State<EdtBairroWidget>
                               color: FlutterFlowTheme.of(context).primaryText,
                               width: 1.0,
                             ),
-                            hoverTextColor: Color(0xFFF29200),
+                            hoverTextColor: const Color(0xFFF29200),
                           ),
                         ).animateOnPageLoad(
                             animationsMap['buttonOnPageLoadAnimation2']!),

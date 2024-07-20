@@ -9,17 +9,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'cad_comercio_model.dart';
 export 'cad_comercio_model.dart';
 
@@ -85,8 +79,8 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -105,8 +99,8 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -131,7 +125,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -139,25 +133,25 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0x4D000000),
               ),
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: double.infinity,
                     maxHeight: double.infinity,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x19000000),
@@ -174,13 +168,13 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -192,7 +186,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                   child: Container(
                                     width: 48.0,
                                     height: 48.0,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0xFFF02E4B),
                                       borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(0.0),
@@ -209,7 +203,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                       onTap: () async {
                                         Navigator.pop(context);
                                       },
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.close_rounded,
                                         color: Colors.white,
                                         size: 36.0,
@@ -222,7 +216,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -239,9 +233,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                               ).animateOnPageLoad(
                                   animationsMap['textOnPageLoadAnimation1']!),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 8.0),
                                   child: Text(
                                     'Preencha os dados do comercio e clique em Cadastrar',
@@ -265,14 +259,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                           children: [
                             if (_model.pagAtual == 0)
                               Container(
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         'Clique para enviar um logo',
@@ -289,13 +283,13 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                             ),
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       height: 190.0,
                                       child: Stack(
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 1.0),
+                                                const AlignmentDirectional(0.0, 1.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -416,7 +410,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 1.0),
                                                         child: Material(
                                                           color: Colors
@@ -448,7 +442,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           2.0,
                                                                           2.0,
@@ -476,7 +470,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 28.0, 40.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -485,9 +479,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   _model.pagAtual =
@@ -498,14 +492,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                 options: FFButtonOptions(
                                                   width: 100.0,
                                                   height: 45.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFFF29200),
+                                                  color: const Color(0xFFF29200),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -519,7 +513,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 8.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -537,7 +531,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                     width: 1.0,
                                                   ),
                                                   hoverTextColor:
-                                                      Color(0xFFF29200),
+                                                      const Color(0xFFF29200),
                                                 ),
                                               ),
                                             ),
@@ -550,16 +544,16 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                               ),
                             if (_model.pagAtual == 1)
                               Container(
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 8.0, 16.0, 24.0),
                                         child: Text(
                                           'Altere os campos a baixo e salve',
@@ -586,8 +580,8 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: Container(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: SizedBox(
                                               width: 300.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -605,7 +599,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFFF29200),
+                                                            const Color(0xFFF29200),
                                                         letterSpacing: 0.0,
                                                       ),
                                                   hintText:
@@ -637,7 +631,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFF29200),
                                                       width: 2.0,
                                                     ),
@@ -672,7 +666,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                             36.0),
                                                   ),
                                                   contentPadding:
-                                                      EdgeInsets.all(18.0),
+                                                      const EdgeInsets.all(18.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -691,9 +685,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 16.0, 8.0, 16.0),
-                                            child: Container(
+                                            child: SizedBox(
                                               width: 300.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -711,7 +705,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFFF29200),
+                                                            const Color(0xFFF29200),
                                                         letterSpacing: 0.0,
                                                       ),
                                                   hintText:
@@ -743,7 +737,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFF29200),
                                                       width: 2.0,
                                                     ),
@@ -778,7 +772,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                             36.0),
                                                   ),
                                                   contentPadding:
-                                                      EdgeInsets.all(18.0),
+                                                      const EdgeInsets.all(18.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -804,7 +798,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -813,9 +807,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       40.0, 0.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -828,11 +822,11 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                 options: FFButtonOptions(
                                                   width: 100.0,
                                                   height: 45.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -851,14 +845,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 8.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  hoverColor: Color(0xFFF29200),
+                                                  hoverColor: const Color(0xFFF29200),
                                                   hoverTextColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -870,9 +864,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       8.0, 0.0, 40.0, 0.0),
                                               child: FFButtonWidget(
@@ -893,14 +887,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                 options: FFButtonOptions(
                                                   width: 100.0,
                                                   height: 45.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFFF29200),
+                                                  color: const Color(0xFFF29200),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -914,7 +908,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 8.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -932,7 +926,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                     width: 1.0,
                                                   ),
                                                   hoverTextColor:
-                                                      Color(0xFFF29200),
+                                                      const Color(0xFFF29200),
                                                 ),
                                               ),
                                             ),
@@ -952,7 +946,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
-                                      return Center(
+                                      return const Center(
                                         child: SizedBox(
                                           width: 50.0,
                                           height: 50.0,
@@ -970,7 +964,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         snapshot.data!;
 
                                     return Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -978,9 +972,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 8.0, 16.0, 0.0),
                                               child: Text(
@@ -1011,7 +1005,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
-                                                return Center(
+                                                return const Center(
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
@@ -1031,9 +1025,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                   snapshot.data!;
 
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 0.0),
                                                   child: Column(
@@ -1048,7 +1042,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1061,7 +1055,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                               MainAxisAlignment
                                                                   .center,
                                                           children: [
-                                                            Container(
+                                                            SizedBox(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -1086,7 +1080,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1121,7 +1115,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1160,7 +1154,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1188,7 +1182,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1201,7 +1195,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                               MainAxisAlignment
                                                                   .center,
                                                           children: [
-                                                            Container(
+                                                            SizedBox(
                                                               width: 300.0,
                                                               child:
                                                                   TextFormField(
@@ -1227,7 +1221,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1262,7 +1256,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1301,7 +1295,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1329,18 +1323,18 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
                                                                     0.0,
                                                                     8.0),
-                                                        child: Container(
+                                                        child: SizedBox(
                                                           width: 300.0,
                                                           child: Autocomplete<
                                                               String>(
                                                             initialValue:
-                                                                TextEditingValue(),
+                                                                const TextEditingValue(),
                                                             optionsBuilder:
                                                                 (textEditingValue) {
                                                               if (textEditingValue
@@ -1390,7 +1384,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                           0.0,
                                                                     ),
                                                                 textHighlightStyle:
-                                                                    TextStyle(),
+                                                                    const TextStyle(),
                                                                 elevation: 4.0,
                                                                 optionBackgroundColor:
                                                                     FlutterFlowTheme.of(
@@ -1455,7 +1449,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                     EasyDebounce
                                                                         .debounce(
                                                                   '_model.bairroTextController',
-                                                                  Duration(
+                                                                  const Duration(
                                                                       milliseconds:
                                                                           2000),
                                                                   () async {
@@ -1496,7 +1490,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1531,7 +1525,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0xFFF29200),
                                                                       width:
@@ -1570,7 +1564,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             36.0),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               18.0),
                                                                 ),
@@ -1597,7 +1591,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1612,9 +1606,9 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 70.0,
                                                                 child:
                                                                     TextFormField(
@@ -1642,7 +1636,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           color:
-                                                                              Color(0xFFF29200),
+                                                                              const Color(0xFFF29200),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1675,7 +1669,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0xFFF29200),
                                                                         width:
@@ -1712,7 +1706,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                               36.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             18.0),
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -1736,18 +1730,18 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             4.0,
                                                                             0.0),
                                                                 child:
-                                                                    Container(
+                                                                    SizedBox(
                                                                   width: 120.0,
                                                                   child:
                                                                       TextFormField(
@@ -1775,7 +1769,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFFF29200),
+                                                                                const Color(0xFFF29200),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1807,7 +1801,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0xFFF29200),
                                                                           width:
@@ -1841,7 +1835,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             BorderRadius.circular(36.0),
                                                                       ),
                                                                       contentPadding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               18.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -1881,7 +1875,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                     enderecoEnderecoRecord
                                                                         .uf,
                                                               ),
-                                                              options: [
+                                                              options: const [
                                                                 'AC',
                                                                 'AL',
                                                                 'AP',
@@ -1929,14 +1923,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             0.0,
                                                                       ),
                                                               hintText: 'UF',
-                                                              icon: Icon(
+                                                              icon: const Icon(
                                                                 Icons
                                                                     .keyboard_arrow_down_rounded,
                                                                 color: Color(
                                                                     0xFFF29200),
                                                                 size: 24.0,
                                                               ),
-                                                              fillColor: Color(
+                                                              fillColor: const Color(
                                                                   0x00FFFFFF),
                                                               elevation: 2.0,
                                                               borderColor:
@@ -1947,7 +1941,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                               borderRadius:
                                                                   24.0,
                                                               margin:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           4.0,
@@ -1967,13 +1961,13 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
                                                                     0.0,
                                                                     8.0),
-                                                        child: Container(
+                                                        child: SizedBox(
                                                           width: 300.0,
                                                           child: TextFormField(
                                                             controller: _model
@@ -1997,7 +1991,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -2033,7 +2027,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0xFFF29200),
                                                                   width: 2.0,
@@ -2072,7 +2066,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             36.0),
                                                               ),
                                                               contentPadding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           18.0),
                                                             ),
@@ -2096,13 +2090,13 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
                                                                     0.0,
                                                                     8.0),
-                                                        child: Container(
+                                                        child: SizedBox(
                                                           width: 300.0,
                                                           child: TextFormField(
                                                             controller: _model
@@ -2126,7 +2120,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFFF29200),
                                                                         letterSpacing:
                                                                             0.0,
@@ -2162,7 +2156,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0xFFF29200),
                                                                   width: 2.0,
@@ -2201,7 +2195,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             36.0),
                                                               ),
                                                               contentPadding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           18.0),
                                                             ),
@@ -2225,7 +2219,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     24.0,
@@ -2243,11 +2237,11 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             40.0,
                                                                             0.0,
@@ -2271,14 +2265,14 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                         100.0,
                                                                     height:
                                                                         45.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -2300,7 +2294,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                     elevation:
                                                                         8.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -2310,7 +2304,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                         BorderRadius.circular(
                                                                             8.0),
                                                                     hoverColor:
-                                                                        Color(
+                                                                        const Color(
                                                                             0xFFF29200),
                                                                     hoverTextColor:
                                                                         FlutterFlowTheme.of(context)
@@ -2323,11 +2317,11 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -2397,8 +2391,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                             createComerciosRecordData(
                                                                       online:
                                                                           true,
-                                                                      logo: _model.uploadedFileUrl != null &&
-                                                                              _model.uploadedFileUrl !=
+                                                                      logo: _model.uploadedFileUrl !=
                                                                                   ''
                                                                           ? _model
                                                                               .uploadedFileUrl
@@ -2441,7 +2434,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                         ComerciosRecord.getDocumentFromData(
                                                                             createComerciosRecordData(
                                                                               online: true,
-                                                                              logo: _model.uploadedFileUrl != null && _model.uploadedFileUrl != '' ? _model.uploadedFileUrl : 'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/logo%20vazia.png?alt=media&token=8bed6ce7-e61d-413c-a4fa-3ce61bbf47c8',
+                                                                              logo: _model.uploadedFileUrl != '' ? _model.uploadedFileUrl : 'https://firebasestorage.googleapis.com/v0/b/power-zxvlh8.appspot.com/o/logo%20vazia.png?alt=media&token=8bed6ce7-e61d-413c-a4fa-3ce61bbf47c8',
                                                                               nomeComercio: _model.nomeComercioTextController.text,
                                                                               proprietario: currentUserReference,
                                                                               suspenso: false,
@@ -2507,19 +2500,19 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                         100.0,
                                                                     height:
                                                                         45.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFFF29200),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -2535,7 +2528,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                     elevation:
                                                                         8.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -2556,7 +2549,7 @@ class _CadComercioWidgetState extends State<CadComercioWidget>
                                                                           1.0,
                                                                     ),
                                                                     hoverTextColor:
-                                                                        Color(
+                                                                        const Color(
                                                                             0xFFF29200),
                                                                   ),
                                                                 ),

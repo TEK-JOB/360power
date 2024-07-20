@@ -7,15 +7,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'pag_pix_model.dart';
 export 'pag_pix_model.dart';
@@ -60,7 +57,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
         _model.buscaStatus2 = await StatusPixMPCall.call(
           token:
               'APP_USR-3703502955972422-032209-8a28de7c37a70e7a013a3ef0f65b46f0-258151765',
-          idPix: widget!.idPix,
+          idPix: widget.idPix,
         );
 
         FFAppState().StatusApp = StatusPixMPCall.status(
@@ -78,7 +75,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
       ));
     });
 
-    _model.textController ??= TextEditingController(text: widget!.chavePix);
+    _model.textController ??= TextEditingController(text: widget.chavePix);
     _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -96,8 +93,8 @@ class _PagPixWidgetState extends State<PagPixWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 210.0.ms,
-            begin: Offset(0.0, -22.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -22.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -133,12 +130,12 @@ class _PagPixWidgetState extends State<PagPixWidget>
                   color: FlutterFlowTheme.of(context).primaryText),
               automaticallyImplyLeading: false,
               title: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Stack(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         'PIX DIÁRIA',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -151,7 +148,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                           animationsMap['textOnPageLoadAnimation']!),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -170,14 +167,14 @@ class _PagPixWidgetState extends State<PagPixWidget>
                   ],
                 ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -209,7 +206,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                 ),
                                 controller: _model.timerController,
                                 updateStateInterval:
-                                    Duration(milliseconds: 1000),
+                                    const Duration(milliseconds: 1000),
                                 onChanged: (value, displayTime, shouldUpdate) {
                                   _model.timerMilliseconds = value;
                                   _model.timerValue = displayTime;
@@ -220,14 +217,14 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        title: Text('Tempo esgotado!'),
+                                        title: const Text('Tempo esgotado!'),
                                         content:
-                                            Text('Pix expirou começe de novo'),
+                                            const Text('Pix expirou começe de novo'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       );
@@ -264,20 +261,20 @@ class _PagPixWidgetState extends State<PagPixWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Card(
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: Color(0xFFF29200),
+                              color: const Color(0xFFF29200),
                               elevation: 1.0,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(6.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Text(
                                     'Pagar: ${formatNumber(
@@ -319,7 +316,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: FlutterFlowTheme.of(context).secondary,
-                                offset: Offset(
+                                offset: const Offset(
                                   0.0,
                                   2.0,
                                 ),
@@ -331,7 +328,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -351,7 +348,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -360,14 +357,14 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                     Container(
                                       width: 250.0,
                                       height: 250.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: Image.network(
                                           valueOrDefault<String>(
                                             functions
-                                                .imgbase64(widget!.qrcode!),
+                                                .imgbase64(widget.qrcode!),
                                             'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/transferir.png',
                                           ),
                                           width: 200.0,
@@ -384,21 +381,21 @@ class _PagPixWidgetState extends State<PagPixWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             8.0, 16.0, 8.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            await launchURL(widget!.url!);
+                            await launchURL(widget.url!);
                           },
                           text: 'Pagar',
                           options: FFButtonOptions(
                             width: 200.0,
                             height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFF29200),
+                            color: const Color(0xFFF29200),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -408,7 +405,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 8.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -419,12 +416,12 @@ class _PagPixWidgetState extends State<PagPixWidget>
                               color: FlutterFlowTheme.of(context).primaryText,
                               width: 1.0,
                             ),
-                            hoverTextColor: Color(0xFFF29200),
+                            hoverTextColor: const Color(0xFFF29200),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
@@ -440,7 +437,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: FlutterFlowTheme.of(context).secondary,
-                                  offset: Offset(
+                                  offset: const Offset(
                                     0.0,
                                     2.0,
                                   ),
@@ -449,7 +446,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -462,7 +459,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   36.0, 0.0, 0.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -484,7 +481,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                             onPressed: () async {
                                               await Clipboard.setData(
                                                   ClipboardData(
-                                                      text: widget!.chavePix!));
+                                                      text: widget.chavePix!));
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
                                                 SnackBar(
@@ -497,7 +494,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                                               .primaryText,
                                                     ),
                                                   ),
-                                                  duration: Duration(
+                                                  duration: const Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -510,7 +507,7 @@ class _PagPixWidgetState extends State<PagPixWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.textController,

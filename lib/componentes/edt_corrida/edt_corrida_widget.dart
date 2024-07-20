@@ -5,15 +5,10 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'edt_corrida_model.dart';
 export 'edt_corrida_model.dart';
 
@@ -51,18 +46,18 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
     _model = createModel(context, () => EdtCorridaModel());
 
     _model.idTextController ??=
-        TextEditingController(text: widget!.corrida?.idPedido);
+        TextEditingController(text: widget.corrida?.idPedido);
     _model.idFocusNode ??= FocusNode();
 
     _model.bairroTextController ??= TextEditingController();
 
     _model.foneTextController ??=
-        TextEditingController(text: widget!.corrida?.foneDestino);
+        TextEditingController(text: widget.corrida?.foneDestino);
     _model.foneFocusNode ??= FocusNode();
 
     _model.prcoPedidoTextController ??= TextEditingController(
         text: formatNumber(
-      widget!.corrida?.valorProduto,
+      widget.corrida?.valorProduto,
       formatType: FormatType.decimal,
       decimalType: DecimalType.commaDecimal,
       currency: 'R\$ ',
@@ -70,7 +65,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
     _model.prcoPedidoFocusNode ??= FocusNode();
 
     _model.detalhesTextController ??=
-        TextEditingController(text: widget!.corrida?.detalhe);
+        TextEditingController(text: widget.corrida?.detalhe);
     _model.detalhesFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -89,8 +84,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -109,8 +104,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -129,8 +124,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -149,8 +144,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -169,8 +164,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -189,8 +184,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -209,8 +204,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(40.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(40.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -229,8 +224,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -249,8 +244,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             curve: Curves.bounceOut,
             delay: 800.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.8, 0.8),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -275,7 +270,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -283,33 +278,33 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0x4D000000),
               ),
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Container(
-                  decoration: BoxDecoration(),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  decoration: const BoxDecoration(),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 0.0),
                           child: StreamBuilder<List<BairroRecord>>(
                             stream: queryBairroRecord(),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -326,13 +321,13 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
 
                               return Container(
                                 width: double.infinity,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 530.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x19000000),
@@ -352,14 +347,14 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -373,7 +368,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                 child: Container(
                                                   width: 48.0,
                                                   height: 48.0,
-                                                  decoration: BoxDecoration(
+                                                  decoration: const BoxDecoration(
                                                     color: Color(0xFFF02E4B),
                                                     borderRadius:
                                                         BorderRadius.only(
@@ -387,7 +382,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                           Radius.circular(12.0),
                                                     ),
                                                   ),
-                                                  child: Icon(
+                                                  child: const Icon(
                                                     Icons.close_rounded,
                                                     color: Colors.white,
                                                     size: 36.0,
@@ -399,7 +394,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -418,10 +413,10 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                             ).animateOnPageLoad(animationsMap[
                                                 'textOnPageLoadAnimation1']!),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 8.0),
                                                 child: Text(
@@ -439,8 +434,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Container(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller:
@@ -457,7 +452,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText: 'Insira o ID',
@@ -487,7 +482,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -523,7 +518,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        EdgeInsets.all(18.0),
+                                                        const EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -542,12 +537,12 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                   'textFieldOnPageLoadAnimation1']!),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Container(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: Autocomplete<String>(
                                                   initialValue:
-                                                      TextEditingValue(),
+                                                      const TextEditingValue(),
                                                   optionsBuilder:
                                                       (textEditingValue) {
                                                     if (textEditingValue.text ==
@@ -588,7 +583,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     0.0,
                                                               ),
                                                       textHighlightStyle:
-                                                          TextStyle(),
+                                                          const TextStyle(),
                                                       elevation: 4.0,
                                                       optionBackgroundColor:
                                                           FlutterFlowTheme.of(
@@ -647,7 +642,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.bairroTextController',
-                                                        Duration(
+                                                        const Duration(
                                                             milliseconds: 2000),
                                                         () async {
                                                           _model.docBairroDestino =
@@ -685,7 +680,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Readex Pro',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFF29200),
                                                                   letterSpacing:
                                                                       0.0,
@@ -722,7 +717,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xFFF29200),
                                                             width: 2.0,
@@ -761,7 +756,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                       36.0),
                                                         ),
                                                         contentPadding:
-                                                            EdgeInsets.all(
+                                                            const EdgeInsets.all(
                                                                 18.0),
                                                       ),
                                                       style: FlutterFlowTheme
@@ -784,8 +779,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                   'textFieldOnPageLoadAnimation2']!),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Container(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller:
@@ -803,7 +798,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -834,7 +829,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -870,7 +865,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        EdgeInsets.all(18.0),
+                                                        const EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -894,8 +889,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                   'textFieldOnPageLoadAnimation3']!),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Container(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
@@ -913,7 +908,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -944,7 +939,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -980,7 +975,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        EdgeInsets.all(18.0),
+                                                        const EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1008,13 +1003,13 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                       SwitchListTile.adaptive(
                                                     value: _model
                                                             .switchListTileValue ??=
-                                                        widget!.corrida!.pago,
+                                                        widget.corrida!.pago,
                                                     onChanged:
                                                         (newValue) async {
                                                       setState(() => _model
                                                               .switchListTileValue =
-                                                          newValue!);
-                                                      if (newValue!) {
+                                                          newValue);
+                                                      if (newValue) {
                                                         _model.pago = true;
                                                         setState(() {});
                                                       } else {
@@ -1035,9 +1030,9 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                             color: _model
                                                                         .pago ==
                                                                     true
-                                                                ? Color(
+                                                                ? const Color(
                                                                     0xFF35E70E)
-                                                                : Color(
+                                                                : const Color(
                                                                     0xFFF20D3D),
                                                             letterSpacing: 0.0,
                                                           ),
@@ -1055,9 +1050,9 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                             color: _model
                                                                         .pago ==
                                                                     true
-                                                                ? Color(
+                                                                ? const Color(
                                                                     0xFF48903C)
-                                                                : Color(
+                                                                : const Color(
                                                                     0xFF902B3F),
                                                             letterSpacing: 0.0,
                                                           ),
@@ -1071,7 +1066,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                 context)
                                                             .primaryText,
                                                     activeTrackColor:
-                                                        Color(0xFFF29200),
+                                                        const Color(0xFFF29200),
                                                     dense: false,
                                                     controlAffinity:
                                                         ListTileControlAffinity
@@ -1087,8 +1082,8 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Container(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
@@ -1106,7 +1101,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color:
-                                                              Color(0xFFF29200),
+                                                              const Color(0xFFF29200),
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -1137,7 +1132,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFF29200),
                                                         width: 2.0,
@@ -1173,7 +1168,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               36.0),
                                                     ),
                                                     contentPadding:
-                                                        EdgeInsets.all(18.0),
+                                                        const EdgeInsets.all(18.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1204,14 +1199,14 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                       rotaRecord.where(
                                                     'CodigoRota',
                                                     isEqualTo:
-                                                        '${widget!.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
+                                                        '${widget.docBairroOrigem?.codigoBairro}${_model.docBairroDestino?.codigoBairro}',
                                                   ),
                                                   singleRecord: true,
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
@@ -1241,14 +1236,14 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               .first
                                                           : null;
                                                   return Container(
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       24.0,
@@ -1264,7 +1259,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1285,7 +1280,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1337,14 +1332,14 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                   FFButtonOptions(
                                                                 width: 150.0,
                                                                 height: 45.0,
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1367,7 +1362,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     ),
                                                                 elevation: 8.0,
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 1.0,
@@ -1376,7 +1371,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     BorderRadius
                                                                         .circular(
                                                                             8.0),
-                                                                hoverColor: Color(
+                                                                hoverColor: const Color(
                                                                     0xFFF29200),
                                                                 hoverTextColor:
                                                                     FlutterFlowTheme.of(
@@ -1390,7 +1385,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     'buttonOnPageLoadAnimation1']!),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           16.0,
@@ -1408,19 +1403,19 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     FFButtonOptions(
                                                                   width: 150.0,
                                                                   height: 50.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFFF29200),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -1436,7 +1431,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                   elevation:
                                                                       8.0,
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -1456,7 +1451,7 @@ class _EdtCorridaWidgetState extends State<EdtCorridaWidget>
                                                                     width: 1.0,
                                                                   ),
                                                                   hoverTextColor:
-                                                                      Color(
+                                                                      const Color(
                                                                           0xFFF29200),
                                                                 ),
                                                               ).animateOnPageLoad(

@@ -3,14 +3,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'tranferir_corrida_model.dart';
 export 'tranferir_corrida_model.dart';
 
@@ -59,8 +54,8 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -79,8 +74,8 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -105,7 +100,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -113,25 +108,25 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0x4D000000),
               ),
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: 650.0,
                     maxHeight: 800.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x19000000),
@@ -147,13 +142,13 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -165,7 +160,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                 child: Container(
                                   width: 48.0,
                                   height: 48.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xFFF02E4B),
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
@@ -174,7 +169,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                       topRight: Radius.circular(12.0),
                                     ),
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.close_rounded,
                                     color: Colors.white,
                                     size: 36.0,
@@ -186,7 +181,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -203,9 +198,9 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                             ).animateOnPageLoad(
                                 animationsMap['textOnPageLoadAnimation1']!),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 8.0),
                                 child: Text(
                                   'Escolha pra quem da fila você quer transferir sua corrida',
@@ -226,7 +221,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 20.0),
                           child: AuthUserStreamWidget(
                             builder: (context) =>
@@ -244,16 +239,12 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                     .where(
                                       'uid',
                                       isNotEqualTo: currentUserUid,
-                                    )
-                                    .where(
-                                      'Nafila',
-                                      isEqualTo: false,
                                     ),
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: Padding(
                                       padding: EdgeInsets.all(16.0),
                                       child: SizedBox(
@@ -281,7 +272,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                       final columnUsersRecord =
                                           columnUsersRecordList[columnIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 8.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -294,7 +285,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                               impedido: true,
                                             ));
 
-                                            await widget!
+                                            await widget
                                                 .corridaTransfere!.reference
                                                 .update(
                                                     createCorridasRecordData(
@@ -317,7 +308,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x32000000),
@@ -331,7 +322,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -341,7 +332,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Material(
                                                       color: Colors.transparent,
                                                       elevation: 4.0,
@@ -351,22 +342,22 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration:
-                                                            BoxDecoration(
+                                                            const BoxDecoration(
                                                           color:
                                                               Color(0xFFF8B400),
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     2.0),
                                                             child: Text(
                                                               (columnIndex + 1)
@@ -411,7 +402,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -455,7 +446,7 @@ class _TranferirCorridaWidgetState extends State<TranferirCorridaWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,

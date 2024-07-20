@@ -4,14 +4,10 @@ import '/componentes/list_rotas/list_rotas_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'menu_bairros_model.dart';
 export 'menu_bairros_model.dart';
 
@@ -54,8 +50,8 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(20.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(20.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -80,22 +76,22 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: 2.0,
           sigmaY: 2.0,
         ),
         child: Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(12.0),
           child: Container(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 400.0,
               maxHeight: 400.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 4.0,
                   color: Color(0x1A000000),
@@ -111,7 +107,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -120,7 +116,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                     Builder(
                       builder: (context) => Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -134,9 +130,9 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                   elevation: 0,
                                   insetPadding: EdgeInsets.zero,
                                   backgroundColor: Colors.transparent,
-                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                  alignment: const AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),
-                                  child: CadRotaWidget(),
+                                  child: const CadRotaWidget(),
                                 );
                               },
                             ).then((value) => setState(() {}));
@@ -155,7 +151,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
                       child: Text(
                         'Escolha o que deseja fazer',
                         textAlign: TextAlign.center,
@@ -171,7 +167,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -179,7 +175,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                             children: [
                               Builder(
                                 builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 8.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -194,11 +190,11 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             elevation: 0,
                                             insetPadding: EdgeInsets.zero,
                                             backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                            child: CadbairroWidget(),
+                                            child: const CadbairroWidget(),
                                           );
                                         },
                                       ).then((value) => setState(() {}));
@@ -207,7 +203,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                       width: 150.0,
                                       height: 130.0,
                                       decoration: BoxDecoration(
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 6.0,
                                             color: Color(0x4B1A1F24),
@@ -217,7 +213,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             ),
                                           )
                                         ],
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             Color(0xFF4BB2F2),
                                             Color(0xFF3B53D0)
@@ -235,7 +231,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Padding(
+                                          const Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
@@ -247,7 +243,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 8.0),
                                             child: Text(
                                               'Novo Bairro',
@@ -272,7 +268,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                               ),
                               Builder(
                                 builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -287,11 +283,11 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             elevation: 0,
                                             insetPadding: EdgeInsets.zero,
                                             backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                            child: CadRotaWidget(),
+                                            child: const CadRotaWidget(),
                                           );
                                         },
                                       ).then((value) => setState(() {}));
@@ -300,7 +296,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                       width: 150.0,
                                       height: 130.0,
                                       decoration: BoxDecoration(
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 6.0,
                                             color: Color(0x4B1A1F24),
@@ -310,7 +306,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             ),
                                           )
                                         ],
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             Color(0xFFF2D64B),
                                             Color(0xFFF44B00)
@@ -328,7 +324,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Padding(
+                                          const Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
@@ -340,7 +336,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 8.0),
                                             child: Text(
                                               'Nova Rota',
@@ -367,7 +363,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -375,7 +371,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                             children: [
                               Builder(
                                 builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 8.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -390,11 +386,11 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             elevation: 0,
                                             insetPadding: EdgeInsets.zero,
                                             backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                            child: ListRotasWidget(),
+                                            child: const ListRotasWidget(),
                                           );
                                         },
                                       ).then((value) => setState(() {}));
@@ -403,7 +399,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                       width: 150.0,
                                       height: 130.0,
                                       decoration: BoxDecoration(
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 6.0,
                                             color: Color(0x4B1A1F24),
@@ -413,7 +409,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                             ),
                                           )
                                         ],
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           colors: [
                                             Color(0xFF3CF27B),
                                             Color(0xFF228B21)
@@ -431,7 +427,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Padding(
+                                          const Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
@@ -443,7 +439,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 8.0),
                                             child: Text(
                                               'Listar Rotas',
@@ -467,7 +463,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -481,7 +477,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                     width: 150.0,
                                     height: 130.0,
                                     decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 6.0,
                                           color: Color(0x4B1A1F24),
@@ -491,7 +487,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                           ),
                                         )
                                       ],
-                                      gradient: LinearGradient(
+                                      gradient: const LinearGradient(
                                         colors: [
                                           Color(0xFFEE3BA6),
                                           Color(0xFFF40048)
@@ -515,7 +511,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Padding(
+                                          const Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
@@ -527,7 +523,7 @@ class _MenuBairrosWidgetState extends State<MenuBairrosWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 8.0),
                                             child: Text(
                                               'Fechar',

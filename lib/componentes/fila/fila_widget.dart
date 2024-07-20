@@ -3,14 +3,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
 import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'fila_model.dart';
 export 'fila_model.dart';
 
@@ -53,8 +48,8 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 40.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 40.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -73,8 +68,8 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 600.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -99,7 +94,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
@@ -107,14 +102,14 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
             sigmaY: 6.0,
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: AuthUserStreamWidget(
               builder: (context) => StreamBuilder<PontoRecord>(
                 stream: PontoRecord.getDocument(currentUserDocument!.ponto!),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return Center(
+                    return const Center(
                       child: SizedBox(
                         width: 50.0,
                         height: 50.0,
@@ -132,22 +127,22 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0x4D000000),
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           maxWidth: 650.0,
                           maxHeight: 800.0,
                         ),
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x19000000),
@@ -163,13 +158,13 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -181,7 +176,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                       child: Container(
                                         width: 48.0,
                                         height: 48.0,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           color: Color(0xFFF02E4B),
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(0.0),
@@ -190,7 +185,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                             topRight: Radius.circular(12.0),
                                           ),
                                         ),
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.close_rounded,
                                           color: Colors.white,
                                           size: 36.0,
@@ -202,7 +197,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -219,9 +214,9 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation1']!),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
                                       child: Text(
                                         'Veja quem está na fila agora, entre ou saia da fila.',
@@ -245,7 +240,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                     currentUserDocument?.ativo, false) ==
                                 true)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -262,10 +257,10 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                             false))
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -311,12 +306,12 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                 width: 200.0,
                                                 height: 50.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF8B400),
+                                                  color: const Color(0xFFF8B400),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
                                                 ),
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Entrar na fila',
@@ -342,10 +337,10 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                         true)
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -391,12 +386,12 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                 width: 200.0,
                                                 height: 50.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF8003E),
+                                                  color: const Color(0xFFF8003E),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
                                                 ),
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Sair da fila',
@@ -421,7 +416,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                               ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 20.0),
                                 child: Builder(
                                   builder: (context) {
@@ -439,7 +434,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                               filaDoPonto[filaDoPontoIndex];
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 8.0),
                                             child: StreamBuilder<UsersRecord>(
                                               stream: UsersRecord.getDocument(
@@ -447,7 +442,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
-                                                  return Center(
+                                                  return const Center(
                                                     child: SizedBox(
                                                       width: 50.0,
                                                       height: 50.0,
@@ -473,7 +468,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -490,7 +485,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -502,7 +497,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Material(
                                                             color: Colors
@@ -514,23 +509,23 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                               width: 50.0,
                                                               height: 50.0,
                                                               decoration:
-                                                                  BoxDecoration(
+                                                                  const BoxDecoration(
                                                                 color: Color(
                                                                     0xFFF8B400),
                                                                 shape: BoxShape
                                                                     .circle,
                                                               ),
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               2.0),
                                                                   child: Text(
@@ -579,7 +574,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -621,7 +616,7 @@ class _FilaWidgetState extends State<FilaWidget> with TickerProviderStateMixin {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
